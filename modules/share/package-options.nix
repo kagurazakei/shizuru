@@ -24,6 +24,7 @@ in {
       cliphist
       app2unit
       hyprpanel
+      wpsoffice
       eog
       gnome-system-monitor
       file-roller
