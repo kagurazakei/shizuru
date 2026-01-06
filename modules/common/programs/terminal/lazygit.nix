@@ -47,7 +47,7 @@
           };
 
           git = {
-            paging = {
+            pagers = {
               colorArg = "always";
               pager = "delta --hyperlinks-file-link-format=\"lazygit-edit://{path}:{line}\"";
             };
