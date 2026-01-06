@@ -2,6 +2,7 @@
   stylix = {
     enable = true;
     autoEnable = false;
+    enableReleaseChecks = false;
     homeManagerIntegration = {
       followSystem = true;
       autoImport = true;

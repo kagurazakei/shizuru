@@ -51,7 +51,7 @@ in
           intel-ocl
           libva
           intel-vaapi-driver
-          vaapiVdpau
+          libva-vdpau-driver
           intel-compute-runtime
           libvdpau-va-gl
           libvdpau

@@ -12,7 +12,7 @@ in {
   ];
   hm = {
     imports = [
-      inputs.niri.homeModules.niri
+      # inputs.niri.homeModules.niri
     ];
 
     xdg.portal.extraPortals = [

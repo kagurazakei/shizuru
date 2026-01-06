@@ -5,7 +5,7 @@
     ../common/drivers
     ../common/programs
     ../desktop/default.nix
-    ../share/spec-hana
+    ../share/package-options.nix
   ];
   drivers.intel.enable = false;
   drivers.nvidia.enable = true;

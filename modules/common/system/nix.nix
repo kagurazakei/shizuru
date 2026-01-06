@@ -4,17 +4,17 @@
   lib,
   ...
 }: {
-  nixpkgs.overlays = lib.mkAfter [
-    (final: prev: {
-      lix = prev.lix.overrideAttrs (_: {
-        separateDebugInfo = false;
-      });
-    })
-  ];
+  # nixpkgs.overlays = lib.mkAfter [
+  #   (final: prev: {
+  #     lix = prev.lix.overrideAttrs (_: {
+  #       separateDebugInfo = false;
+  #     });
+  #   })
+  # ];
   environment.sessionVariables.NIXPKGS_ALLOW_UNFREE = "1";
   nix = {
     channel.enable = false;
-    # package = pkgs.lixPackageSets.git.lix;
+    package = pkgs.nixVersions.git;
     settings = {
       nix-path = [
         "nixpkgs=${inputs.nixpkgs.outPath}"

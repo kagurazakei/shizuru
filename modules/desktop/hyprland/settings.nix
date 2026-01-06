@@ -78,7 +78,6 @@
       ];
 
       animations = {
-        first_launch_animation = true;
         enabled = true;
       };
 
@@ -117,8 +116,6 @@
       };
 
       gestures = {
-        workspace_swipe = true;
-        workspace_swipe_fingers = 3;
         workspace_swipe_distance = 500;
         workspace_swipe_invert = false;
         workspace_swipe_min_speed_to_force = 30;

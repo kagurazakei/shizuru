@@ -1,20 +1,40 @@
 {
   lib,
   pkgs,
+  inputs,
   ...
 }: let
+  niri-package = pkgs.nur.repos.lonerOrz.niri-Naxdy;
   inherit (lib.meta) getExe;
   inherit (lib.filesystem) listFilesRecursive;
+  niri-blur = niri-package.override {
+    withDbus = true;
+    withSystemd = true;
+    withScreencastSupport = true;
+    withDinit = false;
+    withNative = true;
+    withLto = true;
+  };
 in {
+  nixpkgs.overlays = [
+    inputs.nur.overlays.default
+  ];
+  imports = [
+    inputs.noctalia-shell.nixosModules.default
+  ];
+  services.noctalia-shell = {
+    enable = true;
+  };
+
   hj.rum.desktops.niri = {
     enable = true;
-    configFile = pkgs.concatText "config.kdl" (listFilesRecursive ./configs);
+    package = inputs.niri.packages.${pkgs.system}.niri;
+    config = lib.concatMapStringsSep "\n" builtins.readFile [./configs/ribbons.kdl ./configs/inputs.kdl ./configs/rule.kdl ./configs/settings.kdl];
+    #configFile = pkgs.concatText "config.kdl" (listFilesRecursive ./configs);
     spawn-at-startup = [
       ["wl-paste" "--type" "image" "--watch" "cliphist" "store"]
       ["${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"]
       ["wl-paste" "--type" "text" "--watch" "cliphist" "store"]
-      ["swww-daemon"]
-      ["lysec-bar"]
       ["dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"]
       ["systemctl" "--user" "import-environment" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"]
       ["dbus-update-activation-environment" "--all"]

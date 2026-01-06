@@ -23,6 +23,7 @@ in {
   catppuccin.tty.enable = false;
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowBroken = true;
+  stylix.enableReleaseChecks = false;
   programs.command-not-found.enable = true;
   nixpkgs.config = {
     allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) ["joypixels"];

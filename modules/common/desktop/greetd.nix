@@ -1,41 +1,43 @@
-{ pkgs
-, config
-, username
-, options
-, lib
-, system
-, ...
+{
+  pkgs,
+  config,
+  username,
+  options,
+  lib,
+  system,
+  ...
 }:
 with lib; let
   cfg = config.system.greetd;
-in
-{
+in {
   options.system.greetd = {
     enable = mkEnableOption "Enable Greetd Display Manager Services";
   };
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
-      greetd.tuigreet
+      tuigreet
       lyra-cursors
     ];
-
+    systemd.services.greetd.serviceConfig = {
+      Type = "idle";
+      StandardInput = "tty";
+      StandardOutput = "tty";
+      StandardError = "journal";
+      TTYReset = true;
+      TTYVHangup = true;
+      TTYVTDisallocate = true;
+    };
     services.greetd = {
       enable = true;
-      vt = 1;
       settings = {
+        initial_session = {
+          user = "antonio";
+          command = "uwsm start niri-uwsm.desktop";
+        };
         default_session = {
-          user = username;
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet \
-            --user-menu \
-            -w 30 \
-            --window-padding 40 \
-            --container-padding 8 \
-            --remember \
-            --remember-session \
-            --time \
-            --theme 'border=cyan;text=cyan;prompt=cyan;time=cyan;action=cyan;button=cyan;container=black;input=cyan' \
-            --cmd uwsm start hyprland-uwsm.desktop";
+          user = "greeter";
+          command = "${pkgs.tuigreet}/bin/tuigreet --user-menu -w 50 --window-padding 7 --container-padding 7 --remember --remember-session --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --cmd uwsm start niri-uwsm.desktop";
         };
       };
     };
@@ -53,15 +55,5 @@ in
         binPath = "/run/current-system/sw/bin/niri-session";
       };
     };
-    systemd.services.greetd.serviceConfig = {
-      Type = "idle";
-      StarndardInput = "tty";
-      StarndardOutput = "tty";
-      StandardError = "journal";
-      TTYReset = true;
-      TTYHangup = true;
-      TTYVTDisallocate = true;
-    };
-    systemd.extraConfig = "DefaultTimeoutStopSec=1os";
   };
 }

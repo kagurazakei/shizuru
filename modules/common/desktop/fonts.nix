@@ -1,21 +1,20 @@
-{ pkgs
-, theme
-, ...
-}:
-let
+{
+  pkgs,
+  theme,
+  ...
+}: let
   inherit (theme) fonts;
 
   fallbackPackages = [
     pkgs.corefonts
-    pkgs.vistafonts
+    pkgs.vista-fonts
   ];
   fallbackFonts = [
     "JetBrainsMono Nerd Font"
     "corefonts"
     "vistafonts"
   ];
-in
-{
+in {
   fonts = {
     enableDefaultPackages = false;
     packages = with pkgs;

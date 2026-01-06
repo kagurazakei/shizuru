@@ -17,8 +17,7 @@
     qt6.qtmultimedia
     wlsunset
     libqalculate
-    colloid-kde
-    quickshellPkg
+    quickshell
   ];
 
   qtUserPackages = with pkgs; [
@@ -26,12 +25,10 @@
       flavour = ["mocha"];
       accents = ["green"];
     })
-    master.darkly
-    master.darkly-qt5
     master.libsForQt5.qtstyleplugin-kvantum
     master.libsForQt5.qt5ct
     kdePackages.qqc2-desktop-style
-    qt6ct
+    master.kdePackages.qt6ct
     adwaita-qt6
     qt6.qtwayland
     qt6.qtsvg
@@ -47,7 +44,7 @@
     kdePackages.kirigami
     kdePackages.kirigami-addons
     kdePackages.breeze
-    quickshellPkg
+    quickshell
   ];
   qmlPaths = lib.concatStringsSep ":" [
     "${pkgs.kdePackages.kirigami}/lib/qt-6/qml"

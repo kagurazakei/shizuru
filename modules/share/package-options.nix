@@ -18,7 +18,6 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       brightnessctl # for brightness control
-      libinput
       python313Packages.pywayland
       neovide
       cliphist
@@ -27,11 +26,8 @@ in {
       gnome-system-monitor
       file-roller
       grim
-      hiddify-app
       gtk-engine-murrine # for gtk themes
       hyprcursor # requires unstable channel
-      qcomicbook
-      ahoviewer
       imagemagick
       inxi
       jq
@@ -43,7 +39,7 @@ in {
       polkit_gnome
       pyprland
       python313Packages.kde-material-you-colors
-      rofi-wayland
+      rofi
       slurp
       swappy
       swww
@@ -62,26 +58,22 @@ in {
       gtk3
       gtk4
       atuin
-      bun
       zoxide
       dart-sass
       sass
-      readest
       wf-recorder
       sassc
       libgtop
       telegram-desktop
-      papirus-folders
+      #papirus-folders
       papirus-icon-theme
       joypixels
       spotify
-      bibata-cursors
       gpu-screen-recorder
       libqalculate
       dbus-glib
       gtkmm4
       komikku
-      mangayomi
       mangal
       mangareader
       master.tmux
@@ -98,7 +90,6 @@ in {
       socat
       hyprpicker
       master.ani-cli
-      inputs.zen-browser.packages.${pkgs.system}.default
       zellij
     ];
   };

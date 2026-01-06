@@ -35,7 +35,6 @@
             enable = true;
             anonymiseByDefault = true;
           };
-          banger.enable = true;
           betterGifAltText.enable = true;
           betterGifPicker.enable = true;
           betterNotesBox.enable = true;
@@ -47,7 +46,6 @@
           crashHandler.enable = true;
           dearrow.enable = true;
           disableCallIdle.enable = true;
-          emoteCloner.enable = true;
           experiments.enable = true;
           fakeNitro.enable = true;
           favoriteEmojiFirst.enable = true;

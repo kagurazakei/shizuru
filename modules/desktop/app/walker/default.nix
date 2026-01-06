@@ -7,7 +7,7 @@
     ./walker.nix
   ];
   rum.programs.walker = {
-    enable = true;
+    enable = false;
     systemd.enable = true;
     runAsService = true;
     config = ''

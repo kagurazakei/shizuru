@@ -1,17 +1,16 @@
-{ pkgs
-, inputs
-, username
-, host
-, lib
-, ...
-}:
-let
-  inherit (import ./variables.nix) gitUsername;
-in
 {
+  pkgs,
+  inputs,
+  username,
+  host,
+  lib,
+  ...
+}: let
+  inherit (import ./variables.nix) gitUsername;
+in {
   imports = [
     inputs.home-manager.nixosModules.home-manager
-    (lib.modules.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "${username}" ]) # gitlab/fazzi
+    (lib.modules.mkAliasOptionModule ["hm"] ["home-manager" "users" "${username}"]) # gitlab/fazzi
   ];
   home-manager = {
     useUserPackages = true;
@@ -52,13 +51,12 @@ in
         "audio"
       ];
 
-      # define user packages here
       packages = with pkgs; [
       ];
     };
   };
-  #security.sudo.wheelNeedsPassword = false;
-  nix.settings.allowed-users = [ "${username}" ];
-  environment.shells = with pkgs; [ fish ];
-  environment.systemPackages = with pkgs; [ fzf ];
+  nix.settings.allowed-users = ["${username}"];
+  environment.shells = with pkgs; [fish];
+  environment.systemPackages = with pkgs; [fzf];
+  stylix.enableReleaseChecks = false;
 }

@@ -1,7 +1,7 @@
 {
   imports = [
     #./ags.nix
-    ./caelestia.nix
+    #./caelestia.nix
     ./cliphist.nix
     ./hypridle.nix
     ./mpv.nix
@@ -10,6 +10,6 @@
     ./kvantum
     ./qtct
     ./services
-    ./walker
+    #./walker
   ];
 }

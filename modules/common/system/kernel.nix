@@ -13,25 +13,31 @@ in {
 
   config = mkIf cfg.enable {
     boot = {
-      kernelPackages = let
-        apply = _: prevModules: {
-          v4l2loopback =
-            if strings.hasPrefix "0.15.0" prevModules.v4l2loopback.version
-            then
-              prevModules.v4l2loopback.overrideAttrs (_: rec {
-                version = "0.15.1";
-                src = pkgs.fetchFromGitHub {
-                  owner = "umlaeute";
-                  repo = "v4l2loopback";
-                  rev = "v${version}";
-                  hash = "sha256-uokj0MB6bw4I8q5dVmSO9XMDvh4T7YODBoCCHvEf4v4=";
-                };
-              })
-            else prevModules.v4l2loopback;
-        };
-      in
-        pkgs.linuxPackages_cachyos.extend apply;
-
+      # kernelPackages = pkgs.linuxPackages_cachyos;
+      kernelPackages = pkgs.linuxPackages_cachyos-lto.extend (
+        lpself: lpsuper: {
+          inherit (pkgs.linuxPackages_cachyos-gcc) evdi nvidiaPackages; # 引入 CachyOS-GCC 的 NVIDIA 和 EVDI 驱动模块
+        }
+      );
+      # kernelPackages = let
+      #   apply = _: prevModules: {
+      #     v4l2loopback =
+      #       if strings.hasPrefix "0.15.1" prevModules.v4l2loopback.version
+      #       then
+      #         prevModules.v4l2loopback.overrideAttrs (_: rec {
+      #           version = "0.15.1";
+      #           src = pkgs.fetchFromGitHub {
+      #             owner = "umlaeute";
+      #             repo = "v4l2loopback";
+      #             rev = "v${version}";
+      #             hash = "sha256-uokj0MB6bw4I8q5dVmSO9XMDvh4T7YODBoCCHvEf4v4=";
+      #           };
+      #         })
+      #       else prevModules.v4l2loopback;
+      #   };
+      # in
+      #   pkgs.linuxPackages_cachyos.extend apply;
+      #
       # kernelPackages = let
       #   apply = _: prevModules: {
       #     v4l2loopback =
@@ -70,14 +76,12 @@ in {
       ];
 
       kernelModules = [
-        "v4l2loopback"
         "kvm-intel"
         "drm"
         "i2c-dev"
       ];
 
       extraModulePackages = [
-        config.boot.kernelPackages.v4l2loopback
       ];
 
       initrd = {
@@ -90,7 +94,6 @@ in {
           "usbhid"
           "sd_mod"
         ];
-
         kernelModules = []; # GPU kernel modules removed here
       };
     };

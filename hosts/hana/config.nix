@@ -19,11 +19,11 @@ in {
     ./themes.nix
     ../../modules/options/hana.nix
   ];
+  stylix.enableReleaseChecks = false;
   services.xserver.videoDrivers = ["modesetting" "nvidia"];
   catppuccin.tty.enable = false;
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowBroken = true;
-  programs.command-not-found.enable = true;
   nixpkgs.config = {
     allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) ["joypixels"];
     joypixels.acceptLicense = true;
@@ -32,17 +32,13 @@ in {
     (with pkgs; [
       libva-utils
       libvdpau-va-gl
-      intel-compute-runtime
-      intel-vaapi-driver
-      vaapiVdpau
-      vaapi-intel-hybrid
-      #mesa_git
+      libva-vdpau-driver
       egl-wayland
+      mesa
       master.waybar
     ])
     ++ [python-packages];
   hardware.graphics.enable = true;
-
   services.btrfs.autoScrub = {
     enable = true;
     interval = "monthly";

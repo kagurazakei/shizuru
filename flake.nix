@@ -4,18 +4,24 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-master.url = "github:NixOS/nixpkgs/master";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
     font-flake.url = "github:redyf/font-flake";
     systems.url = "github:nix-systems/x86_64-linux";
-    agenix.url = "github:ryantm/agenix";
+    #agenix.url = "github:ryantm/agenix";
     walker.url = "github:abenz1267/walker/v0.13.26";
-    private-key.url = "git+ssh://git@codeberg.org/maotseantonio/secrets.git";
+    #    private-key.url = "git+ssh://git@codeberg.org/maotseantonio/secrets.git";
     sops-nix = {
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    mango = {
+      url = "github:DreamMaoMao/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     alejandra.url = "github:kamadorueda/alejandra/4.0.0";
     alejandra.inputs.nixpkgs.follows = "nixpkgs";
+    noctalia-shell.url = "github:noctalia-dev/noctalia-shell";
     fastanime.url = "github:Benexl/FastAnime";
     fish-flake = {
       url = "github:kagurazakei/fish-flake";
@@ -42,18 +48,18 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    lix-module = {
-      url = "git+https://git.lix.systems/lix-project/nixos-module?ref=main&rev=4d4c2b8f0a801c91ce5b717c77fe3a17efa1402f";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.lix = {
-        url = "git+https://git.lix.systems/lix-project/lix?ref=main&rev=cad6118e20a520b7536879d951ab6c3228b3e111";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
-    };
-    flake-programs-sqlite = {
-      url = "github:wamserma/flake-programs-sqlite";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # lix-module = {
+    #   url = "git+https://git.lix.systems/lix-project/nixos-module?ref=main&rev=4d4c2b8f0a801c91ce5b717c77fe3a17efa1402f";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.lix = {
+    #     url = "git+https://git.lix.systems/lix-project/lix?ref=main&rev=cad6118e20a520b7536879d951ab6c3228b3e111";
+    #     inputs.nixpkgs.follows = "nixpkgs";
+    #   };
+    # };
+    # flake-programs-sqlite = {
+    #   url = "github:wamserma/flake-programs-sqlite";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     disko = {
       url = "github:nix-community/disko";
@@ -172,7 +178,6 @@
         hyprcursor.follows = "hyprcursor";
         hyprgraphics.follows = "hyprgraphics";
         hyprland-protocols.follows = "hyprland-protocols";
-        hyprland-qtutils.follows = "hyprland-qtutils";
         hyprlang.follows = "hyprlang";
         hyprutils.follows = "hyprutils";
         hyprwayland-scanner.follows = "hyprwayland-scanner";
@@ -189,21 +194,17 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # hyprpanel = {
+    #   url = "github:Jas-SinghFSU/HyprPanel";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     hyprscroller = {
       url = "github:cpiber/hyprscroller";
       inputs.hyprland.follows = "hyprland";
     };
 
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
+    niri.url = "github:yayuuu/niri";
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -241,7 +242,8 @@
     };
 
     #chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    chaotic.url = "github:chaotic-cx/nyx/main";
+    # chaotic.url = "github:chaotic-cx/nyx/main";
+    chaotic.url = "github:lonerOrz/nyx-loner";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     catppuccin.url = "github:catppuccin/nix";
     stylix = {
@@ -264,8 +266,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ghostty.url = "github:ghostty-org/ghostty";
-    nixcord.url = "github:kaylorben/nixcord";
+    # ghostty.url = "github:ghostty-org/ghostty";
+    #nixcord.url = "github:kaylorben/nixcord";
+    nixcord.url = "github:kaylorben/nixcord?rev=f93293513fdf2a5d530e3c3bce9cc87bd9b47b2a";
     textfox.url = "github:adriankarlen/textfox";
     nh = {
       url = "github:nix-community/nh";
@@ -304,13 +307,13 @@
     yazi,
     home-manager,
     chaotic,
-    agenix,
     quickshell,
-    lix-module,
+    niri,
+    # lix-module,
     ...
   }: let
     system = "x86_64-linux";
-    host = "shizuru";
+    host = "hana";
     username = "antonio";
 
     pkgs = import nixpkgs {
@@ -354,7 +357,7 @@
     };
 
     nixosConfigurations = {
-      shizuru = nixpkgs.lib.nixosSystem {
+      hana = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit system inputs username host pkgs-master;
         };
@@ -366,9 +369,10 @@
           inputs.catppuccin.nixosModules.catppuccin
           inputs.nixos-hardware.nixosModules.huawei-machc-wa
           inputs.nvf.nixosModules.default
-          agenix.nixosModules.default
-          lix-module.nixosModules.default
-          inputs.flake-programs-sqlite.nixosModules.programs-sqlite
+          inputs.mango.nixosModules.mango
+          # agenix.nixosModules.default
+          # lix-module.nixosModules.default
+          # inputs.flake-programs-sqlite.nixosModules.programs-sqlite
           {
             nixpkgs.overlays = import ./overlays {
               inherit inputs system;

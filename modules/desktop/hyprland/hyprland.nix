@@ -17,8 +17,8 @@ in {
   programs = {
     hyprland = {
       enable = true;
-      package = hyprFlake;
-      portalPackage = portalFlake;
+      package = pkgs.master.hyprland;
+      portalPackage = pkgs.master.xdg-desktop-portal-hyprland;
       xwayland.enable = true;
     };
     appimage = {
