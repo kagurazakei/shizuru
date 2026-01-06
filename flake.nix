@@ -204,7 +204,7 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    niri.url = "github:yayuuu/niri";
+    niri.url = "github:kagurazakei/niri";
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
