@@ -9,7 +9,7 @@
     ./foot.nix
     ./ghostty.nix
     ./git.nix
-    ./lazygit.nix
+     ./lazygit.nix
     ./lutgen.nix
     ./nixy.nix
     ./shell.nix
