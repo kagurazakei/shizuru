@@ -151,38 +151,6 @@ require("yatline"):setup({
     },
 })
 
-require("yatline-githead"):setup({
-    show_branch = true,
-    branch_prefix = "",
-    branch_symbol = "",
-    branch_borders = "",
 
-    commit_symbol = " ",
-
-    show_stashes = true,
-    stashes_symbol = " ",
-
-    show_state = true,
-    show_state_prefix = true,
-    state_symbol = "󱅉",
-
-    show_staged = true,
-    staged_symbol = " ",
-
-    show_unstaged = true,
-    unstaged_symbol = " ",
-
-    show_untracked = true,
-    untracked_symbol = " ",
-
-    prefix_color = catppuccin_palette.pink,
-    branch_color = catppuccin_palette.pink,
-    commit_color = catppuccin_palette.mauve,
-    stashes_color = catppuccin_palette.teal,
-    state_color = catppuccin_palette.lavender,
-    staged_color = catppuccin_palette.green,
-    unstaged_color = catppuccin_palette.yellow,
-    untracked_color = catppuccin_palette.pink,
-})
 
 require("git"):setup()

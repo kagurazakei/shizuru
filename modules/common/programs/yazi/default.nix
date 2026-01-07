@@ -23,7 +23,7 @@
       hide-preview = ./plugins/hide-preview.yazi;
       ouch = ./plugins/ouch.yazi;
       yatline = ./plugins/yatline.yazi;
-      yatline-githead = ./plugins/yatline-githead.yazi;
+     # yatline-githead = ./plugins/yatline-githead.yazi;
       rsync = ./plugins/rsync.yazi;
       searchjump = ./plugins/searchjump.yazi;
       smart-enter = ./plugins/smart-enter.yazi;
