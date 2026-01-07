@@ -11,6 +11,10 @@
     dms.url = "github:AvengeMedia/DankMaterialShell";
     walker.url = "github:abenz1267/walker/v0.13.26";
     #    private-key.url = "git+ssh://git@codeberg.org/maotseantonio/secrets.git";
+    nix-monitor = {
+      url = "github:antonjah/nix-monitor";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     sops-nix = {
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";

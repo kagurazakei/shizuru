@@ -21,11 +21,60 @@ in {
   ];
   imports = [
     inputs.noctalia-shell.nixosModules.default
+    inputs.dms.nixosModules.dank-material-shell
+    inputs.nix-monitor.nixosModules.default
   ];
   services.noctalia-shell = {
-    enable = true;
+    enable = false;
   };
 
+  programs.dankMaterialShell = {
+    enable = true;
+
+    systemd = {
+      enable = true; # Systemd service for auto-start
+      restartIfChanged = true; # Auto-restart dms.service when dankMaterialShell changes
+    };
+    # Core features
+    enableSystemMonitoring = true; # System monitoring widgets (dgop)
+    enableVPN = true; # VPN management widget
+    enableDynamicTheming = true; # Wallpaper-based theming (matugen)
+    enableAudioWavelength = true; # Audio visualizer (cava)
+    enableCalendarEvents = true; # Calendar integration (khal)
+
+    plugins = {
+      DockerManager = {
+        src = pkgs.fetchFromGitHub {
+          owner = "LuckShiba";
+          repo = "DmsDockerManager";
+          rev = "v1.2.0";
+          sha256 = "sha256-VoJCaygWnKpv0s0pqTOmzZnPM922qPDMHk4EPcgVnaU=";
+        };
+      };
+    };
+  };
+
+  programs.nix-monitor = {
+    enable = true;
+
+    # Required: customize for your setup
+    rebuildCommand = [
+      "bash"
+      "-c"
+      "sudo nixos-rebuild switch --flake .#hana 2>&1"
+    ];
+    gcCommand = [
+      "bash"
+      "-c"
+      "sudo nix-collect-garbage -d 2>&1"
+    ];
+    generationsCommand = [
+      "bash"
+      "-c"
+      "nix-env --list-generations --profile /nix/var/nix/profiles/system | wc -l"
+    ];
+    updateInterval = 600;
+  };
   hj.rum.desktops.niri = {
     enable = true;
     package = inputs.niri.packages.${pkgs.system}.niri;
