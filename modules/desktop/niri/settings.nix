@@ -22,13 +22,12 @@ in {
   imports = [
     inputs.noctalia-shell.nixosModules.default
     inputs.dms.nixosModules.dank-material-shell
-    inputs.nix-monitor.nixosModules.default
   ];
   services.noctalia-shell = {
     enable = false;
   };
 
-  programs.dankMaterialShell = {
+  programs.dank-material-shell = {
     enable = true;
 
     systemd = {
@@ -54,27 +53,6 @@ in {
     };
   };
 
-  programs.nix-monitor = {
-    enable = true;
-
-    # Required: customize for your setup
-    rebuildCommand = [
-      "bash"
-      "-c"
-      "sudo nixos-rebuild switch --flake .#hana 2>&1"
-    ];
-    gcCommand = [
-      "bash"
-      "-c"
-      "sudo nix-collect-garbage -d 2>&1"
-    ];
-    generationsCommand = [
-      "bash"
-      "-c"
-      "nix-env --list-generations --profile /nix/var/nix/profiles/system | wc -l"
-    ];
-    updateInterval = 600;
-  };
   hj.rum.desktops.niri = {
     enable = true;
     package = inputs.niri.packages.${pkgs.system}.niri;

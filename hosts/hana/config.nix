@@ -34,6 +34,8 @@ in {
       libvdpau-va-gl
       libva-vdpau-driver
       egl-wayland
+      libimobiledevice
+      ifuse
       mesa
       master.waybar
     ])
@@ -43,6 +45,15 @@ in {
     enable = true;
     interval = "monthly";
     fileSystems = ["/"];
+  };
+
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTR{idVendor}=="05ac", ATTR{idProduct}=="12a8", MODE="0666"
+  '';
+
+  services.usbmuxd = {
+    enable = true;
+    package = pkgs.usbmuxd2;
   };
   console.keyMap = "${keyboardLayout}";
   environment.sessionVariables = {

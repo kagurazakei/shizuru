@@ -13,7 +13,6 @@
     #    private-key.url = "git+ssh://git@codeberg.org/maotseantonio/secrets.git";
     nix-monitor = {
       url = "github:antonjah/nix-monitor";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix = {
       url = "github:mic92/sops-nix";
@@ -314,7 +313,7 @@
     chaotic,
     quickshell,
     niri,
-    # lix-module,
+    nix-monitor,
     ...
   }: let
     system = "x86_64-linux";
@@ -375,6 +374,7 @@
           inputs.nixos-hardware.nixosModules.huawei-machc-wa
           inputs.nvf.nixosModules.default
           inputs.mango.nixosModules.mango
+          nix-monitor.nixosModules.default
           # agenix.nixosModules.default
           # lix-module.nixosModules.default
           # inputs.flake-programs-sqlite.nixosModules.programs-sqlite

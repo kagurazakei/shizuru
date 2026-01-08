@@ -19,7 +19,7 @@ in {
   };
 
   config = mkIf cfg.enable {
-    programs.dankMaterialShell.greeter = {
+    programs.dank-material-shell.greeter = {
       enable = true;
       compositor.name = "niri"; # Or "hyprland" or "sway"
     };
