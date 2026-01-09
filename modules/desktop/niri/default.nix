@@ -12,7 +12,6 @@ in {
   ];
   hm = {
     imports = [
-      # inputs.niri.homeModules.niri
       inputs.nix-monitor.homeManagerModules.default
     ];
 

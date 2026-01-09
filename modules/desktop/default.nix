@@ -3,5 +3,6 @@
     ./app
     ./hyprland
     ./niri
+    ./mango
   ];
 }

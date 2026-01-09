@@ -29,7 +29,6 @@ in {
 
   programs.dank-material-shell = {
     enable = true;
-
     systemd = {
       enable = true; # Systemd service for auto-start
       restartIfChanged = true; # Auto-restart dms.service when dankMaterialShell changes

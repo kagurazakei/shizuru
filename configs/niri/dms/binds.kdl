@@ -1,0 +1,16 @@
+binds {
+    Ctrl+Alt+L hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
+    Mod+B hotkey-overlay-title="Wallpaper Browser" { spawn "dms" "ipc" "call" "dankdash" "wallpaper"; }
+    Mod+Backspace hotkey-overlay-title="Dashboard: Toggle" { spawn "dms" "ipc" "call" "dash" "toggle"; }
+    Mod+D hotkey-overlay-title="App Launcher: Toggle" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
+    Mod+M hotkey-overlay-title="Dashboard: Toggle" { spawn "dms" "ipc" "call" "dash" "toggle"; }
+    Mod+N hotkey-overlay-title="Bar: Toggle (Primary)" { spawn "dms" "ipc" "call" "bar" "toggle" "index" "0"; }
+    Mod+O hotkey-overlay-title="Task Manager: Toggle" { spawn "dms" "ipc" "call" "processlist" "toggle"; }
+    Mod+T hotkey-overlay-title="File: Browse Wallpaper" { spawn "dms" "ipc" "call" "file" "browse" "wallpaper"; }
+    Mod+V hotkey-overlay-title="Clipboard: Toggle" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
+    Mod+X hotkey-overlay-title="Power Menu: Toggle" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
+    Alt+Ctrl+K hotkey-overlay-title="komikku" { spawn "nvidia-offload" "komikku"; }
+    Mod+E { spawn "nvidia-offload" "firefox"; }
+    Mod+I { spawn "rofi" "-show" "drun"; }
+    Mod+Shift+Return { spawn "nvidia-offload" "wezterm"; }
+}

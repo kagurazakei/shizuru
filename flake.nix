@@ -208,7 +208,7 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    niri.url = "github:Naxdy/niri";
+    niri.url = "github:kagurazakei/niri";
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -245,6 +245,11 @@
       inputs.hjem.follows = "hjem";
     };
 
+    hjem-impure = {
+      url = "github:Rexcrazy804/hjem-impure";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.hjem.follows = "hjem";
+    };
     #chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     # chaotic.url = "github:chaotic-cx/nyx/main";
     chaotic.url = "github:lonerOrz/nyx-loner";

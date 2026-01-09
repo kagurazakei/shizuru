@@ -60,7 +60,7 @@ in {
       hyprland = {
         prettyName = "Hyprland";
         comment = "Hyprland compositor manager by UWSM";
-        binPath = "/run/current-system/sw/bin/Hyprland";
+        binPath = "/run/current-system/sw/bin/start-hyprland";
       };
       niri = {
         prettyName = "Niri The Goat";
