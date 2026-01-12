@@ -95,6 +95,9 @@ alias  listgen = sudo nix-env -p /nix/var/nix/profiles/system --list-generations
 alias fuck = nh os switch --hostname hana
 alias rebuild = sudo nixos-rebuild switch --flake .#hana
 alias fucku = nh os switch --hostname hana --update
+alias lg = lazygit
+alias nf = nitch
+alias ff = fastfetch
 # Custom Functions
 ## def sshot [delay: int] {
 ##     sleep ($delay | into duration --unit sec)
