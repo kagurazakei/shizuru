@@ -8,6 +8,7 @@
     ../share/package-options.nix
   ];
   drivers.intel.enable = false;
+  drivers.amdgpu.enable = true;
   drivers.nvidia.enable = true;
   drivers.nvidia-prime = {
     enable = false;

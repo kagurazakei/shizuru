@@ -7,7 +7,6 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
     font-flake.url = "github:redyf/font-flake";
     systems.url = "github:nix-systems/x86_64-linux";
-    #agenix.url = "github:ryantm/agenix";
     dms.url = "github:AvengeMedia/DankMaterialShell";
     walker.url = "github:abenz1267/walker/v0.13.26";
     #    private-key.url = "git+ssh://git@codeberg.org/maotseantonio/secrets.git";
@@ -198,11 +197,6 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    # hyprpanel = {
-    #   url = "github:Jas-SinghFSU/HyprPanel";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
     hyprscroller = {
       url = "github:cpiber/hyprscroller";
       inputs.hyprland.follows = "hyprland";
@@ -312,7 +306,7 @@
   outputs = inputs @ {
     nixpkgs,
     nixpkgs-master,
-    rust-overlay,
+    self,
     yazi,
     home-manager,
     chaotic,
@@ -368,7 +362,7 @@
     nixosConfigurations = {
       hana = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit system inputs username host pkgs-master;
+          inherit self system inputs username host pkgs-master;
         };
         modules = [
           ./hosts/${host}/config.nix

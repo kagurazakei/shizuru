@@ -2,7 +2,7 @@
   hm.programs.btop = {
     enable = true;
     settings = {
-      color_theme = "mocha-refine";
+      color_theme = "btop";
       theme_background = false;
     };
     themes = {

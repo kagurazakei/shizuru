@@ -34,6 +34,7 @@ in {
       nwg-look # requires unstable channel
       nwg-dock-hyprland
       master.pamixer
+      master.nushell
       pavucontrol
       playerctl
       polkit_gnome
@@ -73,7 +74,7 @@ in {
       libqalculate
       dbus-glib
       gtkmm4
-      komikku
+      master.komikku
       mangal
       mangareader
       master.tmux

@@ -18,6 +18,6 @@
     ".config/yazi/plugins/smart-filter.yazi".source = ./plugins/smart-filter.yazi;
     ".config/yazi/plugins/starship.yazi".source = ./plugins/starship.yazi;
     #".config/yazi/plugins/yatline-githead.yazi".source = ./plugins/yatline-githead.yazi;
-    ".config/yazi/plugins/yatline.yazi".source = ./plugins/yatline.yazi;
+    # ".config/yazi/plugins/yatline.yazi".source = ./plugins/yatline.yazi;
   };
 }

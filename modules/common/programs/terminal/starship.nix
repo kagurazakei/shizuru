@@ -5,6 +5,7 @@ in {
     enable = true;
     integrations = {
       fish.enable = true;
+      nushell.enable = true;
     };
     settings = {
       add_newline = true;

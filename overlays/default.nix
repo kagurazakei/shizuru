@@ -7,7 +7,7 @@
     config.allowUnfree = true;
   };
 in [
-  # inputs.niri.overlays.niri
+  #inputs.niri.overlays.niri
   inputs.nur.overlays.default
   inputs.rust-overlay.overlays.default
   (_final: prev: {

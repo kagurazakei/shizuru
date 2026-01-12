@@ -1,0 +1,5 @@
+[integrations.fish]
+enable = true
+
+[integrations.nushell]
+enable = true

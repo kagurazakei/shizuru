@@ -1,11 +1,11 @@
 environment {
-  CLUTTER_BACKEND "wayland"
+CLUTTER_BACKEND "wayland"
 DISPLAY ":0"
 ELECTRON_ENABLE_HARDWARE_ACCELERATION "1"
 ELECTRON_OZONE_PLATFORM_HINT "auto"
 GDK_BACKEND "wayland,x11"
 GTK2_RC_FILES "/home/antonio/.gtkrc-2.0"
-GTK_THEME "catppuccin-mocha-blue-standard+normal"
+GTK_THEME "Rosepine-Dark"
 JAVA_AWT_WM_NONEREPARENTING "1"
 MOZ_ENABLE_WAYLAND "1"
 NIXOS_OZONE_WL "1"
@@ -20,7 +20,6 @@ XDG_SESSION_TYPE "wayland"
 }
 
 debug {
-  // Allows notification actions and window activation from Noctalia.
   honor-xdg-activation-with-invalid-serial
 }
 
@@ -38,8 +37,6 @@ Mod+6  {focus-workspace 6;}
 Mod+7  {focus-workspace 7;}
 Mod+8  {focus-workspace 8;}
 Mod+9  {focus-workspace 9;}
-Mod+B  {spawn "eww-bar";}
-Mod+Backspace  {spawn "wlogout";}
 Mod+C  {center-window;}
 Mod+Comma  {consume-window-into-column;}
 Mod+D  {spawn "noctalia-shell" "ipc" "call" "launcher" "toggle";}
@@ -535,7 +532,7 @@ hotkey-overlay { skip-at-startup; }
 include "./dms/binds.kdl"
 include "./dms/alttab.kdl"
 include "./dms/colors.kdl"
-include "./dms/cursor.kdl"
 include "./dms/layout.kdl"
 include "./dms/wpblur.kdl"
 include "./dms/outputs.kdl"
+include "dms/cursor.kdl"
