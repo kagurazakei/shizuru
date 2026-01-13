@@ -54,10 +54,10 @@ in {
 
         "wezterm/wezterm.lua".source =
           lib.mkForce (dot + "/wezterm/wezterm.lua");
-        # "wezterm/bar.lua".source =
-        #   lib.mkForce (dot + "/wezterm/bar.lua");
-        # "wezterm/catppuccin.lua".source =
-        #   lib.mkForce (dot + "/wezterm/catppuccin.lua");
+        "kitty/kitty.conf".source =
+          lib.mkForce (dot + "/kitty/kitty.conf");
+        "wezterm/colors/oxocarbon-dark.toml".source =
+          lib.mkForce (dot + "/wezterm/colors/oxocarbon-dark.toml");
         # "wezterm/keybinds.lua".source =
         #   lib.mkForce (dot + "/wezterm/keybinds.lua");
         # "wezterm/utils.lua".source =
@@ -73,6 +73,8 @@ in {
           lib.mkForce (dot + "/yazi/package.toml");
         "yazi/theme.toml".source =
           lib.mkForce (dot + "/yazi/theme.toml");
+        "yazi/flavors/oxocarbon.yazi/flavor.toml".source =
+          lib.mkForce (dot + "/yazi/flavors/oxocarbon.yazi/flavor.toml");
         "yazi/flavors/catppuccin-macchiato.yazi/flavor.toml".source =
           lib.mkForce (dot + "/yazi/flavors/catppuccin-macchiato.yazi/flavor.toml");
       };

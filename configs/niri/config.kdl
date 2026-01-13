@@ -39,7 +39,7 @@ Mod+8  {focus-workspace 8;}
 Mod+9  {focus-workspace 9;}
 Mod+C  {center-window;}
 Mod+Comma  {consume-window-into-column;}
-Mod+D  {spawn "noctalia-shell" "ipc" "call" "launcher" "toggle";}
+Mod+D  {spawn "rofi" "-show" "drun" ;}
 Mod+Down  {focus-workspace-down;}
 Mod+E  {spawn "walker" "-m" "emojis";}
 Mod+Equal  {set-column-width "+10%";}
@@ -105,7 +105,7 @@ spawn-at-startup "/nix/store/1b8vj4ii2mskv7sm5031fmlk7rcm5s6n-xdg-desktop-portal
 
 animations {
     workspace-switch {
-        spring damping-ratio=0.80 stiffness=523 epsilon=0.0001
+        spring damping-ratio=1.45 stiffness=750 epsilon=0.0001
     }
 window-open {
     duration-ms 600
@@ -222,10 +222,10 @@ window-close {
 
 
     horizontal-view-movement {
-        spring damping-ratio=0.85 stiffness=423 epsilon=0.0001
+        spring damping-ratio=1.85 stiffness=723 epsilon=0.0001
     }
     window-movement {
-        spring damping-ratio=0.75 stiffness=323 epsilon=0.0001
+        spring damping-ratio=1.75 stiffness=523 epsilon=0.0001
     }
     window-resize {
         custom-shader r"
@@ -244,7 +244,7 @@ window-close {
         curve "ease-out-quad"
     }
     overview-open-close {
-        spring damping-ratio=0.85 stiffness=800 epsilon=0.0001
+        spring damping-ratio=1.85 stiffness=800 epsilon=0.0001
     }
 }
 input {

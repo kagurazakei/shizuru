@@ -11,4 +11,4 @@ prepend_dirs = [
 ]
 
 [flavor]
-use = "kanagawa"
+dark = "oxocarbon"
