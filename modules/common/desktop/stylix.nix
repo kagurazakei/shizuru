@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   stylix = {
     enable = true;
     autoEnable = false;
@@ -17,7 +18,6 @@
     };
   };
   stylix.polarity = "dark";
-  stylix.image = "/home/antonio/Pictures/wallpapers/.wallpaper";
   stylix = {
     fonts = {
       sizes = {

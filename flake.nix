@@ -5,11 +5,12 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-master.url = "github:NixOS/nixpkgs/master";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+    khanelivim.url = "github:kagurazakei/khanelivim";
     font-flake.url = "github:redyf/font-flake";
     systems.url = "github:nix-systems/x86_64-linux";
     dms.url = "github:AvengeMedia/DankMaterialShell";
     walker.url = "github:abenz1267/walker/v0.13.26";
-    #    private-key.url = "git+ssh://git@codeberg.org/maotseantonio/secrets.git";
+    #private-key.url = "git+ssh://git@codeberg.org/maotseantonio/secrets.git";
     nix-monitor = {
       url = "github:antonjah/nix-monitor";
     };
@@ -63,7 +64,6 @@
     #   url = "github:wamserma/flake-programs-sqlite";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
-
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -74,7 +74,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.disko.follows = "disko";
     };
-
+    Moon.url = "github:kagurazakei/Moon";
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -244,8 +244,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.hjem.follows = "hjem";
     };
-    #chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    # chaotic.url = "github:chaotic-cx/nyx/main";
     chaotic.url = "github:lonerOrz/nyx-loner";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     catppuccin.url = "github:catppuccin/nix";
@@ -269,8 +267,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # ghostty.url = "github:ghostty-org/ghostty";
-    #nixcord.url = "github:kaylorben/nixcord";
+    ghostty.url = "github:ghostty-org/ghostty";
     nixcord.url = "github:kaylorben/nixcord?rev=f93293513fdf2a5d530e3c3bce9cc87bd9b47b2a";
     textfox.url = "github:adriankarlen/textfox";
     nh = {
@@ -296,119 +293,135 @@
     wezterm.url = "github:wezterm/wezterm?dir=nix";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nyxexprs.url = "github:notashelf/nyxexprs";
+    omarchy.url = "github:henrysipp/omarchy-nix";
+    omarchy.inputs.nixpkgs.follows = "nixpkgs";
+    omarchy.inputs.home-manager.follows = "home-manager";
     zjstatus.url = "github:dj95/zjstatus";
     zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
+      url = "github:0xc000022070/zen-browser-flake/beta";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs @ {
-    nixpkgs,
-    nixpkgs-master,
-    self,
-    yazi,
-    home-manager,
-    chaotic,
-    quickshell,
-    niri,
-    nix-monitor,
-    ...
-  }: let
-    system = "x86_64-linux";
-    host = "hana";
-    username = "antonio";
+  outputs =
+    inputs@{
+      nixpkgs,
+      nixpkgs-master,
+      self,
+      yazi,
+      home-manager,
+      chaotic,
+      quickshell,
+      niri,
+      nix-monitor,
+      ...
+    }:
+    let
+      system = "x86_64-linux";
+      host = "hana";
+      username = "antonio";
 
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
 
-    pkgs-master = import nixpkgs-master {
-      inherit system;
-      config.allowUnfree = true;
-    };
-  in {
-    # Development shell for quickshell QML development
-    devShells.${system} = {
-      quickshell = let
-        qs = quickshell.packages.${system}.default.override {
-          withJemalloc = true;
-          withQtSvg = true;
-          withWayland = true;
-          withX11 = false;
-          withPipewire = true;
-          withPam = true;
-          withHyprland = true;
-          withI3 = false;
-        };
-        qtDeps = [
-          qs
-          pkgs.qt6.qtbase
-          pkgs.qt6.qtdeclarative
-        ];
-      in
-        pkgs.mkShell {
-          name = "quickshell-dev";
-          nativeBuildInputs = qtDeps;
-          shellHook = let
-            qmlPath = pkgs.lib.makeSearchPath "lib/qt-6/qml" qtDeps;
-          in ''
-            export QML2_IMPORT_PATH="$QML2_IMPORT_PATH:${qmlPath}"
-          '';
-        };
-    };
-
-    nixosConfigurations = {
-      hana = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit self system inputs username host pkgs-master;
-        };
-        modules = [
-          ./hosts/${host}/config.nix
-          chaotic.nixosModules.default
-          home-manager.nixosModules.home-manager
-          inputs.stylix.nixosModules.stylix
-          inputs.catppuccin.nixosModules.catppuccin
-          inputs.nixos-hardware.nixosModules.huawei-machc-wa
-          inputs.nvf.nixosModules.default
-          inputs.mango.nixosModules.mango
-          nix-monitor.nixosModules.default
-          # agenix.nixosModules.default
-          # lix-module.nixosModules.default
-          # inputs.flake-programs-sqlite.nixosModules.programs-sqlite
-          {
-            nixpkgs.overlays = import ./overlays {
-              inherit inputs system;
+      pkgs-master = import nixpkgs-master {
+        inherit system;
+        config.allowUnfree = true;
+      };
+    in
+    {
+      # Development shell for quickshell QML development
+      devShells.${system} = {
+        quickshell =
+          let
+            qs = quickshell.packages.${system}.default.override {
+              withJemalloc = true;
+              withQtSvg = true;
+              withWayland = true;
+              withX11 = false;
+              withPipewire = true;
+              withPam = true;
+              withHyprland = true;
+              withI3 = false;
             };
-          }
+            qtDeps = [
+              qs
+              pkgs.qt6.qtbase
+              pkgs.qt6.qtdeclarative
+            ];
+          in
+          pkgs.mkShell {
+            name = "quickshell-dev";
+            nativeBuildInputs = qtDeps;
+            shellHook =
+              let
+                qmlPath = pkgs.lib.makeSearchPath "lib/qt-6/qml" qtDeps;
+              in
+              ''
+                export QML2_IMPORT_PATH="$QML2_IMPORT_PATH:${qmlPath}"
+              '';
+          };
+      };
+
+      nixosConfigurations = {
+        hana = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit
+              self
+              system
+              inputs
+              username
+              host
+              pkgs-master
+              ;
+          };
+          modules = [
+            ./hosts/${host}/config.nix
+            chaotic.nixosModules.default
+            home-manager.nixosModules.home-manager
+            inputs.stylix.nixosModules.stylix
+            inputs.catppuccin.nixosModules.catppuccin
+            inputs.nixos-hardware.nixosModules.huawei-machc-wa
+            inputs.nvf.nixosModules.default
+            inputs.mango.nixosModules.mango
+            nix-monitor.nixosModules.default
+            # agenix.nixosModules.default
+            # lix-module.nixosModules.default
+            # inputs.flake-programs-sqlite.nixosModules.programs-sqlite
+            {
+              nixpkgs.overlays = import ./overlays {
+                inherit inputs system;
+              };
+            }
+          ];
+        };
+      };
+      nixpkgs.overlays = [ yazi.overlays.default ];
+      nixConfig = {
+        extra-substituters = [
+          "https://nix-community.cachix.org"
+          "https://cache.nixos.org?priority=10" # Keep this last
+          "https://nyx.chaotic.cx"
+          "https://hyprland.cachix.org"
+          "https://yazi.cachix.org"
+          "https://walker-git.cachix.org"
+          "https://walker.cachix.org"
+          "https://niri.cachix.org"
+          "https://catppuccin.cachix.org" # a cache for all catppuccin ports
+        ];
+        extra-trusted-public-keys = [
+          "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+          "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+          "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
+          "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+          "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="
+          "walker-git.cachix.org-1:vmC0ocfPWh0S/vRAQGtChuiZBTAe4wiKDeyyXM0/7pM="
+          "walker.cachix.org-1:fG8q+uAaMqhsMxWjwvk0IMb4mFPFLqHjuvfwQxE4oJM="
+          "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
+          "catppuccin.cachix.org-1:noG/4HkbhJb+lUAdKrph6LaozJvAeEEZj4N732IysmU="
         ];
       };
     };
-    nixpkgs.overlays = [yazi.overlays.default];
-    nixConfig = {
-      extra-substituters = [
-        "https://nix-community.cachix.org"
-        "https://cache.nixos.org?priority=10" # Keep this last
-        "https://nyx.chaotic.cx"
-        "https://hyprland.cachix.org"
-        "https://yazi.cachix.org"
-        "https://walker-git.cachix.org"
-        "https://walker.cachix.org"
-        "https://niri.cachix.org"
-        "https://catppuccin.cachix.org" # a cache for all catppuccin ports
-      ];
-      extra-trusted-public-keys = [
-        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-        "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
-        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-        "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="
-        "walker-git.cachix.org-1:vmC0ocfPWh0S/vRAQGtChuiZBTAe4wiKDeyyXM0/7pM="
-        "walker.cachix.org-1:fG8q+uAaMqhsMxWjwvk0IMb4mFPFLqHjuvfwQxE4oJM="
-        "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
-        "catppuccin.cachix.org-1:noG/4HkbhJb+lUAdKrph6LaozJvAeEEZj4N732IysmU="
-      ];
-    };
-  };
 }

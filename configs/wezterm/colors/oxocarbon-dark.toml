@@ -6,7 +6,7 @@ cursor_border = '#ffffff'
 cursor_fg = '#161616'
 
 ansi = [
-    '#262626',
+    '#11121D',
     '#ee5396',
     '#42be65',
     '#ffe97b',
@@ -16,7 +16,7 @@ ansi = [
     '#dde1e6',
 ]
 brights = [
-    '#393939',
+    '#11121D',
     '#ee5396',
     '#42be65',
     '#ffe97b',

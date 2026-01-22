@@ -61,5 +61,4 @@
     CLUTTER_BACKEND = "wayland";
     ZDOTDIR = "$HOME/.config/zsh";
   };
-  programs.home-manager.enable = true;
 }

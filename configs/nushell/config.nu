@@ -3,6 +3,8 @@ zoxide init nushell | save -f ~/.config/nushell/.zoxide.nu
 source ~/.config/nushell/.zoxide.nu
 carapace _carapace nushell | save -f ~/.config/nushell/carapace.nu
 source ~/.config/nushell/carapace.nu
+atuin init nu | save -f ~/.config/nushell/atuin.nu
+source ~/.config/nushell/atuin.nu
 # Environment Variables
 $env.config.show_banner = false
 $env.PATH = ($env.PATH | prepend [
@@ -58,8 +60,7 @@ $env.PROMPT_COMMAND = {
     $"($brack_hex)[($user_hex)($username)($at_hex)@($host_hex)($hostname) ($cwd_hex)($cwd)($brack_hex)](git-status)($uid_hex)($uid)($reset)"
 }
 
-
-# Aliases
+# aliases
 
 def nls [...args] {
   hide ls;
@@ -95,9 +96,14 @@ alias  listgen = sudo nix-env -p /nix/var/nix/profiles/system --list-generations
 alias fuck = nh os switch --hostname hana
 alias rebuild = sudo nixos-rebuild switch --flake .#hana
 alias fucku = nh os switch --hostname hana --update
+alias clean-gc = nh clean all --keep 3
+alias ga = git add .
 alias lg = lazygit
 alias nf = nitch
 alias ff = fastfetch
+alias cp = cp -r
+alias rm = rm -rf
+alias spf = superfile
 # Custom Functions
 ## def sshot [delay: int] {
 ##     sleep ($delay | into duration --unit sec)
@@ -111,9 +117,10 @@ alias ff = fastfetch
 ##     cat $"($env.HOME)/Pictures/p.png" | wl-copy
 ## }
 
-# Fixed Aliases as Functions
+# Fixed aliases as Functions
 alias gst = git status
 alias gp = git push
+alias ga = git add .
 def gac [message: string] {
     git add .
     git commit -m $message

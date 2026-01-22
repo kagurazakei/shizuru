@@ -74,7 +74,7 @@ in {
       libqalculate
       dbus-glib
       gtkmm4
-      master.komikku
+      #master.komikku
       mangal
       mangareader
       master.tmux
@@ -88,6 +88,7 @@ in {
       nurl
       inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
       master.microfetch
+      inputs.zen-browser.packages.${pkgs.system}.default
       socat
       hyprpicker
       master.ani-cli

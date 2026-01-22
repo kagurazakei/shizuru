@@ -251,13 +251,13 @@ end
 -- general
 config.default_cwd = wezterm.home_dir .. "/Code"
 config.status_update_interval = 5000
-
+config.enable_kitty_graphics = true
 -- leader
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 
 -- font
 config.font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Regular" })
-config.font_size = 15.5
+config.font_size = 14.5
 config.cell_width = 0.9
 config.command_palette_font_size = 15.5
 
@@ -424,7 +424,7 @@ wezterm.on("toggle-light-mode", function(window, _)
 	global.light_mode = not global.light_mode
 	local theme = get_current_theme()
 
-	overrides.color_scheme = theme.theme
+	overrides.color_scheme = "Oxocarbon Dark"
 	overrides.colors = {
 		cursor_bg = theme.highlight,
 		cursor_border = theme.highlight,

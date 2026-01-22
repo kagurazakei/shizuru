@@ -18,7 +18,7 @@ in {
     sharedModules = [
       inputs.sops-nix.homeManagerModules.sops
     ];
-    backupFileExtension = "backup";
+    backupFileExtension = "bkp";
     extraSpecialArgs = {
       inherit inputs username host;
     };
@@ -37,7 +37,7 @@ in {
     mutableUsers = true;
     users."${username}" = {
       shell = pkgs.fish;
-      homeMode = "755";
+      # homeMode = "755";
       isNormalUser = true;
       description = "${gitUsername}";
       extraGroups = [
@@ -49,6 +49,7 @@ in {
         "video"
         "input"
         "audio"
+         "users"
       ];
 
       packages = with pkgs; [

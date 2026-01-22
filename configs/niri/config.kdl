@@ -5,7 +5,7 @@ ELECTRON_ENABLE_HARDWARE_ACCELERATION "1"
 ELECTRON_OZONE_PLATFORM_HINT "auto"
 GDK_BACKEND "wayland,x11"
 GTK2_RC_FILES "/home/antonio/.gtkrc-2.0"
-GTK_THEME "Rosepine-Dark"
+GTK_THEME "Graphite-Dark"
 JAVA_AWT_WM_NONEREPARENTING "1"
 MOZ_ENABLE_WAYLAND "1"
 NIXOS_OZONE_WL "1"
@@ -24,7 +24,6 @@ debug {
 }
 
 binds {
-Alt+Space  {spawn "fuzzel";}
 Mod release=true { spawn "dms" "ipc" "spotlight" "toggle"; }
 Ctrl+Alt+L  {spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock";}
 Ctrl+Print  {screenshot-window;}
@@ -100,12 +99,13 @@ spawn-at-startup "systemctl" "--user" "import-environment" "WAYLAND_DISPLAY" "XD
 spawn-at-startup "dbus-update-activation-environment" "--all"
 spawn-at-startup "/nix/store/ysbzwkkybwx2zfhq139mj0mqivjy9wia-xwayland-satellite-0.8/bin/xwayland-satellite"
 spawn-at-startup "/nix/store/1b8vj4ii2mskv7sm5031fmlk7rcm5s6n-xdg-desktop-portal-gnome-49.0/libexec/xdg-desktop-portal-gnome"
+spawn-at-startup "info-febvre-Komikku"
 //This was a nightmare to make but here
 // original code from; https://github.com/XansiVA
 
 animations {
     workspace-switch {
-        spring damping-ratio=1.45 stiffness=750 epsilon=0.0001
+        spring damping-ratio=2.45 stiffness=750 epsilon=0.0001
     }
 window-open {
     duration-ms 600
@@ -222,10 +222,10 @@ window-close {
 
 
     horizontal-view-movement {
-        spring damping-ratio=1.85 stiffness=723 epsilon=0.0001
+        spring damping-ratio=3.85 stiffness=723 epsilon=0.0001
     }
     window-movement {
-        spring damping-ratio=1.75 stiffness=523 epsilon=0.0001
+        spring damping-ratio=3.75 stiffness=523 epsilon=0.0001
     }
     window-resize {
         custom-shader r"

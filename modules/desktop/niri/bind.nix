@@ -37,7 +37,6 @@ in {
     "Mod+E".spawn = ["walker" "-m" "emojis"];
     "Alt+grave".spawn = ["niri-switch"];
     "Mod+Shift+X".spawn = ["ani-cli" "--rofi"];
-    "Alt+Space".spawn = ["fuzzel"];
     "Mod+Shift+Return".spawn = ["wezterm"];
     "Ctrl+Alt+L".spawn = ["noctalia-shell" "ipc" "call" "lockScreen" "lock"];
     "Mod+T".spawn = ["dolphin"];
