@@ -22,11 +22,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1769101834,
-        "narHash": "sha256-2os7qTfX+snfD8UwHnqBZGJSBsJd2JjSHqYLovhgniY=",
+        "lastModified": 1769114629,
+        "narHash": "sha256-B6Hr777ZG5ZzD+iKTBojg/ba4Svg+NSctYTN869YeKc=",
         "owner": "kagurazakei",
         "repo": "Moon",
-        "rev": "da37dc1e6479e34d70fe52dff2f92220df5f19f8",
+        "rev": "b418ba95e7c89d7faf1475b3558271f3c69595cf",
         "type": "github"
       },
       "original": {
@@ -3929,16 +3929,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1747312588,
-        "narHash": "sha256-MmJvj6mlWzeRwKGLcwmZpKaOPZ5nJb/6al5CXqJsgjo=",
-        "owner": "nixos",
+        "lastModified": 1769110058,
+        "narHash": "sha256-r/cTHU14td1oBMNRaOGlBkEtKJsHMFEVILvj6/QDNrs=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b1bebd0fe266bbd1820019612ead889e96a8fa2d",
+        "rev": "1986a0d98b8ee2e94f4ec49c5a94edc765cc93d4",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
-        "ref": "nixpkgs-unstable",
+        "owner": "NixOS",
+        "ref": "master",
         "repo": "nixpkgs",
         "type": "github"
       }
