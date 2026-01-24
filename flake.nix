@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-master.url = "github:NixOS/nixpkgs/master";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
-    khanelivim.url = "github:kagurazakei/khanelivim";
+    zakeivim.url = "github:kagurazakei/khanelivim";
     font-flake.url = "github:redyf/font-flake";
     systems.url = "github:nix-systems/x86_64-linux";
     dms.url = "github:AvengeMedia/DankMaterialShell";
