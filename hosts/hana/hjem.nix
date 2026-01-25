@@ -59,7 +59,7 @@ in {
         #   lib.mkForce (dot + "/wezterm/utils.lua");
         # tmux
         "tmux/tmux.conf".source = lib.mkForce (dot + "/tmux/tmux.conf");
-        "tmux/binds.conf".source = lib.mkForce (dot + "/tmux/tmux.conf");
+        "tmux/binds.conf".source = lib.mkForce (dot + "/tmux/binds.conf");
 
         "yazi/init.lua".source = lib.mkForce (dot + "/yazi/init.lua");
         "yazi/yazi.toml".source = lib.mkForce (dot + "/yazi/yazi.toml");
@@ -73,13 +73,13 @@ in {
           (dot + "/yazi/flavors/catppuccin-macchiato.yazi/flavor.toml");
 
         ### zellij
-        "zellij/config.kdl".source = lib.mkForce (dot + "zellij/config.kdl");
+        "zellij/config.kdl".source = lib.mkForce (dot + "/zellij/config.kdl");
         "zellij/layouts/default.kdl".source =
-          lib.mkForce (dot + "zellij/layouts/default.nix");
+          lib.mkForce (dot + "/zellij/layouts/default.kdl");
         "zellij/layouts/nodejs.kdl".source =
-          lib.mkForce (dot + "zellij/layouts/default.nix");
+          lib.mkForce (dot + "/zellij/layouts/nodejs.kdl");
         "zellij/themes/catppuccin.kdl".source =
-          lib.mkForce (dot + "zellij/layouts/default.nix");
+          lib.mkForce (dot + "/zellij/themes/catppuccin.kdl");
       };
     };
   };
