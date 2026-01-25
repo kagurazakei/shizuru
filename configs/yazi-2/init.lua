@@ -1,0 +1,1 @@
+/home/antonio/shizuru/configs/yazi/init.lua
