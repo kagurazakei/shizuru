@@ -4,7 +4,8 @@
   inputs,
   system,
   ...
-}: {
+}:
+{
   system.autoUpgrade = {
     enable = true;
     flake = inputs.self.outPath;
@@ -25,26 +26,26 @@
       ];
     };
 
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
   environment.systemPackages = with pkgs; [
     wget
     git
     baobab
-    #btrfs-progs
+    btrfs-progs
     clang
     curl
     cpufrequtils
     duf
     eza
     ffmpeg
-    glib #for gsettings to work
+    glib # for gsettings to work
     gsettings-qt
     git
     killall
     libappindicator
     libnotify
-    openssl #required by Rainbow borders
+    openssl # required by Rainbow borders
     pciutils
     vim
     xdg-user-dirs

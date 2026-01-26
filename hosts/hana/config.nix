@@ -2,16 +2,17 @@
   pkgs,
   lib,
   ...
-}: let
+}:
+let
   inherit (import ./variables.nix) keyboardLayout;
   python-packages = pkgs.python3.withPackages (
-    ps:
-      with ps; [
-        requests
-        pyquery
-      ]
+    ps: with ps; [
+      requests
+      pyquery
+    ]
   );
-in {
+in
+{
   imports = [
     ./hardware.nix
     ./users.nix
@@ -20,12 +21,15 @@ in {
     ../../modules/options/hana.nix
   ];
   stylix.enableReleaseChecks = false;
-  services.xserver.videoDrivers = ["modesetting" "nvidia"];
+  services.xserver.videoDrivers = [
+    "modesetting"
+    "nvidia"
+  ];
   catppuccin.tty.enable = false;
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowBroken = true;
   nixpkgs.config = {
-    allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) ["joypixels"];
+    allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "joypixels" ];
     joypixels.acceptLicense = true;
   };
   environment.systemPackages =
@@ -34,17 +38,15 @@ in {
       libvdpau-va-gl
       libva-vdpau-driver
       egl-wayland
-      libimobiledevice
-      ifuse
       mesa
       master.waybar
     ])
-    ++ [python-packages];
+    ++ [ python-packages ];
   hardware.graphics.enable = true;
   services.btrfs.autoScrub = {
     enable = true;
     interval = "monthly";
-    fileSystems = ["/"];
+    fileSystems = [ "/" ];
   };
 
   services.udev.extraRules = ''
@@ -68,5 +70,4 @@ in {
     ZDOTDIR = "$HOME/.config/zsh";
     NH_OS_FLAKE = "/home/antonio/shizuru";
   };
-  system.stateVersion = "25.05";
 }

@@ -8,9 +8,11 @@
   inputs,
   ...
 }:
-with lib; let
+with lib;
+let
   cfg = config.system.greetd;
-in {
+in
+{
   imports = [
     inputs.dms.nixosModules.greeter
   ];
@@ -21,7 +23,6 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       tuigreet
-      lyra-cursors
     ];
     systemd.services.greetd.serviceConfig = {
       Type = "idle";

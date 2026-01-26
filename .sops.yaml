@@ -1,20 +1,21 @@
 # .sops.yaml
-keys: 
+keys:
   - &mao age1u8wl3dnc6af2l7qggt4p9385zeu3q72jh3k2464vtvtnudx7tcuskf4drt
+  - &hana age1jf0fwakn24q0x63spn879vam0p2vv9nqucwagh5vl95q8c6zyyhqcppgz0
 creation_rules:
-  - path_regex: secrets/access-token.yaml$
+  - path_regex: secrets/laptop.yaml$
     key_groups:
-      - age: 
-        - *mao 
-  - path_regex: secrets/github.yaml$
+      - age:
+          - *hana
+  - path_regex: secrets/github-zakei.yaml$
     key_groups:
-      - age: 
-        - *mao    
+      - age:
+          - *hana
   - path_regex: secrets/secrets.yaml$
     key_groups:
       - age:
-        - *mao 
-  - path_regex: secrets/private.yaml$ 
+          - *mao
+  - path_regex: secrets/private.yaml$
     key_groups:
-      - age: 
-        - *mao 
+      - age:
+          - *mao

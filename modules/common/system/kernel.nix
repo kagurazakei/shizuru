@@ -4,21 +4,23 @@
   lib,
   ...
 }:
-with lib; let
+with lib;
+let
   cfg = config.system.kernel;
-in {
+in
+{
   options.system.kernel = {
     enable = mkEnableOption "Enable custom kernel configuration";
   };
 
   config = mkIf cfg.enable {
     boot = {
-      # kernelPackages = pkgs.linuxPackages_cachyos;
-      kernelPackages = pkgs.linuxPackages_cachyos-lto.extend (
-        lpself: lpsuper: {
-          inherit (pkgs.linuxPackages_cachyos-gcc) evdi nvidiaPackages; # 引入 CachyOS-GCC 的 NVIDIA 和 EVDI 驱动模块
-        }
-      );
+      kernelPackages = pkgs.linuxPackages_cachyos-lto;
+      # kernelPackages = pkgs.linuxPackages_cachyos-lto.extend (
+      #   lpself: lpsuper: {
+      #     inherit (pkgs.linuxPackages_cachyos-gcc) evdi nvidiaPackages; # 引入 CachyOS-GCC 的 NVIDIA 和 EVDI 驱动模块
+      #   }
+      # );
       # kernelPackages = let
       #   apply = _: prevModules: {
       #     v4l2loopback =
@@ -94,7 +96,7 @@ in {
           "usbhid"
           "sd_mod"
         ];
-        kernelModules = []; # GPU kernel modules removed here
+        kernelModules = [ ]; # GPU kernel modules removed here
       };
     };
   };

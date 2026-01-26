@@ -1,9 +1,11 @@
 {
   imports = [
     ./bootloader.nix
+    ./btrfs.nix
+    ./laptop-secrets.nix
     ./cachix.nix
     ./console.nix
-    ./gaming.nix
+    # ./gaming.nix
     ./grub.nix
     ./kernel.nix
     ./local-hardware-clock.nix

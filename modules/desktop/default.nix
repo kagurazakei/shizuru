@@ -1,8 +1,8 @@
 {
   imports = [
     ./app
-    ./hyprland
+    # ./hyprland
     ./niri
-    ./mango
+    # ./mango
   ];
 }

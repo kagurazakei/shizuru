@@ -10,6 +10,5 @@
     ./matugen
     ./ui
     ./wlogout
-    ./yazi
   ];
 }

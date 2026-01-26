@@ -7,10 +7,12 @@
   system,
   ...
 }:
-with lib; let
+with lib;
+let
   swww = inputs.swww.packages.${pkgs.system}.swww;
   cfg = config.system.packages;
-in {
+in
+{
   options.system.packages = {
     enable = mkEnableOption "Enable Laptop Specific Packages";
   };
@@ -21,7 +23,6 @@ in {
       python313Packages.pywayland
       neovide
       cliphist
-      hyprpanel
       eog
       gnome-system-monitor
       file-roller
@@ -81,6 +82,7 @@ in {
       neofetch
       gtk4
       vivid
+      inputs.firefox.packages.${pkgs.stdenv.hostPlatform.system}.firefox-nightly-bin
       inputs.shizuruPkgs.packages.${pkgs.system}.nitch
       inputs.shizuruPkgs.packages.${pkgs.system}.idle-inhibit
       inputs.shizuruPkgs.packages.${pkgs.system}.rxfetch

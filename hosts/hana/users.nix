@@ -5,12 +5,14 @@
   host,
   lib,
   ...
-}: let
+}:
+let
   inherit (import ./variables.nix) gitUsername;
-in {
+in
+{
   imports = [
     inputs.home-manager.nixosModules.home-manager
-    (lib.modules.mkAliasOptionModule ["hm"] ["home-manager" "users" "${username}"]) # gitlab/fazzi
+    (lib.modules.mkAliasOptionModule [ "hm" ] [ "home-manager" "users" "${username}" ]) # gitlab/fazzi
   ];
   home-manager = {
     useUserPackages = true;
@@ -28,7 +30,7 @@ in {
       ];
       home.username = "${username}";
       home.homeDirectory = "/home/${username}";
-      home.stateVersion = "25.05";
+      home.stateVersion = "26.05";
       programs.home-manager.enable = true;
     };
   };
@@ -37,7 +39,7 @@ in {
     mutableUsers = true;
     users."${username}" = {
       shell = pkgs.fish;
-      # homeMode = "755";
+      homeMode = "755";
       isNormalUser = true;
       description = "${gitUsername}";
       extraGroups = [
@@ -49,15 +51,15 @@ in {
         "video"
         "input"
         "audio"
-         "users"
+        "users"
       ];
 
       packages = with pkgs; [
       ];
     };
   };
-  nix.settings.allowed-users = ["${username}"];
-  environment.shells = with pkgs; [fish];
-  environment.systemPackages = with pkgs; [fzf];
+  nix.settings.allowed-users = [ "${username}" ];
+  environment.shells = with pkgs; [ fish ];
+  environment.systemPackages = with pkgs; [ fzf ];
   stylix.enableReleaseChecks = false;
 }

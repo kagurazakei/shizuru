@@ -7,11 +7,11 @@
     ../desktop/default.nix
     ../share/package-options.nix
   ];
-  drivers.intel.enable = false;
-  drivers.amdgpu.enable = true;
+  drivers.intel.enable = true;
+  drivers.amdgpu.enable = false;
   drivers.nvidia.enable = true;
   drivers.nvidia-prime = {
-    enable = false;
+    enable = true;
     intelBusID = "PCI:0:2:0";
     nvidiaBusID = "PCI:1:0:0";
   };
@@ -19,6 +19,7 @@
   local.hardware-clock.enable = true;
   modules.terminal.foot.enable = true;
   system.packages.enable = true;
+  system.btrfs.enable = true;
   system.kernel.enable = true;
   system.bootloader-systemd.enable = true;
   system.bootloader-grub.enable = false;

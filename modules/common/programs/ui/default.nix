@@ -1,7 +1,7 @@
 {
   imports = [
     ./flatpak.nix
-    ./hyprpanel.nix
+    # ./hyprpanel.nix
     ./nh.nix
   ];
 }

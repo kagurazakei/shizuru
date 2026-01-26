@@ -16,6 +16,7 @@
     ./shell.nix
     ./nushell.nix
     ./starship.nix
+    ./yazi.nix
     ./zathura.nix
     ./zellij.nix
     ./zoxide.nix
