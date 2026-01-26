@@ -86,6 +86,7 @@ alias b64 = base64
 alias cb = cargo build
 alias cr = cargo run
 alias v = nvim
+alias sv = sudo -E nvim
 alias fm = yazi
 alias e = clear
 alias x = exit
