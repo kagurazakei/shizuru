@@ -70,7 +70,6 @@ in {
     extraVariables = {
       CLUTTER_BACKEND = "wayland";
       GDK_BACKEND = "wayland,x11";
-      GTK_THEME = "Rosepine-Dark";
       MOZ_ENABLE_WAYLAND = "1";
       NIXOS_OZONE_WL = "1";
       QT_QPA_PLATFORM = "wayland;xcb";

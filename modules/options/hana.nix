@@ -17,7 +17,6 @@
   };
   vm.guest-services.enable = false;
   local.hardware-clock.enable = true;
-  modules.terminal.foot.enable = true;
   system.packages.enable = true;
   system.kernel.enable = true;
   system.bootloader-systemd.enable = true;

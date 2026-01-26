@@ -7,9 +7,8 @@
     ./scripts
     ./terminal
     ./editors
-    ./matugen
+    #    ./matugen
     ./ui
     ./wlogout
-    ./yazi
   ];
 }

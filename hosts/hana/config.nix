@@ -34,8 +34,6 @@ in {
       libvdpau-va-gl
       libva-vdpau-driver
       egl-wayland
-      libimobiledevice
-      ifuse
       mesa
       master.waybar
     ])
@@ -68,5 +66,4 @@ in {
     ZDOTDIR = "$HOME/.config/zsh";
     NH_OS_FLAKE = "/home/antonio/shizuru";
   };
-  system.stateVersion = "25.05";
 }

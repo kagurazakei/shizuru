@@ -66,7 +66,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.disko.follows = "disko";
     };
-    Moon.url = "github:kagurazakei/Moon";
+    Moon.url = "github:kagurazakei/nvim-flake";
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";

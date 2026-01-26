@@ -22,16 +22,16 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1769244619,
-        "narHash": "sha256-wIxcdEl7eJxPjBRIJ83ie6P7dpUemD3BfHqF1N98Tfk=",
+        "lastModified": 1769400561,
+        "narHash": "sha256-4KxXnX9IYPwzlhHg8XoXXcgEYehlYCsSabCdzEo7IJI=",
         "owner": "kagurazakei",
-        "repo": "Moon",
-        "rev": "2e6c5f6aa970eee8268aa25b96a7ee094e46dcf9",
+        "repo": "nvim-flake",
+        "rev": "20f3dc5000714f7aa2ca77dda8f91788a99f1eaf",
         "type": "github"
       },
       "original": {
         "owner": "kagurazakei",
-        "repo": "Moon",
+        "repo": "nvim-flake",
         "type": "github"
       }
     },

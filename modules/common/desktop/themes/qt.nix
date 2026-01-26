@@ -5,7 +5,6 @@
   ...
 }: let
   envVars = {
-    QT_STYLE_OVERRIDE = "kvantum";
     QT_QPA_PLATFORMTHEME = "qt6ct";
     PATH = "$HOME/.local/bin:$PATH";
   };
@@ -85,11 +84,8 @@ in {
   environment = {
     variables = envVars // {QML2_IMPORT_PATH = qmlPaths;};
     sessionVariables = envVars;
-    systemPackages = qtSystemPackages;
+    systemPackages = qtSystemPackages ++ qtUserPackages;
   };
 
   nixpkgs.overlays = [qt6ctOverlay];
-  hj = {
-    packages = qtUserPackages;
-  };
 }

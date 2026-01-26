@@ -54,8 +54,6 @@ in {
         wl-clipboard
         seatd
         jaq
-        eww
-        brillo
         cage
         qt6.qtwayland
         wl-clip-persist
@@ -67,7 +65,6 @@ in {
       ];
       sessionVariables = {
         QT_QPA_PLATFORMTHEME = "qt6ct";
-        QT_STYLE_OVERRIDE = "kvantum";
         XDG_SESSION_TYPE = "wayland";
       };
     };

@@ -31,7 +31,7 @@
     wget
     git
     baobab
-    #btrfs-progs
+    btrfs-progs
     clang
     curl
     cpufrequtils
@@ -52,5 +52,5 @@
     hyprpicker
     fastfetch
   ];
-  system.stateVersion = "25.05";
+  system.stateVersion = "26.05";
 }

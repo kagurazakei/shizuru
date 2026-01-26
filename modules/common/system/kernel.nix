@@ -13,12 +13,12 @@ in {
 
   config = mkIf cfg.enable {
     boot = {
-      # kernelPackages = pkgs.linuxPackages_cachyos;
-      kernelPackages = pkgs.linuxPackages_cachyos-lto.extend (
-        lpself: lpsuper: {
-          inherit (pkgs.linuxPackages_cachyos-gcc) evdi nvidiaPackages; # 引入 CachyOS-GCC 的 NVIDIA 和 EVDI 驱动模块
-        }
-      );
+       kernelPackages = pkgs.linuxPackages_latest;
+ #     kernelPackages = pkgs.linuxPackages_cachyos-lto.extend (
+  #      lpself: lpsuper: {
+  #        inherit (pkgs.linuxPackages_cachyos-gcc) evdi nvidiaPackages; # 引入 CachyOS-GCC 的 NVIDIA 和 EVDI 驱动模块
+   #     }
+   #   );
       # kernelPackages = let
       #   apply = _: prevModules: {
       #     v4l2loopback =

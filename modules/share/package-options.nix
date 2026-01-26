@@ -21,7 +21,6 @@ in {
       python313Packages.pywayland
       neovide
       cliphist
-      hyprpanel
       eog
       gnome-system-monitor
       file-roller
@@ -76,22 +75,22 @@ in {
       gtkmm4
       #master.komikku
       mangal
-      mangareader
+   #   mangareader
       master.tmux
-      neofetch
+    #  neofetch
       gtk4
       vivid
-      inputs.shizuruPkgs.packages.${pkgs.system}.nitch
-      inputs.shizuruPkgs.packages.${pkgs.system}.idle-inhibit
-      inputs.shizuruPkgs.packages.${pkgs.system}.rxfetch
+#      inputs.shizuruPkgs.packages.${pkgs.system}.nitch
+#      inputs.shizuruPkgs.packages.${pkgs.system}.idle-inhibit
+#      inputs.shizuruPkgs.packages.${pkgs.system}.rxfetch
       inputs.fastanime.packages.${pkgs.system}.default
       nurl
       inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
       master.microfetch
-      inputs.zen-browser.packages.${pkgs.system}.default
+ #     inputs.zen-browser.packages.${pkgs.system}.default
       socat
       hyprpicker
-      master.ani-cli
+  #    master.ani-cli
       zellij
     ];
   };

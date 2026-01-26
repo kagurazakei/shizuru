@@ -5,7 +5,7 @@ ELECTRON_ENABLE_HARDWARE_ACCELERATION "1"
 ELECTRON_OZONE_PLATFORM_HINT "auto"
 GDK_BACKEND "wayland,x11"
 GTK2_RC_FILES "/home/antonio/.gtkrc-2.0"
-GTK_THEME "Graphite-Dark"
+GTK_THEME "Catppuccin-Dark"
 JAVA_AWT_WM_NONEREPARENTING "1"
 MOZ_ENABLE_WAYLAND "1"
 NIXOS_OZONE_WL "1"
@@ -525,7 +525,7 @@ blur {
     always-center-single-column
 }
 cursor {
-    xcursor-theme "Sylverlilith"
+    xcursor-theme "Reichi-Shinigami"
     xcursor-size 32
 }
 hotkey-overlay { skip-at-startup; }

@@ -21,7 +21,6 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       tuigreet
-      lyra-cursors
     ];
     systemd.services.greetd.serviceConfig = {
       Type = "idle";

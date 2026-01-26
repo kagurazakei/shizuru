@@ -28,7 +28,7 @@ in {
       ];
       home.username = "${username}";
       home.homeDirectory = "/home/${username}";
-      home.stateVersion = "25.05";
+      home.stateVersion = "26.05";
       programs.home-manager.enable = true;
     };
   };
@@ -37,7 +37,7 @@ in {
     mutableUsers = true;
     users."${username}" = {
       shell = pkgs.fish;
-      # homeMode = "755";
+      homeMode = "755";
       isNormalUser = true;
       description = "${gitUsername}";
       extraGroups = [
