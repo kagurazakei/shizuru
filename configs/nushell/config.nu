@@ -104,6 +104,8 @@ alias ff = fastfetch
 alias cp = cp -r
 alias rm = rm -rf
 alias spf = superfile
+alias v = nvim 
+alias sv = sudo -E nvim 
 # Custom Functions
 ## def sshot [delay: int] {
 ##     sleep ($delay | into duration --unit sec)
@@ -132,3 +134,4 @@ def iamb [] {
 
 starship init nu | save -f ~/.cache/starship/init.nu
 use ~/.cache/starship/init.nu
+krabby random

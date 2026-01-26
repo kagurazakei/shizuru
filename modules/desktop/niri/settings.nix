@@ -66,6 +66,7 @@ in {
       ["dbus-update-activation-environment" "--all"]
       ["${pkgs.xwayland-satellite}/bin/xwayland-satellite"]
       ["${pkgs.xdg-desktop-portal-gnome}/libexec/xdg-desktop-portal-gnome"]
+      ["hjem-impure"]
     ];
     extraVariables = {
       CLUTTER_BACKEND = "wayland";
