@@ -11,18 +11,15 @@
 
   packages = {
     theme = pkgs.catppuccin-gtk.override {
-      accents = ["blue"];
+      accents = ["pink"];
       variant = "mocha";
       size = "standard";
       tweaks = ["normal"];
     };
-    theme-zk = inputs.shizuruPkgs.packages.${pkgs.system}.gtk-themes.CatppuccinMocha-zk;
-    theme-rose = pkgs.rose-pine-gtk-theme;
     iconTheme = pkgs.catppuccin-papirus-folders.override {
-      accent = "green";
+      accent = "pink";
       flavor = "mocha";
     };
-    iconThemeBeauty = inputs.shizuruPkgs.packages.${pkgs.system}.BeautyLine;
     cursorTheme = inputs.waifu-cursors.packages.${pkgs.system}.Reichi-Shinigami;
   };
 
@@ -32,16 +29,13 @@ in {
     enable = true;
     packages = [
       packages.theme
-      packages.theme-zk
-      packages.theme-rose
       packages.iconTheme
-      packages.iconThemeBeauty
       packages.cursorTheme
     ];
     settings = {
       application-prefer-dark-theme = true;
-      theme-name = "catppuccin-mocha-blue-standard+normal";
-      icon-theme-name = "BeautyLine";
+      theme-name = "catppuccin-mocha-pink-standard+normal";
+      icon-theme-name = "Papirus-Dark";
       font-name = "JetBrainsMono Nerd Font ${toString 13}";
       cursor-theme-name = "Reichi-Shinigami";
     };

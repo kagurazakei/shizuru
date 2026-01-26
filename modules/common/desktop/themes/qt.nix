@@ -5,7 +5,6 @@
   ...
 }: let
   envVars = {
-    QT_STYLE_OVERRIDE = "kvantum";
     QT_QPA_PLATFORMTHEME = "qt6ct";
     PATH = "$HOME/.local/bin:$PATH";
   };
@@ -17,7 +16,7 @@
     qt6.qtmultimedia
     wlsunset
     libqalculate
-    quickshellPkg
+    quickshell
   ];
 
   qtUserPackages = with pkgs; [
@@ -25,12 +24,10 @@
       flavour = ["mocha"];
       accents = ["green"];
     })
-    master.darkly
-    master.darkly-qt5
     master.libsForQt5.qtstyleplugin-kvantum
     master.libsForQt5.qt5ct
     kdePackages.qqc2-desktop-style
-    qt6ct
+    master.kdePackages.qt6ct
     adwaita-qt6
     qt6.qtwayland
     qt6.qtsvg
@@ -46,7 +43,7 @@
     kdePackages.kirigami
     kdePackages.kirigami-addons
     kdePackages.breeze
-    quickshellPkg
+    quickshell
   ];
   qmlPaths = lib.concatStringsSep ":" [
     "${pkgs.kdePackages.kirigami}/lib/qt-6/qml"
@@ -87,11 +84,8 @@ in {
   environment = {
     variables = envVars // {QML2_IMPORT_PATH = qmlPaths;};
     sessionVariables = envVars;
-    systemPackages = qtSystemPackages;
+    systemPackages = qtSystemPackages ++ qtUserPackages;
   };
 
   nixpkgs.overlays = [qt6ctOverlay];
-  hj = {
-    packages = qtUserPackages;
-  };
 }

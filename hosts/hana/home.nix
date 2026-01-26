@@ -23,6 +23,7 @@
   programs.htop = {
     enable = true;
   };
+  stylix.enableReleaseChecks = false;
   catppuccin.enable = true;
   catppuccin.btop.enable = false;
   catppuccin.mako.enable = false;
@@ -32,10 +33,8 @@
   home.packages = with pkgs; [
     libsForQt5.qtstyleplugin-kvantum
     kdePackages.qtstyleplugin-kvantum
-    inputs.ags.packages.${pkgs.system}.agsFull
   ];
   home.file = {};
-
   home.sessionVariables = {
     EDITOR = "nvim";
     TERMINAL = "wezterm";
@@ -58,10 +57,8 @@
     WLR_NO_HARDWARE_CURSORS = "1";
     XDG_SESSION_TYPE = "wayland";
     XDG_SESSION_DESKTOP = "Hyprland";
-    #ANI_CLI_PLAYER = "vlc";
     SDL_VIDEODRIVER = "wayland";
     CLUTTER_BACKEND = "wayland";
     ZDOTDIR = "$HOME/.config/zsh";
   };
-  programs.home-manager.enable = true;
 }

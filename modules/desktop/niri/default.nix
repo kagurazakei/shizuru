@@ -12,14 +12,37 @@ in {
   ];
   hm = {
     imports = [
-      inputs.niri.homeModules.niri
+      inputs.nix-monitor.homeManagerModules.default
     ];
+
+    programs.nix-monitor = {
+      enable = true;
+
+      # Required: customize for your setup
+      rebuildCommand = [
+        "bash"
+        "-c"
+        "sudo nixos-rebuild switch --flake .#hana 2>&1"
+      ];
+      generationsCommand = [
+        "bash"
+        "-c"
+        "nixos-rebuild list-generations | wc -l"
+      ];
+
+      gcCommand = [
+        "bash"
+        "-c"
+        "sudo nix-collect-garbage -d 2>&1"
+      ];
+    };
 
     xdg.portal.extraPortals = [
       pkgs.xdg-desktop-portal-gtk
       pkgs.xdg-desktop-portal-gnome
       pkgs.gnome-keyring
     ];
+    services.arrpc.enable = true;
     services.swww = {
       enable = true;
       package = swww;
@@ -31,8 +54,6 @@ in {
         wl-clipboard
         seatd
         jaq
-        eww
-        brillo
         cage
         qt6.qtwayland
         wl-clip-persist
@@ -44,7 +65,6 @@ in {
       ];
       sessionVariables = {
         QT_QPA_PLATFORMTHEME = "qt6ct";
-        QT_STYLE_OVERRIDE = "kvantum";
         XDG_SESSION_TYPE = "wayland";
       };
     };

@@ -18,10 +18,10 @@
   system.kernel.enable = true;
   system.bootloader-systemd.enable = true;
   system.bootloader-grub.enable = false;
-  system.sddm-stray.enable = true;
+  system.sddm-stray.enable = false;
   system.plymouth.enable = true;
   system.audio.enable = true;
-  system.displayManager.enable = false;
+  system.displayManager.enable = true;
   system.greetd.enable = false;
   system.powermanagement.enable = true;
   system.scheduler.enable = true;
@@ -31,4 +31,5 @@
   mine.wleave.enable = true;
   system.zfs.enable = true;
   system.zram.enable = true;
+  cfg.wayland.wl-clip-persist.enable = false;
 }

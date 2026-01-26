@@ -1,0 +1,54 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "9a09505"
+hash = "1f3dad061209081a6b04dd6ff2cb06c7"
+
+[[plugin.deps]]
+use = "KKV9/compress"
+rev = "60b24af"
+hash = "ee025be766240cc98e671754ac836da3"
+
+[[plugin.deps]]
+use = "imsi32/yatline"
+rev = "6b0fc1e"
+hash = "ab115c6cc77f5710c27f39dfa2f3d4d"
+
+[[plugin.deps]]
+use = "imsi32/yatline-githead"
+rev = "3b0eb7c"
+hash = "bfd30c396bbe2af526cb949d97ce3dcf"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "9a09505"
+hash = "e0ada736ea676c2bbb3ec705a49526ef"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "68f7d48"
+hash = "56fdabc96fc1f4d53c96eb884b02a5be"
+
+[[plugin.deps]]
+use = "ahkohd/eza-preview"
+rev = "7a2d60f"
+hash = "eed8e19469f3dca38fd977eb938dd34e"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-filter"
+rev = "68f7d48"
+hash = "407d19bc4fb46eff5fa8ff8337644847"
+
+[[plugin.deps]]
+use = "Tyarel8/whide"
+rev = "4308ad1"
+hash = "9a114fa5a2a5a2ac4ada86cbfcc52be6"
+
+[[plugin.deps]]
+use = "simla33/ucp"
+rev = "96f54af"
+hash = "2011ef145f7d4aaa23cbc64c05cd6a7f"
+
+[[flavor.deps]]
+use = "dangooddd/kanagawa"
+rev = "04985d1"
+hash = "c69a63981e254a3a06a11c2bf0e6af1d"

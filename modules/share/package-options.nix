@@ -18,30 +18,27 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       brightnessctl # for brightness control
-      libinput
       python313Packages.pywayland
       neovide
       cliphist
-      app2unit
-      hyprpanel
-      wpsoffice
       eog
       gnome-system-monitor
       file-roller
       grim
       gtk-engine-murrine # for gtk themes
-      hyprcursor
+      hyprcursor # requires unstable channel
       imagemagick
       inxi
-      home-manager
       jq
-      nwg-look
+      nwg-look # requires unstable channel
       nwg-dock-hyprland
       master.pamixer
+      master.nushell
       pavucontrol
       playerctl
       polkit_gnome
       pyprland
+      python313Packages.kde-material-you-colors
       rofi
       slurp
       swappy
@@ -54,13 +51,13 @@ in {
       nix-ld
       power-profiles-daemon
       fd
-      waypaper
+      master.home-manager
+      master.waypaper
       bluez-tools
       wgpu-utils
       gtk3
       gtk4
       atuin
-      bun
       zoxide
       dart-sass
       sass
@@ -68,34 +65,32 @@ in {
       sassc
       libgtop
       telegram-desktop
-      papirus-folders
+      #papirus-folders
       papirus-icon-theme
       joypixels
       spotify
-      bibata-cursors
       gpu-screen-recorder
       libqalculate
       dbus-glib
       gtkmm4
       #master.komikku
-      mangayomi
       mangal
-      mangareader
+   #   mangareader
       master.tmux
-      neofetch
+    #  neofetch
       gtk4
       vivid
-      inputs.shizuruPkgs.packages.${pkgs.system}.nitch
-      inputs.shizuruPkgs.packages.${pkgs.system}.idle-inhibit
-      inputs.shizuruPkgs.packages.${pkgs.system}.rxfetch
+#      inputs.shizuruPkgs.packages.${pkgs.system}.nitch
+#      inputs.shizuruPkgs.packages.${pkgs.system}.idle-inhibit
+#      inputs.shizuruPkgs.packages.${pkgs.system}.rxfetch
       inputs.fastanime.packages.${pkgs.system}.default
       nurl
       inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
       master.microfetch
+ #     inputs.zen-browser.packages.${pkgs.system}.default
       socat
       hyprpicker
-      master.ani-cli
-      inputs.zen-browser.packages.${pkgs.system}.default
+  #    master.ani-cli
       zellij
     ];
   };

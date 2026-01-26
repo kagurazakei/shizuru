@@ -5,9 +5,10 @@
     ../common/drivers
     ../common/programs
     ../desktop/default.nix
-    ../share/spec-hana
+    ../share/package-options.nix
   ];
   drivers.intel.enable = false;
+  drivers.amdgpu.enable = true;
   drivers.nvidia.enable = true;
   drivers.nvidia-prime = {
     enable = false;
@@ -16,7 +17,6 @@
   };
   vm.guest-services.enable = false;
   local.hardware-clock.enable = true;
-  modules.terminal.foot.enable = true;
   system.packages.enable = true;
   system.kernel.enable = true;
   system.bootloader-systemd.enable = true;
@@ -32,7 +32,7 @@
   mine.cliphist.enable = true;
   mine.wlogout.enable = true;
   mine.wleave.enable = true;
-  system.zfs.enable = false;
+  #system.zfs.enable = false;
   system.zram.enable = true;
   cfg.wayland.wl-clip-persist.enable = false;
 }

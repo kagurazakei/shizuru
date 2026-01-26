@@ -1,9 +1,8 @@
 {
   imports = [
     #./ags.nix
-    ./caelestia.nix
+    #./caelestia.nix
     ./cliphist.nix
-    #./elephant.nix
     ./hypridle.nix
     ./mpv.nix
     ./fuzzel
@@ -11,6 +10,6 @@
     ./kvantum
     ./qtct
     ./services
-    ./walker
+    #./walker
   ];
 }

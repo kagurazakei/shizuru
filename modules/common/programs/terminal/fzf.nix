@@ -3,6 +3,7 @@
     enable = true;
     integrations = {
       fish.enable = true;
+      nushell.enable = true;
     };
   };
 

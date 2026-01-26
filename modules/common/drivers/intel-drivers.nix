@@ -12,6 +12,7 @@ in
     config = mkIf cfg.enable {
       environment.systemPackages = with pkgs; [
         vulkan-loader
+        vulkan-validation-layers
         vulkan-tools
         libva-utils
       ];
@@ -19,6 +20,7 @@ in
       environment.variables = {
         LIBVA_DRIVER_NAME = "iHD";
         VDPAU_DRIVER = "va_gl";
+        LIBVA_DRIVERS_PATH = "${pkgs.intel-media-driver}/lib/dri";
       };
 
       boot = {
@@ -34,24 +36,25 @@ in
       nixpkgs.config.packageOverrides = pkgs: {
         vaapiIntel = pkgs.vaapiIntel.override {enableHybridCodec = true;};
       };
-      # chaotic.mesa-git = {
-      #   enable = true;
-      #   extraPackages = with pkgs; [
-      #     intel-media-driver
-      #     vaapiIntel
-      #   ];
-      # };
+      chaotic.mesa-git = {
+        enable = true;
+        extraPackages = with pkgs; [
+          intel-media-driver
+          intel-ocl
+          vaapiIntel
+        ];
+      };
       hardware.graphics = {
         enable = true;
         extraPackages = with pkgs; [
           intel-media-driver
+          intel-ocl
           libva
           intel-vaapi-driver
-          vaapiVdpau
-          # intel-compute-runtime
+          libva-vdpau-driver
+          intel-compute-runtime
           libvdpau-va-gl
           libvdpau
-          mesa
         ];
       };
     };

@@ -14,8 +14,7 @@
       "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "dbus-update-activation-environment --all"
       "swww-daemon --format xrgb"
-      "elephant"
-      #"uwsm-app -- qs -c ii -d"
+      "uwsm-app -- qs -c ii -d"
     ];
   };
 }

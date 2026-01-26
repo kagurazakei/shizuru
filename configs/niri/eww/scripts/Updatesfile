@@ -1,3 +1,0 @@
-#!/bin/bash
-
-selected=$(eww get UPDATESEWW -c $HOME/.config/hypr/eww) && echo "$selected" > $HOME/.config/hypr/eww/updatesfile | $(eww get EDITOR -c $HOME/.config/hypr/eww) $HOME/.config/hypr/eww/updatesfile &

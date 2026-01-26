@@ -1,6 +1,7 @@
-{ inputs
-, pkgs
-, ...
+{
+  inputs,
+  pkgs,
+  ...
 }: {
   hj = {
     packages = with pkgs.kdePackages;
@@ -17,6 +18,7 @@
         kio-fuse
         kimageformats
         kdegraphics-thumbnailers
+        kirigami
       ]
       ++ [
         inputs.shizuruPkgs.packages.${pkgs.system}.catppuccin-icons

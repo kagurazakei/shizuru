@@ -1,0 +1,182 @@
+
+@define-color foreground #f8f8f2;
+@define-color background #0a0a13;
+@define-color cursor     #f8f8f2;
+
+@define-color color0  #0a0a13;   
+@define-color color1  #e06c75;   
+@define-color color2  #98c379;   
+@define-color color3  #e0c989;   
+@define-color color4  #61afef;   
+@define-color color5  #d67ad2;   
+@define-color color6  #56b6c2;   
+@define-color color7  #f8f8f2;   
+
+@define-color color8  #44475a;   
+@define-color color9  #f07178;   
+@define-color color10 #85c87e;   
+@define-color color11 #e6cfa1;   
+@define-color color12 #82aaff;   
+@define-color color13 #e291e9;  
+@define-color color14 #7fdbca;   
+@define-color color15 #ffffff;   
+/* AUTO GENERATED. DO NOT EDIT. CHANGES WILL BE OVERWRITTEN. */
+#window,
+#box,
+#aiScroll,
+#aiList,
+#search,
+#password,
+#input,
+#prompt,
+#clear,
+#typeahead,
+#list,
+child,
+scrollbar,
+slider,
+#item,
+#text,
+#label,
+#bar,
+#sub,
+#activationlabel {
+  all: unset;
+}
+
+#cfgerr {
+  background: rgba(255, 0, 0, 0.4);
+  margin-top: 20px;
+  padding: 8px;
+  font-size: 1.2em;
+}
+
+#window {
+  color: @foreground;
+}
+
+#box {
+  border-radius: 20px;
+  background: @background;
+  padding: 34px 0px 34px 0px;
+  border: 1px solid lighter(@background);
+  box-shadow:
+    0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+#search {
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.22);
+  background: lighter(@background);
+  padding: 8px;
+  border-radius: 20px;
+}
+
+#prompt {
+  margin-left: 4px;
+  margin-right: 12px;
+  color: @foreground;
+  opacity: 0.2;
+}
+
+#clear {
+  color: @foreground;
+  opacity: 0.8;
+}
+
+#password,
+#input,
+#typeahead {
+  border-radius: 20px;
+}
+
+#input {
+  background: none;
+  border-radius: 20px;
+}
+
+#password {
+}
+
+#spinner {
+  padding: 8px;
+}
+
+#typeahead {
+  color: @foreground;
+  opacity: 0.8;
+}
+
+#input placeholder {
+  opacity: 0.5;
+}
+
+#list {
+}
+
+child {
+  padding: 8px;
+}
+
+child:selected #icon,
+child:hover #icon {
+  background: alpha(@color1, 0.2);
+}
+
+#item {
+}
+
+#icon {
+  padding: 10px;
+  border-radius: 50%;
+}
+
+#text {
+}
+
+#label {
+  font-weight: 500;
+}
+
+#sub {
+  opacity: 0.5;
+  font-size: 0.8em;
+}
+
+#activationlabel {
+  opacity: 0;
+}
+
+#bar {
+}
+
+.barentry {
+}
+
+.activation #activationlabel {
+  opacity: 1;
+}
+
+.activation #text,
+.activation #icon,
+.activation #search {
+  opacity: 0.5;
+}
+
+.aiItem {
+  padding: 10px;
+  border-radius: 2px;
+  color: @foreground;
+  background: @background;
+}
+
+.aiItem.user {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.aiItem.assistant {
+  background: lighter(@background);
+}

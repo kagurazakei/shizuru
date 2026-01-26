@@ -7,7 +7,7 @@
     config.allowUnfree = true;
   };
 in [
-  inputs.niri.overlays.niri
+  #inputs.niri.overlays.niri
   inputs.nur.overlays.default
   inputs.rust-overlay.overlays.default
   (_final: prev: {
@@ -76,6 +76,34 @@ in [
     });
   })
 
+  (final: prev: {
+    kdePackages = prev.kdePackages.overrideScope (kfinal: kprev: {
+      qt6ct = kprev.qt6ct.overrideAttrs (ctprev: {
+        src = prev.fetchFromGitHub {
+          owner = "ilya-fedin";
+          repo = "qt6ct";
+          rev = "26b539af69cf997c6878d41ba75ad7060b20e56e";
+          hash = "sha256-ePY+BEpEcAq11+pUMjQ4XG358x3bXFQWwI1UAi+KmLo=";
+        };
+
+        nativeBuildInputs =
+          (builtins.filter (p: p != kfinal.qmake) ctprev.nativeBuildInputs)
+          ++ [final.cmake];
+
+        buildInputs =
+          ctprev.buildInputs
+          ++ (with final.kdePackages; [
+            kconfig
+            kcolorscheme
+            kiconthemes
+          ]);
+
+        cmakeFlags = [
+          (prev.lib.cmakeFeature "PLUGINDIR" "lib/qt-6/plugins")
+        ];
+      });
+    });
+  })
   (final: prev: {
     scx_v1_0_12 = (prev.scx or prev.scx_git).overrideAttrs (_: {
       pname = "scx";

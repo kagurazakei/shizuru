@@ -1,18 +1,28 @@
 screenshot-path "~/Pictures/Screenshots/Screenshot-from-%Y-%m-%d-%H-%M-%S.png"
 prefer-no-csd
-overview { backdrop-color "#11121d"; }
+overview {
+    backdrop-color "#11121d";
+    workspace-shadow {
+        off
+    }
+}
 layout {
     gaps 6
     struts {
         left 2
         right 2
-        top 2
-        bottom 2
+        top 5
+        bottom 5
     }
+blur {
+    noise 0.1
+    passes 2
+    radius 5
+  }
     focus-ring { off; }
     border {
-        width 1.5
-        active-gradient angle=150 from="#e97078" relative-to="window" to="#80c8ff"
+        width 3
+        active-gradient angle=100 from="#9ad4a1" relative-to="window" to="#ffb4ab"
         inactive-gradient angle=180 from="#414868" relative-to="window" to="#1e1e2e"
     }
     background-color "transparent"
@@ -26,11 +36,9 @@ layout {
     }
     tab-indicator {
         hide-when-single-tab
-        place-within-column
         gap -12.000000
         width 4.000000
         length total-proportion=0.100000
-        position "left"
         gaps-between-tabs 10.000000
         corner-radius 10.000000
     }
@@ -45,7 +53,7 @@ layout {
     always-center-single-column
 }
 cursor {
-    xcursor-theme "Yuurei-Angel"
+    xcursor-theme "Chiharu"
     xcursor-size 32
 }
 hotkey-overlay { skip-at-startup; }

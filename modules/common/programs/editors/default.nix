@@ -1,6 +1,6 @@
 {
   imports = [
-    ./vscodium.nix
+ #   ./vscodium.nix
     ./nvchad.nix
   ];
 }

@@ -1,3 +1,0 @@
-!#/bin/bash
-
-selected=$(hyprpicker -a) && echo -n "$selected" | wl-copy && notify-send "Color copied: $selected"

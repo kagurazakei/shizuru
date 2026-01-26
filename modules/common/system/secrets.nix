@@ -2,7 +2,6 @@
   inputs,
   pkgs,
   config,
-  username,
   ...
 }: {
   imports = [
@@ -73,7 +72,7 @@
     };
   };
 
-  age.identityPaths = ["${config.users.users.${username}.home}/.config/age/keys.txt"];
+  age.identityPaths = ["/etc/agenix/keys.txt"];
   age.secrets = {
     private = {
       file = ../../../secrets/private.age;

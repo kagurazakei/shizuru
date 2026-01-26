@@ -5,11 +5,15 @@
   options,
   lib,
   system,
+  inputs,
   ...
 }:
 with lib; let
   cfg = config.system.greetd;
 in {
+  imports = [
+    inputs.dms.nixosModules.greeter
+  ];
   options.system.greetd = {
     enable = mkEnableOption "Enable Greetd Display Manager Services";
   };
@@ -17,24 +21,26 @@ in {
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       tuigreet
-      lyra-cursors
     ];
-
+    systemd.services.greetd.serviceConfig = {
+      Type = "idle";
+      StandardInput = "tty";
+      StandardOutput = "tty";
+      StandardError = "journal";
+      TTYReset = true;
+      TTYVHangup = true;
+      TTYVTDisallocate = true;
+    };
     services.greetd = {
       enable = true;
       settings = {
+        initial_session = {
+          user = "antonio";
+          command = "uwsm start niri-uwsm.desktop";
+        };
         default_session = {
-          user = username;
-          command = "${pkgs.tuigreet}/bin/tuigreet \
-            --user-menu \
-            -w 30 \
-            --window-padding 40 \
-            --container-padding 8 \
-            --remember \
-            --remember-session \
-            --time \
-            --theme 'border=cyan;text=cyan;prompt=cyan;time=cyan;action=cyan;button=cyan;container=black;input=cyan' \
-            --cmd uwsm start hyprland-uwsm.desktop";
+          user = "greeter";
+          command = "${pkgs.tuigreet}/bin/tuigreet --user-menu -w 50 --window-padding 7 --container-padding 7 --remember --remember-session --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --cmd uwsm start niri-uwsm.desktop";
         };
       };
     };
@@ -44,29 +50,13 @@ in {
       hyprland = {
         prettyName = "Hyprland";
         comment = "Hyprland compositor manager by UWSM";
-        binPath = "/run/current-system/sw/bin/Hyprland";
+        binPath = "/run/current-system/sw/bin/start-hyprland";
       };
       niri = {
         prettyName = "Niri The Goat";
         comment = "Niri compositor managed by UWSM";
         binPath = "/run/current-system/sw/bin/niri-session";
       };
-    };
-    systemd.services.greetd.serviceConfig = {
-      Type = "idle";
-      StarndardInput = "tty";
-      StarndardOutput = "tty";
-      StandardError = "journal";
-      TTYReset = true;
-      TTYHangup = true;
-      TTYVTDisallocate = true;
-    };
-    systemd.settings.Manager = {
-      KExecWatchdogSec = "5min";
-      RebootWatchdogSec = "10min";
-      RuntimeWatchdogSec = "30s";
-      DefaultTimeoutStopSec = "10s";
-      WatchdogDevice = "/dev/watchdog";
     };
   };
 }

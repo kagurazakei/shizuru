@@ -155,6 +155,8 @@
       exec-once = $HOME/.config/hypr/initial-boot.sh
       source = $HOME/.config/hypr/UserConfigs/windowRules.conf
       source = $HOME/.config/hypr/themes/mocha.conf
+      source = $HOME/.config/hypr/animations/LimeFrenzy.conf
+
       bind = $mainMod, mouse:272, movewindow
       bind = ALT, mouse:272, togglefloating
     '';

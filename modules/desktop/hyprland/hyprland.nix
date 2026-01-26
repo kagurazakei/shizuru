@@ -13,13 +13,12 @@ in {
     pkgs.kdePackages.qtstyleplugin-kvantum
     inputs.hyprland-qtutils.packages.${pkgs.system}.default
     inputs.hypridle.packages.${pkgs.system}.default
-    #pkgs.hypridle
   ];
   programs = {
     hyprland = {
       enable = true;
-      package = hyprFlake;
-      portalPackage = portalFlake;
+      package = pkgs.master.hyprland;
+      portalPackage = pkgs.master.xdg-desktop-portal-hyprland;
       xwayland.enable = true;
     };
     appimage = {

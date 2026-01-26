@@ -6,7 +6,7 @@
     ./greetd.nix
     ./niri.nix
     ./sddm-stray.nix
-    #./hm-clean.nix
+    # ./hm-clean.nix
     ./portal.nix
     ./xdg.nix
     ./stylix.nix

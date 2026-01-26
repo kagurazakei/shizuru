@@ -4,25 +4,28 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-master.url = "github:NixOS/nixpkgs/master";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+    zakeivim.url = "github:kagurazakei/khanelivim";
     font-flake.url = "github:redyf/font-flake";
     systems.url = "github:nix-systems/x86_64-linux";
-    agenix.url = "github:ryantm/agenix";
-    #walker.url = "github:abenz1267/walker/v0.13.26";
-    walker.url = "github:abenz1267/walker";
-    private-key.url = "git+ssh://git@codeberg.org/maotseantonio/secrets.git";
+    dms.url = "github:AvengeMedia/DankMaterialShell";
+    walker.url = "github:abenz1267/walker/v0.13.26";
+    #private-key.url = "git+ssh://git@codeberg.org/maotseantonio/secrets.git";
+    nix-monitor = {url = "github:antonjah/nix-monitor";};
     sops-nix = {
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    noctalia-shell.url = "github:noctalia-dev/noctalia-shell";
+
+    mango = {
+      url = "github:DreamMaoMao/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     alejandra.url = "github:kamadorueda/alejandra/4.0.0";
     alejandra.inputs.nixpkgs.follows = "nixpkgs";
+    noctalia-shell.url = "github:noctalia-dev/noctalia-shell";
     fastanime.url = "github:Benexl/FastAnime";
-    elephant.url = "github:abenz1267/elephant";
-    fish-flake = {
-      url = "github:kagurazakei/fish-flake";
-    };
+    fish-flake = {url = "github:kagurazakei/fish-flake";};
     silentSDDM = {
       url = "github:kagurazakei/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,32 +34,28 @@
     kureiji-ollie-cursor.url = "github:kagurazakei/kureiji-ollie-cursors";
     waifu-cursors.url = "git+https://codeberg.org/maotseantonio/waifu-cursors";
     caelestia = {
-      url = "github:caelestia-dots/shell";
+      url = "github:kagurazakei/shell";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.quickshell.follows = "quickshell";
     };
-    caelestia-cli = {
-      url = "github:caelestia-dots/cli";
-    };
+    caelestia-cli = {url = "github:caelestia-dots/cli";};
+    app2unit = {url = "github:soramanew/app2unit";};
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    lix-module = {
-      url = "git+https://git.lix.systems/lix-project/nixos-module?ref=main";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.lix = {
-        url = "git+https://git.lix.systems/lix-project/lix?ref=main";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
-    };
-
-    flake-programs-sqlite = {
-      url = "github:wamserma/flake-programs-sqlite";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
+    # lix-module = {
+    #   url = "git+https://git.lix.systems/lix-project/nixos-module?ref=main&rev=4d4c2b8f0a801c91ce5b717c77fe3a17efa1402f";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.lix = {
+    #     url = "git+https://git.lix.systems/lix-project/lix?ref=main&rev=cad6118e20a520b7536879d951ab6c3228b3e111";
+    #     inputs.nixpkgs.follows = "nixpkgs";
+    #   };
+    # };
+    # flake-programs-sqlite = {
+    #   url = "github:wamserma/flake-programs-sqlite";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -67,7 +66,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.disko.follows = "disko";
     };
-
+    Moon.url = "github:kagurazakei/nvim-flake";
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -101,7 +100,7 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         systems.follows = "systems";
-        # hyprlang.follows = "hyprlang";
+        hyprlang.follows = "hyprlang";
       };
     };
 
@@ -126,18 +125,18 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         systems.follows = "systems";
-        # hyprlang.follows = "hyprlang";
+        hyprlang.follows = "hyprlang";
       };
     };
 
-    # hyprlang = {
-    #   url = "github:hyprwm/hyprlang";
-    #   inputs = {
-    #     nixpkgs.follows = "nixpkgs";
-    #     systems.follows = "systems";
-    #     hyprutils.follows = "hyprutils";
-    #   };
-    # };
+    hyprlang = {
+      url = "github:hyprwm/hyprlang";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+        hyprutils.follows = "hyprutils";
+      };
+    };
 
     hyprutils = {
       url = "github:hyprwm/hyprutils";
@@ -160,7 +159,7 @@
         nixpkgs.follows = "nixpkgs";
         systems.follows = "systems";
         hyprland-protocols.follows = "hyprland-protocols";
-        # hyprlang.follows = "hyprlang";
+        hyprlang.follows = "hyprlang";
         hyprutils.follows = "hyprutils";
         hyprwayland-scanner.follows = "hyprwayland-scanner";
       };
@@ -174,8 +173,7 @@
         hyprcursor.follows = "hyprcursor";
         hyprgraphics.follows = "hyprgraphics";
         hyprland-protocols.follows = "hyprland-protocols";
-        hyprland-qtutils.follows = "hyprland-qtutils";
-        # hyprlang.follows = "hyprlang";
+        hyprlang.follows = "hyprlang";
         hyprutils.follows = "hyprutils";
         hyprwayland-scanner.follows = "hyprwayland-scanner";
         xdph.follows = "xdph";
@@ -191,21 +189,12 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     hyprscroller = {
       url = "github:cpiber/hyprscroller";
       inputs.hyprland.follows = "hyprland";
     };
 
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
+    niri.url = "github:kagurazakei/niri";
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -242,10 +231,12 @@
       inputs.hjem.follows = "hjem";
     };
 
-    hjem-impure.url = "github:Rexcrazy804/hjem-impure";
-
-    #chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-    chaotic.url = "github:chaotic-cx/nyx/main";
+    hjem-impure = {
+      url = "github:Rexcrazy804/hjem-impure";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.hjem.follows = "hjem";
+    };
+    chaotic.url = "github:lonerOrz/nyx-loner";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     catppuccin.url = "github:catppuccin/nix";
     stylix = {
@@ -269,7 +260,6 @@
     };
 
     ghostty.url = "github:ghostty-org/ghostty";
-    # nixcord.url = "github:kaylorben/nixcord";
     nixcord.url = "github:kaylorben/nixcord?rev=f93293513fdf2a5d530e3c3bce9cc87bd9b47b2a";
     textfox.url = "github:adriankarlen/textfox";
     nh = {
@@ -278,7 +268,6 @@
     };
     home-manager = {
       url = "github:nix-community/home-manager";
-      # url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -287,18 +276,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    swww = {
-      url = "github:LGFae/swww/v0.10.3";
-    };
+    swww = {url = "github:LGFae/swww/v0.10.3";};
 
     sddm-stray.url = "git+https://codeberg.org/maotseantonio/sddm-stray-flakes";
     nix-alien.url = "github:thiagokokada/nix-alien";
     wezterm.url = "github:wezterm/wezterm?dir=nix";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nyxexprs.url = "github:notashelf/nyxexprs";
+    omarchy.url = "github:henrysipp/omarchy-nix";
+    omarchy.inputs.nixpkgs.follows = "nixpkgs";
+    omarchy.inputs.home-manager.follows = "home-manager";
     zjstatus.url = "github:dj95/zjstatus";
     zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
+      url = "github:0xc000022070/zen-browser-flake/beta";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -306,17 +296,17 @@
   outputs = inputs @ {
     nixpkgs,
     nixpkgs-master,
-    rust-overlay,
+    self,
     yazi,
     home-manager,
     chaotic,
-    agenix,
     quickshell,
-    lix-module,
+    niri,
+    nix-monitor,
     ...
   }: let
     system = "x86_64-linux";
-    host = "hanako";
+    host = "hana";
     username = "antonio";
 
     pkgs = import nixpkgs {
@@ -342,11 +332,7 @@
           withHyprland = true;
           withI3 = false;
         };
-        qtDeps = [
-          qs
-          pkgs.qt6.qtbase
-          pkgs.qt6.qtdeclarative
-        ];
+        qtDeps = [qs pkgs.qt6.qtbase pkgs.qt6.qtdeclarative];
       in
         pkgs.mkShell {
           name = "quickshell-dev";
@@ -360,9 +346,9 @@
     };
 
     nixosConfigurations = {
-      hanako = nixpkgs.lib.nixosSystem {
+      hana = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit system inputs username host pkgs-master;
+          inherit self system inputs username host pkgs-master;
         };
         modules = [
           ./hosts/${host}/config.nix
@@ -372,14 +358,12 @@
           inputs.catppuccin.nixosModules.catppuccin
           inputs.nixos-hardware.nixosModules.huawei-machc-wa
           inputs.nvf.nixosModules.default
-          agenix.nixosModules.default
-          #lix-module.nixosModules.default
-          inputs.flake-programs-sqlite.nixosModules.programs-sqlite
-          {
-            nixpkgs.overlays = import ./overlays {
-              inherit inputs system;
-            };
-          }
+          inputs.mango.nixosModules.mango
+          nix-monitor.nixosModules.default
+          # agenix.nixosModules.default
+          # lix-module.nixosModules.default
+          # inputs.flake-programs-sqlite.nixosModules.programs-sqlite
+          {nixpkgs.overlays = import ./overlays {inherit inputs system;};}
         ];
       };
     };
@@ -388,7 +372,6 @@
       extra-substituters = [
         "https://nix-community.cachix.org"
         "https://cache.nixos.org?priority=10" # Keep this last
-        "https://cache.lix.systems"
         "https://nyx.chaotic.cx"
         "https://hyprland.cachix.org"
         "https://yazi.cachix.org"
@@ -400,7 +383,6 @@
       extra-trusted-public-keys = [
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-        "cache.lix.systems:aBnZUw8zA7H35Cz2RyKFVs3H4PlGTLawyY5KRbvJR8o="
         "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
         "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="

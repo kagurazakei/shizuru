@@ -1,11 +1,13 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   stylix = {
     enable = true;
     autoEnable = false;
-    # homeManagerIntegration = {
-    #   followSystem = false;
-    #   autoImport = false;
-    # };
+    enableReleaseChecks = false;
+    homeManagerIntegration = {
+      followSystem = true;
+      autoImport = true;
+    };
   };
   stylix.base16Scheme = ./themes/oxo-draco.yaml;
   stylix = {
@@ -16,7 +18,6 @@
     };
   };
   stylix.polarity = "dark";
-  stylix.image = "/home/antonio/Pictures/wallpapers/.wallpaper";
   stylix = {
     fonts = {
       sizes = {

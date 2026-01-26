@@ -19,11 +19,11 @@ in {
     ./themes.nix
     ../../modules/options/hana.nix
   ];
+  stylix.enableReleaseChecks = false;
   services.xserver.videoDrivers = ["modesetting" "nvidia"];
   catppuccin.tty.enable = false;
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowBroken = true;
-  programs.command-not-found.enable = true;
   nixpkgs.config = {
     allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) ["joypixels"];
     joypixels.acceptLicense = true;
@@ -32,21 +32,26 @@ in {
     (with pkgs; [
       libva-utils
       libvdpau-va-gl
-      intel-compute-runtime
-      intel-vaapi-driver
-      vaapiVdpau
-      vaapi-intel-hybrid
-      #mesa_git
+      libva-vdpau-driver
       egl-wayland
+      mesa
       master.waybar
     ])
     ++ [python-packages];
   hardware.graphics.enable = true;
-
   services.btrfs.autoScrub = {
     enable = true;
     interval = "monthly";
     fileSystems = ["/"];
+  };
+
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTR{idVendor}=="05ac", ATTR{idProduct}=="12a8", MODE="0666"
+  '';
+
+  services.usbmuxd = {
+    enable = true;
+    package = pkgs.usbmuxd2;
   };
   console.keyMap = "${keyboardLayout}";
   environment.sessionVariables = {
@@ -61,5 +66,4 @@ in {
     ZDOTDIR = "$HOME/.config/zsh";
     NH_OS_FLAKE = "/home/antonio/shizuru";
   };
-  system.stateVersion = "25.05";
 }

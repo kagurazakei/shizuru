@@ -4,17 +4,21 @@
     ./btop.nix
     ./bottom.nix
     ./cava.nix
+    ./carapace.nix
     ./fhsenv.nix
     ./fish.nix
-    ./foot.nix
-    ./ghostty.nix
+ #   ./foot.nix
+#    ./ghostty.nix
     ./git.nix
     ./lazygit.nix
     ./lutgen.nix
     ./nixy.nix
     ./shell.nix
+    ./nushell.nix
+    ./yazi.nix
     ./starship.nix
     ./zathura.nix
+    ./zellij.nix
     ./zoxide.nix
   ];
 }
