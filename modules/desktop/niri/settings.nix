@@ -23,6 +23,34 @@ in {
     inputs.noctalia-shell.nixosModules.default
     inputs.dms.nixosModules.dank-material-shell
   ];
+
+  environment.systemPackages = with pkgs; [
+    libsForQt5.qtstyleplugin-kvantum
+    kdePackages.qtstyleplugin-kvantum
+  ];
+  programs = {
+    appimage = {
+      enable = true;
+      binfmt = true;
+    };
+
+    firefox = {
+      enable = true;
+      package = inputs.firefox.packages.${pkgs.stdenv.hostPlatform.system}.firefox-nightly-bin;
+    };
+    nix-ld.enable = true;
+
+    xwayland.enable = true;
+    dconf.enable = true;
+    seahorse.enable = true;
+    fuse.userAllowOther = true;
+    mtr.enable = true;
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
+  };
+
   services.noctalia-shell = {
     enable = false;
   };
