@@ -11,7 +11,6 @@ in
 [
   #inputs.niri.overlays.niri
   inputs.nur.overlays.default
-  inputs.neovim-nightly-overlay.overlays.default
   inputs.rust-overlay.overlays.default
   (_final: prev: {
     stable = import inputs.nixpkgs-stable {
@@ -21,7 +20,6 @@ in
     };
     unstable = prev;
     master = nixpkgs-master;
-    nvim = inputs.neovim-nightly-overlay.packages.${system}.default;
     quickshell = inputs.quickshell.packages.${system}.default;
     nvchad = inputs.nvchad4nix.packages.${system}.nvchad;
     zjstatus = inputs.zjstatus.packages.${system}.default;

@@ -4,7 +4,8 @@
   system,
   config,
   ...
-}: {
+}:
+{
   imports = [
     inputs.catppuccin.homeModules.catppuccin
   ];
@@ -28,16 +29,16 @@
   catppuccin.btop.enable = false;
   catppuccin.mako.enable = false;
   catppuccin.cava.enable = false;
-  catppuccin.kvantum.enable = false;
+  #catppuccin.kvantum.enable = false;
   services.mako.enable = false;
   home.packages = with pkgs; [
     libsForQt5.qtstyleplugin-kvantum
     kdePackages.qtstyleplugin-kvantum
   ];
-  home.file = {};
+  home.file = { };
   home.sessionVariables = {
     EDITOR = "nvim";
-    TERMINAL = "wezterm";
+    TERMINAL = "kitty";
     VISUAL = "codium";
     BROWSER = "firefox";
     NIXOS_OZONE_WL = "1";

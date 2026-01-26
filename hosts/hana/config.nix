@@ -38,7 +38,6 @@ in
       libvdpau-va-gl
       libva-vdpau-driver
       egl-wayland
-      mesa
       master.waybar
     ])
     ++ [ python-packages ];

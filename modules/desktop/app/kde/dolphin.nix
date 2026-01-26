@@ -2,9 +2,11 @@
   inputs,
   pkgs,
   ...
-}: {
+}:
+{
   hj = {
-    packages = with pkgs.kdePackages;
+    packages =
+      with pkgs.kdePackages;
       [
         dolphin
         dolphin-plugins
@@ -19,6 +21,7 @@
         kimageformats
         kdegraphics-thumbnailers
         kirigami
+        qtstyleplugin-kvantum
       ]
       ++ [
         inputs.shizuruPkgs.packages.${pkgs.system}.catppuccin-icons

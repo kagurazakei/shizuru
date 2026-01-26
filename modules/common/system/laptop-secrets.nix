@@ -71,20 +71,21 @@
 
   sops = {
     age.keyFile = "/persistent/var/lib/sops-nix/keys.txt";
-    defaultSopsFile = ../../../secrets/laptop.yaml;
+    defaultSopsFile = ../../../secrets/secret.yaml;
     defaultSopsFormat = "yaml";
   };
   sops.secrets = {
     "nix-access-token" = {
-      sopsFile = ../../../secrets/laptop.yaml;
+      sopsFile = ../../../secrets/secret.yaml;
       owner = "antonio";
       mode = "0440";
       path = "/etc/nix/access-token.conf";
     };
     "github-authentication-code" = {
-      sopsFile = ../../../secrets/laptop.yaml;
-      owner = "root";
-      path = "/etc/sops-nix/keys.txt";
+      sopsFile = ../../../secrets/secret.yaml;
+      owner = "antonio";
+      mode = "0440";
+      path = "/etc/sops-nix/git-authen.txt";
     };
   };
   nix.extraOptions = ''

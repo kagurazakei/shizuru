@@ -38,13 +38,13 @@ with lib;
     nixpkgs.config.packageOverrides = pkgs: {
       vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
     };
-    chaotic.mesa-git = {
-      enable = true;
-      extraPackages = with pkgs; [
-        intel-media-driver
-        intel-ocl
-      ];
-    };
+    # chaotic.mesa-git = {
+    #   enable = true;
+    #   extraPackages = with pkgs; [
+    #     intel-media-driver
+    #     intel-ocl
+    #   ];
+    # };
     hardware.graphics = {
       enable = true;
       extraPackages = with pkgs; [
@@ -55,6 +55,7 @@ with lib;
         libva-vdpau-driver
         libvdpau-va-gl
         libvdpau
+        mesa
       ];
     };
   };

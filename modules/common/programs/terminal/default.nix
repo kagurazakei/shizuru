@@ -8,7 +8,7 @@
     ./fhsenv.nix
     ./fish.nix
     ./foot.nix
-    ./ghostty.nix
+    # ./ghostty.nix
     ./git.nix
     ./lazygit.nix
     ./lutgen.nix

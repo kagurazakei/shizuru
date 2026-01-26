@@ -1,226 +1,217 @@
 environment {
-CLUTTER_BACKEND "wayland"
-DISPLAY ":0"
-ELECTRON_ENABLE_HARDWARE_ACCELERATION "1"
-ELECTRON_OZONE_PLATFORM_HINT "auto"
-GDK_BACKEND "wayland,x11"
-GTK2_RC_FILES "/home/antonio/.gtkrc-2.0"
-GTK_THEME "Graphite-Dark"
-JAVA_AWT_WM_NONEREPARENTING "1"
-MOZ_ENABLE_WAYLAND "1"
-NIXOS_OZONE_WL "1"
-NIXPKGS_ALLOW_UNFREE "1"
-OZONE_PLATFORM "wayland"
-QT_QPA_PLATFORM "wayland;xcb"
-QT_QPA_PLATFORMTHEME "qt6ct"
-QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
-SDL_VIDEODRIVER "wayland"
-XDG_CURRENT_DESKTOP "niri"
-XDG_SESSION_TYPE "wayland"
+    CLUTTER_BACKEND "wayland"
+    DISPLAY ":0"
+    ELECTRON_ENABLE_HARDWARE_ACCELERATION "1"
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+    GDK_BACKEND "wayland,x11"
+    GTK2_RC_FILES "/home/antonio/.gtkrc-2.0"
+    GTK_THEME "Catppuccin-Dark"
+    JAVA_AWT_WM_NONEREPARENTING "1"
+    MOZ_ENABLE_WAYLAND "1"
+    NIXOS_OZONE_WL "1"
+    NIXPKGS_ALLOW_UNFREE "1"
+    OZONE_PLATFORM "wayland"
+    QT_QPA_PLATFORM "wayland;xcb"
+    QT_QPA_PLATFORMTHEME "qt6ct"
+    QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
+    SDL_VIDEODRIVER "wayland"
+    XDG_CURRENT_DESKTOP "niri"
+    XDG_SESSION_TYPE "wayland"
 }
-
 debug {
-  honor-xdg-activation-with-invalid-serial
+    honor-xdg-activation-with-invalid-serial
 }
-
 binds {
-Mod release=true { spawn "dms" "ipc" "spotlight" "toggle"; }
-Ctrl+Alt+L  {spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock";}
-Ctrl+Print  {screenshot-window;}
-Mod+1  {focus-workspace 1;}
-Mod+2  {focus-workspace 2;}
-Mod+3  {focus-workspace 3;}
-Mod+4  {focus-workspace 4;}
-Mod+5  {focus-workspace 5;}
-Mod+6  {focus-workspace 6;}
-Mod+7  {focus-workspace 7;}
-Mod+8  {focus-workspace 8;}
-Mod+9  {focus-workspace 9;}
-Mod+C  {center-window;}
-Mod+Comma  {consume-window-into-column;}
-Mod+D  {spawn "rofi" "-show" "drun" ;}
-Mod+Down  {focus-workspace-down;}
-Mod+E  {spawn "walker" "-m" "emojis";}
-Mod+Equal  {set-column-width "+10%";}
-Mod+F  {maximize-column;}
-Mod+H  {focus-column-left;}
-Mod+I  {spawn "fuzzel-clip";}
-Mod+J  {focus-window-or-workspace-down;}
-Mod+K  {focus-window-or-workspace-up;}
-Mod+L  {focus-column-right;}
-Mod+Left  {focus-column-left;}
-Mod+M  {spawn "walker" "-m" "niri";}
-Mod+Minus  {set-column-width "-10%";}
-Mod+N  {spawn "noctalia-shell" "ipc" "call" "bar" "toggle";}
-Mod+O  {spawn "walker";}
-Mod+Period  {expel-window-from-column;}
-Mod+Q  {close-window;}
-Mod+R  {spawn "noctalia-shell" "ipc" "call" "wallpaper" "toggle";}
-Mod+Return  {spawn "kitty";}
-Mod+Right  {focus-column-right;}
-Mod+S  {switch-preset-column-width;}
-Mod+Shift+Alt+S  {screenshot-window;}
-Mod+Shift+Ctrl+J  {move-column-to-monitor-down;}
-Mod+Shift+Ctrl+K  {move-column-to-monitor-up;}
-Mod+Shift+Equal  {set-window-height "+10%";}
-Mod+Shift+F  {expand-column-to-available-width;}
-Mod+Shift+H  {move-column-left;}
-Mod+Shift+J  {move-column-to-workspace-down;}
-Mod+Shift+K  {move-column-to-workspace-up;}
-Mod+Shift+L  {move-column-right;}
-Mod+Shift+Minus  {set-window-height "-10%";}
-Mod+Shift+Return  {spawn "wezterm";}
-Mod+Shift+S  {screenshot;}
-Mod+Shift+Space  {fullscreen-window;}
-Mod+Shift+X  {spawn "ani-cli" "--rofi";}
-Mod+Space  {toggle-window-floating;}
-Mod+T  {spawn "dolphin";}
-Mod+Tab  {toggle-overview;}
-Mod+Up  {focus-workspace-up;}
-Mod+V  {spawn "noctalia-shell" "ipc" "call" "launcher" "clipboard";}
-Mod+X  {spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle";}
-Mod+grave  {switch-focus-between-floating-and-tiling;}
-Print  {screenshot-screen;}
-Shift+Print  {screenshot;}
-XF86AudioLowerVolume allow-when-locked=true {spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-";}
-XF86AudioMute allow-when-locked=true {spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle";}
-XF86AudioRaiseVolume allow-when-locked=true {spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+";}
-XF86MonBrightnessDown allow-when-locked=true {spawn "/home/antonio/.local/bin/brightness" "--dec";}
-XF86MonBrightnessUp allow-when-locked=true {spawn "/home/antonio/.local/bin/brightness" "--inc";}
+    Mod release=true {
+        spawn "dms" "ipc" "spotlight" "toggle"
+    }
+    Ctrl+Print {
+        screenshot-window
+    }
+    Mod+1 {
+        focus-workspace 1
+    }
+    Mod+2 {
+        focus-workspace 2
+    }
+    Mod+3 {
+        focus-workspace 3
+    }
+    Mod+4 {
+        focus-workspace 4
+    }
+    Mod+5 {
+        focus-workspace 5
+    }
+    Mod+6 {
+        focus-workspace 6
+    }
+    Mod+7 {
+        focus-workspace 7
+    }
+    Mod+8 {
+        focus-workspace 8
+    }
+    Mod+9 {
+        focus-workspace 9
+    }
+    Mod+C {
+        center-window
+    }
+    Mod+Comma {
+        consume-window-into-column
+    }
+    Mod+D {
+        spawn "fuzzel"
+    }
+    Mod+Down {
+        focus-workspace-down
+    }
+    Mod+Equal {
+        set-column-width "+10%"
+    }
+    Mod+F {
+        maximize-column
+    }
+    Mod+H {
+        focus-column-left
+    }
+    Mod+I {
+        spawn "fuzzel-clip"
+    }
+    Mod+J {
+        focus-window-or-workspace-down
+    }
+    Mod+K {
+        focus-window-or-workspace-up
+    }
+    Mod+L {
+        focus-column-right
+    }
+    Mod+Left {
+        focus-column-left
+    }
+    Mod+Minus {
+        set-column-width "-10%"
+    }
+    Mod+Period {
+        expel-window-from-column
+    }
+    Mod+Q {
+        close-window
+    }
+    Mod+Return {
+        spawn "kitty"
+    }
+    Mod+Right {
+        focus-column-right
+    }
+    Mod+S {
+        switch-preset-column-width
+    }
+    Mod+Shift+Alt+S {
+        screenshot-window
+    }
+    Mod+Shift+Ctrl+J {
+        move-column-to-monitor-down
+    }
+    Mod+Shift+Ctrl+K {
+        move-column-to-monitor-up
+    }
+    Mod+Shift+Equal {
+        set-window-height "+10%"
+    }
+    Mod+Shift+F {
+        expand-column-to-available-width
+    }
+    Mod+Shift+H {
+        move-column-left
+    }
+    Mod+Shift+J {
+        move-column-to-workspace-down
+    }
+    Mod+Shift+K {
+        move-column-to-workspace-up
+    }
+    Mod+Shift+L {
+        move-column-right
+    }
+    Mod+Shift+Minus {
+        set-window-height "-10%"
+    }
+    Mod+Shift+Return {
+        spawn "wezterm"
+    }
+    Mod+Shift+S {
+        screenshot
+    }
+    Mod+Shift+Space {
+        fullscreen-window
+    }
+    Mod+Shift+X {
+        spawn "ani-cli" "--rofi"
+    }
+    Mod+Space {
+        toggle-window-floating
+    }
+    Mod+T {
+        spawn "dolphin"
+    }
+    Mod+Tab {
+        toggle-overview
+    }
+    Mod+Up {
+        focus-workspace-up
+    }
+    Mod+grave {
+        switch-focus-between-floating-and-tiling
+    }
+    Print {
+        screenshot-screen
+    }
+    Shift+Print {
+        screenshot
+    }
+    XF86AudioLowerVolume allow-when-locked=true {
+        spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"
+    }
+    XF86AudioMute allow-when-locked=true {
+        spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"
+    }
+    XF86AudioRaiseVolume allow-when-locked=true {
+        spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"
+    }
+    XF86MonBrightnessDown allow-when-locked=true {
+        spawn "/home/antonio/.local/bin/brightness" "--dec"
+    }
+    XF86MonBrightnessUp allow-when-locked=true {
+        spawn "/home/antonio/.local/bin/brightness" "--inc"
+    }
 }
-
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 spawn-at-startup "/nix/store/8z3bha0fzr9ldy2bxw27hk2kb8adm7s7-polkit-gnome-0.105/libexec/polkit-gnome-authentication-agent-1"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
-spawn-at-startup "swww-daemon"
-spawn-at-startup "lysec-bar"
 spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
 spawn-at-startup "systemctl" "--user" "import-environment" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
 spawn-at-startup "dbus-update-activation-environment" "--all"
 spawn-at-startup "/nix/store/ysbzwkkybwx2zfhq139mj0mqivjy9wia-xwayland-satellite-0.8/bin/xwayland-satellite"
 spawn-at-startup "/nix/store/1b8vj4ii2mskv7sm5031fmlk7rcm5s6n-xdg-desktop-portal-gnome-49.0/libexec/xdg-desktop-portal-gnome"
-spawn-at-startup "info-febvre-Komikku"
 //This was a nightmare to make but here
 // original code from; https://github.com/XansiVA
-
 animations {
     workspace-switch {
         spring damping-ratio=2.45 stiffness=750 epsilon=0.0001
     }
-window-open {
-    duration-ms 600
-    curve "ease-out-quad"
-    custom-shader "
-    vec4 open_color(vec3 coords_geo, vec3 size_geo) {
-        float progress = niri_clamped_progress;
-
-        // Completely random angle (0 to 2*PI)
-        float random_angle = niri_random_seed * 6.28318;
-
-        // Rotate the coordinates to create tilted ribbons
-        vec2 coords = coords_geo.xy - 0.5;
-        float cos_a = cos(random_angle);
-        float sin_a = sin(random_angle);
-        vec2 rotated = vec2(
-            coords.x * cos_a - coords.y * sin_a,
-            coords.x * sin_a + coords.y * cos_a
-        );
-
-        // Now work with rotated Y position for ribbon indexing
-        float y_pos = rotated.y + 0.5;
-
-        // Equal-sized ribbons (20 total)
-        float ribbon_count = 20.0;
-        float ribbon_index = floor(y_pos * ribbon_count);
-
-        // Alternating pattern: even = left, odd = right
-        float direction = mod(ribbon_index, 2.0) == 0.0 ? -1.0 : 1.0;
-
-        // Cascading delay
-        float delay = ribbon_index / ribbon_count * 0.5;
-        float ribbon_progress = clamp((progress - delay) / (1.0 - delay), 0.0, 1.0);
-
-        // Slide along the rotated X axis
-        rotated.x += (1.0 - ribbon_progress) * direction * 2.0;
-
-        // Rotate back to get final coordinates
-        coords = vec2(
-            rotated.x * cos_a + rotated.y * sin_a,
-            -rotated.x * sin_a + rotated.y * cos_a
-        );
-        coords += 0.5;
-
-        // Regular sampling
-        vec3 coords_tex = niri_geo_to_tex * vec3(coords.x, coords.y, 1.0);
-        vec4 color = texture2D(niri_tex, coords_tex.xy);
-
-        // Check if ribbon hasn't arrived yet
-        if (coords.x < 0.0 || coords.x > 1.0) {
-            return vec4(0.0);
-        }
-
-        return color;
-    }"
-}
-
-
-window-close {
-    duration-ms 800
-    curve "ease-out-quad"
-    custom-shader "
-    vec4 close_color(vec3 coords_geo, vec3 size_geo) {
-        float progress = niri_clamped_progress;
-
-        // Completely random angle (0 to 2*PI)
-        float random_angle = niri_random_seed * 6.28318;
-
-        // Rotate the coordinates to create tilted ribbons
-        vec2 coords = coords_geo.xy - 0.5; // center
-        float cos_a = cos(random_angle);
-        float sin_a = sin(random_angle);
-        vec2 rotated = vec2(
-            coords.x * cos_a - coords.y * sin_a,
-            coords.x * sin_a + coords.y * cos_a
-        );
-
-        // Now work with rotated Y position for ribbon indexing
-        float y_pos = rotated.y + 0.5;
-
-        // Equal-sized ribbons (20 total)
-        float ribbon_count = 20.0;
-        float ribbon_index = floor(y_pos * ribbon_count);
-
-        // Alternating pattern: even = left, odd = right
-        float direction = mod(ribbon_index, 2.0) == 0.0 ? -1.0 : 1.0;
-
-        // Cascading delay
-        float delay = ribbon_index / ribbon_count * 0.5;
-        float ribbon_progress = clamp((progress - delay) / (1.0 - delay), 0.0, 1.0);
-
-        // Slide along the rotated X axis
-        rotated.x += ribbon_progress * direction * 2.0;
-
-        // Rotate back to get final coordinates
-        coords = vec2(
-            rotated.x * cos_a + rotated.y * sin_a,
-            -rotated.x * sin_a + rotated.y * cos_a
-        );
-        coords += 0.5; // uncenter
-
-        // Regular sampling
-        vec3 coords_tex = niri_geo_to_tex * vec3(coords.x, coords.y, 1.0);
-        vec4 color = texture2D(niri_tex, coords_tex.xy);
-
-        // Check if ribbon has moved out of bounds
-        if (coords.x < 0.0 || coords.x > 1.0) {
-            return vec4(0.0);
-        }
-
-        return color;
-    }"
-}
-
-
+    window-open {
+        duration-ms 600
+        curve "ease-out-quad"
+        custom-shader "\n    vec4 open_color(vec3 coords_geo, vec3 size_geo) {\n        float progress = niri_clamped_progress;\n\n        // Completely random angle (0 to 2*PI)\n        float random_angle = niri_random_seed * 6.28318;\n\n        // Rotate the coordinates to create tilted ribbons\n        vec2 coords = coords_geo.xy - 0.5;\n        float cos_a = cos(random_angle);\n        float sin_a = sin(random_angle);\n        vec2 rotated = vec2(\n            coords.x * cos_a - coords.y * sin_a,\n            coords.x * sin_a + coords.y * cos_a\n        );\n\n        // Now work with rotated Y position for ribbon indexing\n        float y_pos = rotated.y + 0.5;\n\n        // Equal-sized ribbons (20 total)\n        float ribbon_count = 20.0;\n        float ribbon_index = floor(y_pos * ribbon_count);\n\n        // Alternating pattern: even = left, odd = right\n        float direction = mod(ribbon_index, 2.0) == 0.0 ? -1.0 : 1.0;\n\n        // Cascading delay\n        float delay = ribbon_index / ribbon_count * 0.5;\n        float ribbon_progress = clamp((progress - delay) / (1.0 - delay), 0.0, 1.0);\n\n        // Slide along the rotated X axis\n        rotated.x += (1.0 - ribbon_progress) * direction * 2.0;\n\n        // Rotate back to get final coordinates\n        coords = vec2(\n            rotated.x * cos_a + rotated.y * sin_a,\n            -rotated.x * sin_a + rotated.y * cos_a\n        );\n        coords += 0.5;\n\n        // Regular sampling\n        vec3 coords_tex = niri_geo_to_tex * vec3(coords.x, coords.y, 1.0);\n        vec4 color = texture2D(niri_tex, coords_tex.xy);\n\n        // Check if ribbon hasn't arrived yet\n        if (coords.x < 0.0 || coords.x > 1.0) {\n            return vec4(0.0);\n        }\n\n        return color;\n    }"
+    }
+    window-close {
+        duration-ms 800
+        curve "ease-out-quad"
+        custom-shader "\n    vec4 close_color(vec3 coords_geo, vec3 size_geo) {\n        float progress = niri_clamped_progress;\n\n        // Completely random angle (0 to 2*PI)\n        float random_angle = niri_random_seed * 6.28318;\n\n        // Rotate the coordinates to create tilted ribbons\n        vec2 coords = coords_geo.xy - 0.5; // center\n        float cos_a = cos(random_angle);\n        float sin_a = sin(random_angle);\n        vec2 rotated = vec2(\n            coords.x * cos_a - coords.y * sin_a,\n            coords.x * sin_a + coords.y * cos_a\n        );\n\n        // Now work with rotated Y position for ribbon indexing\n        float y_pos = rotated.y + 0.5;\n\n        // Equal-sized ribbons (20 total)\n        float ribbon_count = 20.0;\n        float ribbon_index = floor(y_pos * ribbon_count);\n\n        // Alternating pattern: even = left, odd = right\n        float direction = mod(ribbon_index, 2.0) == 0.0 ? -1.0 : 1.0;\n\n        // Cascading delay\n        float delay = ribbon_index / ribbon_count * 0.5;\n        float ribbon_progress = clamp((progress - delay) / (1.0 - delay), 0.0, 1.0);\n\n        // Slide along the rotated X axis\n        rotated.x += ribbon_progress * direction * 2.0;\n\n        // Rotate back to get final coordinates\n        coords = vec2(\n            rotated.x * cos_a + rotated.y * sin_a,\n            -rotated.x * sin_a + rotated.y * cos_a\n        );\n        coords += 0.5; // uncenter\n\n        // Regular sampling\n        vec3 coords_tex = niri_geo_to_tex * vec3(coords.x, coords.y, 1.0);\n        vec4 color = texture2D(niri_tex, coords_tex.xy);\n\n        // Check if ribbon has moved out of bounds\n        if (coords.x < 0.0 || coords.x > 1.0) {\n            return vec4(0.0);\n        }\n\n        return color;\n    }"
+    }
     horizontal-view-movement {
         spring damping-ratio=3.85 stiffness=723 epsilon=0.0001
     }
@@ -228,13 +219,7 @@ window-close {
         spring damping-ratio=3.75 stiffness=523 epsilon=0.0001
     }
     window-resize {
-        custom-shader r"
-            vec4 resize_color(vec3 coords_curr_geo, vec3 size_curr_geo) {
-                vec3 coords_tex_next = niri_geo_to_tex_next * coords_curr_geo;
-                vec4 color = texture2D(niri_tex_next, coords_tex_next.st);
-                return color;
-            }
-        "
+        custom-shader "\n            vec4 resize_color(vec3 coords_curr_geo, vec3 size_curr_geo) {\n                vec3 coords_tex_next = niri_geo_to_tex_next * coords_curr_geo;\n                vec4 color = texture2D(niri_tex_next, coords_tex_next.st);\n                return color;\n            }\n        "
     }
     config-notification-open-close {
         spring damping-ratio=0.65 stiffness=923 epsilon=0.001
@@ -269,66 +254,66 @@ input {
         scroll-method "two-finger"
         click-method "button-areas"
         tap-button-map "left-right-middle"
-        scroll-factor 0.700000
+        scroll-factor 0.7
     }
     warp-mouse-to-focus
     focus-follows-mouse
     workspace-auto-back-and-forth
 }
 output "eDP-1" {
-    scale 1.000000
+    scale 1.0
     transform "normal"
     mode "2160x1440"
 }
-
 window-rule {
     draw-border-with-background false
-    geometry-corner-radius 5.000000 5.000000 5.000000 5.000000
+    geometry-corner-radius 5.0 5.0 5.0 5.0
     clip-to-geometry true
 }
 window-rule {
     match app-id="^niri$"
     match app-id="^quickshell$"
     match app-id="^noctalia-shell$"
-    opacity 0.850000
-
- blur {
-    on
-  }
+    opacity 0.85
+    blur {
+        on
+    }
 }
 window-rule {
     match is-focused=false
-    opacity 0.80000
- blur {
-    on
-  }
-
-
+    opacity 0.8
+    blur {
+        on
+    }
 }
 window-rule {
     match is-floating=true
-    shadow { on; }
- blur {
-    on
-  }
-
+    shadow {
+        on
+    }
+    blur {
+        on
+    }
 }
 window-rule {
     match is-window-cast-target=true
-    border { inactive-color "#a9b1d600 "; }
+    border {
+        inactive-color "#a9b1d600 "
+    }
     focus-ring {
         active-color "#f38ba8"
         inactive-color "#a9b1d600 "
     }
-    shadow { color "#f38ba800 "; }
+    shadow {
+        color "#f38ba800 "
+    }
     tab-indicator {
         active-color "#f38ba8"
         inactive-color "#a9b1d600"
     }
- blur {
-    on
-  }
-
+    blur {
+        on
+    }
 }
 window-rule {
     match app-id="org.telegram.desktop"
@@ -341,27 +326,24 @@ window-rule {
 window-rule {
     match app-id="^(zen|firefox|chromium-browser|chrome-.*|zen-.*)$"
     match app-id="^(xdg-desktop-portal-gtk)$"
-    scroll-factor 0.850000
- blur {
-    on
-  }
-
-  }
+    scroll-factor 0.85
+    blur {
+        on
+    }
+}
 window-rule {
     match app-id="^(info.febvre.Komikku)$"
-    scroll-factor 1.580000
- blur {
-    on
-  }
-
-  }
+    scroll-factor 1.58
+    blur {
+        on
+    }
+}
 window-rule {
     match app-id="^(zen|firefox|equibop|chromium-browser|edge|chrome-.*|zen-.*)$"
     open-maximized false
- blur {
-    on
-  }
-
+    blur {
+        on
+    }
 }
 window-rule {
     match app-id="firefox$" title="^Picture-in-Picture$"
@@ -370,26 +352,28 @@ window-rule {
     match title="^Discord Popout$"
     open-floating true
     default-floating-position relative-to="top-right" x=32 y=32
- blur {
-    on
-  }
-
+    blur {
+        on
+    }
 }
-
 window-rule {
     match app-id="^(org.wezfurlong.wezterm)$"
     match app-id="^(kitty)$"
     match app-id="^(com.mitchellh.ghostty)$"
-    opacity 0.860000
- blur {
-    on
-  }
+    opacity 0.86
+    blur {
+        on
+    }
 }
 window-rule {
     match app-id="^(dropdown)$"
     match app-id="^file_chooser$"
-    default-column-width { proportion 0.500000; }
-    default-window-height { proportion 0.500000; }
+    default-column-width {
+        proportion 0.5
+    }
+    default-window-height {
+        proportion 0.5
+    }
     open-floating true
     default-floating-position relative-to="top" x=10 y=10
 }
@@ -472,12 +456,13 @@ layer-rule {
         on
         ignore-alpha 0.85
         x-ray true
-  }
+    }
 }
-
 screenshot-path "~/Pictures/Screenshots/Screenshot-from-%Y-%m-%d-%H-%M-%S.png"
 prefer-no-csd
-overview { backdrop-color "#11121d"; }
+overview {
+    backdrop-color "#11121d"
+}
 layout {
     gaps 6
     struts {
@@ -486,12 +471,14 @@ layout {
         top 5
         bottom 5
     }
-blur {
-    noise 0.05
-    passes 2
-    radius 5
-  }
-    focus-ring { off; }
+    blur {
+        noise 0.05
+        passes 2
+        radius 5
+    }
+    focus-ring {
+        off
+    }
     border {
         width 3
         active-gradient angle=100 from="#9ad4a1" relative-to="window" to="#ffb4ab"
@@ -508,27 +495,31 @@ blur {
     }
     tab-indicator {
         hide-when-single-tab
-        gap -12.000000
-        width 4.000000
-        length total-proportion=0.100000
-        gaps-between-tabs 10.000000
-        corner-radius 10.000000
+        gap -12.0
+        width 4.0
+        length total-proportion=0.1
+        gaps-between-tabs 10.0
+        corner-radius 10.0
     }
-    default-column-width { proportion 0.500000; }
+    default-column-width {
+        proportion 0.5
+    }
     preset-column-widths {
-        proportion 0.330000
-        proportion 0.500000
-        proportion 0.750000
-        proportion 1.000000
+        proportion 0.33
+        proportion 0.5
+        proportion 0.75
+        proportion 1.0
     }
     center-focused-column "never"
     always-center-single-column
 }
 cursor {
-    xcursor-theme "Sylverlilith"
+    xcursor-theme "Reichi-Shinigami"
     xcursor-size 32
 }
-hotkey-overlay { skip-at-startup; }
+hotkey-overlay {
+    skip-at-startup
+}
 include "./dms/binds.kdl"
 include "./dms/alttab.kdl"
 include "./dms/colors.kdl"
@@ -536,3 +527,4 @@ include "./dms/layout.kdl"
 include "./dms/wpblur.kdl"
 include "./dms/outputs.kdl"
 include "dms/cursor.kdl"
+

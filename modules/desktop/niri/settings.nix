@@ -53,6 +53,25 @@ in
       };
     };
   };
+  environment.systemPackages = with pkgs; [
+    libsForQt5.qtstyleplugin-kvantum
+    kdePackages.qtstyleplugin-kvantum
+  ];
+  programs = {
+    appimage = {
+      enable = true;
+      binfmt = true;
+    };
+    firefox = {
+      enable = true;
+      package = inputs.firefox.packages.${pkgs.stdenv.hostPlatform.system}.firefox-nightly-bin;
+    };
+    nix-ld.enable = true;
+    xwayland.enable = true;
+    dconf.enable = true;
+    seahorse.enable = true;
+    mtr.enable = true;
+  };
 
   hj.rum.desktops.niri = {
     enable = true;
@@ -101,6 +120,7 @@ in
       ]
       [ "${pkgs.xwayland-satellite}/bin/xwayland-satellite" ]
       [ "${pkgs.xdg-desktop-portal-gnome}/libexec/xdg-desktop-portal-gnome" ]
+      [ "hjem-impure" ]
     ];
     extraVariables = {
       CLUTTER_BACKEND = "wayland";

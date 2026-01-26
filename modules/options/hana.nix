@@ -32,8 +32,6 @@
   system.scheduler.enable = true;
   mine.hypridle.enable = false;
   mine.cliphist.enable = true;
-  mine.wlogout.enable = true;
-  mine.wleave.enable = true;
   #system.zfs.enable = false;
   system.zram.enable = true;
   cfg.wayland.wl-clip-persist.enable = false;

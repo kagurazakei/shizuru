@@ -1,10 +1,11 @@
-{...}: {
+{ ... }:
+{
   hj.files = {
     ".config/qt5ct/qt5ct.conf".text = ''
       [Appearance]
       color_scheme_path=/home/antonio/.config/qt5ct/colors/Catppuccin-Mocha.conf
       custom_palette=true
-      icon_theme=akrata-icons-anarchy
+      icon_theme=Papirus-Dark
       standard_dialogs=xdgdesktopportal
       style=kvantum-dark
 
@@ -38,9 +39,9 @@
       [Appearance]
       color_scheme_path=/home/antonio/.config/qt6ct/colors/Catppuccin-Mocha.conf
       custom_palette=true
-      icon_theme=akrata-icons-anarchy
+      icon_theme=Papirus-Dark
       standard_dialogs=default
-      style=kvantum
+      style=kvantum-dark
 
       [Fonts]
       fixed="JetBrainsMono Nerd Font,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular"
