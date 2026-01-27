@@ -34,7 +34,6 @@ in {
       xdg.config.files = let
         dot = config.hjem.users.${username}.impure.dotsDir;
       in {
-        "dolphinrc".source = lib.mkForce (dot + "/dolphinrc");
         "fuzzel/fuzzel.ini".source = lib.mkForce (dot + "/fuzzel/fuzzel.ini");
         "niri/config.kdl".source = lib.mkForce (dot + "/niri/config.kdl");
         "lazygit/config.yml".source = lib.mkForce (dot + "/lazygit/config.yml");
