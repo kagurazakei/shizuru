@@ -6663,11 +6663,11 @@
         "pkgs-by-name-for-flake-parts": "pkgs-by-name-for-flake-parts"
       },
       "locked": {
-        "lastModified": 1769439274,
-        "narHash": "sha256-6UU5SSnOeD/rnoY5nbR+6+gRtI813wIV03c8Q6ep/WE=",
+        "lastModified": 1769501574,
+        "narHash": "sha256-NR6bYN9P/sNITalw7Ki11UU9odSpOtRWuJOc6R6fr1o=",
         "owner": "kagurazakei",
         "repo": "khanelivim",
-        "rev": "3e0ee75ff2670b76924129e5a19522896bb46f71",
+        "rev": "9624d0d2cd9228f9f2ad3740d0d5218d8515333a",
         "type": "github"
       },
       "original": {

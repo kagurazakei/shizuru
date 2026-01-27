@@ -194,8 +194,8 @@ spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
 spawn-at-startup "systemctl" "--user" "import-environment" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
 spawn-at-startup "dbus-update-activation-environment" "--all"
-spawn-at-startup "/nix/store/ysbzwkkybwx2zfhq139mj0mqivjy9wia-xwayland-satellite-0.8/bin/xwayland-satellite"
-spawn-at-startup "/nix/store/1b8vj4ii2mskv7sm5031fmlk7rcm5s6n-xdg-desktop-portal-gnome-49.0/libexec/xdg-desktop-portal-gnome"
+spawn-at-startup "xwayland-satellite"
+spawn-at-startup "equibop"
 //This was a nightmare to make but here
 // original code from; https://github.com/XansiVA
 animations {

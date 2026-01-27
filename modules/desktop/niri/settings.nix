@@ -5,17 +5,8 @@
   ...
 }:
 let
-  niri-package = pkgs.nur.repos.lonerOrz.niri-Naxdy;
   inherit (lib.meta) getExe;
   inherit (lib.filesystem) listFilesRecursive;
-  niri-blur = niri-package.override {
-    withDbus = true;
-    withSystemd = true;
-    withScreencastSupport = true;
-    withDinit = false;
-    withNative = true;
-    withLto = true;
-  };
 in
 {
   nixpkgs.overlays = [
