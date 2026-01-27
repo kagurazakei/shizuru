@@ -87,6 +87,12 @@
       mode = "0440";
       path = "/etc/sops-nix/git-authen.txt";
     };
+    "wakatime-api" = {
+      sopsFile = ../../../secrets/secret.yaml;
+      owner = "antonio";
+      mode = "0440";
+      path = "/etc/sops-nix/waka-time.txt";
+    };
   };
   nix.extraOptions = ''
     !include ${config.sops.secrets."nix-access-token".path}
