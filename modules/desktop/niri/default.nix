@@ -4,7 +4,7 @@
   ...
 }: let
   wallpaperScript = pkgs.writeScriptBin "niri-wallpaper" (builtins.readFile ./wallpaperAutoChange.sh);
-  swww = inputs.swww.packages.${pkgs.system}.swww;
+  swww = inputs.swww.packages.${pkgs.stdenv.hostPlatform.system}.swww;
 in {
   imports = [
     ./bind.nix

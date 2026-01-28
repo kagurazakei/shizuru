@@ -9,7 +9,7 @@
     PATH = "$HOME/.local/bin:$PATH";
   };
 
-  quickshellPkg = inputs.quickshell.packages.${pkgs.system}.default;
+  quickshellPkg = inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
   qtSystemPackages = with pkgs; [
     qt6.qtdeclarative

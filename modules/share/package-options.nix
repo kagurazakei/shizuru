@@ -8,7 +8,7 @@
   ...
 }:
 with lib; let
-  swww = inputs.swww.packages.${pkgs.system}.swww;
+  swww = inputs.swww.packages.${pkgs.stdenv.hostPlatform.system}.swww;
   cfg = config.system.packages;
 in {
   options.system.packages = {
@@ -75,22 +75,22 @@ in {
       gtkmm4
       #master.komikku
       mangal
-   #   mangareader
+      #   mangareader
       master.tmux
-    #  neofetch
+      #  neofetch
       gtk4
       vivid
-#      inputs.shizuruPkgs.packages.${pkgs.system}.nitch
-#      inputs.shizuruPkgs.packages.${pkgs.system}.idle-inhibit
-#      inputs.shizuruPkgs.packages.${pkgs.system}.rxfetch
-      inputs.fastanime.packages.${pkgs.system}.default
+      #      inputs.shizuruPkgs.packages.${pkgs.system}.nitch
+      #      inputs.shizuruPkgs.packages.${pkgs.system}.idle-inhibit
+      #      inputs.shizuruPkgs.packages.${pkgs.system}.rxfetch
+      inputs.fastanime.packages.${pkgs.stdenv.hostPlatform.system}.default
       nurl
-      inputs.hyprsunset.packages.${pkgs.system}.hyprsunset
+      inputs.hyprsunset.packages.${pkgs.stdenv.hostPlatform.system}.hyprsunset
       master.microfetch
- #     inputs.zen-browser.packages.${pkgs.system}.default
+      #     inputs.zen-browser.packages.${pkgs.system}.default
       socat
       hyprpicker
-  #    master.ani-cli
+      #    master.ani-cli
       zellij
     ];
   };

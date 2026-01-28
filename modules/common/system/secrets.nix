@@ -6,14 +6,40 @@
 }: {
   imports = [
     inputs.sops-nix.nixosModules.sops
-    inputs.private-key.nixosModules.default
-    ./ssh.nix
+    inputs.impermanence.nixosModules.impermanence
   ];
+  environment.persistence."/persistent" = {
+    enable = true; # NB: Defaults to true, not needed
+    hideMounts = true;
+    directories = [
+      "/var/log"
+      "/var/lib/bluetooth"
+      "/var/lib/nixos"
+      "/var/lib/systemd/coredump"
+      "/etc/NetworkManager/system-connections"
+      {
+        directory = "/var/lib/colord";
+        user = "colord";
+        group = "colord";
+        mode = "u=rwx,g=rx,o=";
+      }
+    ];
+    files = [
+      "/etc/sops-nix/keys.txt"
+      {
+        file = "/var/keys/secret_file";
+        parentDirectory = {
+          mode = "u=rwx,g=,o=";
+        };
+      }
+    ];
+  };
   environment.systemPackages = with pkgs; [
     sops
     age
   ];
   sops = {
+    age.keyFile = "/persistent/etc/sops-nix/keys.txt";
     defaultSopsFile = ../../../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
   };
@@ -25,63 +51,15 @@
       owner = "antonio";
       mode = "0400";
     };
-    "recovery-key" = {
+    "wakatime" = {
       sopsFile = ../../../secrets/secrets.yaml;
-      path = "/home/antonio/.config/git/access.txt";
+      path = "/etc/sops-nix/wakatime.txt";
       owner = "antonio";
-      mode = "0400";
-    };
-
-    "age-private" = {
-      sopsFile = ../../../secrets/secrets.yaml;
-      owner = "root";
-      path = "/etc/agenix/private.txt";
-      mode = "0400";
-    };
-    "gpg-key" = {
-      sopsFile = ../../../secrets/secrets.yaml;
-      path = "/home/antonio/.config/keys/gpg-key.txt";
-      owner = "antonio";
-      mode = "0400";
-    };
-    "github-ssh" = {
-      sopsFile = ../../../secrets/secrets.yaml;
-      owner = "antonio";
-      mode = "0400";
-    };
-    "codeberg-ssh" = {
-      sopsFile = ../../../secrets/secrets.yaml;
-      owner = "antonio";
-      mode = "0400";
-    };
-    "gitlab-ssh" = {
-      sopsFile = ../../../secrets/secrets.yaml;
-      owner = "antonio";
-      mode = "0400";
-    };
-    "root-access-token" = {
-      sopsFile = ../../../secrets/secrets.yaml;
-      mode = "0400";
-      path = "/etc/nix/root-access.conf";
-    };
-    "anilist" = {
-      sopsFile = ../../../secrets/secrets.yaml;
-      owner = "antonio";
-      mode = "0400";
-      path = "/home/antonio/.config/fastanime/anilist.txt";
+      mode = "0440";
     };
   };
 
-  age.identityPaths = ["/etc/agenix/keys.txt"];
-  age.secrets = {
-    private = {
-      file = ../../../secrets/private.age;
-      owner = "antonio";
-      mode = "0400";
-    };
-  };
   nix.extraOptions = "
   !include ${config.sops.secrets."nix-access-token".path}
-  !include ${config.sops.secrets."root-access-token".path}
   ";
 }

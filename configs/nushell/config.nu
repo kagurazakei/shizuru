@@ -5,6 +5,7 @@ carapace _carapace nushell | save -f ~/.config/nushell/carapace.nu
 source ~/.config/nushell/carapace.nu
 atuin init nu | save -f ~/.config/nushell/atuin.nu
 source ~/.config/nushell/atuin.nu
+use ~/.config/nushell/nix-your-shell.nu
 # Environment Variables
 $env.config.show_banner = false
 $env.PATH = ($env.PATH | prepend [

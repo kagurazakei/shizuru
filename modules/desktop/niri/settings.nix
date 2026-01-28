@@ -82,7 +82,7 @@ in {
 
   hj.rum.desktops.niri = {
     enable = true;
-    package = inputs.niri.packages.${pkgs.system}.niri;
+    package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri;
     config = lib.concatMapStringsSep "\n" builtins.readFile [./configs/ribbons.kdl ./configs/inputs.kdl ./configs/rule.kdl ./configs/settings.kdl];
     #configFile = pkgs.concatText "config.kdl" (listFilesRecursive ./configs);
     spawn-at-startup = [

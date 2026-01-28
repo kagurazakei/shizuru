@@ -15,7 +15,7 @@
     ./scheduler.nix
     ./security.nix
     ./services.nix
-    #./secrets.nix
+    ./secrets.nix
     ./system.nix
     ./virtualization.nix
     ./vm-guest-services.nix
