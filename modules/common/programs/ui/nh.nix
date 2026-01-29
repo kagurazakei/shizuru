@@ -3,7 +3,7 @@
   inputs,
   ...
 }: let
-  nh = inputs.nh.packages.${pkgs.system}.default;
+  nh = inputs.nh.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in {
   programs.nh = {
     package = nh;

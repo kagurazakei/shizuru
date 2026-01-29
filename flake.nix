@@ -321,9 +321,9 @@
     };
   in {
     # Development shell for quickshell QML development
-    devShells.${system} = {
+    devShells.${pkgs.stdenv.hostPlatform.system} = {
       quickshell = let
-        qs = quickshell.packages.${system}.default.override {
+        qs = quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
           withJemalloc = true;
           withQtSvg = true;
           withWayland = true;

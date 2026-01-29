@@ -7,8 +7,8 @@
 }:
 with lib; let
   cfg = config.system.displayManager;
-  cursorPkg = inputs.kureiji-ollie-cursor.packages.${pkgs.system}.kureiji-ollie-cursor;
-  sddm-theme = inputs.silentSDDM.packages.${pkgs.system}.default.override {
+  cursorPkg = inputs.kureiji-ollie-cursor.packages.${pkgs.stdenv.hostPlatform.system}.kureiji-ollie-cursor;
+  sddm-theme = inputs.silentSDDM.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
     theme = "new";
   };
 in {
@@ -20,10 +20,10 @@ in {
     environment.systemPackages = [
       sddm-theme
       sddm-theme.test
-      inputs.app2unit.packages.${pkgs.system}.default
+      inputs.app2unit.packages.${pkgs.stdenv.hostPlatform.system}.default
       cursorPkg
-      inputs.sddm-stray.packages.${pkgs.system}.default
-      inputs.waifu-cursors.packages.${pkgs.system}.Reichi-Shinigami
+      inputs.sddm-stray.packages.${pkgs.stdenv.hostPlatform.system}.default
+      inputs.waifu-cursors.packages.${pkgs.stdenv.hostPlatform.system}.Reichi-Shinigami
     ];
     qt.enable = true;
     services.xserver.enable = true;

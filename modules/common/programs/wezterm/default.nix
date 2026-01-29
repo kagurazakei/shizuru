@@ -3,7 +3,7 @@
   inputs,
   ...
 }: let
-  wezterm = inputs.wezterm.packages.${pkgs.system}.default;
+  wezterm = inputs.wezterm.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in {
   hj = {
     packages = [pkgs.wezterm];

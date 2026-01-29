@@ -4,8 +4,8 @@
   ...
 }: {
   hj.packages = [
-    inputs.caelestia.packages.${pkgs.system}.default
-    inputs.caelestia-cli.packages.${pkgs.system}.caelestia-cli
-    inputs.app2unit.packages.${pkgs.system}.app2unit
+    inputs.caelestia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.caelestia-cli.packages.${pkgs.stdenv.hostPlatform.system}.caelestia-cli
+    inputs.app2unit.packages.${pkgs.stdenv.hostPlatform.system}.app2unit
   ];
 }

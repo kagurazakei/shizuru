@@ -21,7 +21,7 @@
         kirigami
       ]
       ++ [
-        inputs.shizuruPkgs.packages.${pkgs.system}.catppuccin-icons
+        inputs.shizuruPkgs.packages.${pkgs.stdenv.hostPlatform.system}.catppuccin-icons
         pkgs.candy-icons
         pkgs.zafiro-icons
       ];
