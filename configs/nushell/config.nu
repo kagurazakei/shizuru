@@ -2,8 +2,9 @@ use git-status.nu
 zoxide init nushell | save -f ~/.config/nushell/.zoxide.nu
 source ~/.config/nushell/.zoxide.nu
 carapace _carapace nushell | save -f ~/.config/nushell/carapace.nu
+source $"($nu.cache-dir)/carapace.nu"
+source $"($nu.cache-dir)/atuin.nu"
 source ~/.config/nushell/carapace.nu
-atuin init nu | save -f ~/.config/nushell/atuin.nu
 source ~/.config/nushell/atuin.nu
 use ~/.config/nushell/nix-your-shell.nu
 # Environment Variables
