@@ -41,6 +41,7 @@ in {
         "carapace/carapace.toml".source =
           lib.mkForce (dot + "/carapace/carapace.toml");
 
+        "kitty/kitty.conf".source = lib.mkForce (dot + "/kitty/kitty.conf");
         "nushell/config.nu".source = lib.mkForce (dot + "/nushell/config.nu");
 
         "nushell/env.nu".source = lib.mkForce (dot + "/nushell/env.nu");
@@ -50,7 +51,6 @@ in {
 
         "wezterm/wezterm.lua".source =
           lib.mkForce (dot + "/wezterm/wezterm.lua");
-        "kitty/kitty.conf".source = lib.mkForce (dot + "/kitty/kitty.conf");
         "wezterm/colors/oxocarbon-dark.toml".source =
           lib.mkForce (dot + "/wezterm/colors/oxocarbon-dark.toml");
         # "wezterm/keybinds.lua".source =
