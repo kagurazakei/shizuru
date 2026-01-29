@@ -16,7 +16,6 @@
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     mango = {
       url = "github:DreamMaoMao/mango";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,6 +25,8 @@
     noctalia-shell.url = "github:noctalia-dev/noctalia-shell";
     fastanime.url = "github:Benexl/FastAnime";
     fish-flake = {url = "github:kagurazakei/fish-flake";};
+    firefox.url = "github:nix-community/flake-firefox-nightly";
+    impermanence.url = "github:nix-community/impermanence";
     silentSDDM = {
       url = "github:kagurazakei/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";

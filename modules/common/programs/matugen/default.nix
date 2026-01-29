@@ -1,12 +1,13 @@
-{ inputs
-, pkgs
-, ...
+{
+  inputs,
+  pkgs,
+  ...
 }: {
   imports = [
     inputs.matugen.nixosModules.default
   ];
   environment.systemPackages = with pkgs; [
-    inputs.matugen.packages.${system}.default
+    inputs.matugen.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
   programs.matugen = {
     enable = true;

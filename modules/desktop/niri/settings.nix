@@ -23,6 +23,34 @@ in {
     inputs.noctalia-shell.nixosModules.default
     inputs.dms.nixosModules.dank-material-shell
   ];
+
+  environment.systemPackages = with pkgs; [
+    libsForQt5.qtstyleplugin-kvantum
+    kdePackages.qtstyleplugin-kvantum
+  ];
+  programs = {
+    appimage = {
+      enable = true;
+      binfmt = true;
+    };
+
+    firefox = {
+      enable = true;
+      package = inputs.firefox.packages.${pkgs.stdenv.hostPlatform.system}.firefox-nightly-bin;
+    };
+    nix-ld.enable = true;
+
+    xwayland.enable = true;
+    dconf.enable = true;
+    seahorse.enable = true;
+    fuse.userAllowOther = true;
+    mtr.enable = true;
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
+  };
+
   services.noctalia-shell = {
     enable = false;
   };
@@ -54,7 +82,7 @@ in {
 
   hj.rum.desktops.niri = {
     enable = true;
-    package = inputs.niri.packages.${pkgs.system}.niri;
+    package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri;
     config = lib.concatMapStringsSep "\n" builtins.readFile [./configs/ribbons.kdl ./configs/inputs.kdl ./configs/rule.kdl ./configs/settings.kdl];
     #configFile = pkgs.concatText "config.kdl" (listFilesRecursive ./configs);
     spawn-at-startup = [
