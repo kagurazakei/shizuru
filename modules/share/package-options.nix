@@ -87,7 +87,7 @@ in {
       nurl
       inputs.hyprsunset.packages.${pkgs.stdenv.hostPlatform.system}.hyprsunset
       master.microfetch
-      #     inputs.zen-browser.packages.${pkgs.system}.default
+      inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
       socat
       hyprpicker
       #    master.ani-cli

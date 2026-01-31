@@ -8,11 +8,11 @@
 in {
   imports = [inputs.hyprland.nixosModules.default];
   hj.packages = [
-    inputs.hyprland-qt-support.packages.${pkgs.system}.default
+    inputs.hyprland-qt-support.packages.${pkgs.stdenv.hostPlatform.system}.default
     pkgs.libsForQt5.qtstyleplugin-kvantum
     pkgs.kdePackages.qtstyleplugin-kvantum
-    inputs.hyprland-qtutils.packages.${pkgs.system}.default
-    inputs.hypridle.packages.${pkgs.system}.default
+    inputs.hyprland-qtutils.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.hypridle.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
   programs = {
     hyprland = {
@@ -29,7 +29,7 @@ in {
     waybar.enable = false;
     hyprlock = {
       enable = true;
-      package = inputs.hyprlock.packages.${pkgs.system}.default;
+      package = inputs.hyprlock.packages.${pkgs.stdenv.hostPlatform.system}.default;
     };
     firefox.enable = true;
     git.enable = true;
