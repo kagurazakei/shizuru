@@ -26,3 +26,30 @@ layout {
         color "#9ad4a180"
     }
 }
+
+
+layer-rule {
+    match namespace="dms:blurwallpaper"
+  match namespace="^noctalia-overview*"
+    place-within-backdrop true
+}
+binds {
+    Ctrl+Alt+L hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
+    Mod+B hotkey-overlay-title="Wallpaper Browser" { spawn "dms" "ipc" "call" "dankdash" "wallpaper"; }
+    Mod+Backspace hotkey-overlay-title="Dashboard: Toggle" { spawn "dms" "ipc" "call" "dash" "toggle"; }
+    Mod+D hotkey-overlay-title="App Launcher: Toggle" { spawn "fuzzel"; }
+    Mod+M hotkey-overlay-title="Dashboard: Toggle" { spawn "dms" "ipc" "call" "dash" "toggle"; }
+    Mod+N hotkey-overlay-title="Bar: Toggle (Primary)" { spawn "dms" "ipc" "call" "bar" "toggle" "index" "0"; }
+    Mod+O hotkey-overlay-title="Task Manager: Toggle" { spawn "fuzzel-clip"; }
+    Mod+T hotkey-overlay-title="File: Browse Wallpaper" { spawn "dms" "ipc" "call" "file" "browse" "wallpaper"; }
+Mod+V  {spawn "noctalia-shell" "ipc" "call" "launcher" "clipboard";}
+Mod+X  {spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle";}
+Mod+W  {spawn "noctalia-shell" "ipc" "call" "wallpaper" "toggle";}
+Alt+Ctrl+K hotkey-overlay-title="komikku" { spawn "komikku"; }
+    Mod+E { spawn  "firefox"; }
+    Mod+I { spawn "rofi" "-show" "drun"; }
+    Mod+Shift+Return { spawn  "wezterm"; }
+
+    Mod release=true{spawn "noctalia-shell" "ipc" "call" "launcher" "toggle";}
+  
+  }

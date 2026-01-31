@@ -24,7 +24,7 @@ debug {
 }
 
 binds {
-Mod release=true { spawn "dms" "ipc" "spotlight" "toggle"; }
+//Mod release=true { spawn "dms" "ipc" "spotlight" "toggle"; }
 Ctrl+Print  {screenshot-window;}
 Mod+1  {focus-workspace 1;}
 Mod+2  {focus-workspace 2;}
@@ -71,8 +71,6 @@ Mod+Space  {toggle-window-floating;}
 Mod+T  {spawn "dolphin";}
 Mod+Tab  {toggle-overview;}
 Mod+Up  {focus-workspace-up;}
-Mod+V  {spawn "noctalia-shell" "ipc" "call" "launcher" "clipboard";}
-Mod+X  {spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle";}
 Mod+grave  {switch-focus-between-floating-and-tiling;}
 Print  {screenshot-screen;}
 Shift+Print  {screenshot;}
@@ -94,6 +92,7 @@ spawn-at-startup "dbus-update-activation-environment" "--all"
 spawn-at-startup "/nix/store/ysbzwkkybwx2zfhq139mj0mqivjy9wia-xwayland-satellite-0.8/bin/xwayland-satellite"
 spawn-at-startup "/nix/store/1b8vj4ii2mskv7sm5031fmlk7rcm5s6n-xdg-desktop-portal-gnome-49.0/libexec/xdg-desktop-portal-gnome"
 spawn-at-startup "info-febvre-Komikku"
+spawn-at-startup "steam"
 //This was a nightmare to make but here
 // original code from; https://github.com/XansiVA
 
@@ -455,6 +454,12 @@ window-rule {
     match app-id="^(waypaper)" title=""
     open-floating true
 }
+
+window-rule {
+    match at-startup=true app-id="^steam"
+    open-on-workspace "steam"
+    open-fullscreen true
+}
 layer-rule {
     match namespace="^swww-daemon$"
     match namespace="^wallpaper$"
@@ -467,6 +472,17 @@ layer-rule {
         ignore-alpha 0.85
         x-ray true
   }
+}
+workspace "steam" {
+    layout {
+        always-center-single-column true
+        gaps 0
+        border {
+            on 
+            width 4
+         }
+    }
+      open-on-output "HDMI-A-1"
 }
 
 screenshot-path "~/Pictures/Screenshots/Screenshot-from-%Y-%m-%d-%H-%M-%S.png"
@@ -523,10 +539,4 @@ cursor {
     xcursor-size 32
 }
 hotkey-overlay { skip-at-startup; }
-include "./dms/binds.kdl"
-include "./dms/alttab.kdl"
-include "./dms/colors.kdl"
-include "./dms/layout.kdl"
-include "./dms/wpblur.kdl"
-include "./dms/outputs.kdl"
-include "dms/cursor.kdl"
+include "./noctalia.kdl"
