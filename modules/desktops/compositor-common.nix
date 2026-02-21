@@ -50,7 +50,6 @@
         kokCursor
         kurukurubar
         stash
-        mpv-wrapped
         viu
         equibop
         niri-scratchpad-rs
