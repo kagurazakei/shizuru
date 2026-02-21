@@ -1,0 +1,46 @@
+// Define layout
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="https://github.com/dj95/zjstatus/releases/latest/download/zjstatus.wasm" {
+                format_left   "{mode}#[bg=#3b4261] {session} #[fg=#3b4261,bg=#16161e]"
+                format_right "#[fg=#3b4261,bg=#16161e]{datetime}#[fg=#3b4261,bg=#16161e]"
+                format_space  "#[bg=#16161e]"
+
+                hide_frame_for_single_pane "true"
+
+                mode_normal  "#[fg=blue,bg=#16161e]#[fg=#16161e,bg=blue,bold] NORMAL "
+                mode_locked  "#[fg=green,bg=#16161e]#[fg=#16161e,bg=green,bold] LOCKED "
+
+                datetime        "#[bg=#3b4261] {format} "
+                datetime_format "%D | %I:%M %p"
+                datetime_timezone "America/Chicago"
+            }
+        }
+        children
+    }
+    tab {
+        pane split_direction="vertical" {
+            pane size="60%" borderless=true {
+                command "nvim"
+            }
+            pane split_direction="horizontal" {
+                pane size="50%" {
+                    name "Terminal"
+                }
+                pane size="25%" {
+                    name "Build"
+                    command "npm"
+                    args "run" "build"
+                    start_suspended true
+                }
+                pane size="25%" {
+                    name "Start"
+                    command "npm"
+                    args "start"
+                    start_suspended true
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,62 @@
+"$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
+
+[manager]
+show_hidden = true
+
+prepend_keymap = [
+
+{ on = [ "e", "t" ], run = "plugin eza-preview",  desc = "Toggle tree/list dir preview" },
+  { on = [ "e", "-" ], run = "plugin eza-preview inc-level", desc = "Increment tree level" },
+  { on = [ "e", "_" ], run = "plugin eza-preview dec-level", desc = "Decrement tree level" },
+  { on = [ "e", "$" ], run = "plugin eza-preview toggle-follow-symlinks", desc = "Toggle tree follow symlinks" },
+  { on = [ "e", "*" ], run = "plugin eza-preview toggle-hidden", desc = "Toggle hidden files" },
+  { on = [ "e", "g", "i" ], run = "plugin eza-preview toggle-git-ignore", desc = "Toggle .gitignore files" },
+  { on = [ "e", "g", "s" ], run = "plugin eza-preview toggle-git-status", desc = "Toggle showing git status" },
+
+
+  { on = [
+    "!",
+  ], run = 'shell "$SHELL" --block', desc = "Open shell here" },
+  { on = [
+    "c",
+    "a",
+  ], run = "plugin compress", desc = "Archive selected files" },
+  { on = "<C-u>", run = "seek -5", desc = "Seek up 5 units in the preview" },
+  { on = "<C-d>", run = "seek 5", desc = "Seek down 5 units in the preview" },
+  { on = "K", run = "arrow -50%", desc = "Move cursor up half page" },
+  { on = "J", run = "arrow 50%", desc = "Move cursor down half page" },
+ { on = "p", run = "plugin ucp paste notify", desc = "Paste" },
+    { on = "y", run = "plugin ucp copy notify", desc = "Copy" },
+  { on = "<A-k>", run = "arrow -5", desc = "Move cursor up half page" },
+  { on = "<A-j>", run = "arrow 5", desc = "Move cursor down half page" },
+ { on   = [ "'", "h" ], run  = "plugin whide --args='hide'", desc = "Hide files" },
+  { on   = [ "'", "H" ], run  = "plugin whide --args='unhide'", desc = "Unhide files" },
+  { on   = [ "'", "<A-h>" ], run  = "plugin whide --args='toggle'", desc = "Toggle hidden status" },
+  { on = "<C-g>", run = "plugin smart-filter", desc = "find file by content (fuzzy match)" },
+  { on = [
+    "f",
+    "f",
+  ], run = "plugin smart-filter", desc = "Filter files" },
+  { on = [
+    "s",
+  ], run = "plugin searchjump", desc = "Flash" },
+  { on = "S", run = "plugin smart-filter", desc = "Search Jump" },
+  { on = [
+    "<C-y>",
+  ], run = 'shell -- for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list', desc = "Copy to clipboard" },
+  { on = "A", run = "create --dir", desc = "Create a dir" },
+  { on = [
+    "g",
+    "r",
+  ], run = 'shell -- ya emit cd "$(git rev-parse --show-toplevel)"', desc = "Root of Git Repo" },
+ { on = "H", run = "tab_switch -1 --relative", desc = "Switch to the previous tab" },
+  { on = "L", run = "tab_switch 1 --relative", desc = "Switch to the next tab" },
+  { on = "<", run = "tab_swap -1", desc = "Swap current tab with previous tab" },
+  { on = ">", run = "tab_swap 1", desc = "Swap current tab with next tab" },
+]
+
+[completion]
+prepend_keymap = [
+  { on = "<C-k>", run = "arrow -1", desc = "Move cursor up" },
+  { on = "<C-j>", run = "arrow 1", desc = "Move cursor down" },
+]

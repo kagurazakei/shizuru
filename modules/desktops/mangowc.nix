@@ -1,0 +1,70 @@
+{self, ...}: {
+  azalea.modules.mangowc = {
+    config,
+    lib,
+    pkgs,
+    ...
+  }: let
+    inherit (lib) mkEnableOption mkOption mkIf mkForce;
+    cfg = config.zaphkiel.programs.mangowc;
+
+    uwsmWithPlugin = pkgs.symlinkJoin {
+      inherit (pkgs.uwsm) pname version;
+      paths = [pkgs.uwsm];
+      postBuild = ''
+        ln -sf ${self.packages.${pkgs.stdenv.hostPlatform.system}.mangowc.uwsm-plugin} $out/share/uwsm/plugins/mango.sh
+      '';
+
+      meta = pkgs.uwsm.meta // {outputsToInstall = ["out"];};
+    };
+  in {
+    options.zaphkiel.programs.mangowc = {
+      package = mkOption {
+        default = self.packages.${pkgs.stdenv.hostPlatform.system}.mangowc;
+      };
+      withUWSM = mkEnableOption "uwsm for mangowc" // {default = true;};
+    };
+
+    config = {
+      environment.systemPackages = [
+        cfg.package
+        pkgs.wlsunset
+      ];
+
+      systemd.user.services.hypridle.path = mkForce [cfg.package];
+
+      # REQUIRES uwsm finalize in autostart.sh
+      programs.uwsm = mkIf cfg.withUWSM {
+        enable = true;
+        package = uwsmWithPlugin;
+        waylandCompositors.mango = {
+          prettyName = "MangoWC";
+          comment = "Mango compositor managed by UWSM";
+          binPath = "/run/current-system/sw/bin/mango";
+        };
+      };
+
+      xdg.portal = {
+        enable = true;
+        wlr.enable = true;
+        configPackages = [cfg.package];
+        extraPortals = [pkgs.xdg-desktop-portal-gtk];
+        config.mango = {
+          # borrowed from config for sway
+          default = ["gtk"];
+          "org.freedesktop.impl.portal.ScreenCast" = "wlr";
+          "org.freedesktop.impl.portal.Screenshot" = "wlr";
+          "org.freedesktop.impl.portal.Inhibit" = "none";
+        };
+      };
+
+      security.polkit.enable = true;
+      programs.xwayland.enable = true;
+
+      services = {
+        displayManager.sessionPackages = mkIf (! cfg.withUWSM) [cfg.package];
+        graphical-desktop.enable = true;
+      };
+    };
+  };
+}

@@ -1,0 +1,82 @@
+cursor {
+    xcursor-theme "Reichi-Shinigami"
+    xcursor-size 36
+}
+output "eDP-1" {
+    scale 1
+    position x=0 y=0
+    focus-at-startup
+}
+layer-rule {
+    match namespace="dms:blurwallpaper"
+    match namespace="^noctalia-shell$"
+    match namespace="noctalia-shell:wallpaper"
+    place-within-backdrop true
+}
+workspace "stash" {
+  open-on-output "eDP-1"
+}
+spawn-at-startup "niri-scratchpad daemon"
+binds {
+    Mod+Shift+Return {
+      spawn "niri-scratchpad" "create" "1" "--as-float"
+    }
+    Ctrl+Alt+L hotkey-overlay-title="Lock Screen" {
+        spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"
+    }
+    Mod+B hotkey-overlay-title="Wallpaper Browser" {
+        spawn "noctalia-shell" "ipc" "call" "wallpaper" "toggle"
+    }
+    Mod+Backspace hotkey-overlay-title="Dashboard: Toggle" {
+        spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"
+    }
+    Mod+M hotkey-overlay-title="Dashboard: Toggle" {
+        spawn "noctalia-shell" "ipc" "call" "settings" "toggle" ""
+    }
+    Mod+N hotkey-overlay-title="Bar: Toggle (Primary)" {
+        spawn "noctalia-shell" "ipc" "call" "bar" "toggle"
+    }
+    Mod+O hotkey-overlay-title="Wallpaper: Next" {
+        spawn "fuzzel-clip"
+    }
+    Mod+V hotkey-overlay-title="Clipboard: Toggle" {
+        spawn "noctalia-shell" "ipc" "call" "launcher" "clipboard"
+    }
+    Mod+X hotkey-overlay-title="Power Menu: Toggle" {
+        spawn "dms" "ipc" "call" "powermenu" "toggle"
+    }
+    XF86MonBrightnessDown hotkey-overlay-title="Brightness Down (10%)" {
+        spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"
+    }
+    XF86MonBrightnessUp hotkey-overlay-title="Brightness Down (10%)" {
+        spawn "noctalia-shell" "ipc" "call" "brightness" "increase"
+    }
+    Mod+D {
+        spawn "fuzzel"
+    }
+    Mod+E {
+        spawn "sh" "-c" "notify-send" "'Browsing" "Time'" "&&" "firefox-nightly"
+    }
+    Mod+I {
+        spawn "fuzzel-clip"
+    }
+    Mod+Shift+Return {
+        spawn "wezterm"
+    }
+    XF86AudioLowerVolume allow-when-locked=true {
+        spawn "noctalia-shell" "ipc" "call" "volume" "decrease"
+    }
+    XF86AudioMute allow-when-locked=true {
+        spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"
+    }
+    XF86AudioRaiseVolume allow-when-locked=true {
+        spawn "noctalia-shell" "ipc" "call" "volume" "increase"
+    }
+    Mod+T {
+        spawn "dolphin"
+    }
+    Ctrl+Alt+K {
+        spawn "info.febvre.Komikku"
+    }
+}
+

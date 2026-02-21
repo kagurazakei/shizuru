@@ -1,0 +1,11 @@
+export QT_QPA_PLATFORM=wayland
+export QT_QPA_PLATFORMTHEME=qt6ct
+export XCURSOR_THEME=Kureiji-Ollie-v2
+export XCURSOR_SIZE=36
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export QT_ENABLE_HIGHDPI_SCALING=1
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+export XDG_CURRENT_DESKTOP=niri
+export SDL_VIDEODRIVER=wayland
+export QT_ENABLE_HIGHDPI_SCALING=1
+export APP2UNIT_SLICES='a=app-graphical.slice b=background-graphical.slice s=session-graphical.slice'

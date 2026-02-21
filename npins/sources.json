@@ -1,0 +1,327 @@
+{
+  "pins": {
+    "WiiUDownloader": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Xpl0itU",
+        "repo": "WiiUDownloader"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v2.69",
+      "revision": "7defb5cfd7b65d0b49f4d14446a6635a6e126b3b",
+      "url": "https://api.github.com/repos/Xpl0itU/WiiUDownloader/tarball/v2.69",
+      "hash": "sha256-9Z/HUGcBJ6AKaEpfEcHLHJ21h+bJsu9eyoPjTCdGqe8="
+    },
+    "agenix": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "ryantm",
+        "repo": "agenix"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "b027ee29d959fda4b60b57566d64c98a202e0feb",
+      "url": "https://github.com/ryantm/agenix/archive/b027ee29d959fda4b60b57566d64c98a202e0feb.tar.gz",
+      "hash": "sha256-9VnK6Oqai65puVJ4WYtCTvlJeXxMzAp/69HhQuTdl/I="
+    },
+    "ayugram-desktop": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "ndfined-crp",
+        "repo": "ayugram-desktop"
+      },
+      "branch": "release",
+      "submodules": false,
+      "revision": "a95081b8ac098e529aedad2de68464e312d724dc",
+      "url": "https://github.com/ndfined-crp/ayugram-desktop/archive/a95081b8ac098e529aedad2de68464e312d724dc.tar.gz",
+      "hash": "sha256-MRRHMf2wGeotG26qBJ9+tzjWWdEJFjaui+La2o5Lx7c="
+    },
+    "catp-bat": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "catppuccin",
+        "repo": "bat"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "6810349b28055dce54076712fc05fc68da4b8ec0",
+      "url": "https://github.com/catppuccin/bat/archive/6810349b28055dce54076712fc05fc68da4b8ec0.tar.gz",
+      "hash": "sha256-lJapSgRVENTrbmpVyn+UQabC9fpV1G1e+CdlJ090uvg="
+    },
+    "direnv.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "NotAShelf",
+        "repo": "direnv.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "4dfc8758a1deab45e37b7f3661e0fd3759d85788",
+      "url": "https://github.com/NotAShelf/direnv.nvim/archive/4dfc8758a1deab45e37b7f3661e0fd3759d85788.tar.gz",
+      "hash": "sha256-KqO8uDbVy4sVVZ6mHikuO+SWCzWr97ZuFRC8npOPJIE="
+    },
+    "fzf-lua": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "ibhagwan",
+        "repo": "fzf-lua"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "b1d2b0dc146cb9260209da4d7ab754adb0a2653d",
+      "url": "https://github.com/ibhagwan/fzf-lua/archive/b1d2b0dc146cb9260209da4d7ab754adb0a2653d.tar.gz",
+      "hash": "sha256-jPPLIvydAm6IYaXgrcfxdwfvkwtnNmohyALta7nDNEg="
+    },
+    "image.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "3rd",
+        "repo": "image.nvim"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "446a8a5cc7a3eae3185ee0c697732c32a5547a0b",
+      "url": "https://github.com/3rd/image.nvim/archive/446a8a5cc7a3eae3185ee0c697732c32a5547a0b.tar.gz",
+      "hash": "sha256-EaDeY8aP41xHTw5epqYjaBqPYs6Z2DABzSaVOnG6D6I="
+    },
+    "impermanence": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "impermanence"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "7b1d382faf603b6d264f58627330f9faa5cba149",
+      "url": "https://github.com/nix-community/impermanence/archive/7b1d382faf603b6d264f58627330f9faa5cba149.tar.gz",
+      "hash": "sha256-03+JxvzmfwRu+5JafM0DLbxgHttOQZkUtDWBmeUkN8Y="
+    },
+    "khanelivim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "kagurazakei",
+        "repo": "khanelivim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "ed0892ce3946b132955ec541e7cdd275443b62ba",
+      "url": "https://github.com/kagurazakei/khanelivim/archive/ed0892ce3946b132955ec541e7cdd275443b62ba.tar.gz",
+      "hash": "sha256-732/iyVGUZbB/oNA1xBU1hUKlzD+wzzXDnTZQyluFZk="
+    },
+    "mangowc": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "DreamMaoMao",
+        "repo": "mangowc"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "0.10.8",
+      "revision": "ff35c7afe92e77017fdcf3396ea51aa5f29b7a84",
+      "url": "https://api.github.com/repos/DreamMaoMao/mangowc/tarball/0.10.8",
+      "hash": "sha256-Vszn4Zp0pojvvKkyP7M7V5iqNRB0kUvwd9iez+KzOyM="
+    },
+    "mini.align": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nvim-mini",
+        "repo": "mini.align"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "6d8a6ca3a0fd313938374abccb50cad026229db3",
+      "url": "https://github.com/nvim-mini/mini.align/archive/6d8a6ca3a0fd313938374abccb50cad026229db3.tar.gz",
+      "hash": "sha256-4GxHFM4aIDaDVZk1uM5DS3t0JEaRMX5TdZPf8qm/yVY="
+    },
+    "mini.cursorword": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nvim-mini",
+        "repo": "mini.cursorword"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "dda0f57d55bb1fa19423b7201b2ba892c7d2bb3c",
+      "url": "https://github.com/nvim-mini/mini.cursorword/archive/dda0f57d55bb1fa19423b7201b2ba892c7d2bb3c.tar.gz",
+      "hash": "sha256-VyH0+aswqME2PpQtTgQ3VyaUfik1N3y2Psyhr1gHWOE="
+    },
+    "neorg": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nvim-neorg",
+        "repo": "neorg"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "4da2159b3f3420d43613f43e159f4253b8544474",
+      "url": "https://github.com/nvim-neorg/neorg/archive/4da2159b3f3420d43613f43e159f4253b8544474.tar.gz",
+      "hash": "sha256-DFpbdBfyW32d4QhH59+melM7cHK9tzm9awKjTDPJOvs="
+    },
+    "niri-scratchpad-rs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "argosnothing",
+        "repo": "niri-scratchpad-rs"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "8fa1645c826bd1d0990e4a2c8e445ff9bc90fd42",
+      "url": "https://github.com/argosnothing/niri-scratchpad-rs/archive/8fa1645c826bd1d0990e4a2c8e445ff9bc90fd42.tar.gz",
+      "hash": "sha256-Z+aFZShe5m0FMf6e1DotsGuvs6uH3hQ1VPvsKHOk2SI="
+    },
+    "nirinit": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "amaanq",
+        "repo": "nirinit"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v0.2.1",
+      "revision": "57fa05318b6371c887a857cc7697271758a8091f",
+      "url": "https://api.github.com/repos/amaanq/nirinit/tarball/refs/tags/v0.2.1",
+      "hash": "sha256-jqeBpFTG++Aupy5VDmtEBO0NchXQZBsVLWOchWE7qWU="
+    },
+    "nix-flatpak": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "gmodena",
+        "repo": "nix-flatpak"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "123fe29340a5b8671367055b75a6e7c320d6f89a",
+      "url": "https://github.com/gmodena/nix-flatpak/archive/123fe29340a5b8671367055b75a6e7c320d6f89a.tar.gz",
+      "hash": "sha256-Sbh037scxKFm7xL0ahgSCw+X2/5ZKeOwI2clqrYr9j4="
+    },
+    "rosep-fish": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "rose-pine",
+        "repo": "fish"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "b82982c55582cfaf6f220de1893c7c73dd0cb301",
+      "url": "https://github.com/rose-pine/fish/archive/b82982c55582cfaf6f220de1893c7c73dd0cb301.tar.gz",
+      "hash": "sha256-Dvaw1k7XOU2NUQbTJAXPgAOPN1zTLVrc7NZDY5/KHeM="
+    },
+    "rosep-foot": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "rose-pine",
+        "repo": "foot"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "725e9c38880d577ee973eb916e83395964ffc287",
+      "url": "https://github.com/rose-pine/foot/archive/725e9c38880d577ee973eb916e83395964ffc287.tar.gz",
+      "hash": "sha256-Lo8HkJr+uYNUSRNzUhaksJAPvK8fbu5WubtmBSsa0/Q="
+    },
+    "rust-overlay": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "oxalica",
+        "repo": "rust-overlay"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "8b3f46b8a6d17ab46e533a5e3d5b1cc2ff228860",
+      "url": "https://github.com/oxalica/rust-overlay/archive/8b3f46b8a6d17ab46e533a5e3d5b1cc2ff228860.tar.gz",
+      "hash": "sha256-zKprqMQDl3xVfhSSYvgru1IGXjFdxryWk+KqK0I20Xk="
+    },
+    "shizuruPkgs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "kagurazakei",
+        "repo": "shizuruPkgs"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "fc1232e4d60b34b52addb7f20e3fe689c5d7451e",
+      "url": "https://github.com/kagurazakei/shizuruPkgs/archive/fc1232e4d60b34b52addb7f20e3fe689c5d7451e.tar.gz",
+      "hash": "sha256-6bL54LqB9oCjgO6S0BUYEGV3DCp6veSOKaYUfS+Wuoo="
+    },
+    "viu": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "viu-media",
+        "repo": "viu"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "70e1445650252c742b3e2c5c3b35981dbc3c31a8",
+      "url": "https://github.com/viu-media/viu/archive/70e1445650252c742b3e2c5c3b35981dbc3c31a8.tar.gz",
+      "hash": "sha256-fnFuFnNZdly14hcnQP9CY3gPcFyYVE7xa19jt64jtvA="
+    },
+    "waifu-cursors": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "kagurazakei",
+        "repo": "waifu-cursors"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "8e692c1daacf241b3d76ea3b2024f0fa4d662531",
+      "url": "https://github.com/kagurazakei/waifu-cursors/archive/8e692c1daacf241b3d76ea3b2024f0fa4d662531.tar.gz",
+      "hash": "sha256-68QmW2WK0OxyMlcdTxhjCRY4SMmKWy+eDF8yA6dkx4c="
+    },
+    "zaphkiel": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Rexcrazy804",
+        "repo": "Zaphkiel"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "cc6d5cf12ae824e6945cc2599a2650d5fe054ffe",
+      "url": "https://github.com/Rexcrazy804/Zaphkiel/archive/cc6d5cf12ae824e6945cc2599a2650d5fe054ffe.tar.gz",
+      "hash": "sha256-u1yJ9JCLlQzmMNQSLZ/zWJTMLDcMDfLYpY/7cPtQuWU=",
+      "frozen": true
+    },
+    "zen-browser-flake": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "0fa995bec0e391b45b032fbd9d6e03609a30c115",
+      "url": "https://github.com/0xc000022070/zen-browser-flake/archive/0fa995bec0e391b45b032fbd9d6e03609a30c115.tar.gz",
+      "hash": "sha256-6uEDuQYEGuyuFnvOdSx+fW75tRbNiLswAl6+4qyTdJ4="
+    }
+  },
+  "version": 7
+}
