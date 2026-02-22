@@ -48,23 +48,23 @@
       };
       secrets = {
         secret2 = {
-          file = self.path.secrets + "/laptop2.age";
+          file = self.paths.secrets + /laptop2.age;
           owner = "antonio";
           mode = "0500";
           path = "/etc/nix/nix-access-token.conf";
         };
         recovery = {
-          file = self.path.secrets + "/recovery.age";
+          file = self.paths.secrets + /recovery.age;
           owner = "root";
           path = "/home/${username}/.config/keys/recovery.txt";
         };
         anilist = {
-          file = self.path.secrets + "anilist.age";
+          file = self.paths.secrets + /anilist.age;
           owner = "antonio";
           path = "/home/${username}/.config/keys/anilist.txt";
         };
         ssh-key = {
-          file = self.secrets.path + "/laptop3.age";
+          file = self.paths.secrets + /laptop3.age;
           owner = "root";
           path = "home/${username}/.config/keys/ssh-ed25519";
         };

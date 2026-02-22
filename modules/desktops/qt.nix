@@ -1,4 +1,8 @@
-{nur, ...}: {
+{
+  nur,
+  self,
+  ...
+}: {
   azalea.modules.qt = {pkgs, ...}: let
     username = "antonio";
   in {
@@ -7,7 +11,7 @@
     ];
     qt.enable = true;
     environment.systemPackages = with pkgs; [
-      pkgs.nur.repos.ilya-fedin.qt6ct
+      self.packages.${pkgs.stdenv.hostPlatform.system}.qt6ct
       wlsunset
       libqalculate
       quickshell

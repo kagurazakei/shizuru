@@ -12,17 +12,17 @@
 
 ## Summary
 
-| Component  | Software                   | Configuration                                                               |
+| Component | Software | Configuration |
 | ---------- | -------------------------- | --------------------------------------------------------------------------- |
-| noctalia   | [Quickshell]               | [`dots/noctalia`][noctaliadots]                                             |
-| Compositor | [Niri]                     | [`dots/niri/config.kdl`][niridots]                                          |
-| Compositor | [Niri-Fork]                | [`dots/niri/config.kdl`][niridots]                                          |
-| Launcher   | [Fuzzel]                   | [`dots/fuzzel`][fuzldots]                                                   |
-| Colors     | [Matugen]                  | [`nixosModules/external/matugen/templates/`][mtgndots]                      |
-| Terminal   | [foot]                     | [`dots/foot/foot.ini`][footdots]                                            |
-| Editor     | [Kitty]                    | [`dots/kitty/kitty.conf`][kittydots]                                        |
-| Wallpapers | [booru-hs]                 | [`dots/booru/preview.md`][booru images]                                     |
-| Cursor     | [Kokomi Cursor][kokcursor] | nil / really long random text to make this table very wide yes looks like I |
+| noctalia | [noctalia] | [`dots/noctalia`][noctaliadots] |
+| Compositor | [Niri] | [`dots/niri/config.kdl`][niridots] |
+| Compositor | [Niri-Fork] | [`dots/niri/config.kdl`][niridots] |
+| Launcher | [Fuzzel] | [`dots/fuzzel`][fuzldots] |
+| Colors | [Matugen] | [`nixosModules/external/matugen/templates/`][mtgndots] |
+| Terminal | [foot] | [`dots/foot/foot.ini`][footdots] |
+| Editor | [Kitty] | [`dots/kitty/kitty.conf`][kittydots] |
+| Wallpapers | [booru-hs] | [`dots/booru/preview.md`][booru images] |
+| Cursor | [Kokomi Cursor][kokcursor] | nil / really long random text to make this table very wide yes looks like I |
 
 - [hjem] + [hjem-impure] over home manager
 - last revision where Zaphkiel was a normal flake [1164182e][pre-dandelion-rev]
@@ -30,7 +30,7 @@
 - ~~Last revision where Zaphkiel was flake based~~ pre-npins flake config
   [0eee46d1e][flake-rev]
 - ~~fix sddm weird eval input errors check~~
-  [`modules/nixosConfiguration.nix`][hostConfig]
+  \[`modules/nixosConfiguration.nix`\][hostConfig]
 
 ## What in the nix is going on here?
 
@@ -74,32 +74,27 @@ licensing is included.
 [flake-rev]: https://github.com/Rexcrazy804/Zaphkiel/tree/0eee46d1e5d98c3b94d39795b73a39270fc61ad7
 [foot]: https://codeberg.org/dnkl/foot
 [footdots]: dots/foot/foot.ini
-[Kitty]: https://github.com/kovidgoyal/kitty.git
-[kittydots]: dots/kitty/kitty.conf
-[Niri]: https://github.com/niri-wm/niri.git
-[Niri-Fork]: https://github.com/yayuuu/niri.git ( Fork Fork blur and modifier only keybinding )
-[niridots]: dots/niri/config.kdl
 [fuzldots]: dots/fuzzel
 [fuzzel]: https://codeberg.org/dnkl/fuzzel
 [hjem]: https://github.com/feel-co/hjem
 [hjem-impure]: https://github.com/Rexcrazy804/hjem-impure
 [install guide]: dots/quickshell/kurukurubar/README.md
 [jet]: https://github.com/Michael-C-Buckley
+[kitty]: https://github.com/kovidgoyal/kitty.git
+[kittydots]: dots/kitty/kitty.conf
 [kokcursor]: https://www.pling.com/p/2167734/
-[kurudots]: dots/quickshell/kurukurubar
-[mangodots]: dots/mango/
-[mangowc]: https://github.com/DreamMaoMao/mangowc
 [matugen]: https://github.com/InioX/matugen
 [mtgndots]: dots/matugen/templates/
-[neovim]: https://neovim.io/
+[niri]: https://github.com/niri-wm/niri.git
+[niri-fork]: https://github.com/yayuuu/niri.git " Fork Fork blur and modifier only keybinding "
+[niridots]: dots/niri/config.kdl
 [nixnew]: https://git.outfoxxed.me/outfoxxed/nixnew/src/branch/master/modules/user/modules/quickshell
+[noctalia]: https://noctalia.dev/
+[noctaliadots]: dots/noctalia
 [notashelf]: https://github.com/NotAShelf
 [npins-rev]: https://github.com/Rexcrazy804/Zaphkiel/tree/fc91df912fd8811ab33456b1f13a33bbe216b36b
-[nvimdots]: dots/nvim/
 [nysh]: https://github.com/nydragon/nysh
 [pikabar]: https://git.pika-os.com/wm-packages/pikabar/src/branch/main/pikabar/usr/share/pikabar
 [pre-dandelion-rev]: https://github.com/Rexcrazy804/Zaphkiel/tree/1164182e9abc5dccdd9945e9367ee5eba38b31cb
-[quickshell]: https://quickshell.outfoxxed.me/
 [rainingkuru]: https://github.com/soramanew/rainingkuru
 [sioodmy]: https://github.com/sioodmy
-[wallpaper]: https://www.pixiv.net/artworks/126270092
