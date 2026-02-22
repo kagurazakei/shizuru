@@ -28,7 +28,6 @@ Places Icons Static Size=48
 MenuBar=Disabled
 
 [MainWindow][Toolbar mainToolBar]
-IconSize=16
 ToolButtonStyle=IconOnly
 
 [PlacesPanel]

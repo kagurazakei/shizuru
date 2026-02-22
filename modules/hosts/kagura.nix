@@ -47,6 +47,10 @@
         };
       };
       secrets = {
+        antonioPass = {
+          file = self.paths.secrets + /kagura-user.age;
+          owner = "antonio";
+        };
         secret2 = {
           file = self.paths.secrets + /kagura-access-token.age;
           owner = "antonio";

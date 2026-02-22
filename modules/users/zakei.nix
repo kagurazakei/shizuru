@@ -13,12 +13,6 @@ in {
     ];
     zaphkiel = {
       data.users = [username];
-      secrets = {
-        antonioPass = {
-          file = self.paths.secrets + /kagura-user.age;
-          owner = username;
-        };
-      };
     };
 
     users.users.${username} = {

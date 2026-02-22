@@ -15,7 +15,7 @@ in {
   "ssh-kagura.age".publicKeys = kagura ++ hana;
   "anilist.age".publicKeys = kagura ++ hana;
   "recovery.age".publicKeys = kagura ++ hana;
-  "secret1.age".publicKeys = kagura ++ hana;
-  "secret2.age".publicKeys = kagura ++ hana;
+  "hana-user.age".publicKeys = kagura ++ hana;
+  "hana-access-token.age".publicKeys = kagura ++ hana;
   "ssh-hana.age".publicKeys = kagura ++ hana;
 }

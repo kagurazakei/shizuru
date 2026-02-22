@@ -36,8 +36,12 @@
     zaphkiel = {
       data.wallpaper = self.packages.${pkgs.stdenv.hostPlatform.system}.images.corvus;
       secrets = {
+        antonioPass = {
+          file = self.paths.secrets + /hana-user.age;
+          owner = "antonio";
+        };
         secret2 = {
-          file = self.paths.secrets + /secret2.age;
+          file = self.paths.secrets + /hana-access-token.age;
           owner = "antonio";
           mode = "0500";
           path = "/etc/nix/nix-access-token.conf";
