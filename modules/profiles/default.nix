@@ -24,7 +24,7 @@
       # self.azalea.modules.shpool
       # network
       # self.azalea.modules.dnscrypt
-      # self.azalea.modules.tailscale
+      self.azalea.modules.tailscale
       # self.azalea.modules.openssh
       # hardware
       self.azalea.modules.undetected

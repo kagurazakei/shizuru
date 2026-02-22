@@ -40,6 +40,10 @@
           file = self.paths.secrets + /hana-user.age;
           owner = "antonio";
         };
+        tailAuth = {
+          file = self.paths.secrets + /tailscale.age;
+          owner = "antonio";
+        };
         secret2 = {
           file = self.paths.secrets + /hana-access-token.age;
           owner = "antonio";
@@ -75,16 +79,16 @@
       #   shpool.users = [ "antonio" ];
       # };
       # graphics.intel.hwAccelDriver = "media-driver";
-      # services = {
-      #   caddy = {
-      #     secretsFile = config.age.secrets.caddyEnv.path;
-      #     tsplugin.enable = true;
-      #   };
-      #   tailscale = {
-      #     operator = "rexies";
-      #     authFile = config.age.secrets.tailAuth.path;
-      #   };
-      # };
+      services = {
+        # caddy = {
+        #   secretsFile = config.age.secrets.caddyEnv.path;
+        #   tsplugin.enable = true;
+        # };
+        tailscale = {
+          operator = "antonio";
+          authFile = config.age.secrets.tailAuth.path;
+        };
+      };
     };
 
     # user stuff

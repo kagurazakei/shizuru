@@ -18,4 +18,6 @@ in {
   "hana-user.age".publicKeys = kagura ++ hana;
   "hana-access-token.age".publicKeys = kagura ++ hana;
   "ssh-hana.age".publicKeys = kagura ++ hana;
+  "tailscale.age".publicKeys = kagura ++ hana;
+  "maxitone.age".publicKeys = kagura ++ hana;
 }
