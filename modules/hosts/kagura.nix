@@ -1,8 +1,7 @@
 {self, ...}: {
   azalea.hosts.kagura = {
     pkgs,
-    config,
-    lib,
+    username,
     ...
   }: {
     imports = [
@@ -38,22 +37,6 @@
     # zaphkiel opts
     zaphkiel = {
       data.wallpaper = self.packages.${pkgs.stdenv.hostPlatform.system}.images.corvus;
-      # secrets = {
-      #   tailAuth.file = self.paths.secrets + /secret5.age;
-      #   caddyEnv.file = self.paths.secrets + /secret10.age;
-      # };
-      # programs = {
-      #   privoxy.forwards = [
-      #     {
-      #       domains = [
-      #         ".donmai.us"
-      #         ".yande.re"
-      #         "www.zerochan.net"
-      #       ];
-      #     }
-      #   ];
-      #   shpool.users = [ "antonio" ];
-      # };
       graphics.intel.hwAccelDriver = "media-driver";
       graphics.nvidia = {
         hybrid = {
@@ -63,16 +46,29 @@
           dgpu.port = "PCI:1:0:0";
         };
       };
-      # services = {
-      #   caddy = {
-      #     secretsFile = config.age.secrets.caddyEnv.path;
-      #     tsplugin.enable = true;
-      #   };
-      #   tailscale = {
-      #     operator = "rexies";
-      #     authFile = config.age.secrets.tailAuth.path;
-      #   };
-      # };
+      secrets = {
+        secret2 = {
+          file = self.path.secrets + "/laptop2.age";
+          owner = "antonio";
+          mode = "0500";
+          path = "/etc/nix/nix-access-token.conf";
+        };
+        recovery = {
+          file = self.path.secrets + "/recovery.age";
+          owner = "root";
+          path = "/home/${username}/.config/keys/recovery.txt";
+        };
+        anilist = {
+          file = self.path.secrets + "anilist.age";
+          owner = "antonio";
+          path = "/home/${username}/.config/keys/anilist.txt";
+        };
+        ssh-key = {
+          file = self.secrets.path + "/laptop3.age";
+          owner = "root";
+          path = "home/${username}/.config/keys/ssh-ed25519";
+        };
+      };
     };
 
     # user stuff
