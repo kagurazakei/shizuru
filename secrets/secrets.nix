@@ -10,9 +10,12 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDT989Rm6vSVS4cSP2NevoXVS7UnFVYHgfsE6dbM2+s6 hana@antonio"
   ];
 in {
-  "laptop1.age".publicKeys = kagura ++ hana;
-  "laptop2.age".publicKeys = kagura ++ hana;
-  "laptop3.age".publicKeys = kagura ++ hana;
+  "kagura-user.age".publicKeys = kagura ++ hana;
+  "kagura-access-token.age".publicKeys = kagura ++ hana;
+  "ssh-kagura.age".publicKeys = kagura ++ hana;
   "anilist.age".publicKeys = kagura ++ hana;
   "recovery.age".publicKeys = kagura ++ hana;
+  "secret1.age".publicKeys = kagura ++ hana;
+  "secret2.age".publicKeys = kagura ++ hana;
+  "ssh-hana.age".publicKeys = kagura ++ hana;
 }

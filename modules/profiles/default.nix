@@ -15,7 +15,6 @@
       self.azalea.modules.scheduler
       self.azalea.modules.input
       self.azalea.modules.nh
-      self.azelea.modules.mpv
       self.azalea.modules.qt
       # programs
       self.azalea.modules.environment

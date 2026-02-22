@@ -18,6 +18,7 @@
       self.azalea.modules.btrfs
       self.azalea.modules.intel
       self.azalea.modules.nvidia
+      self.azelea.modules.mpv
       # self.azalea.modules.greetd-autostart
       self.azalea.modules.silent-sddm
       self.azalea.modules.cups
@@ -47,7 +48,7 @@
       };
       secrets = {
         secret2 = {
-          file = self.paths.secrets + /laptop2.age;
+          file = self.paths.secrets + /kagura-access-token.age;
           owner = "antonio";
           mode = "0500";
           path = "/etc/nix/nix-access-token.conf";
@@ -62,8 +63,8 @@
           owner = "antonio";
           path = "/home/${username}/.config/keys/anilist.txt";
         };
-        ssh-key = {
-          file = self.paths.secrets + /laptop3.age;
+        ssh-kagura = {
+          file = self.paths.secrets + /ssh-kagura.age;
           owner = "root";
           path = "home/${username}/.config/keys/ssh-kagura";
         };

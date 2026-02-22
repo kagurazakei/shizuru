@@ -15,7 +15,7 @@ in {
       data.users = [username];
       secrets = {
         antonioPass = {
-          file = self.paths.secrets + /laptop1.age;
+          file = self.paths.secrets + /kagura-user.age;
           owner = username;
         };
       };

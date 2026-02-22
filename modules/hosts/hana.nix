@@ -3,6 +3,7 @@
     pkgs,
     config,
     lib,
+    username,
     ...
   }: {
     imports = [
@@ -18,7 +19,6 @@
       self.azalea.modules.cursors
       self.azalea.modules.btrfs
       self.azalea.modules.steam
-      # self.azalea.modules.intel
       self.azalea.modules.nvidia
       # self.azalea.modules.greetd-autostart
       self.azalea.modules.silent-sddm
@@ -35,10 +35,29 @@
     # zaphkiel opts
     zaphkiel = {
       data.wallpaper = self.packages.${pkgs.stdenv.hostPlatform.system}.images.corvus;
-      # secrets = {
-      #   tailAuth.file = self.paths.secrets + /secret5.age;
-      #   caddyEnv.file = self.paths.secrets + /secret10.age;
-      # };
+      secrets = {
+        secret2 = {
+          file = self.paths.secrets + /secret2.age;
+          owner = "antonio";
+          mode = "0500";
+          path = "/etc/nix/nix-access-token.conf";
+        };
+        recovery = {
+          file = self.paths.secrets + /recovery.age;
+          owner = "root";
+          path = "/home/${username}/.config/keys/recovery.txt";
+        };
+        anilist = {
+          file = self.paths.secrets + /anilist.age;
+          owner = "antonio";
+          path = "/home/${username}/.config/keys/anilist.txt";
+        };
+        ssh-hana = {
+          file = self.paths.secrets + /ssh-hana.age;
+          owner = "root";
+          path = "/home/${username}/.config/keys/ssh-hana";
+        };
+      };
       # programs = {
       #   privoxy.forwards = [
       #     {
