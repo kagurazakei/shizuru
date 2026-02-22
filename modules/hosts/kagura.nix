@@ -29,7 +29,6 @@
     networking.hostName = "kagura";
     time.timeZone = "Asia/Yangon";
     nixpkgs.hostPlatform = "x86_64-linux";
-
     services.xserver.videoDrivers = [
       "modesetting"
       "nvidia"
@@ -66,7 +65,7 @@
         ssh-key = {
           file = self.paths.secrets + /laptop3.age;
           owner = "root";
-          path = "home/${username}/.config/keys/ssh-ed25519";
+          path = "home/${username}/.config/keys/ssh-kagura";
         };
       };
     };

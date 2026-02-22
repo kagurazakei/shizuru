@@ -1,13 +1,12 @@
 source ~/.config/fish/user_variables.fish
 source ~/.config/fish/abbreviations.fish
 source ~/.config/fish/aliases.fish
-set -xg ATUIN_NOBIND true
 atuin init fish | source
 any-nix-shell fish --info-right | source
-bind \cr _atuin_search
-bind -M insert \cr _atuin_search
-bind \e\[1\;5A _atuin_search
 bind up _atuin_search
+bind \cr _atuin_search
+bind -M insert up _atuin_search
+bind \e\[1\;5A _atuin_search
 
 # theme
 set -g theme_color_scheme catppuccin-mocha
