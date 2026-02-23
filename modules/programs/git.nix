@@ -12,16 +12,10 @@
     hj.rum.programs.git = {
       enable = true;
       settings = {
-        gpg = {
-          format = "ssh";
-        };
         user = {
           name = "kagurazakei";
           email = "maotsugiri@gmail.com";
           signingKey = signKey;
-        };
-        commit = {
-          gpgSign = true;
         };
         column = {
           ui = "auto";
