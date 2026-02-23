@@ -1,6 +1,7 @@
 {self, ...}: {
   azalea.hosts.kagura = {
     pkgs,
+    config,
     username,
     ...
   }: {
@@ -44,6 +45,12 @@
           igpu.vendor = "intel";
           igpu.port = "PCI:0:2:0";
           dgpu.port = "PCI:1:0:0";
+        };
+        services = {
+          tailscale = {
+            operator = "antonio";
+            authFile = config.age.secrets.tailAuth.path;
+          };
         };
       };
       secrets = {
