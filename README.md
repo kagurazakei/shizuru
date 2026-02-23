@@ -1,6 +1,9 @@
-# My NixOS Configuration ( Stolen From Zaphkiel )
-
-# Heavily Unstable and Under heavy Development state
+<p align="center">
+  <img src="./.github/assets/logo/flake.png" width="100px" alt="Shizuru Logo"/>
+  <h1 align="center">Azalea(stolen form Zaphkiel)</h1>
+  <p align="center">Aesthetic, Modular NixOS Configuration</p>
+  <p align="center"><img src="./.github/assets/pallet/macchiato.png" width="600px" alt="Color Palette"/></p>
+</p>
 
 <div align="center">
   <img src="./.github/screenshots/niri-1.png" width="30%" alt="Niri Overview"/>
@@ -25,10 +28,8 @@
 | Cursor | [Kokomi Cursor][kokcursor] | nil / really long random text to make this table very wide yes looks like I |
 
 - [hjem] + [hjem-impure] over home manager
-- last revision where Zaphkiel was a normal flake [1164182e][pre-dandelion-rev]
-- last revision where Zaphkiel was an npins based config [fc91df912][npins-rev]
-- ~~Last revision where Zaphkiel was flake based~~ pre-npins flake config
-  [0eee46d1e][flake-rev]
+- the laptop branch is the pre-azalea configuration [pre-azalea]
+- this commit was testing branch for npins base [npins]
 - ~~fix sddm weird eval input errors check~~
   \[`modules/nixosConfiguration.nix`\][hostConfig]
 
@@ -58,8 +59,15 @@ due to [argosnothing] shilling [jet]'s nixos configuration a great deal.
 - [pikabar]
 - [soramanew/rainingkurukuru][rainingkuru]
 - [outfoxxed/nixnew][nixnew]
+- [Rexcrazy804/Zaphkiel][zaphkiel]
+- [noctalia-dev/noctalia-shell][noctalia-shell]
 - one unmentioned individual that did not return
 - and other homies in `#rice-discussion` of Hyprland discord
+
+#### Nixvim
+
+- [khaneliman/khanelivim][khanelivim]
+- and other nixvim community
 
 ## Licensing
 
@@ -71,7 +79,6 @@ licensing is included.
 [booru-hs]: https://github.com/Rexcrazy804/booru.hs
 [dandruff pattern]: https://github.com/Michael-C-Buckley/nixos/blob/cfb8cfa3ee815cbb216cc3b9361373be4837a126/documentation/intent.md#dendritic-nix
 [enddots]: https://github.com/end-4/dots-hyprland/tree/ii-qs/.config/quickshell
-[flake-rev]: https://github.com/Rexcrazy804/Zaphkiel/tree/0eee46d1e5d98c3b94d39795b73a39270fc61ad7
 [foot]: https://codeberg.org/dnkl/foot
 [footdots]: dots/foot/foot.ini
 [fuzldots]: dots/fuzzel
@@ -80,21 +87,24 @@ licensing is included.
 [hjem-impure]: https://github.com/Rexcrazy804/hjem-impure
 [install guide]: dots/quickshell/kurukurubar/README.md
 [jet]: https://github.com/Michael-C-Buckley
+[khanelivim]: https://github.com/khaneliman/khanelivim
 [kitty]: https://github.com/kovidgoyal/kitty.git
 [kittydots]: dots/kitty/kitty.conf
 [kokcursor]: https://www.pling.com/p/2167734/
 [matugen]: https://github.com/InioX/matugen
 [mtgndots]: dots/matugen/templates/
 [niri]: https://github.com/niri-wm/niri.git
-[niri-fork]: https://github.com/yayuuu/niri.git " Fork Fork blur and modifier only keybinding "
+[niri-fork]: https://github.com/yayuuu/niri.git "Fork Fork blur and modifier only keybinding"
 [niridots]: dots/niri/config.kdl
 [nixnew]: https://git.outfoxxed.me/outfoxxed/nixnew/src/branch/master/modules/user/modules/quickshell
 [noctalia]: https://noctalia.dev/
+[noctalia-shell]: https://github.com/noctalia-dev/noctalia-shell
 [noctaliadots]: dots/noctalia
 [notashelf]: https://github.com/NotAShelf
-[npins-rev]: https://github.com/Rexcrazy804/Zaphkiel/tree/fc91df912fd8811ab33456b1f13a33bbe216b36b
+[npins]: https://github.com/kagurazakei/shizuru/commit/5b385b698a39371af3fce05819787dadbc50b740
 [nysh]: https://github.com/nydragon/nysh
 [pikabar]: https://git.pika-os.com/wm-packages/pikabar/src/branch/main/pikabar/usr/share/pikabar
-[pre-dandelion-rev]: https://github.com/Rexcrazy804/Zaphkiel/tree/1164182e9abc5dccdd9945e9367ee5eba38b31cb
+[pre-azalea]: https://github.com/kagurazakei/shizuru/commit/8d85cd72cd19134e54aca20d455220570c569407
 [rainingkuru]: https://github.com/soramanew/rainingkuru
 [sioodmy]: https://github.com/sioodmy
+[zaphkiel]: https://github.com/Rexcrazy804/Zaphkiel

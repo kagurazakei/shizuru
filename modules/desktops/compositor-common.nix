@@ -30,11 +30,6 @@
 
     # required for mounting mobile phones
     services.gvfs.enable = true;
-
-    xdg.portal = {
-      enable = true;
-      extraPortals = [pkgs.xdg-desktop-portal-gtk];
-    };
     services.power-profiles-daemon.enable = true;
     services.upower = {
       enable = true;

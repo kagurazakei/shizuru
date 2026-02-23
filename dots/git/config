@@ -1,9 +1,8 @@
 # adapted from https://gist.githubusercontent.com/pksunkara/988716/raw/13f2fb121abb94f5a87eebb104821832d56e48d7/config
 [user]
-name = Rexiel Scarlet
-email = 37258415+Rexcrazy804@users.noreply.github.com
-github = Rexcrazy804
-signingkey = 00AC2D589EE7B0EBA5F03969E22FC5FD4007C746
+name = kagurazakei
+email = maotsugiri@gmail.com
+github = kagurazakei
 
 [commit]
 gpgsign = true
@@ -45,7 +44,6 @@ followTags = true
 prune = true
 pruneTags = true
 all = true
-
 
 [rebase]
 autoSquash = true

@@ -1,5 +1,4 @@
-{ self, ... }:
-{
+{self, ...}: {
   azalea.profiles.workstation = {
     imports = [
       self.azalea.modules.firefox
@@ -12,6 +11,8 @@
       self.azalea.modules.bluetooth
       self.azalea.modules.network
       self.azalea.modules.graphics
+      self.azalea.modules.openssh
+      self.azalea.modules.git
       # self.azalea.modules.privoxy
     ];
   };

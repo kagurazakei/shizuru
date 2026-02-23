@@ -23,7 +23,6 @@
       # self.azalea.modules.greetd-autostart
       self.azalea.modules.silent-sddm
       self.azalea.modules.cups
-      self.azalea.modules.openssh
     ];
 
     # info
@@ -38,6 +37,10 @@
       secrets = {
         antonioPass = {
           file = self.paths.secrets + /hana-user.age;
+          owner = "antonio";
+        };
+        tailAuth = {
+          file = self.paths.secrets + /tailscale.age;
           owner = "antonio";
         };
         secret2 = {
@@ -75,16 +78,16 @@
       #   shpool.users = [ "antonio" ];
       # };
       # graphics.intel.hwAccelDriver = "media-driver";
-      # services = {
-      #   caddy = {
-      #     secretsFile = config.age.secrets.caddyEnv.path;
-      #     tsplugin.enable = true;
-      #   };
-      #   tailscale = {
-      #     operator = "rexies";
-      #     authFile = config.age.secrets.tailAuth.path;
-      #   };
-      # };
+      services = {
+        # caddy = {
+        #   secretsFile = config.age.secrets.caddyEnv.path;
+        #   tsplugin.enable = true;
+        # };
+        tailscale = {
+          operator = "antonio";
+          authFile = config.age.secrets.tailAuth.path;
+        };
+      };
     };
 
     # user stuff

@@ -1,6 +1,9 @@
 {self, ...}: {
   devShells = self.lib.eachSystem (
-    {pkgs}: let
+    {
+      pkgs,
+      system,
+    }: let
       precommit = pkgs.writeShellScript "pre-commit" ''
         if irminsul chk FILES_STAGED=1; then
           exit 0
@@ -27,7 +30,7 @@
         '';
 
         packages = [
-          self.packages.${pkgs.stdenv.hostPlatform.system}.irminsul
+          self.packages.${system}.irminsul
           pkgs.taplo
         ];
       };

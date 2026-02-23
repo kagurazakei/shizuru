@@ -50,6 +50,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nix-darwin.follows = "";
     };
+    hjem-rum = {
+      url = "github:snugnug/hjem-rum";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.hjem.follows = "hjem";
+    };
     booru-hs = {
       url = "github:Rexcrazy804/booru.hs";
       inputs.nixpkgs.follows = "nixpkgs";
