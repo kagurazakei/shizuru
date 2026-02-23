@@ -5,6 +5,7 @@
       self.azalea.modules.hjem
       self.azalea.modules.hjem-impure
       self.azalea.modules.hjem-matugen
+      self.azalea.modules.hjem-rum
       self.azalea.modules.zaphkiel-data
       self.azalea.modules.locales
       self.azalea.modules.impermanence
