@@ -28,9 +28,8 @@
 | Cursor | [Kokomi Cursor][kokcursor] | nil / really long random text to make this table very wide yes looks like I |
 
 - [hjem] + [hjem-impure] over home manager
-- the laptop branch is the pre-azalea configuration \[8d85cd7
-  \][pre-azalea]
-- this commit was testing branch for npins base [5b385b6][npins]
+- the laptop branch is the pre-azalea configuration [pre-azalea]
+- this commit was testing branch for npins base [npins]
 - ~~fix sddm weird eval input errors check~~
   \[`modules/nixosConfiguration.nix`\][hostConfig]
 
