@@ -7,6 +7,7 @@ update_info=dolphin_detailsmodesettings.upd:rename-leading-padding
 PreviewSize=80
 
 [General]
+LockPanels=false
 ShowStatusBar=false
 ShowToolTips=true
 Version=202

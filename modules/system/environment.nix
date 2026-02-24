@@ -6,7 +6,7 @@
       pkgs.npins
       pkgs.alejandra
       zakeivim.packages.${pkgs.stdenv.hostPlatform.system}.khanelivim
-    ];
+   ];
 
     environment.variables.EDITOR = "nvim";
     environment.variables.MANPAGER = "nvim +Man!";

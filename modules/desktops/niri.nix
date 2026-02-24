@@ -25,7 +25,7 @@
         niri = {
           prettyName = "Niri The Goat";
           comment = "Niri Compositor managed by UWSM";
-          binPath = "/run/current-system/sw/bin/niri";
+          binPath = "/run/current-system/sw/bin/niri-session";
         };
       };
     };

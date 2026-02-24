@@ -20,8 +20,8 @@
       self.azalea.modules.btrfs
       self.azalea.modules.steam
       self.azalea.modules.nvidia
-      # self.azalea.modules.greetd-autostart
-      self.azalea.modules.silent-sddm
+      self.azalea.modules.greetd-autostart
+      #self.azalea.modules.silent-sddm
       self.azalea.modules.cups
     ];
 
@@ -111,41 +111,31 @@
     services.fstrim.enable = true;
     # disabled autosuspend
     hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-    fileSystems."/" = {
-      device = "/dev/disk/by-uuid/07d4c304-5420-4374-aaed-6a53e691cffd";
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/33c9dfe4-1f00-4eca-8515-55330f66dd34";
       fsType = "btrfs";
-      options = ["subvol=root"];
+      options = [ "subvol=root" ];
     };
 
-    fileSystems."/home" = {
-      device = "/dev/disk/by-uuid/712e07f3-65b5-4ea3-b115-dd96147e00f8";
+  fileSystems."/home" =
+    { device = "/dev/disk/by-uuid/12a55073-227a-4f1a-a272-aeb49e34276c";
       fsType = "btrfs";
-      neededForBoot = true;
     };
 
-    fileSystems."/nix" = {
-      device = "/dev/disk/by-uuid/07d4c304-5420-4374-aaed-6a53e691cffd";
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-uuid/33c9dfe4-1f00-4eca-8515-55330f66dd34";
       fsType = "btrfs";
-      options = ["subvol=nix"];
+      options = [ "subvol=nix" ];
     };
 
-    fileSystems."/persist" = {
-      device = "/dev/disk/by-uuid/07d4c304-5420-4374-aaed-6a53e691cffd";
-      fsType = "btrfs";
-      options = ["subvol=persist"];
-      neededForBoot = true;
-    };
-
-    fileSystems."/boot" = {
-      device = "/dev/disk/by-uuid/B138-1CC7";
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/719B-61DE";
       fsType = "vfat";
-      options = [
-        "fmask=0022"
-        "dmask=0022"
-      ];
+      options = [ "fmask=0022" "dmask=0022" ];
     };
-    swapDevices = [
-      {device = "/dev/disk/by-uuid/35b04156-9b91-48de-a117-ccbf04e13001";}
+
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/54a991e6-f06d-4de3-8eee-daf6f5671295"; }
     ];
   };
 }
