@@ -20,6 +20,7 @@
         }
       ];
       files = [
+        ".screenrc"
         "/etc/sops-nix/keys.txt"
         {
           file = "/var/keys/secret_file";
