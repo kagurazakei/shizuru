@@ -7,6 +7,8 @@
     nixpkgs.overlays = [
       nix-cachyos-kernel.overlays.pinned
     ];
+    nix.settings.substituters = ["https://attic.xuyh0120.win/lantian"];
+    nix.settings.trusted-public-keys = ["lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="];
     console = {
       colors = [
         "1e1e2e"
