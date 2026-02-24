@@ -34,11 +34,6 @@
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
     firefox.url = "github:nix-community/flake-firefox-nightly";
     mnw.url = "github:Gerg-L/mnw";
-    nixos-wsl = {
-      url = "github:nix-community/nixos-wsl";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-compat.follows = "";
-    };
     hjem-impure = {
       url = "github:Rexcrazy804/hjem-impure";
       inputs.nixpkgs.follows = "";
