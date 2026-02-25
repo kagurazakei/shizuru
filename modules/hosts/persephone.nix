@@ -9,10 +9,10 @@
       self.dandelion.users.rexies
       self.dandelion.dots.rexies-cli
       self.dandelion.dots.rexies-gui
-      self.dandelion.dots.rexies-mango
+      # self.dandelion.dots.rexies-mango
 
       self.dandelion.profiles.default
-      self.dandelion.profiles.mangowc
+      # self.dandelion.profiles.mangowc
       self.dandelion.profiles.workstation
       self.dandelion.profiles.gaming
 
@@ -42,12 +42,23 @@
         shpool.users = ["rexies"];
         privoxy.forwards = [
           # I shouldn't be exposing myself like this
-          {domains = ["www.privoxy.org" ".donmai.us" "rule34.xxx" ".yande.re" "www.zerochan.net" ".kemono.su" "hanime.tv" "1337x.to"];}
+          {
+            domains = [
+              "www.privoxy.org"
+              ".donmai.us"
+              "rule34.xxx"
+              ".yande.re"
+              "www.zerochan.net"
+              ".kemono.su"
+              "hanime.tv"
+              "1337x.to"
+            ];
+          }
         ];
       };
 
       secrets.tailAuth.file = self.paths.secrets + /secret9.age;
-      services. tailscale = {
+      services.tailscale = {
         operator = "rexies";
         exitNode.enable = false;
         authFile = config.age.secrets.tailAuth.path;
@@ -114,8 +125,19 @@
     };
 
     # hardware
-    boot.kernelParams = ["i915.enable_guc=3" "nmi_watchdog=0"];
-    boot.initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "ahci" "nvme" "usb_storage" "sd_mod" "sdhci_pci"];
+    boot.kernelParams = [
+      "i915.enable_guc=3"
+      "nmi_watchdog=0"
+    ];
+    boot.initrd.availableKernelModules = [
+      "xhci_pci"
+      "thunderbolt"
+      "ahci"
+      "nvme"
+      "usb_storage"
+      "sd_mod"
+      "sdhci_pci"
+    ];
     hardware.bluetooth.powerOnBoot = lib.mkForce false;
     systemd.services.NetworkManager-wait-online.enable = false;
     zramSwap.enable = true;
@@ -124,25 +146,38 @@
       "/" = {
         device = "/dev/disk/by-uuid/492f31cf-5db4-4965-95f7-e4d590aa0c29";
         fsType = "btrfs";
-        options = ["subvol=root" "compress=zstd"];
+        options = [
+          "subvol=root"
+          "compress=zstd"
+        ];
       };
 
       "/home" = {
         device = "/dev/disk/by-uuid/492f31cf-5db4-4965-95f7-e4d590aa0c29";
         fsType = "btrfs";
-        options = ["subvol=home" "compress=zstd"];
+        options = [
+          "subvol=home"
+          "compress=zstd"
+        ];
       };
 
       "/nix" = {
         device = "/dev/disk/by-uuid/492f31cf-5db4-4965-95f7-e4d590aa0c29";
         fsType = "btrfs";
-        options = ["subvol=nix" "compress=zstd" "noatime"];
+        options = [
+          "subvol=nix"
+          "compress=zstd"
+          "noatime"
+        ];
       };
 
       "/boot" = {
         device = "/dev/disk/by-uuid/7DFC-B6FB";
         fsType = "vfat";
-        options = ["fmask=0077" "dmask=0077"];
+        options = [
+          "fmask=0077"
+          "dmask=0077"
+        ];
       };
 
       "/run/media/rexies/Aphrodite" = {

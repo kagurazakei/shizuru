@@ -43,7 +43,6 @@
       inherit
         (zpkgs)
         kokCursor
-        kurukurubar
         stash
         viu
         equibop
@@ -130,7 +129,6 @@
     services.hypridle.enable = true;
     systemd.user.services.hypridle.path = mkForce (attrValues {
       inherit (pkgs) systemd procps brightnessctl;
-      inherit (zpkgs) kurukurubar;
     });
   };
 }
