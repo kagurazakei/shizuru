@@ -1,1 +1,5 @@
-/home/antonio/shizuru/configs/carapace/carapace.toml
+[integrations.fish]
+enable = true
+
+[integrations.nushell]
+enable = true
