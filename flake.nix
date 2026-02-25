@@ -3,10 +3,12 @@
 
   # This is the completely stolen from Rexcrazy804/Zaphkiel(dandelion)
   # Presenting, the *azalea* setup
-  outputs = {...} @ inputs: let
-    azalea = import ./azalea.nix inputs;
-    inherit (azalea) importModules recursiveImport;
-  in
+  outputs =
+    { ... }@inputs:
+    let
+      azalea = import ./azalea.nix inputs;
+      inherit (azalea) importModules recursiveImport;
+    in
     importModules [
       (recursiveImport ./modules)
     ];
@@ -18,7 +20,14 @@
     chaotic.url = "github:lonerOrz/nyx-loner";
     silent-sddm.url = "github:kagurazakei/SilentSDDM";
     zakeivim.url = "github:kagurazakei/khanelivim";
-    niri.url = "github:kagurazakei/niri";
+    niri = {
+      url = "github:kagurazakei/niri";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    sysc-greet = {
+      url = "github:kagurazakei/sysc-greet";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";

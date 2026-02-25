@@ -177,6 +177,7 @@ spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "systemctl" "--user" "start" "hjem-impure.service" "--now"
 spawn-at-startup "systemctl" "--user" "start" "arRPC.service" "--now"
 spawn-at-startup "noctalia-shell" "--no-duplicate"
+spawn-at-startup "niri-scratchpad" "daemon"
 //This was a nightmare to make but here
 // original code from; https://github.com/XansiVA
 animations {

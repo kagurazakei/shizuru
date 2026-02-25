@@ -14,12 +14,12 @@ layer-rule {
     place-within-backdrop true
 }
 workspace "stash" {
-  open-on-output "eDP-1"
+    open-on-output "eDP-1"
 }
-spawn-at-startup "niri-scratchpad daemon"
+spawn-sh-at-startup "niri-scratchpad daemon"
 binds {
     Mod+Shift+Return {
-      spawn "niri-scratchpad" "create" "1" "--as-float"
+        spawn "niri-scratchpad" "create" "1" "--as-float"
     }
     Ctrl+Alt+L hotkey-overlay-title="Lock Screen" {
         spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"
