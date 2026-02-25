@@ -18,7 +18,7 @@ environment {
     XDG_SESSION_TYPE "wayland"
 }
 binds {
-    Alt+F1 {
+    Mod release=true {
         spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"
     }
     Ctrl+Print {
@@ -178,7 +178,6 @@ spawn-at-startup "systemctl" "--user" "start" "hjem-impure.service" "--now"
 spawn-at-startup "systemctl" "--user" "start" "arRPC.service" "--now"
 spawn-at-startup "noctalia-shell" "--no-duplicate"
 spawn-at-startup "niri-scratchpad" "daemon"
-spawn-at-startup "ksuperkey"
 //This was a nightmare to make but here
 // original code from; https://github.com/XansiVA
 animations {
@@ -258,20 +257,23 @@ window-rule {
     match app-id="^quickshell$"
     match app-id="^noctalia-shell$"
     opacity 0.85
- // blur {
-    //     on
-    // }
+    blur {
+        on
+    }
 }
 window-rule {
     match is-focused=false
     opacity 0.8
- // blur {
-    //     on
-    // }
+    blur {
+        on
+    }
 }
 window-rule {
     match is-floating=true
     shadow {
+        on
+    }
+    blur {
         on
     }
 }
@@ -291,6 +293,9 @@ window-rule {
         active-color "#f38ba8"
         inactive-color "#a9b1d600"
     }
+    blur {
+        on
+    }
 }
 window-rule {
     match app-id="org.telegram.desktop"
@@ -304,10 +309,16 @@ window-rule {
     match app-id="^(zen|firefox|chromium-browser|chrome-.*|zen-.*)$"
     match app-id="^(xdg-desktop-portal-gtk)$"
     scroll-factor 0.85
+    blur {
+        on
+    }
 }
 window-rule {
     match app-id="^(info.febvre.Komikku)$"
     scroll-factor 1.58
+    blur {
+        on
+    }
 }
 window-rule {
     match app-id="firefox$" title="^Picture-in-Picture$"
@@ -316,12 +327,18 @@ window-rule {
     match title="^Discord Popout$"
     open-floating true
     default-floating-position relative-to="top-right" x=32 y=32
+    blur {
+        on
+    }
 }
 window-rule {
     match app-id="^(org.wezfurlong.wezterm)$"
     match app-id="^(kitty)$"
     match app-id="^(com.mitchellh.ghostty)$"
     opacity 0.86
+    blur {
+        on
+    }
 }
 window-rule {
     match app-id="^(dropdown)$"
@@ -406,12 +423,18 @@ window-rule {
 window-rule {
     match app-id="^(org.wezfurlong.wezterm|ghostty|Kvantum|dolphin|niri)$"
     open-maximized false
+    blur {
+        on
+    }
 }
 window-rule {
     match app-id="^(zen|equibop|firefox-nightly|firefox|chromium-browser|edge|chrome-.*|zen-.*)$"
     open-maximized false
     default-column-width {
         proportion 0.7
+    }
+    blur {
+        on
     }
 }
 window-rule {
@@ -433,6 +456,11 @@ layer-rule {
     match namespace="^noctalia-wallpaper*"
     match namespace="^quickshell*"
     place-within-backdrop true
+    blur {
+        on
+        ignore-alpha 0.85
+        x-ray true
+    }
 }
 workspace "general" {
     layout {
@@ -482,6 +510,11 @@ layout {
         right 2
         top 5
         bottom 5
+    }
+    blur {
+        noise 0.05
+        passes 2
+        radius 5
     }
     focus-ring {
         off

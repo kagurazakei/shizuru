@@ -3,12 +3,10 @@
 
   # This is the completely stolen from Rexcrazy804/Zaphkiel(dandelion)
   # Presenting, the *azalea* setup
-  outputs =
-    { ... }@inputs:
-    let
-      azalea = import ./azalea.nix inputs;
-      inherit (azalea) importModules recursiveImport;
-    in
+  outputs = {...} @ inputs: let
+    azalea = import ./azalea.nix inputs;
+    inherit (azalea) importModules recursiveImport;
+  in
     importModules [
       (recursiveImport ./modules)
     ];
@@ -20,12 +18,15 @@
     chaotic.url = "github:lonerOrz/nyx-loner";
     silent-sddm.url = "github:kagurazakei/SilentSDDM";
     zakeivim.url = "github:kagurazakei/khanelivim";
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
+    firefox.url = "github:nix-community/flake-firefox-nightly";
+    mnw.url = "github:Gerg-L/mnw";
     niri = {
       url = "github:kagurazakei/niri";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     sysc-greet = {
-      url = "github:kagurazakei/sysc-greet";
+      url = "github:Nomadcxx/sysc-greet";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nur = {
@@ -40,9 +41,10 @@
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
     };
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
-    firefox.url = "github:nix-community/flake-firefox-nightly";
-    mnw.url = "github:Gerg-L/mnw";
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hjem-impure = {
       url = "github:Rexcrazy804/hjem-impure";
       inputs.nixpkgs.follows = "";

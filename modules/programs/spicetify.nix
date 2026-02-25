@@ -1,14 +1,14 @@
-{...}: {
+{spicetify-nix, ...}: {
   azalea.modules.spicetify = {
     pkgs,
-    sources,
+    inputs,
     ...
   }: {
     imports = [
-      (sources.spicetify-nix + "/modules/options.nix")
+      spicetify-nix.nixosModules.default
     ];
     programs.spicetify = let
-      spicePkgs = pkgs.callPackage "${sources.spicetify-nix}/pkgs/default.nix" {};
+      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
     in {
       enable = true;
       enabledExtensions = with spicePkgs.extensions; [
@@ -28,6 +28,7 @@
         newReleases
       ];
       theme = spicePkgs.themes.text;
+      colorScheme = "CatppuccinMocha";
     };
   };
 }
