@@ -95,8 +95,10 @@
         open = false;
 
         nvidiaSettings = true;
-        package = config.boot.kernelPackages.nvidiaPackages.latest;
-
+        package =
+          if config.networking.hostName == "hana"
+          then config.boot.kernelPackages.nvidiaPackages.latest
+          else config.boot.kernelPackages.nvidiaPackages.stable;
         prime = lib.mkIf cfg.hybrid.enable {
           offload = {
             enable = true;
