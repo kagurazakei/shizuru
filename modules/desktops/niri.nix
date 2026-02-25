@@ -23,7 +23,6 @@
     systemd.user.services.xwayland-satellite.wantedBy = ["graphical-session.target"];
     programs.niri = {
       enable = true;
-      # package = niri.packages.${pkgs.stdenv.hostPlatform.system}.niri;
     };
     programs.uwsm = {
       enable = true;

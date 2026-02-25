@@ -1,7 +1,7 @@
-{noctalia, ...}: {
+{
   azalea.modules.noctalia = {pkgs, ...}: {
-    environment.systemPackages = [
-      noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    environment.systemPackages = with pkgs; [
+      noctalia-shell
     ];
     hj = {
       systemd.services = {
