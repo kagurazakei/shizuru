@@ -1133,15 +1133,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1770571733,
-        "narHash": "sha256-829w9lPsr9FiIqwNNDjGFkqNM5jVSRGJNg8ST10DwJA=",
-        "owner": "Nomadcxx",
+        "lastModified": 1771993884,
+        "narHash": "sha256-3X2wN1MwPz+JfKunIzWrOq90nv0+D3+rlhNW2uyFyHI=",
+        "owner": "kagurazakei",
         "repo": "sysc-greet",
-        "rev": "4d1e9e6e49c1cf42ab98c5bd2e19b3f76b874504",
+        "rev": "9f85196987fc47f2e695b926d0c4dca2ae759029",
         "type": "github"
       },
       "original": {
-        "owner": "Nomadcxx",
+        "owner": "kagurazakei",
         "repo": "sysc-greet",
         "type": "github"
       }
