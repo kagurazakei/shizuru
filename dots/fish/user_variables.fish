@@ -22,7 +22,7 @@ set -xg DOCKER_CONFIG $XDG_CONFIG_HOME/docker
 set -xg SQLITE_HISTORY $XDG_DATA_HOME/sqlite_history
 set -xg GRADLE_USER_HOME $XDG_DATA_HOME/gradle
 set -xg RIPGREP_CONFIG_PATH $HOME/.config/rg/.ripgreprc
-set -xg STARSHIP_CONFIG $HOME/.config/starship/starship.toml
+set -xg STARSHIP_CONFIG $HOME/.config/starship.toml
 set -xg ANSIBLE_HOME $XDG_CONFIG_HOME/ansible
 set -xg FFMPEG_DATADIR $XDG_CONFIG_HOME/ffmpeg
 set -xg MYSQL_HISTFILE $XDG_DATA_HOME/mysql_history

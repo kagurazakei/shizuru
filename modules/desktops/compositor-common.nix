@@ -56,6 +56,7 @@
         cowask
         npins-show
         wallcrop
+        nixy
         ;
       # Themes
       inherit

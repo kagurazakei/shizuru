@@ -85,11 +85,13 @@
         };
       };
     };
-
+    environment.systemPackages = with pkgs; [
+      libraw
+    ];
     # user stuff
-    users.users."antonio".packages = [
-      pkgs.vscodium
-      pkgs.cava
+    users.users."antonio".packages = with pkgs; [
+      vscodium
+      cava
     ];
 
     # hardware
