@@ -31,7 +31,7 @@
         "mprisBlacklist": [
         ],
         "preferredPlayer": "",
-        "visualizerType": "mirrored",
+        "visualizerType": "wave",
         "volumeFeedback": true,
         "volumeOverdrive": true,
         "volumeStep": 5
@@ -150,9 +150,9 @@
                 {
                     "characterCount": 2,
                     "colorizeIcons": false,
-                    "emptyColor": "secondary",
+                    "emptyColor": "tertiary",
                     "enableScrollWheel": true,
-                    "focusedColor": "primary",
+                    "focusedColor": "secondary",
                     "followFocusedScreen": false,
                     "groupedBorderOpacity": 1,
                     "hideUnoccupied": false,

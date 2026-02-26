@@ -24,6 +24,7 @@
     programs.niri = {
       enable = true;
     };
+    services.dbus.packages = with pkgs; [thunar];
     programs.uwsm = {
       enable = true;
       waylandCompositors = {
@@ -34,16 +35,6 @@
         };
       };
     };
-    hj = {
-      packages = with pkgs; [
-        xdg-desktop-portal-gnome
-        xdg-desktop-portal-wlr
-        polkit_gnome
-      ];
-    };
-    # I could write a hypersunrise service to conflict but fuck it better to just
-    # make a keybind to stop the service lol And I am less likely to forget to
-    # turn the darn thing off if its right on my face
     systemd.user.timers.hyprsunset = {
       description = "Start hyprsunset after sunset";
       enable = true;

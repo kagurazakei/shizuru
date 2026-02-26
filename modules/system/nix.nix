@@ -2,6 +2,7 @@
   azalea.modules.nix = {
     pkgs,
     config,
+    lib,
     ...
   }: let
     script = pkgs.writers.writeNuBin "activate" ''
@@ -29,8 +30,9 @@
     '';
   in {
     nixpkgs.config.allowUnfree = true;
+    chaotic.nyx.cache.enable = lib.mkForce false;
     nix = {
-      package = pkgs.nixVersions.nix_2_30;
+      package = pkgs.nixVersions.git;
       registry.nixpkgs.flake = nixpkgs;
       channel.enable = false;
       settings = {

@@ -20,4 +20,5 @@ in {
   "ssh-hana.age".publicKeys = kagura ++ hana;
   "tailscale.age".publicKeys = kagura ++ hana;
   "maxitone.age".publicKeys = kagura ++ hana;
+  "cachix-token.age".publicKeys = kagura ++ hana;
 }
