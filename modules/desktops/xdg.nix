@@ -4,6 +4,13 @@
     pkgs,
     ...
   }: {
+    services.dbus.packages = with pkgs; [thunar];
+    xdg = {
+      autostart.enable = lib.mkDefault true;
+      menus.enable = lib.mkDefault true;
+      mime.enable = lib.mkDefault true;
+      icons.enable = lib.mkDefault true;
+    };
     xdg.portal = {
       enable = true;
       config = {

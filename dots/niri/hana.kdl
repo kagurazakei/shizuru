@@ -139,16 +139,13 @@ binds {
         fullscreen-window
     }
     Mod+Shift+X {
-        spawn "ani-cli" "--rofi"
+        spawn "kitty" "-e" "viu"
     }
     Mod+Space {
         toggle-window-floating
     }
     Mod+T {
         spawn "dolphin"
-    }
-    Mod+O {
-        spawn "noctalia-shell" "ipc" "call" "launcher" "clipboard"
     }
     Mod+Tab {
         toggle-overview
@@ -335,7 +332,9 @@ window-rule {
     match app-id="^(org.wezfurlong.wezterm)$"
     match app-id="^(kitty)$"
     match app-id="^(com.mitchellh.ghostty)$"
-    opacity 0.86
+    match app-id="^(firefox-nightly)$"
+    match app-id="^(zen-browser)$"
+    opacity 0.85
     blur {
         on
     }

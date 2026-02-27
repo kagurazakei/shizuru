@@ -3,7 +3,11 @@
   self,
   ...
 }: {
-  azalea.modules.qt = {pkgs, ...}: let
+  azalea.modules.qt = {
+    pkgs,
+    config,
+    ...
+  }: let
     username = "antonio";
   in {
     nixpkgs.overlays = [
@@ -52,6 +56,16 @@
       QML2_IMPORT_PATH = [
         "${pkgs.kdePackages.qqc2-desktop-style}/${pkgs.kdePackages.qtbase.qtQmlPrefix}"
       ];
+    };
+    hj = {
+      xdg.config.files = {
+        "qt6ct/qt6ct.conf".source = config.hj.impure.dotsDir + "/qt6ct/qt6ct.conf";
+        "qt6ct/colors".source = config.hj.impure.dotsDir + "/qt6ct/colors";
+        "qt5ct/qt5ct.conf".source = config.hj.impure.dotsDir + "/qt5ct/qt5ct.conf";
+        "qt5ct/colors".source = config.hj.impure.dotsDir + "/qt5ct/colors";
+        "Kvantum/kvantum.kvconfig".source = config.hj.impure.dotsDir + "/Kvantum/kvantum.kvconfig";
+        "Kvantum/rose-pine-iris".source = config.hj.impure.dotsDir + "/Kvantum/rose-pine-iris";
+      };
     };
   };
 }

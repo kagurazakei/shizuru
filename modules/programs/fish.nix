@@ -178,13 +178,11 @@
         (pkgs)
         eza
         fish-lsp
-        starship
         carapace
         carapace-bridge
         lsd
         g-ls
         krabby
-        atuin
         nix-your-shell
         any-nix-shell
         stylua

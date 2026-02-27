@@ -10,7 +10,7 @@
           after = ["graphical-session.target"];
           partOf = ["graphical-session.target"];
           serviceConfig = {
-            ExecStart = "noctalia-shell -d";
+            ExecStart = "${pkgs.noctalia-shell}/bin/noctalia-shell -d";
             Restart = "on-failure";
           };
         };

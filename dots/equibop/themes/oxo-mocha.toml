@@ -1,0 +1,38 @@
+[[themes]]
+name = "Catppuccin-mocha"
+
+[themes.palette]
+background = "#0a0a13"
+foreground = "#f8f8f2"
+black = "#0a0a13"
+red = "#ff5555"
+green = "#50fa7b"
+yellow = "#f1fa8c"
+blue = "#bd93f9"
+magenta = "#ff79c6"
+cyan = "#8be9fd"
+white = "#f8f8f2"
+
+bright_black = "#44475a"
+bright_red = "#ff6e6e"
+bright_green = "#50fa7b"
+bright_yellow = "#ffb86c"
+bright_blue = "#bd93f9"
+bright_magenta = "#ff79c6"
+bright_cyan = "#8be9fd"
+bright_white = "#ffffff"
+
+[themes.component_style]
+selection = { bg = "#6272a4", modifiers = ["Bold"] }
+block_title = { fg = "Magenta" }
+playback_track = { fg = "Cyan", modifiers = ["Bold"] }
+playback_album = { fg = "Yellow" }
+playback_metadata = { fg = "Blue" }
+playback_progress_bar = { bg = "#6272a4", fg = "Green" }
+current_playing = { fg = "Green", modifiers = ["Bold"] }
+page_desc = { fg = "Cyan", modifiers = ["Bold"] }
+table_header = { fg = "Blue" }
+border = { fg = "#ff79c6" }
+playback_status = { fg = "Cyan", modifiers = ["Bold"] }
+playback_artists = { fg = "Cyan", modifiers = ["Bold"] }
+playlist_desc = { fg = "#6272a4" }

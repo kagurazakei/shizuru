@@ -88,8 +88,6 @@ in {
     "bat/config" = "/bat/config";
     "bat/themes" = {sources, ...}: sources.catp-bat + "/themes";
     "shpool/config.toml" = "/shpool/config.toml";
-    "yazi/yazi.toml" = "/yazi/yazi.toml";
-    "yazi/keymap.toml" = "/yazi/keymap.toml";
     "booru/config.toml" = "/booru/config.toml";
     "btop/btop.conf" = "/btop/btop.conf";
     "btop/themes/oxocarbon.theme" = "/btop/themes/oxocarbon.theme";
@@ -99,8 +97,6 @@ in {
     "fish/aliases.fish" = "/fish/aliases.fish";
     "kitty/kitty.conf" = d: d.dotsDir + "/kitty/${d.lib.toLower d.config.networking.hostName}.conf";
     "kitty/themes/oxocarbon.conf" = "/kitty/themes/oxocarbon.conf";
-    "menus/applications.menu" = "/menus/applications.menu";
-    "dolphinrc" = "/dolphinrc";
     "carapace/carapace.toml" = "/carapace/carapace.toml";
     "nushell/config.nu" = "/nushell/config.nu";
     "nushell/env.nu" = "/nushell/env.nu";
@@ -109,17 +105,11 @@ in {
 
   azalea.dots.zakei-gui = mkDotsModule username {
     "uwsm/env" = "/uwsm/env";
-    "dolphinrc" = "/dolphinrc";
-    "qt6ct/qt6ct.conf" = "/qt6ct/qt6ct.conf";
-    "qt6ct/colors" = "/qt6ct/colors";
-    "qt5ct/qt5ct.conf" = "/qt5ct/qt5ct.conf";
-    "qt5ct/colors" = "/qt5ct/colors";
-    "Kvantum/kvantum.kvconfig" = "/Kvantum/kvantum.kvconfig";
-    "Kvantum/rose-pine-iris" = "/Kvantum/rose-pine-iris";
-    "kdeglobals" = "/kdeglobals";
     "background" = {config, ...}: config.zaphkiel.data.wallpaper;
     "matugen/config.toml" = "/matugen/config.toml";
     "matugen/templates" = "/matugen/templates";
+    "equibop/settings.json" = "/equibop/settings.json";
+    "equibop/themes" = "/equibop/themes";
     "fuzzel/fuzzel.ini" = "/fuzzel/fuzzel.ini";
     "foot/foot.ini" = "/foot/foot.ini";
     "foot/rose-pine.ini" = {sources, ...}: sources.rosep-foot + "/rose-pine";

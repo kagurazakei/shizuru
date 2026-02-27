@@ -1,5 +1,4 @@
-{ self, ... }:
-{
+{self, ...}: {
   azalea.profiles.default = {
     imports = [
       self.azalea.modules.agenix
@@ -19,6 +18,7 @@
       self.azalea.modules.nh
       self.azalea.modules.qt
       self.azalea.modules.starship
+      self.azalea.modules.atuin
       # programs
       self.azalea.modules.environment
       self.azalea.modules.nix

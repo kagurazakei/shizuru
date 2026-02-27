@@ -56,6 +56,7 @@
         npins-show
         wallcrop
         nixy
+        lutui
         ;
       # Themes
       inherit
@@ -91,8 +92,6 @@
         bottom
         nitch
         fastfetch
-        carapace
-        carapace-bridge
         htop
         ;
       inherit
@@ -108,7 +107,7 @@
       # external
       inherit todo;
     };
-
+    programs.dconf.enable = true;
     programs.dconf.profiles.user.databases = [
       {
         settings = {

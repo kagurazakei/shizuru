@@ -21,19 +21,11 @@
     services.displayManager.defaultSession = "niri-uwsm";
     systemd.user.services.hypridle.path = lib.mkForce [config.programs.hyprland.package];
     systemd.user.services.xwayland-satellite.wantedBy = ["graphical-session.target"];
-    programs.niri = {
+    programs.niriBlur = {
       enable = true;
-    };
-    services.dbus.packages = with pkgs; [thunar];
-    programs.uwsm = {
-      enable = true;
-      waylandCompositors = {
-        niri = {
-          prettyName = "Niri The Goat";
-          comment = "Niri Compositor managed by UWSM";
-          binPath = "/run/current-system/sw/bin/niri-session";
-        };
-      };
+      withUWSM = true;
+      useThunar = true;
+      withXDG = true;
     };
     systemd.user.timers.hyprsunset = {
       description = "Start hyprsunset after sunset";
