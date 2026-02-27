@@ -59,12 +59,12 @@
     };
     hj = {
       xdg.config.files = {
-        "qt6ct/qt6ct.conf".source = config.hj.impure.dotsDir + "/qt6ct/qt6ct.conf";
-        "qt6ct/colors".source = config.hj.impure.dotsDir + "/qt6ct/colors";
-        "qt5ct/qt5ct.conf".source = config.hj.impure.dotsDir + "/qt5ct/qt5ct.conf";
-        "qt5ct/colors".source = config.hj.impure.dotsDir + "/qt5ct/colors";
-        "Kvantum/kvantum.kvconfig".source = config.hj.impure.dotsDir + "/Kvantum/kvantum.kvconfig";
-        "Kvantum/rose-pine-iris".source = config.hj.impure.dotsDir + "/Kvantum/rose-pine-iris";
+        "qt6ct/qt6ct.conf".source = config.impure-dots + "/qt6ct/qt6ct.conf";
+        "qt6ct/colors".source = config.impure-dots + "/qt6ct/colors";
+        "qt5ct/qt5ct.conf".source = config.impure-dots + "/qt5ct/qt5ct.conf";
+        "qt5ct/colors".source = config.impure-dots + "/qt5ct/colors";
+        "Kvantum/kvantum.kvconfig".source = config.impure-dots + "/Kvantum/kvantum.kvconfig";
+        "Kvantum/rose-pine-iris".source = config.impure-dots + "/Kvantum/rose-pine-iris";
       };
     };
   };

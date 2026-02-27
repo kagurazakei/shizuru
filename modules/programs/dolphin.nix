@@ -21,9 +21,9 @@
         kirigami
       ];
       xdg.config.files = {
-        "dolphinrc".source = config.hj.impure.dotsDir + "/dolphinrc";
-        "menus/applications.menu".source = config.hj.impure.dotsDir + "/menus/applications.menu";
-        "kdeglobals".source = config.hj.impure.dotsDir + "/kdeglobals";
+        "dolphinrc".source = config.impure-dots + "/dolphinrc";
+        "menus/applications.menu".source = config.impure-dots + "/menus/applications.menu";
+        "kdeglobals".source = config.impure-dots + "/kdeglobals";
       };
     };
   };

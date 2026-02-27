@@ -10,6 +10,7 @@ in {
   }: {
     imports = [
       (lib.mkAliasOptionModule ["hj"] ["hjem" "users" "${username}"])
+      (lib.mkAliasOptionModule ["impure-dots"] ["hjem" "users" "${username}" "impure" "dotsDir"])
     ];
     zaphkiel = {
       data.users = [username];
