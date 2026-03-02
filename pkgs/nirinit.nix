@@ -1,0 +1,46 @@
+{
+  pkgs,
+  sources,
+}: let
+  # Import rust-overlay from sources
+  rustOverlay = import sources.rust-overlay;
+
+  # Apply overlay to nixpkgs
+  pkgsWithRust = import pkgs.path {
+    inherit (pkgs) system;
+    overlays = [rustOverlay];
+  };
+
+  # Setup rust platform
+  rustPlatform = pkgsWithRust.makeRustPlatform {
+    cargo = pkgsWithRust.rust-bin.beta.latest.default;
+    rustc = pkgsWithRust.rust-bin.beta.latest.default;
+  };
+in
+  # Build the Rust package
+  rustPlatform.buildRustPackage {
+    pname = "nirinit";
+    version = "nightly";
+
+    src = sources.nirinit;
+
+    cargoLock = {
+      lockFile = "${sources.nirinit}/Cargo.lock";
+    };
+
+    # Optional: native build dependencies
+    nativeBuildInputs = with pkgsWithRust; [
+      pkg-config
+    ];
+
+    # Optional: runtime dependencies
+    buildInputs = with pkgsWithRust; [
+      openssl
+    ];
+
+    meta = {
+      description = "Session restore helper";
+      license = pkgs.lib.licenses.mit;
+      maintainers = [];
+    };
+  }

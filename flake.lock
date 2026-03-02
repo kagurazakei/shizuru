@@ -1090,11 +1090,11 @@
         "nixpkgs": "nixpkgs_10"
       },
       "locked": {
-        "lastModified": 1771423256,
-        "narHash": "sha256-2Isulpemvl7n53zhdd01nCa/RaE2tOZS4rQEC+M7O2E=",
+        "lastModified": 1772431666,
+        "narHash": "sha256-kkNsliadQKq6fetKg2DsKKVpHPQMyXKnbOBI6F8gDC0=",
         "owner": "kagurazakei",
         "repo": "SilentSDDM",
-        "rev": "3e17694c115c8cfe14d92d6c6760a96c4a76ded7",
+        "rev": "15c70bc94ba2a810349e7c91ed41c01172097008",
         "type": "github"
       },
       "original": {

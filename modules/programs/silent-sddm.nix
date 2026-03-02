@@ -1,5 +1,4 @@
-{ self, ... }@inputs:
-{
+{...} @ inputs: {
   # NOTE
   # ╭──────────────────────────────────────────────────────────╮
   # │ complete this weird inputs error ( check                 │
@@ -8,13 +7,11 @@
   # not really using this which is why the weird @inputs
   # to excape eval errors using laziness
 
-  azalea.modules.silent-sddm =
-    { pkgs, ... }:
-    {
-      imports = [ inputs.silent-sddm.nixosModules.default ];
-      programs.silentSDDM = {
-        enable = true;
-        theme = "rei";
-      };
+  azalea.modules.silent-sddm = {
+    imports = [inputs.silent-sddm.nixosModules.default];
+    programs.silentSDDM = {
+      enable = true;
+      theme = "silvia";
     };
+  };
 }

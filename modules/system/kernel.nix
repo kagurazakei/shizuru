@@ -32,9 +32,9 @@
 
     boot = {
       kernelPackages =
-       if config.networking.hostName == "hana"
-       then pkgs.cachyosKernels.linuxPackages-cachyos-latest-zen4
-       else pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto;
+        if config.networking.hostName == "hana"
+        then pkgs.cachyosKernels.linuxPackages-cachyos-rt-bore
+        else pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto;
       consoleLogLevel = 0;
       kernelParams = [
         "quiet"

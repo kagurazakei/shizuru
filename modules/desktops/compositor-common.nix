@@ -46,6 +46,7 @@
         stash
         viu
         equibop
+        nirinit
         niri-scratchpad-rs
         ;
       inherit
