@@ -282,6 +282,19 @@
       "url": "https://github.com/Gerg-L/spicetify-nix/archive/6dd43010ac2458cc56a6ac5250349b9217a7a2ae.tar.gz",
       "hash": "sha256-7wn9qbzIQQgH8tnq4VwzuWEqEWpekuymlLyhY3vM/j8="
     },
+    "sysc-greet": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "kagurazakei",
+        "repo": "sysc-greet"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "7a6d1caddcb7c046d6c5f44490e77a5885d3a620",
+      "url": "https://github.com/kagurazakei/sysc-greet/archive/7a6d1caddcb7c046d6c5f44490e77a5885d3a620.tar.gz",
+      "hash": "sha256-sTunoMZ16GWkaLS2ZdvqHLt0WU3PAAIAorC++yhEx1k="
+    },
     "viu": {
       "type": "Git",
       "repository": {

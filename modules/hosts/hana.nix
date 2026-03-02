@@ -2,7 +2,6 @@
   azalea.hosts.hana = {
     pkgs,
     config,
-    lib,
     username,
     ...
   }: {
@@ -20,8 +19,8 @@
       self.azalea.modules.btrfs
       self.azalea.modules.steam
       self.azalea.modules.nvidia
-      self.azalea.modules.greetd-autostart
-      # self.azalea.modules.sysc-greet
+      # self.azalea.modules.greetd-autostart
+      self.azalea.modules.sysc-greet
       # self.azalea.modules.silent-sddm
       self.azalea.modules.cups
     ];
@@ -99,7 +98,6 @@
     ];
 
     # hardware
-    boot.kernelParams = ["i915.enable_guc=2"];
     boot.initrd.availableKernelModules = [
       "xhci_pci"
       "ahci"
@@ -110,27 +108,26 @@
 
     # probably not required, but leaving it in for now
     services.fstrim.enable = true;
-    # disabled autosuspend
-    hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
     fileSystems."/" = {
-      device = "/dev/disk/by-uuid/33c9dfe4-1f00-4eca-8515-55330f66dd34";
+      device = "/dev/disk/by-uuid/47a75818-824d-4cb1-bbeb-663415918292";
       fsType = "btrfs";
       options = ["subvol=root"];
     };
 
     fileSystems."/home" = {
-      device = "/dev/disk/by-uuid/12a55073-227a-4f1a-a272-aeb49e34276c";
+      device = "/dev/disk/by-uuid/b66cdd35-b90d-423a-8d08-6333d0f901c8";
       fsType = "btrfs";
     };
 
     fileSystems."/nix" = {
-      device = "/dev/disk/by-uuid/33c9dfe4-1f00-4eca-8515-55330f66dd34";
+      device = "/dev/disk/by-uuid/47a75818-824d-4cb1-bbeb-663415918292";
       fsType = "btrfs";
       options = ["subvol=nix"];
     };
 
     fileSystems."/boot" = {
-      device = "/dev/disk/by-uuid/719B-61DE";
+      device = "/dev/disk/by-uuid/4577-6170";
       fsType = "vfat";
       options = [
         "fmask=0022"
@@ -139,7 +136,7 @@
     };
 
     swapDevices = [
-      {device = "/dev/disk/by-uuid/54a991e6-f06d-4de3-8eee-daf6f5671295";}
+      {device = "/dev/disk/by-uuid/2cfd7bef-e433-4d31-ac35-ec00b181d660";}
     ];
   };
 }

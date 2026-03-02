@@ -1,14 +1,17 @@
-{sysc-greet, ...}: {
-  azalea.modules.sysc-greet = {...}: {
-    imports = [sysc-greet.nixosModules.default];
+{
+  azalea.modules.sysc-greet = {
+    pkgs,
+    sources,
+    ...
+  }: {
+    imports = [(sources.sysc-greet + "/module.nix")];
+    environment.systemPackages = [
+      (pkgs.callPackage "${sources.sysc-greet}/default.nix" {})
+    ];
+    environment.pathsToLink = ["/run/current-system/sw/share/wayland-sessions/"];
     services.sysc-greet = {
       enable = true;
       compositor = "niri";
-      # compositorPackage = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri;
-      settings = {
-        default_session = "niri --session";
-        user = "antonio";
-      };
     };
   };
 }
