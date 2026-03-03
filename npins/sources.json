@@ -42,6 +42,19 @@
       "url": "https://github.com/ndfined-crp/ayugram-desktop/archive/a95081b8ac098e529aedad2de68464e312d724dc.tar.gz",
       "hash": "sha256-MRRHMf2wGeotG26qBJ9+tzjWWdEJFjaui+La2o5Lx7c="
     },
+    "cat-gtk-themes": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "kagurazakei",
+        "repo": "cat-gtk-themes"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "7eeeaf131e8206c136a259f81940ae2d2a26e44f",
+      "url": "https://github.com/kagurazakei/cat-gtk-themes/archive/7eeeaf131e8206c136a259f81940ae2d2a26e44f.tar.gz",
+      "hash": "sha256-mEBnbGNl/n020tPOgGGWzleW+BY/dmGRpEa3V7rwU3I="
+    },
     "catp-bat": {
       "type": "Git",
       "repository": {
@@ -67,6 +80,19 @@
       "revision": "4dfc8758a1deab45e37b7f3661e0fd3759d85788",
       "url": "https://github.com/NotAShelf/direnv.nvim/archive/4dfc8758a1deab45e37b7f3661e0fd3759d85788.tar.gz",
       "hash": "sha256-KqO8uDbVy4sVVZ6mHikuO+SWCzWr97ZuFRC8npOPJIE="
+    },
+    "fish": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "kagurazakei",
+        "repo": "fish"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "bcfeb321aaecfd0634b7364f3ac8cda5eeea85a6",
+      "url": "https://github.com/kagurazakei/fish/archive/bcfeb321aaecfd0634b7364f3ac8cda5eeea85a6.tar.gz",
+      "hash": "sha256-ODbSYwWKNVh7BsKPyycORr4rT8We8yJuCgVZBpmvoaQ="
     },
     "fzf-lua": {
       "type": "Git",

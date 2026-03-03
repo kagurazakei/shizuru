@@ -92,10 +92,6 @@ in {
     "booru/config.toml" = "/booru/config.toml";
     "btop/btop.conf" = "/btop/btop.conf";
     "btop/themes/oxocarbon.theme" = "/btop/themes/oxocarbon.theme";
-    "fish/config.fish" = "/fish/config.fish";
-    "fish/user_variables.fish" = "/fish/user_variables.fish";
-    "fish/abbreviations.fish" = "/fish/abbreviations.fish";
-    "fish/aliases.fish" = "/fish/aliases.fish";
     "kitty/kitty.conf" = d: d.dotsDir + "/kitty/${d.lib.toLower d.config.networking.hostName}.conf";
     "kitty/themes/oxocarbon.conf" = "/kitty/themes/oxocarbon.conf";
     "carapace/carapace.toml" = "/carapace/carapace.toml";
@@ -112,6 +108,7 @@ in {
     "equibop/settings.json" = "/equibop/settings.json";
     "equibop/themes" = "/equibop/themes";
     "fuzzel/fuzzel.ini" = "/fuzzel/fuzzel.ini";
+    "fuzzel/noctalia" = "/fuzzel/noctalia";
     "foot/foot.ini" = "/foot/foot.ini";
     "foot/rose-pine.ini" = {sources, ...}: sources.rosep-foot + "/rose-pine";
     "hypr/hypridle.conf" = "/hyprland/hypridle.conf";

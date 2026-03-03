@@ -1,7 +1,19 @@
-{self, ...}: {
+{self, ...}: let
+  inherit (self.lib) mkDotsModule;
+  username = "antonio";
+in {
+  azalea.dots.fish-config = mkDotsModule username {
+    "fish/config.fish" = "/fish/config.fish";
+    "fish/user_variables.fish" = "/fish/user_variables.fish";
+    "fish/abbreviations.fish" = "/fish/abbreviations.fish";
+    "fish/aliases.fish" = "/fish/aliases.fish";
+    "fish/completions" = {sources, ...}: sources.fish + "/completions";
+    "fish/functions" = {sources, ...}: sources.fish + "/functions";
+    "fish/conf.d" = {sources, ...}: sources.fish + "/conf.d";
+  };
   azalea.modules.fish = {
-    lib,
     pkgs,
+    lib,
     ...
   }: let
     inherit
@@ -11,6 +23,7 @@
       concatStringsSep
       map
       ;
+
     rebuildCommand = "nixos-rebuild --sudo --flake ~/nixos#";
     #         !!!you found the fish!!!
     #   ⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⠖⠒⠲⠤⣤⣀⠀⠀⠀⢀⣀⣤⠤⠖⠒⠢⢤⡀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -160,7 +173,6 @@
         end
       '';
     };
-
     programs = {
       zoxide = {
         enable = true;

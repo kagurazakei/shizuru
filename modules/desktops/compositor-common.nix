@@ -47,6 +47,7 @@
         viu
         equibop
         nirinit
+        gtk-themes
         niri-scratchpad-rs
         ;
       inherit

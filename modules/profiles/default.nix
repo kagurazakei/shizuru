@@ -19,6 +19,7 @@
       self.azalea.modules.qt
       self.azalea.modules.starship
       self.azalea.modules.atuin
+      self.azalea.dots.fish-config
       # programs
       self.azalea.modules.environment
       self.azalea.modules.nix
