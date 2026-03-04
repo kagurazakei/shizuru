@@ -46,8 +46,8 @@
         "density": "spacious",
         "displayMode": "always_visible",
         "floating": false,
-        "frameRadius": 12,
-        "frameThickness": 14,
+        "frameRadius": 7,
+        "frameThickness": 17,
         "hideOnOverview": false,
         "marginHorizontal": 4,
         "marginVertical": 4,
@@ -143,7 +143,7 @@
                     "colorizeSystemIcon": "secondary",
                     "customIconPath": "",
                     "enableColorization": true,
-                    "icon": "snowflake-off",
+                    "icon": "mood-crazy-happy-filled",
                     "id": "ControlCenter",
                     "useDistroLogo": false
                 },
@@ -154,17 +154,17 @@
                     "enableScrollWheel": true,
                     "focusedColor": "secondary",
                     "followFocusedScreen": false,
-                    "groupedBorderOpacity": 1,
+                    "groupedBorderOpacity": 0.86,
                     "hideUnoccupied": false,
-                    "iconScale": 0.8,
+                    "iconScale": 0.67,
                     "id": "Workspace",
-                    "labelMode": "index",
-                    "occupiedColor": "secondary",
-                    "pillSize": 0.6,
+                    "labelMode": "none",
+                    "occupiedColor": "tertiary",
+                    "pillSize": 0.41000000000000003,
                     "showApplications": false,
                     "showBadge": true,
                     "showLabelsOnlyWhenOccupied": true,
-                    "unfocusedIconsOpacity": 1
+                    "unfocusedIconsOpacity": 0.71
                 },
                 {
                     "deviceNativePath": "",
@@ -400,7 +400,7 @@
         "enableLockScreenCountdown": true,
         "enableShadows": true,
         "forceBlackScreenCorners": false,
-        "iRadiusRatio": 0.45,
+        "iRadiusRatio": 0.36,
         "keybinds": {
             "keyDown": [
                 "Down"
@@ -433,9 +433,9 @@
         "lockScreenMonitors": [
         ],
         "lockScreenTint": 0,
-        "radiusRatio": 1.27,
+        "radiusRatio": 0.21,
         "reverseScroll": false,
-        "scaleRatio": 1.05,
+        "scaleRatio": 1,
         "screenRadiusRatio": 0.86,
         "shadowDirection": "center",
         "shadowOffsetX": 0,
@@ -630,15 +630,19 @@
             },
             {
                 "enabled": true,
-                "id": "btop"
-            },
-            {
-                "enabled": true,
                 "id": "foot"
             },
             {
                 "enabled": true,
                 "id": "cava"
+            },
+            {
+                "enabled": true,
+                "id": "gtk"
+            },
+            {
+                "enabled": true,
+                "id": "zenBrowser"
             }
         ],
         "enableUserTheming": false

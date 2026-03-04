@@ -8,11 +8,11 @@
     "mOnSurface": "#f2f4f8",
     "mOnSurfaceVariant": "#dde1e6",
     "mOnTertiary": "#11121d",
-    "mOutline": "#525252",
-    "mPrimary": "#ff7eb6",
+    "mOutline": "#1e1e2e",
+    "mPrimary": "#78a9ff",
     "mSecondary": "#42be65",
     "mShadow": "#000000",
     "mSurface": "#11121d",
-    "mSurfaceVariant": "#1e1e2e",
+    "mSurfaceVariant": "#11121d",
     "mTertiary": "#be95ff"
 }

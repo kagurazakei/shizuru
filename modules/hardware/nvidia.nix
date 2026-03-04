@@ -98,7 +98,7 @@
         package =
           if config.networking.hostName == "hana"
           then config.boot.kernelPackages.nvidiaPackages.stable
-          else config.boot.kernelPackages.nvidiaPackages.beta;
+          else config.boot.kernelPackages.nvidiaPackages.stable;
         prime = lib.mkIf cfg.hybrid.enable {
           offload = {
             enable = true;
