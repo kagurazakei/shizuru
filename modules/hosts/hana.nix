@@ -23,6 +23,8 @@
       self.azalea.modules.sysc-greet
       # self.azalea.modules.silent-sddm
       self.azalea.modules.cups
+      self.azalea.modules.hana-fs
+      self.azalea.modules.spicetify
     ];
 
     # info
@@ -108,35 +110,5 @@
 
     # probably not required, but leaving it in for now
     services.fstrim.enable = true;
-
-    fileSystems."/" = {
-      device = "/dev/disk/by-uuid/47a75818-824d-4cb1-bbeb-663415918292";
-      fsType = "btrfs";
-      options = ["subvol=root"];
-    };
-
-    fileSystems."/home" = {
-      device = "/dev/disk/by-uuid/b66cdd35-b90d-423a-8d08-6333d0f901c8";
-      fsType = "btrfs";
-    };
-
-    fileSystems."/nix" = {
-      device = "/dev/disk/by-uuid/47a75818-824d-4cb1-bbeb-663415918292";
-      fsType = "btrfs";
-      options = ["subvol=nix"];
-    };
-
-    fileSystems."/boot" = {
-      device = "/dev/disk/by-uuid/4577-6170";
-      fsType = "vfat";
-      options = [
-        "fmask=0022"
-        "dmask=0022"
-      ];
-    };
-
-    swapDevices = [
-      {device = "/dev/disk/by-uuid/2cfd7bef-e433-4d31-ac35-ec00b181d660";}
-    ];
   };
 }

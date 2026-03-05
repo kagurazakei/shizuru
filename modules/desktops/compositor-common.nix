@@ -49,6 +49,7 @@
         nirinit
         gtk-themes
         niri-scratchpad-rs
+        ktop
         ;
       inherit
         (zpkgs.scripts)

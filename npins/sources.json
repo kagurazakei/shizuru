@@ -146,6 +146,22 @@
       "url": "https://github.com/kagurazakei/khanelivim/archive/ed0892ce3946b132955ec541e7cdd275443b62ba.tar.gz",
       "hash": "sha256-732/iyVGUZbB/oNA1xBU1hUKlzD+wzzXDnTZQyluFZk="
     },
+    "ktop": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "brontoguana",
+        "repo": "ktop"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v1.0.0",
+      "revision": "ecdb66477e4ebc615c5e540c047afebdcb328b2b",
+      "url": "https://api.github.com/repos/brontoguana/ktop/tarball/refs/tags/v1.0.0",
+      "hash": "sha256-3urlADgG8CB5oTZ3eT7RQi2P2DcE+mNZrbV4IYcRTyI="
+    },
     "mangowc": {
       "type": "GitRelease",
       "repository": {

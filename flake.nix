@@ -25,10 +25,6 @@
       url = "github:kagurazakei/niri";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    sysc-greet = {
-      url = "github:Nomadcxx/sysc-greet";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -15,8 +15,7 @@
         "iconMode": "tabler",
         "ignoreMouseInput": false,
         "overviewLayer": false,
-        "pinnedApps": [
-        ],
+        "pinnedApps": [],
         "position": "top_center",
         "screenshotAnnotationTool": "",
         "showCategories": true,
@@ -28,8 +27,7 @@
     },
     "audio": {
         "cavaFrameRate": 30,
-        "mprisBlacklist": [
-        ],
+        "mprisBlacklist": [],
         "preferredPlayer": "",
         "visualizerType": "wave",
         "volumeFeedback": true,
@@ -43,7 +41,7 @@
         "barType": "framed",
         "capsuleColorKey": "none",
         "capsuleOpacity": 0.89,
-        "density": "spacious",
+        "density": "default",
         "displayMode": "always_visible",
         "floating": false,
         "frameRadius": 7,
@@ -51,12 +49,10 @@
         "hideOnOverview": false,
         "marginHorizontal": 4,
         "marginVertical": 4,
-        "monitors": [
-        ],
+        "monitors": [],
         "outerCorners": true,
         "position": "right",
-        "screenOverrides": [
-        ],
+        "screenOverrides": [],
         "showCapsule": true,
         "showOutline": true,
         "useSeparateOpacity": false,
@@ -160,7 +156,7 @@
                     "id": "Workspace",
                     "labelMode": "none",
                     "occupiedColor": "tertiary",
-                    "pillSize": 0.41000000000000003,
+                    "pillSize": 0.37,
                     "showApplications": false,
                     "showBadge": true,
                     "showLabelsOnlyWhenOccupied": true,
@@ -202,15 +198,13 @@
                     "useFixedWidth": true
                 },
                 {
-                    "blacklist": [
-                    ],
+                    "blacklist": [],
                     "chevronColor": "none",
                     "colorizeIcons": false,
                     "drawerEnabled": false,
                     "hidePassive": false,
                     "id": "Tray",
-                    "pinned": [
-                    ]
+                    "pinned": []
                 },
                 {
                     "hideWhenZero": false,
@@ -377,8 +371,7 @@
             "HDMI-A-1"
         ],
         "onlySameOutput": true,
-        "pinnedApps": [
-        ],
+        "pinnedApps": [],
         "pinnedStatic": true,
         "position": "bottom",
         "showFrameIndicator": true,
@@ -430,8 +423,7 @@
         "lockScreenAnimations": true,
         "lockScreenBlur": 0.05,
         "lockScreenCountdownDuration": 10000,
-        "lockScreenMonitors": [
-        ],
+        "lockScreenMonitors": [],
         "lockScreenTint": 0,
         "radiusRatio": 0.21,
         "reverseScroll": false,
@@ -534,8 +526,7 @@
             2
         ],
         "location": "top_right",
-        "monitors": [
-        ],
+        "monitors": [],
         "overlayLayer": true
     },
     "plugins": {
@@ -667,13 +658,11 @@
         "directory": "/home/antonio/Pictures/wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
-        "favorites": [
-        ],
+        "favorites": [],
         "fillColor": "#000000",
         "fillMode": "crop",
         "hideWallpaperFilenames": false,
-        "monitorDirectories": [
-        ],
+        "monitorDirectories": [],
         "overviewBlur": 0.4,
         "overviewEnabled": false,
         "overviewTint": 0.6,

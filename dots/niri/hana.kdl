@@ -4,7 +4,7 @@ environment {
     ELECTRON_ENABLE_HARDWARE_ACCELERATION "1"
     ELECTRON_OZONE_PLATFORM_HINT "auto"
     GDK_BACKEND "wayland,x11"
-    GTK_THEME "Catppuccin-Red-Dark"
+    GTK_THEME "CatppuccinMocha-zk"
     JAVA_AWT_WM_NONEREPARENTING "1"
     MOZ_ENABLE_WAYLAND "1"
     NIXOS_OZONE_WL "1"
