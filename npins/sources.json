@@ -29,19 +29,6 @@
       "url": "https://github.com/ryantm/agenix/archive/b027ee29d959fda4b60b57566d64c98a202e0feb.tar.gz",
       "hash": "sha256-9VnK6Oqai65puVJ4WYtCTvlJeXxMzAp/69HhQuTdl/I="
     },
-    "ayugram-desktop": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "ndfined-crp",
-        "repo": "ayugram-desktop"
-      },
-      "branch": "release",
-      "submodules": false,
-      "revision": "a95081b8ac098e529aedad2de68464e312d724dc",
-      "url": "https://github.com/ndfined-crp/ayugram-desktop/archive/a95081b8ac098e529aedad2de68464e312d724dc.tar.gz",
-      "hash": "sha256-MRRHMf2wGeotG26qBJ9+tzjWWdEJFjaui+La2o5Lx7c="
-    },
     "cat-gtk-themes": {
       "type": "Git",
       "repository": {
@@ -51,9 +38,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "7eeeaf131e8206c136a259f81940ae2d2a26e44f",
-      "url": "https://github.com/kagurazakei/cat-gtk-themes/archive/7eeeaf131e8206c136a259f81940ae2d2a26e44f.tar.gz",
-      "hash": "sha256-mEBnbGNl/n020tPOgGGWzleW+BY/dmGRpEa3V7rwU3I="
+      "revision": "6bb6206ec544276fb6f2805023fcff54fc54e8e2",
+      "url": "https://github.com/kagurazakei/cat-gtk-themes/archive/6bb6206ec544276fb6f2805023fcff54fc54e8e2.tar.gz",
+      "hash": "sha256-wtt4IMl6kFRfkquGCepjL6oZq5qZbhJXFjPicOrlo6I="
     },
     "catp-bat": {
       "type": "Git",
@@ -217,19 +204,6 @@
       "url": "https://github.com/nvim-neorg/neorg/archive/4da2159b3f3420d43613f43e159f4253b8544474.tar.gz",
       "hash": "sha256-DFpbdBfyW32d4QhH59+melM7cHK9tzm9awKjTDPJOvs="
     },
-    "niri": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "kagurazakei",
-        "repo": "niri"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "a0284439adda83e2ca1bc34c05b84cbf4272de82",
-      "url": "https://github.com/kagurazakei/niri/archive/a0284439adda83e2ca1bc34c05b84cbf4272de82.tar.gz",
-      "hash": "sha256-MvIjmuSGPozXuynaJAwK7xmXiy5ZK/jOGMO9nJK6mVo="
-    },
     "niri-scratchpad-rs": {
       "type": "Git",
       "repository": {
@@ -284,6 +258,33 @@
       "revision": "d2b0b283deb24cdbb2750e658fa7001fee5ad586",
       "url": "https://github.com/fufexan/nix-gaming/archive/d2b0b283deb24cdbb2750e658fa7001fee5ad586.tar.gz",
       "hash": "sha256-Yw1tP/ASebNYuW2GcYDTgWf2Mg9qcUYo6MTagXyeFCs="
+    },
+    "noctalia-shell": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "noctalia-dev",
+        "repo": "noctalia-shell"
+      },
+      "branch": "niri-qs",
+      "submodules": false,
+      "revision": "d62eb5b249d8166fbcc549dc7504f26b1e024672",
+      "url": "https://github.com/noctalia-dev/noctalia-shell/archive/d62eb5b249d8166fbcc549dc7504f26b1e024672.tar.gz",
+      "hash": "sha256-tG/gMUaP/0nZI1Hue7tuBbwpqI4I1TG0lzIZRXJ+x04="
+    },
+    "quickshell": {
+      "type": "Git",
+      "repository": {
+        "type": "Forgejo",
+        "server": "https://git.outfoxxed.me/",
+        "owner": "quickshell",
+        "repo": "quickshell"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "15a84097653593dd15fad59a56befc2b7bdc270d",
+      "url": "https://git.outfoxxed.me/quickshell/quickshell/archive/15a84097653593dd15fad59a56befc2b7bdc270d.tar.gz",
+      "hash": "sha256-mMoiXABDtkSJxCYDrkhJ/TrrJf5M46oUfIlJvv2gkZ0="
     },
     "rosep-fish": {
       "type": "Git",
@@ -359,9 +360,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "7a6d1caddcb7c046d6c5f44490e77a5885d3a620",
-      "url": "https://github.com/kagurazakei/sysc-greet/archive/7a6d1caddcb7c046d6c5f44490e77a5885d3a620.tar.gz",
-      "hash": "sha256-sTunoMZ16GWkaLS2ZdvqHLt0WU3PAAIAorC++yhEx1k="
+      "revision": "864c7451af8ccf3ea3c0af4a2b3e7aceea03a028",
+      "url": "https://github.com/kagurazakei/sysc-greet/archive/864c7451af8ccf3ea3c0af4a2b3e7aceea03a028.tar.gz",
+      "hash": "sha256-OVZUrTEufEnChLkaxljO50ypaPCRnZ5/RNg7iA5o4tQ="
     },
     "viu": {
       "type": "Git",

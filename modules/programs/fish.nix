@@ -137,8 +137,9 @@ in {
         set fish_cursor_insert line blink
         set -Ux LS_COLORS $(cat ${self.paths.dots + /fish/rose-pine-lscolors})
         set -Ux FZF_DEFAULT_OPTS ${fzf-options}
+        set -xg XDG_BIN_HOME $HOME/.local/bin
         fish_vi_key_bindings
-
+        fish_add_path $XDG_BIN_HOME
         function fish_user_key_bindings
           bind --mode insert alt-c 'cdi; commandline -f repaint'
           bind --mode insert alt-f 'fzf-file-widget'

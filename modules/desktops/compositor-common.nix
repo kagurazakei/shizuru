@@ -15,8 +15,18 @@
     zpkgs = self.packages.${system};
     todo = hs-todo.packages.${system}.default;
     noRounding = ''
+      * {
+                border-radius: 0px !important;
+        }
       window {
-        border-radius: 0;
+                border-radius: 0px !important;
+             }
+      window, decoration, decoration-overlay, headerbar, .titlebar {
+          border-radius: 0px !important;
+          border-bottom-left-radius: 0px !important;
+          border-bottom-right-radius: 0px !important;
+          border-top-left-radius: 0px !important;
+          border-top-right-radius: 0px !important;
       }
     '';
   in {
@@ -56,7 +66,6 @@
         viu
         equibop
         nirinit
-        gtk-themes
         niri-scratchpad-rs
         ktop
         ;
@@ -85,6 +94,9 @@
         (pkgs)
         ayugram-desktop
         wl-clipboard
+        cliphist
+        findutils
+        gtkmm4
         grim
         slurp
         qimgv
@@ -113,7 +125,6 @@
         seahorse
         app2unit
         komikku
-        quickshell
         ;
       inherit (pkgs) foot libsixel kitty;
       # external
@@ -124,13 +135,13 @@
       {
         settings = {
           "org/gnome/desktop/interface" = {
-            cursor-theme = "Kokomi-Cursor";
-            gtk-theme = "rose-pine";
-            icon-theme = "rose-pine";
+            cursor-theme = "Kureiji-Ollie-v2";
+            gtk-theme = "oomox-snazzy";
+            icon-theme = "Catppuccin-SE";
             document-font-name = "JetBrainsMono Nerd Font";
             font-name = "JetBrainsMono Nerd Font";
             monospace-font-name = "JetBrainsMono Nerd Font";
-            accent-color = "purple";
+            accent-color = "red";
             color-scheme = "prefer-dark";
           };
         };

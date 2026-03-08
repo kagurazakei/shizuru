@@ -6,25 +6,21 @@
   azalea.modules.qt = {
     pkgs,
     config,
+    sources,
     ...
   }: let
     username = "antonio";
+    system = pkgs.stdenv.hostPlatform.system;
+    zpkgs = self.packages.${system};
   in {
     nixpkgs.overlays = [
       nur.overlays.default
     ];
     qt.enable = true;
     environment.systemPackages = with pkgs; [
-      self.packages.${pkgs.stdenv.hostPlatform.system}.qt6ct
+      zpkgs.qt6ct
       wlsunset
       libqalculate
-      quickshell
-      (catppuccin-papirus-folders.override {
-        flavor = "mocha";
-        accent = "red";
-      })
-    ];
-    hjem.users.${username}.packages = with pkgs; [
       (catppuccin-papirus-folders.override {
         flavor = "mocha";
         accent = "red";
@@ -38,6 +34,7 @@
       qt6Packages.qtstyleplugin-kvantum
       kdePackages.kdialog
       kdePackages.qtpositioning
+      kdePackages.qtshadertools
       kdePackages.syntax-highlighting
       kdePackages.qtbase
       kdePackages.qtdeclarative
@@ -47,7 +44,13 @@
       kdePackages.kirigami
       kdePackages.kirigami-addons
       kdePackages.breeze
-      quickshell
+      (pkgs.callPackage "${sources.quickshell}/default.nix" {})
+    ];
+    hjem.users.${username}.packages = with pkgs; [
+      (catppuccin-papirus-folders.override {
+        flavor = "mocha";
+        accent = "red";
+      })
     ];
     environment.variables = {
       QT_PLUGIN_PATH = [
@@ -55,6 +58,7 @@
       ];
       QML2_IMPORT_PATH = [
         "${pkgs.kdePackages.qqc2-desktop-style}/${pkgs.kdePackages.qtbase.qtQmlPrefix}"
+        "${pkgs.kdePackages.kirigami}/lib/qt-6/qml"
       ];
     };
     hj = {
@@ -65,6 +69,7 @@
         "qt5ct/colors".source = config.impure-dots + "/qt5ct/colors";
         "Kvantum/kvantum.kvconfig".source = config.impure-dots + "/Kvantum/kvantum.kvconfig";
         "Kvantum/rose-pine-iris".source = config.impure-dots + "/Kvantum/rose-pine-iris";
+        "Kvantum/rose-pine-love".source = config.impure-dots + "/Kvantum/rose-pine-love";
       };
     };
   };
