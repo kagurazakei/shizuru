@@ -44,7 +44,7 @@
       kdePackages.kirigami
       kdePackages.kirigami-addons
       kdePackages.breeze
-      (pkgs.callPackage "${sources.quickshell}/default.nix" {})
+      (pkgs.callPackage "${sources.noctalia-qs}/default.nix" {})
     ];
     hjem.users.${username}.packages = with pkgs; [
       (catppuccin-papirus-folders.override {

@@ -1,21 +1,15 @@
 {
   azalea.modules.noctalia = {
     pkgs,
-    sources,
     lib,
+    self,
     ...
   }: let
-    noctaliaPkg = pkgs.callPackage "${sources.noctalia-shell}/nix/package.nix" {};
+    system = pkgs.stdenv.hostPlatform.system;
+    zpkgs = self.packages.${system};
   in {
-    imports = [
-      (sources.noctalia-shell + "/nix/nixos-module.nix")
-    ];
-    services.noctalia-shell = {
-      enable = true;
-      package = noctaliaPkg;
-    };
     environment.systemPackages = [
-      (pkgs.callPackage "${sources.noctalia-shell}/nix/package.nix" {})
+      zpkgs.noctalia
     ];
     hj = {
       systemd.services = {
@@ -24,7 +18,7 @@
           after = ["graphical-session.target"];
           partOf = ["graphical-session.target"];
           serviceConfig = {
-            ExecStart = "${lib.getExe noctaliaPkg} -d";
+            ExecStart = "${lib.getExe zpkgs.noctalia} -d";
             Restart = "on-failure";
           };
         };
