@@ -49,7 +49,7 @@
         "i915.enable_fbc=1"
         "intel_pstate=performance"
       ];
-
+      boot.initrd.kernelModules = ["i915"];
       # enables gpu usage statistic in btop
       security.wrappers.btop = {
         owner = "root";

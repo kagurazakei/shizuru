@@ -14,12 +14,21 @@
     system = pkgs.stdenv.hostPlatform.system;
     zpkgs = self.packages.${system};
     todo = hs-todo.packages.${system}.default;
+    noRounding = ''
+      window {
+        border-radius: 0;
+      }
+    '';
   in {
     nixpkgs.overlays = [
       nur.overlays.default
     ];
     # for whatever reason swappy likes to open images
     # don't let that fucker open images
+    hj = {
+      xdg.config.files."gtk-4.0/gtk.css".text = noRounding;
+      xdg.config.files."gtk-3.0/gtk.css".text = noRounding;
+    };
     xdg.mime.defaultApplications = {
       "image/jpeg" = ["imv.desktop"];
       "image/png" = ["imv.desktop"];

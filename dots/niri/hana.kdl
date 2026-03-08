@@ -246,7 +246,7 @@ output "HDMI-A-1" {
 }
 window-rule {
     draw-border-with-background false
-    geometry-corner-radius 5.0 5.0 5.0 5.0
+    geometry-corner-radius 2.0 2.0 2.0 2.0
     clip-to-geometry true
 }
 window-rule {
