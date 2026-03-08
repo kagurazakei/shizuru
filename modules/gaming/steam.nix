@@ -1,9 +1,13 @@
-{nix-gaming, ...}: {
-  azalea.modules.steam = {pkgs, ...}: {
+{
+  azalea.modules.steam = {
+    pkgs,
+    sources,
+    ...
+  }: {
     imports = [
-      nix-gaming.nixosModules.wine
-      nix-gaming.nixosModules.pipewireLowLatency
-      nix-gaming.nixosModules.platformOptimizations
+      (sources.nix-gaming + "/modules/wine.nix")
+      (sources.nix-gaming + "/modules/pipewireLowLatency.nix")
+      (sources.nix-gaming + "/modules/platformOptimizations.nix")
     ];
 
     programs.wine = {

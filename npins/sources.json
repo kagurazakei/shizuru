@@ -217,6 +217,19 @@
       "url": "https://github.com/nvim-neorg/neorg/archive/4da2159b3f3420d43613f43e159f4253b8544474.tar.gz",
       "hash": "sha256-DFpbdBfyW32d4QhH59+melM7cHK9tzm9awKjTDPJOvs="
     },
+    "niri": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "kagurazakei",
+        "repo": "niri"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "a0284439adda83e2ca1bc34c05b84cbf4272de82",
+      "url": "https://github.com/kagurazakei/niri/archive/a0284439adda83e2ca1bc34c05b84cbf4272de82.tar.gz",
+      "hash": "sha256-MvIjmuSGPozXuynaJAwK7xmXiy5ZK/jOGMO9nJK6mVo="
+    },
     "niri-scratchpad-rs": {
       "type": "Git",
       "repository": {
@@ -258,6 +271,19 @@
       "revision": "123fe29340a5b8671367055b75a6e7c320d6f89a",
       "url": "https://github.com/gmodena/nix-flatpak/archive/123fe29340a5b8671367055b75a6e7c320d6f89a.tar.gz",
       "hash": "sha256-Sbh037scxKFm7xL0ahgSCw+X2/5ZKeOwI2clqrYr9j4="
+    },
+    "nix-gaming": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "fufexan",
+        "repo": "nix-gaming"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "d2b0b283deb24cdbb2750e658fa7001fee5ad586",
+      "url": "https://github.com/fufexan/nix-gaming/archive/d2b0b283deb24cdbb2750e658fa7001fee5ad586.tar.gz",
+      "hash": "sha256-Yw1tP/ASebNYuW2GcYDTgWf2Mg9qcUYo6MTagXyeFCs="
     },
     "rosep-fish": {
       "type": "Git",
