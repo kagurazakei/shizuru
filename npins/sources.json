@@ -1,5 +1,18 @@
 {
   "pins": {
+    "Ambxst": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Axenide",
+        "repo": "Ambxst"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "59edec9a0430eb2f679697f4a817a1f44ffcfb8b",
+      "url": "https://github.com/Axenide/Ambxst/archive/59edec9a0430eb2f679697f4a817a1f44ffcfb8b.tar.gz",
+      "hash": "sha256-SONu9NiNr0gaLC6rMt3x5x1L6DwSUuGJesizS7Ej2eo="
+    },
     "WiiUDownloader": {
       "type": "GitRelease",
       "repository": {
@@ -93,6 +106,19 @@
       "revision": "b1d2b0dc146cb9260209da4d7ab754adb0a2653d",
       "url": "https://github.com/ibhagwan/fzf-lua/archive/b1d2b0dc146cb9260209da4d7ab754adb0a2653d.tar.gz",
       "hash": "sha256-jPPLIvydAm6IYaXgrcfxdwfvkwtnNmohyALta7nDNEg="
+    },
+    "hyprland-plugins": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "hyprwm",
+        "repo": "hyprland-plugins"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "b85a56b9531013c79f2f3846fd6ee2ff014b8960",
+      "url": "https://github.com/hyprwm/hyprland-plugins/archive/b85a56b9531013c79f2f3846fd6ee2ff014b8960.tar.gz",
+      "hash": "sha256-xwNa+1D8WPsDnJtUofDrtyDCZKZotbUymzV/R5s+M0I="
     },
     "image.nvim": {
       "type": "Git",
@@ -284,6 +310,20 @@
       "revision": "864d6ad72244078029b256df6272afefaabff3db",
       "url": "https://github.com/noctalia-dev/noctalia-shell/archive/864d6ad72244078029b256df6272afefaabff3db.tar.gz",
       "hash": "sha256-3MFl8fPthHx07+dA9tcWleEZ3UmM3PVvwKSq6DXEoD0="
+    },
+    "quickshell": {
+      "type": "Git",
+      "repository": {
+        "type": "Forgejo",
+        "server": "https://git.outfoxxed.me/",
+        "owner": "quickshell",
+        "repo": "quickshell"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "15a84097653593dd15fad59a56befc2b7bdc270d",
+      "url": "https://git.outfoxxed.me/quickshell/quickshell/archive/15a84097653593dd15fad59a56befc2b7bdc270d.tar.gz",
+      "hash": "sha256-mMoiXABDtkSJxCYDrkhJ/TrrJf5M46oUfIlJvv2gkZ0="
     },
     "rosep-fish": {
       "type": "Git",

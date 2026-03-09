@@ -4,11 +4,38 @@
   lib,
   ...
 }: let
-  inherit (lib) concatStringsSep mapAttrs attrValues mkEnableOption;
-  inherit (lib) mkOption mkIf strings mkPackageOption optionalAttrs;
-  inherit (lib) filterAttrs attrNames elemAt warn length optional;
+  inherit
+    (lib)
+    concatStringsSep
+    mapAttrs
+    attrValues
+    mkEnableOption
+    ;
+  inherit
+    (lib)
+    mkOption
+    mkIf
+    strings
+    mkPackageOption
+    optionalAttrs
+    ;
+  inherit
+    (lib)
+    filterAttrs
+    attrNames
+    elemAt
+    warn
+    length
+    optional
+    ;
   inherit (lib) mkRenamedOptionModule;
-  inherit (lib.types) path lines enum nullOr;
+  inherit
+    (lib.types)
+    path
+    lines
+    enum
+    nullOr
+    ;
   inherit (config.services.displayManager) sessionData defaultSession;
 
   kuruOpts =
@@ -22,7 +49,9 @@
       INSTANTAUTH = "1";
     });
 
-  optsToString = concatStringsSep " " (attrValues (mapAttrs (k: v: "KURU_DM_${k}=\"${v}\"") kuruOpts));
+  optsToString = concatStringsSep " " (
+    attrValues (mapAttrs (k: v: "KURU_DM_${k}=\"${v}\"") kuruOpts)
+  );
   baseConfig = ''
     monitor = ,preferred, auto, auto
     env=XDG_CURRENT_DESKTOP,Hyprland
@@ -33,18 +62,22 @@
       disable_hyprland_logo = true
     }
   '';
-  hyprConf = pkgs.writeText "hyprland.conf" (strings.concatLines [
-    baseConfig
-    cfg.settings.extraConfig
-  ]);
+  hyprConf = pkgs.writeText "hyprland.conf" (
+    strings.concatLines [
+      baseConfig
+      cfg.settings.extraConfig
+    ]
+  );
   cfg = config.programs.kurukuruDM;
 
   normalUsers = attrNames (filterAttrs (_k: v: v.isNormalUser) config.users.users);
 in {
   imports = [
-    (mkRenamedOptionModule
+    (
+      mkRenamedOptionModule
       ["programs" "kurukuruDM" "settings" "colorsQML"]
-      ["programs" "kurukuruDM" "settings" "colors"])
+      ["programs" "kurukuruDM" "settings" "colors"]
+    )
   ];
   options.programs.kurukuruDM = {
     enable = mkEnableOption "kurukuru display manager";
@@ -137,7 +170,7 @@ in {
       settings = {
         default_session = {
           # lib.mkForce this value to use another compositor as base
-          command = "${pkgs.hyprland}/bin/start-hyprland -- --config ${hyprConf}";
+          command = lib.mkForce "${pkgs.hyprland}/bin/start-hyprland -- --config ${hyprConf}";
         };
       };
     };

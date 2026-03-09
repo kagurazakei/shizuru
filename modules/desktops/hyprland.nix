@@ -3,16 +3,24 @@
     pkgs,
     lib,
     config,
+    self,
     ...
   }: {
-    environment.systemPackages = [pkgs.hyprsunset];
+    imports = [
+      self.azalea.modules.ambxst
+    ];
+    environment.systemPackages = with pkgs; [
+      hyprsunset
+    ];
     systemd.user.services.hypridle.path = lib.mkForce [config.programs.hyprland.package];
 
     programs.hyprland = {
       enable = true;
       withUWSM = true;
     };
-
+    hj.rum.desktops.hyprland = {
+      enable = true;
+    };
     # I could write a hypersunrise service to conflict but fuck it better to just
     # make a keybind to stop the service lol And I am less likely to forget to
     # turn the darn thing off if its right on my face

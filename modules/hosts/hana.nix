@@ -14,6 +14,8 @@
       self.azalea.profiles.default
       self.azalea.profiles.workstation
       self.azalea.profiles.niri
+      self.azalea.modules.kuruDM
+      self.azalea.modules.hyprland
       self.azalea.modules.dolphin
       self.azalea.modules.cursors
       self.azalea.modules.btrfs
@@ -32,7 +34,9 @@
     networking.hostName = "hana";
     time.timeZone = "Asia/Yangon";
     nixpkgs.hostPlatform = "x86_64-linux";
-
+    programs.kurukuruDM = {
+      enable = true;
+    };
     # zaphkiel opts
     zaphkiel = {
       data.wallpaper = self.packages.${pkgs.stdenv.hostPlatform.system}.images.corvus;

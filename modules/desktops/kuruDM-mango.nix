@@ -1,5 +1,5 @@
 {self, ...}: {
-  dandelion.modules.kuruDM-mango = {
+  azalea.modules.kuruDM-mango = {
     config,
     pkgs,
     lib,
