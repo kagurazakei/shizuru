@@ -4,11 +4,17 @@
     lib,
     config,
     self,
+    username,
     ...
   }: {
     imports = [
       self.azalea.modules.ambxst
     ];
+    hj.xdg.config.files = {
+      "hypr/plugins.conf".text = ''
+        exec-once = hyprctl plugin load /home/${username}/.config/hypr/plugins/hyprland-plugins/result/lib/libhyprscrolling.so
+      '';
+    };
     environment.systemPackages = with pkgs; [
       hyprsunset
     ];
@@ -17,9 +23,7 @@
     programs.hyprland = {
       enable = true;
       withUWSM = true;
-    };
-    hj.rum.desktops.hyprland = {
-      enable = true;
+      xwayland.enable = true;
     };
     # I could write a hypersunrise service to conflict but fuck it better to just
     # make a keybind to stop the service lol And I am less likely to forget to

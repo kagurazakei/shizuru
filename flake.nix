@@ -21,6 +21,7 @@
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
     firefox.url = "github:nix-community/flake-firefox-nightly";
     mnw.url = "github:Gerg-L/mnw";
+    ambxst.url = "github:Axenide/Ambxst";
     niri = {
       url = "github:kagurazakei/niri";
       inputs.nixpkgs.follows = "nixpkgs";
