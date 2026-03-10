@@ -47,7 +47,7 @@
           "root"
           "@wheel"
         ];
-
+        substituters = ["https://hyprland.cachix.org"];
         extra-substituters = [
           "https://nix-community.cachix.org"
           "https://cache.garnix.io"

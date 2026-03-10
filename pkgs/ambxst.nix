@@ -4,7 +4,7 @@
   sources,
 }: let
   # pinned quickshell
-  quickshellPkg = pkgs.callPackage "${sources.quickshell}/default.nix" {};
+  quickshellPkg = pkgs.callPackage "${sources.noctalia-qs}/default.nix" {};
 
   # Ambxst packages from pinned repo
   ttf-phosphor-icons = import "${sources.Ambxst}/nix/packages/phosphor-icons.nix" {inherit pkgs;};
@@ -29,7 +29,7 @@
     qt6.qt5compat
     qt6.qtsvg
     qt6.qtwayland
-
+    qt6.qtbase
     kdePackages.kirigami
     kdePackages.qqc2-desktop-style
   ];
@@ -61,9 +61,8 @@
     # Qt / QML runtime
     export QML2_IMPORT_PATH="${envAmbxst}/lib/qt-6/qml:$QML2_IMPORT_PATH"
     export QML_IMPORT_PATH="$QML2_IMPORT_PATH"
+    export QML2_IMPORT_PATH="${pkgs.kdePackages.kirigami}/lib/qt-6/qml:$QML2_IMPORT_PATH"
 
-    export QML2_IMPORT_PATH="${envAmbxst}/lib/qt-6/qml:${pkgs.kdePackages.kirigami}/lib/qt-6/qml:${pkgs.kdePackages.qqc2-desktop-style}/lib/qt-6/qml:$QML2_IMPORT_PATH"
-    export QML_IMPORT_PATH="$QML2_IMPORT_PATH"
     # Fontconfig
     export FONTCONFIG_PATH="${fontconfigConf}/etc/fonts:''${FONTCONFIG_PATH:-}"
 

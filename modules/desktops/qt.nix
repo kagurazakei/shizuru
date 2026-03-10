@@ -1,8 +1,4 @@
-{
-  nur,
-  self,
-  ...
-}: {
+{nur, ...}: {
   azalea.modules.qt = {
     pkgs,
     config,
@@ -10,8 +6,6 @@
     ...
   }: let
     username = "antonio";
-    system = pkgs.stdenv.hostPlatform.system;
-    zpkgs = self.packages.${system};
   in {
     nixpkgs.overlays = [
       nur.overlays.default

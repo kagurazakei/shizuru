@@ -1,5 +1,4 @@
 {
-  self,
   hs-todo,
   nur,
   ...
@@ -12,7 +11,6 @@
     inherit (lib) mkForce attrValues;
 
     system = pkgs.stdenv.hostPlatform.system;
-    zpkgs = self.packages.${system};
     todo = hs-todo.packages.${system}.default;
     noRounding = ''
       * {
@@ -60,7 +58,7 @@
     environment.systemPackages = attrValues {
       # internal overlay
       inherit
-        (zpkgs)
+        (pkgs.zpkgs)
         kokCursor
         stash
         viu
@@ -70,7 +68,7 @@
         ktop
         ;
       inherit
-        (zpkgs.scripts)
+        (pkgs.zpkgs.scripts)
         taildrop
         gpurecording
         cowask

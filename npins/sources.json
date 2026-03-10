@@ -4,14 +4,14 @@
       "type": "Git",
       "repository": {
         "type": "GitHub",
-        "owner": "Axenide",
+        "owner": "kagurazakei",
         "repo": "Ambxst"
       },
-      "branch": "main",
+      "branch": "master",
       "submodules": false,
-      "revision": "59edec9a0430eb2f679697f4a817a1f44ffcfb8b",
-      "url": "https://github.com/Axenide/Ambxst/archive/59edec9a0430eb2f679697f4a817a1f44ffcfb8b.tar.gz",
-      "hash": "sha256-SONu9NiNr0gaLC6rMt3x5x1L6DwSUuGJesizS7Ej2eo="
+      "revision": "95be44492d54835c509d1d2846a259b03448695d",
+      "url": "https://github.com/kagurazakei/Ambxst/archive/95be44492d54835c509d1d2846a259b03448695d.tar.gz",
+      "hash": "sha256-kgMlar/18Ny9Q19IdY3kvlBcVPC6vK4ZOVqljSn1dUs="
     },
     "WiiUDownloader": {
       "type": "GitRelease",
@@ -323,6 +323,32 @@
       "revision": "864d6ad72244078029b256df6272afefaabff3db",
       "url": "https://github.com/noctalia-dev/noctalia-shell/archive/864d6ad72244078029b256df6272afefaabff3db.tar.gz",
       "hash": "sha256-3MFl8fPthHx07+dA9tcWleEZ3UmM3PVvwKSq6DXEoD0="
+    },
+    "npins": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "andir",
+        "repo": "npins"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "c664916b48964bdb442f8a1529d3a10c168ab195",
+      "url": "https://github.com/andir/npins/archive/c664916b48964bdb442f8a1529d3a10c168ab195.tar.gz",
+      "hash": "sha256-qoVRA4osHAXC+g+C3h/OjEm9ODRwCR4w9xOgjASjwOM="
+    },
+    "piri": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "kagurazakei",
+        "repo": "piri"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "912eed97a68f8d1fb87da1cb47b6e46c26d6a5cd",
+      "url": "https://github.com/kagurazakei/piri/archive/912eed97a68f8d1fb87da1cb47b6e46c26d6a5cd.tar.gz",
+      "hash": "sha256-TEY54Y1nMMxTwaD7swybnlF84tF1lIo4KpFqh5dNGLk="
     },
     "quickshell": {
       "type": "Git",

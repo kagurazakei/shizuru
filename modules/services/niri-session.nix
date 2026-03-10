@@ -3,11 +3,9 @@
     pkgs,
     self,
     ...
-  }: let
-    zpkgs = self.packages.${pkgs.system};
-  in {
+  }: {
     imports = [
-      zpkgs.nixosModules.nirinit
+      self.zpkgs.nixosModules.nirinit
     ];
 
     environment.systemPackages = [

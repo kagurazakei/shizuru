@@ -1,14 +1,10 @@
 {
   azalea.modules.noctalia = {
-    pkgs,
     lib,
-    self,
+    pkgs,
     ...
-  }: let
-    system = pkgs.stdenv.hostPlatform.system;
-    zpkgs = self.packages.${system};
-  in {
-    environment.systemPackages = [
+  }: {
+    environment.systemPackages = with pkgs; [
       zpkgs.noctalia
     ];
     hj = {
@@ -18,7 +14,7 @@
           after = ["graphical-session.target"];
           partOf = ["graphical-session.target"];
           serviceConfig = {
-            ExecStart = "${lib.getExe zpkgs.noctalia} -d";
+            ExecStart = "${lib.getExe pkgs.zpkgs.noctalia} -d";
             Restart = "on-failure";
           };
         };
