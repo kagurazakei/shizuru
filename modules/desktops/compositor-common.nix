@@ -66,6 +66,7 @@
         nirinit
         niri-scratchpad-rs
         ktop
+        piri
         ;
       inherit
         (pkgs.zpkgs.scripts)

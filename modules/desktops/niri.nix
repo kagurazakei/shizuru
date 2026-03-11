@@ -11,12 +11,12 @@
     nixpkgs.overlays = [
       niri.overlays.default
     ];
-    environment.systemPackages = [
-      pkgs.hyprsunset
-      pkgs.xwayland-satellite
-      pkgs.jq
-      pkgs.yazi
-      pkgs.nwg-look
+    environment.systemPackages = with pkgs; [
+      hyprsunset
+      xwayland-satellite
+      jq
+      yazi
+      nwg-look
     ];
     services.displayManager.defaultSession = "niri-uwsm";
     systemd.user.services.hypridle.path = lib.mkForce [config.programs.hyprland.package];
