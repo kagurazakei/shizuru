@@ -63,10 +63,8 @@
         stash
         viu
         equibop
-        nirinit
-        niri-scratchpad-rs
         ktop
-        piri
+        nixos-wallpaper
         ;
       inherit
         (pkgs.zpkgs.scripts)

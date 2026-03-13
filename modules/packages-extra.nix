@@ -14,7 +14,7 @@
         mnw = mnw.lib;
       };
       stash = let
-        stp = stash.packages.${system}.default;
+        stp = stash.packages.${pkgs.stdenv.hostPlatform.system}.default;
       in
         pkgs.symlinkJoin {
           inherit (stp) meta version pname;

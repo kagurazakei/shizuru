@@ -1,24 +1,26 @@
-{nur, ...}: {
+{nur, ...}: let
+  username = "antonio";
+in {
   azalea.modules.qt = {
     pkgs,
     config,
     sources,
+    lib,
     ...
-  }: let
-    username = "antonio";
-  in {
+  }: {
+    # Overlays
     nixpkgs.overlays = [
       nur.overlays.default
     ];
+
+    # Enable Qt globally
     qt.enable = true;
+
+    # System-wide packages
     environment.systemPackages = with pkgs; [
       zpkgs.qt6ct
       wlsunset
       libqalculate
-      (catppuccin-papirus-folders.override {
-        flavor = "mocha";
-        accent = "red";
-      })
       libsForQt5.qtstyleplugin-kvantum
       libsForQt5.qt5ct
       kdePackages.qqc2-desktop-style
@@ -38,23 +40,35 @@
       kdePackages.kirigami
       kdePackages.kirigami-addons
       kdePackages.breeze
+      libsForQt5.qt5.qtgraphicaleffects
       (pkgs.callPackage "${sources.noctalia-qs}/default.nix" {})
     ];
+
+    # User-specific packages
     hjem.users.${username}.packages = with pkgs; [
       (catppuccin-papirus-folders.override {
         flavor = "mocha";
         accent = "red";
       })
     ];
+
+    # Environment variables for Qt/QML
     environment.variables = {
       QT_PLUGIN_PATH = [
         "${pkgs.kdePackages.qqc2-desktop-style}/${pkgs.kdePackages.qtbase.qtPluginPrefix}"
       ];
-      QML2_IMPORT_PATH = [
+
+      QML2_IMPORT_PATH = lib.concatStringsSep ":" [
         "${pkgs.kdePackages.qqc2-desktop-style}/${pkgs.kdePackages.qtbase.qtQmlPrefix}"
         "${pkgs.kdePackages.kirigami}/lib/qt-6/qml"
+        "${pkgs.qt6.qt5compat}/lib/qt6/qml"
+        "${pkgs.libsForQt5.qt5.qtgraphicaleffects}/lib/qt-5.15.18/qml"
+        "${pkgs.qt6.qtbase}/lib/qt6/qml"
+        "/home/antonio/.config/quickshell/*"
       ];
     };
+
+    # Config files for user (qt6ct, qt5ct, Kvantum)
     hj = {
       xdg.config.files = {
         "qt6ct/qt6ct.conf".source = config.impure-dots + "/qt6ct/qt6ct.conf";

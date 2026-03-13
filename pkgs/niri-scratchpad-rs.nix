@@ -5,7 +5,7 @@
   rustOverlay = import sources.rust-overlay;
 
   pkgsWithRust = import pkgs.path {
-    inherit (pkgs) system;
+    system = pkgs.stdenv.hostPlatform.system;
     overlays = [rustOverlay];
   };
 

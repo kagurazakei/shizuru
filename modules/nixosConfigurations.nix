@@ -28,11 +28,11 @@
       modules = [
         self.azalea.hosts.${hostName}
         (
-          {pkgs, ...}: {
+          {...}: {
             nixpkgs.overlays = [
-              (_: _: {
-                zpkgs = self.packages.${pkgs.stdenv.hostPlatform.system};
-                system = pkgs.stdenv.hostPlatform.system;
+              (_final: prev: {
+                zpkgs = self.packages.${prev.stdenv.hostPlatform.system};
+                system = prev.stdenv.hostPlatform.system;
               })
             ];
           }

@@ -1,13 +1,12 @@
 {
   pkgs,
   sources,
-  system ? pkgs.stdenv.hostPlatform.system,
 }: let
   # Import rust-overlay from sources
   rustOverlay = import sources.rust-overlay;
   # Apply overlay to nixpkgs
   pkgsWithRust = import pkgs.path {
-    inherit (pkgs) system;
+    system = pkgs.stdenv.hostPlatform.system;
     overlays = [rustOverlay];
   };
 
