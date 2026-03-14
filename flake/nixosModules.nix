@@ -9,7 +9,6 @@
           (_: _: {
             inherit (self.packages.${pkgs.stdenv.hostPlatform.system}) kurukurubar;
           })
-          inputs.nur.overlays.default
         ];
       };
     default = self.nixosModules.kurukuruDM;

@@ -11,6 +11,8 @@
       self.azalea.dots.zakei-gui
       self.azalea.dots.zakei-niri
       self.azalea.dots.zakei-hyprland
+      self.azalea.dots.zakei-mango
+      self.azalea.modules.mangowc
       self.azalea.profiles.default
       self.azalea.profiles.workstation
       self.azalea.profiles.niri
@@ -35,7 +37,7 @@
     nixpkgs.hostPlatform = "x86_64-linux";
     # zaphkiel opts
     zaphkiel = {
-      data.wallpaper = self.packages.${pkgs.stdenv.hostPlatform.system}.images.corvus;
+      data.wallpaper = pkgs.zpkgs.images.nix-logo;
       secrets = {
         antonioPass = {
           file = self.paths.secrets + /hana-user.age;

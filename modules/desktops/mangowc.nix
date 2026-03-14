@@ -64,7 +64,10 @@
         enable = true;
         wlr.enable = true;
         configPackages = [cfg.package];
-        extraPortals = [pkgs.xdg-desktop-portal-gtk];
+        extraPortals = [
+          pkgs.xdg-desktop-portal-gtk
+          pkgs.xdg-desktop-portal-wlr
+        ];
         config.mango = {
           # borrowed from config for sway
           default = ["gtk"];
@@ -75,6 +78,7 @@
         };
       };
 
+      services.dbus.packages = lib.mkDefault [pkgs.thunar];
       security.polkit.enable = true;
       programs.xwayland.enable = true;
 

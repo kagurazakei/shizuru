@@ -64,7 +64,6 @@
         viu
         equibop
         ktop
-        nixos-wallpaper
         ;
       inherit
         (pkgs.zpkgs.scripts)
@@ -84,14 +83,16 @@
         gtk-engine-murrine
         rose-pine-icon-theme
         rose-pine-gtk-theme
+        libadwaita
         ;
-      inherit (pkgs.kdePackages) breeze;
+      inherit (pkgs.kdePackages) breeze breeze-icons;
       # utility
       inherit
         (pkgs)
         ayugram-desktop
         wl-clipboard
         cliphist
+        mpvpaper
         findutils
         gtkmm4
         grim
@@ -122,6 +123,8 @@
         seahorse
         app2unit
         komikku
+        ollama
+        protonvpn-gui
         ;
       inherit (pkgs) foot libsixel kitty;
       # external

@@ -119,18 +119,5 @@ in
     installPhase = ''
       mkdir -p $out
       cp wallpaper.png $out/
-
-      # Try to copy to user's Pictures directory if we're not in a sandbox
-      if [ -n "$HOME" ] && [ "$HOME" != "/homeless-shelter" ] && [ -w "$HOME" ]; then
-        WALLPAPER_DIR="$HOME/Pictures/wallpapers"
-        WALLPAPER_DEST="$WALLPAPER_DIR/nixos-logo-test.png"
-
-        echo "Installing wallpaper to $WALLPAPER_DEST"
-        mkdir -p "$WALLPAPER_DIR"
-        cp wallpaper.png "$WALLPAPER_DEST"
-      else
-        echo "Note: Not copying to ~/Pictures/wallpapers/ (running in build sandbox)"
-        echo "The wallpaper is available at: $out/wallpaper.png"
-      fi
     '';
   }

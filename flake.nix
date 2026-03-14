@@ -9,6 +9,7 @@
   in
     importModules [
       (recursiveImport ./modules)
+      (recursiveImport ./flake)
     ];
 
   inputs = {

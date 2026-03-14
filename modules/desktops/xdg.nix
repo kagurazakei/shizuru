@@ -16,10 +16,10 @@
       config = {
         common = {
           default = "gtk gnome";
-          "org.freedesktop.impl.portal.ScreenCast" = "gnome";
-          "org.freedesktop.impl.portal.Screenshot" = "gnome";
-          "org.freedesktop.impl.portal.RemoteDesktop" = "gnome";
-          "org.freedesktop.impl.portal.FileChooser" = "gnome";
+          "org.freedesktop.impl.portal.ScreenCast" = "gtk";
+          "org.freedesktop.impl.portal.Screenshot" = "gtk";
+          "org.freedesktop.impl.portal.RemoteDesktop" = "gtk";
+          "org.freedesktop.impl.portal.FileChooser" = "gtk";
         };
         niri = {
           default = [

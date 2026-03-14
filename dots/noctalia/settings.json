@@ -8,7 +8,9 @@
         "customLaunchPrefixEnabled": false,
         "density": "default",
         "enableClipPreview": true,
+        "enableClipboardChips": true,
         "enableClipboardHistory": true,
+        "enableClipboardSmartIcons": true,
         "enableSessionSearch": true,
         "enableSettingsSearch": true,
         "enableWindowsSearch": true,
@@ -23,7 +25,6 @@
         "showIconBackground": true,
         "sortByMostUsed": true,
         "terminalCommand": "kitty -e",
-        "useApp2Unit": false,
         "viewMode": "list"
     },
     "audio": {
@@ -44,11 +45,12 @@
         "barType": "framed",
         "capsuleColorKey": "none",
         "capsuleOpacity": 0.89,
-        "contentPadding": 2,
-        "density": "default",
+        "contentPadding": 5,
+        "density": "comfortable",
         "displayMode": "always_visible",
+        "enableExclusionZoneInset": true,
         "floating": false,
-        "fontScale": 1,
+        "fontScale": 0.87,
         "frameRadius": 7,
         "frameThickness": 17,
         "hideOnOverview": false,
@@ -63,22 +65,22 @@
         "mouseWheelAction": "none",
         "mouseWheelWrap": true,
         "outerCorners": true,
-        "position": "left",
+        "position": "top",
         "reverseScroll": false,
         "rightClickAction": "controlCenter",
         "rightClickCommand": "",
         "rightClickFollowMouse": true,
         "screenOverrides": [
             {
-                "enabled": true,
+                "enabled": false,
                 "name": "HDMI-A-1"
             }
         ],
-        "showCapsule": false,
+        "showCapsule": true,
         "showOnWorkspaceSwitch": true,
         "showOutline": true,
         "useSeparateOpacity": false,
-        "widgetSpacing": 7,
+        "widgetSpacing": 8,
         "widgets": {
             "center": [
                 {
@@ -180,10 +182,11 @@
                     "id": "Workspace",
                     "labelMode": "none",
                     "occupiedColor": "tertiary",
-                    "pillSize": 0.37,
+                    "pillSize": 0.4,
                     "showApplications": false,
+                    "showApplicationsHover": false,
                     "showBadge": true,
-                    "showLabelsOnlyWhenOccupied": true,
+                    "showLabelsOnlyWhenOccupied": false,
                     "unfocusedIconsOpacity": 0.71
                 },
                 {
@@ -283,6 +286,13 @@
                         "videoSource": "portal"
                     },
                     "id": "plugin:screen-recorder"
+                },
+                {
+                    "defaultSettings": {
+                        "monitorOrder": [
+                        ]
+                    },
+                    "id": "plugin:mangowc-layout-switcher"
                 }
             ]
         }
@@ -381,8 +391,9 @@
         }
     },
     "desktopWidgets": {
-        "enabled": false,
+        "enabled": true,
         "gridSnap": false,
+        "gridSnapScale": true,
         "monitorWidgets": [
             {
                 "name": "eDP-1",
@@ -414,6 +425,67 @@
                         "y": 1066
                     }
                 ]
+            },
+            {
+                "name": "HDMI-A-1",
+                "widgets": [
+                    {
+                        "colorName": "error",
+                        "height": 45,
+                        "hideWhenIdle": true,
+                        "id": "AudioVisualizer",
+                        "roundedCorners": true,
+                        "scale": 1.895392375916559,
+                        "showBackground": true,
+                        "visualizerType": "wave",
+                        "width": 520,
+                        "x": 480,
+                        "y": 960
+                    },
+                    {
+                        "defaultSettings": {
+                            "completedCount": 0,
+                            "count": 0,
+                            "current_page_id": 0,
+                            "exportEmptySections": false,
+                            "exportFormat": "markdown",
+                            "exportPath": "~/Documents",
+                            "isExpanded": false,
+                            "pages": [
+                                {
+                                    "id": 0,
+                                    "name": "General"
+                                }
+                            ],
+                            "priorityColors": {
+                                "high": "#f44336",
+                                "low": "#9e9e9e",
+                                "medium": "#2196f3"
+                            },
+                            "showBackground": true,
+                            "showCompleted": true,
+                            "todos": [
+                            ],
+                            "useCustomColors": false
+                        },
+                        "id": "plugin:todo",
+                        "scale": 1.3388404135576473,
+                        "showBackground": true,
+                        "x": 1490,
+                        "y": 58
+                    },
+                    {
+                        "diskPath": "/",
+                        "id": "SystemStat",
+                        "layout": "bottom",
+                        "roundedCorners": true,
+                        "scale": 0.9046326557352832,
+                        "showBackground": false,
+                        "statType": "CPU",
+                        "x": 28,
+                        "y": 946
+                    }
+                ]
             }
         ],
         "overviewEnabled": true
@@ -426,7 +498,7 @@
         "displayMode": "auto_hide",
         "dockType": "floating",
         "enabled": true,
-        "floatingRatio": 1.93,
+        "floatingRatio": 1.24,
         "groupApps": false,
         "groupClickAction": "cycle",
         "groupContextMenuMode": "extended",
@@ -463,10 +535,10 @@
         "clockStyle": "digital",
         "compactLockScreen": false,
         "dimmerOpacity": 0.1,
-        "enableBlurBehind": false,
+        "enableBlurBehind": true,
         "enableLockScreenCountdown": true,
         "enableLockScreenMediaControls": true,
-        "enableShadows": true,
+        "enableShadows": false,
         "forceBlackScreenCorners": false,
         "iRadiusRatio": 0.36,
         "keybinds": {
@@ -504,7 +576,7 @@
         "passwordChars": false,
         "radiusRatio": 0.21,
         "reverseScroll": false,
-        "scaleRatio": 1,
+        "scaleRatio": 1.05,
         "screenRadiusRatio": 0.86,
         "shadowDirection": "center",
         "shadowOffsetX": 0,
@@ -697,7 +769,7 @@
         "showHeader": true,
         "showKeybinds": true
     },
-    "settingsVersion": 57,
+    "settingsVersion": 58,
     "systemMonitor": {
         "batteryCriticalThreshold": 5,
         "batteryWarningThreshold": 20,
@@ -733,14 +805,6 @@
             },
             {
                 "enabled": true,
-                "id": "foot"
-            },
-            {
-                "enabled": true,
-                "id": "cava"
-            },
-            {
-                "enabled": true,
                 "id": "zenBrowser"
             }
         ],
@@ -749,14 +813,16 @@
     "ui": {
         "boxBorderEnabled": true,
         "fontDefault": "JetBrainsMono Nerd Font Propo",
-        "fontDefaultScale": 1.1099999999999999,
+        "fontDefaultScale": 1.05,
         "fontFixed": "JetBrainsMono Nerd Font Propo",
-        "fontFixedScale": 1.09,
+        "fontFixedScale": 1.04,
         "panelBackgroundOpacity": 0.91,
         "panelsAttachedToBar": true,
+        "scrollbarAlwaysVisible": true,
         "settingsPanelMode": "attached",
-        "settingsPanelSideBarCardStyle": false,
-        "tooltipsEnabled": true
+        "settingsPanelSideBarCardStyle": true,
+        "tooltipsEnabled": true,
+        "translucentWidgets": true
     },
     "wallpaper": {
         "automationEnabled": false,

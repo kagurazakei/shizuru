@@ -102,7 +102,7 @@ in {
 
   azalea.dots.zakei-gui = mkDotsModule username {
     "uwsm/env" = "/uwsm/env";
-    "background" = {config, ...}: config.zaphkiel.data.wallpaper;
+    "wallpapers/nix-logo.png" = {config, ...}: config.zaphkiel.data.wallpaper;
     "matugen/config.toml" = "/matugen/config.toml";
     "matugen/templates" = "/matugen/templates";
     "equibop/settings.json" = "/equibop/settings.json";
@@ -128,7 +128,11 @@ in {
   };
 
   azalea.dots.zakei-mango = mkDotsModule username {
+    "mango/animation.conf" = "/mango/animation.conf";
+    "mango/bind.conf" = "/mango/bind.conf";
     "mango/config.conf" = "/mango/config.conf";
+    "mango/env.conf" = "/mango/env.conf";
+    "mango/rules.conf" = "/mango/rules.conf";
     "mango/autostart.sh" = "/mango/autostart.sh";
     "mango/hardware.conf" = d: d.dotsDir + "/mango/${d.lib.toLower d.config.networking.hostName}.conf";
   };
