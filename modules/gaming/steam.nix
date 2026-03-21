@@ -79,7 +79,7 @@
       };
     };
     environment.systemPackages = with pkgs; [
-      heroic
+      # heroic
       lutris
       mumble
     ];

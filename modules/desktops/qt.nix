@@ -12,7 +12,6 @@ in {
     nixpkgs.overlays = [
       nur.overlays.default
     ];
-
     # Enable Qt globally
     qt.enable = true;
 

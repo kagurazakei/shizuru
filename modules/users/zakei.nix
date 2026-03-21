@@ -50,7 +50,7 @@ in {
     };
 
     hj.files = {
-      ".face.icon".source = "${../../dots/profile.png}";
+      ".face.icon".source = "${../../dots/images/profile-2.png}";
     };
     systemd.tmpfiles.rules = [
       # AccountsService user file

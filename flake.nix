@@ -3,6 +3,13 @@
 
   # This is the completely stolen from Rexcrazy804/Zaphkiel(dandelion)
   # Presenting, the *azalea* setup
+
+  nixConfig = {
+    commit-lockfile-summary = "chore(deps): update flake";
+    extra-experimental-features = ["pipe-operators"];
+    extra-substituters = ["https://heitor.cachix.org"];
+    extra-trusted-public-keys = ["heitor.cachix.org-1:IZ1ydLh73kFtdv+KfcsR4WGPkn+/I926nTGhk9O9AxI="];
+  };
   outputs = {...} @ inputs: let
     azalea = import ./azalea.nix inputs;
     inherit (azalea) importModules recursiveImport;
@@ -19,10 +26,11 @@
     crane.url = "github:ipetkov/crane";
     chaotic.url = "github:lonerOrz/nyx-loner";
     silent-sddm.url = "github:kagurazakei/SilentSDDM";
-    zakeivim.url = "github:kagurazakei/khanelivim";
+    zakeivim.url = "github:kagurazakei/nvim-flake?ref=master";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
     firefox.url = "github:nix-community/flake-firefox-nightly";
     mnw.url = "github:Gerg-L/mnw";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     ambxst.url = "github:kagurazakei/Ambxst?ref=master";
     niri = {
       url = "github:kagurazakei/niri";

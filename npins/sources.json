@@ -68,19 +68,6 @@
       "url": "https://github.com/catppuccin/bat/archive/6810349b28055dce54076712fc05fc68da4b8ec0.tar.gz",
       "hash": "sha256-lJapSgRVENTrbmpVyn+UQabC9fpV1G1e+CdlJ090uvg="
     },
-    "direnv.nvim": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "NotAShelf",
-        "repo": "direnv.nvim"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "4dfc8758a1deab45e37b7f3661e0fd3759d85788",
-      "url": "https://github.com/NotAShelf/direnv.nvim/archive/4dfc8758a1deab45e37b7f3661e0fd3759d85788.tar.gz",
-      "hash": "sha256-KqO8uDbVy4sVVZ6mHikuO+SWCzWr97ZuFRC8npOPJIE="
-    },
     "fish": {
       "type": "Git",
       "repository": {
@@ -93,19 +80,6 @@
       "revision": "bcfeb321aaecfd0634b7364f3ac8cda5eeea85a6",
       "url": "https://github.com/kagurazakei/fish/archive/bcfeb321aaecfd0634b7364f3ac8cda5eeea85a6.tar.gz",
       "hash": "sha256-ODbSYwWKNVh7BsKPyycORr4rT8We8yJuCgVZBpmvoaQ="
-    },
-    "fzf-lua": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "ibhagwan",
-        "repo": "fzf-lua"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "b1d2b0dc146cb9260209da4d7ab754adb0a2653d",
-      "url": "https://github.com/ibhagwan/fzf-lua/archive/b1d2b0dc146cb9260209da4d7ab754adb0a2653d.tar.gz",
-      "hash": "sha256-jPPLIvydAm6IYaXgrcfxdwfvkwtnNmohyALta7nDNEg="
     },
     "hyprland": {
       "type": "Git",
@@ -132,19 +106,6 @@
       "revision": "b85a56b9531013c79f2f3846fd6ee2ff014b8960",
       "url": "https://github.com/hyprwm/hyprland-plugins/archive/b85a56b9531013c79f2f3846fd6ee2ff014b8960.tar.gz",
       "hash": "sha256-xwNa+1D8WPsDnJtUofDrtyDCZKZotbUymzV/R5s+M0I="
-    },
-    "image.nvim": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "3rd",
-        "repo": "image.nvim"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "446a8a5cc7a3eae3185ee0c697732c32a5547a0b",
-      "url": "https://github.com/3rd/image.nvim/archive/446a8a5cc7a3eae3185ee0c697732c32a5547a0b.tar.gz",
-      "hash": "sha256-EaDeY8aP41xHTw5epqYjaBqPYs6Z2DABzSaVOnG6D6I="
     },
     "impermanence": {
       "type": "Git",
@@ -204,44 +165,31 @@
       "url": "https://api.github.com/repos/DreamMaoMao/mangowc/tarball/0.10.8",
       "hash": "sha256-Vszn4Zp0pojvvKkyP7M7V5iqNRB0kUvwd9iez+KzOyM="
     },
-    "mini.align": {
+    "mnw-nvim": {
       "type": "Git",
       "repository": {
         "type": "GitHub",
-        "owner": "nvim-mini",
-        "repo": "mini.align"
+        "owner": "kagurazakei",
+        "repo": "mnw-nvim"
       },
-      "branch": "main",
+      "branch": "master",
       "submodules": false,
-      "revision": "6d8a6ca3a0fd313938374abccb50cad026229db3",
-      "url": "https://github.com/nvim-mini/mini.align/archive/6d8a6ca3a0fd313938374abccb50cad026229db3.tar.gz",
-      "hash": "sha256-4GxHFM4aIDaDVZk1uM5DS3t0JEaRMX5TdZPf8qm/yVY="
+      "revision": "68cf6e013e6b59fd3eaa1c1ddc82cd40c76bbfc9",
+      "url": "https://github.com/kagurazakei/mnw-nvim/archive/68cf6e013e6b59fd3eaa1c1ddc82cd40c76bbfc9.tar.gz",
+      "hash": "sha256-dmcL+t15906yUvmiz2am0XQY3OYx6RwtvyWJ5+H9e4s="
     },
-    "mini.cursorword": {
+    "neovim-nightly-overlay": {
       "type": "Git",
       "repository": {
         "type": "GitHub",
-        "owner": "nvim-mini",
-        "repo": "mini.cursorword"
+        "owner": "nix-community",
+        "repo": "neovim-nightly-overlay"
       },
-      "branch": "main",
+      "branch": "master",
       "submodules": false,
-      "revision": "dda0f57d55bb1fa19423b7201b2ba892c7d2bb3c",
-      "url": "https://github.com/nvim-mini/mini.cursorword/archive/dda0f57d55bb1fa19423b7201b2ba892c7d2bb3c.tar.gz",
-      "hash": "sha256-VyH0+aswqME2PpQtTgQ3VyaUfik1N3y2Psyhr1gHWOE="
-    },
-    "neorg": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nvim-neorg",
-        "repo": "neorg"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "4da2159b3f3420d43613f43e159f4253b8544474",
-      "url": "https://github.com/nvim-neorg/neorg/archive/4da2159b3f3420d43613f43e159f4253b8544474.tar.gz",
-      "hash": "sha256-DFpbdBfyW32d4QhH59+melM7cHK9tzm9awKjTDPJOvs="
+      "revision": "7f54fc34e0ff994dff6494f074979ad6e4a0eba4",
+      "url": "https://github.com/nix-community/neovim-nightly-overlay/archive/7f54fc34e0ff994dff6494f074979ad6e4a0eba4.tar.gz",
+      "hash": "sha256-xjL22RjFqfN3D4dglBt0PTEFLl1rvN60f6LtHX8kQJs="
     },
     "niri-scratchpad-rs": {
       "type": "Git",
@@ -337,6 +285,19 @@
       "url": "https://github.com/andir/npins/archive/c664916b48964bdb442f8a1529d3a10c168ab195.tar.gz",
       "hash": "sha256-qoVRA4osHAXC+g+C3h/OjEm9ODRwCR4w9xOgjASjwOM="
     },
+    "nvim-flake": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "kagurazakei",
+        "repo": "nvim-flake"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "c201e815f64b92c058ced8dadfaac4c8a00bd1f3",
+      "url": "https://github.com/kagurazakei/nvim-flake/archive/c201e815f64b92c058ced8dadfaac4c8a00bd1f3.tar.gz",
+      "hash": "sha256-PhIGj1hjb68Qg2yCPt2HgMoloc3wPcjqQBqndlv1UbU="
+    },
     "piri": {
       "type": "Git",
       "repository": {
@@ -403,6 +364,19 @@
       "url": "https://github.com/oxalica/rust-overlay/archive/8b3f46b8a6d17ab46e533a5e3d5b1cc2ff228860.tar.gz",
       "hash": "sha256-zKprqMQDl3xVfhSSYvgru1IGXjFdxryWk+KqK0I20Xk="
     },
+    "shizuru": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "kagurazakei",
+        "repo": "shizuru"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "4ce14a2ee444ea542fa4278aa52ceb8ce5f77e91",
+      "url": "https://github.com/kagurazakei/shizuru/archive/4ce14a2ee444ea542fa4278aa52ceb8ce5f77e91.tar.gz",
+      "hash": "sha256-leh6f0FpdHo3T7l+L7SX14aBPwSUTExfRWh4EHm+IFA="
+    },
     "shizuruPkgs": {
       "type": "Git",
       "repository": {
@@ -467,20 +441,6 @@
       "revision": "8e692c1daacf241b3d76ea3b2024f0fa4d662531",
       "url": "https://github.com/kagurazakei/waifu-cursors/archive/8e692c1daacf241b3d76ea3b2024f0fa4d662531.tar.gz",
       "hash": "sha256-68QmW2WK0OxyMlcdTxhjCRY4SMmKWy+eDF8yA6dkx4c="
-    },
-    "zaphkiel": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "Rexcrazy804",
-        "repo": "Zaphkiel"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "cc6d5cf12ae824e6945cc2599a2650d5fe054ffe",
-      "url": "https://github.com/Rexcrazy804/Zaphkiel/archive/cc6d5cf12ae824e6945cc2599a2650d5fe054ffe.tar.gz",
-      "hash": "sha256-u1yJ9JCLlQzmMNQSLZ/zWJTMLDcMDfLYpY/7cPtQuWU=",
-      "frozen": true
     },
     "zen-browser-flake": {
       "type": "Git",

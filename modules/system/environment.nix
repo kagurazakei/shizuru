@@ -5,7 +5,7 @@
       pkgs.gh
       pkgs.npins
       pkgs.alejandra
-      zakeivim.packages.${pkgs.stdenv.hostPlatform.system}.khanelivim
+      zakeivim.packages.${pkgs.stdenv.hostPlatform.system}.nightly
     ];
 
     environment.variables.EDITOR = "nvim";

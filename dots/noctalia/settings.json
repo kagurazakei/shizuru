@@ -535,7 +535,7 @@
         "clockStyle": "digital",
         "compactLockScreen": false,
         "dimmerOpacity": 0.1,
-        "enableBlurBehind": true,
+        "enableBlurBehind": false,
         "enableLockScreenCountdown": true,
         "enableLockScreenMediaControls": true,
         "enableShadows": false,

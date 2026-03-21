@@ -520,8 +520,8 @@ layout {
     }
     border {
         width 3
-        active-gradient angle=100 from="#f497b1" 0% via="#95bcf5" 50% via="#f9e4b4" 75% to="#b2e7ad" 100% relative-to="window"
-        inactive-gradient angle=180 from="#414868" 0% via="#7aa2f7" 70% to="#1e1e2e" 100% relative-to="window"
+        active-gradient angle=180 from="#f497b1"  to="#b2e7ad" relative-to="window"
+        inactive-gradient angle=180 from="#414868" to="#1e1e2e" relative-to="window"
 
         urgent-gradient from="#800" to="#a33" angle=45 
     }

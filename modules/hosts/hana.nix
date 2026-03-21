@@ -4,7 +4,9 @@
     config,
     username,
     ...
-  }: {
+  }: let
+    pkgx = self.lib.mkPkgx' pkgs;
+  in {
     imports = [
       self.azalea.users.zakei
       self.azalea.dots.zakei-cli
@@ -37,7 +39,7 @@
     nixpkgs.hostPlatform = "x86_64-linux";
     # zaphkiel opts
     zaphkiel = {
-      data.wallpaper = pkgs.zpkgs.images.nix-logo;
+      data.wallpaper = pkgx.images.nix-logo;
       secrets = {
         antonioPass = {
           file = self.paths.secrets + /hana-user.age;
@@ -97,7 +99,7 @@
     # user stuff
     users.users."antonio".packages = [
       pkgs.vscodium
-      self.packages.${pkgs.stdenv.hostPlatform.system}.mpv-wrapped
+      pkgx.mpv-wrapped
       pkgs.cava
     ];
 

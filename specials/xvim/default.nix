@@ -2,13 +2,10 @@
 {
   mnw,
   pkgs,
-  callPackage,
   lib,
-  sources,
 }:
 lib.fix (self: {
-  vimPlugins = callPackage ./plugins.nix {inherit sources;};
-  minimal = mnw.wrap (pkgs // {inherit (self) vimPlugins;}) ./config.nix;
+  minimal = mnw.lib.wrap pkgs ./config.nix;
   default = self.minimal.override (prev: {
     extraBinPath =
       prev.extraBinPath

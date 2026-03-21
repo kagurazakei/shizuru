@@ -4,6 +4,7 @@
 {
   self,
   nixpkgs,
+  mnw,
   ...
 } @ inputs: let
   inherit
@@ -21,6 +22,7 @@
           self
           nixpkgs
           sources
+          mnw
           ;
         username = "antonio";
       };
@@ -31,7 +33,7 @@
           {...}: {
             nixpkgs.overlays = [
               (_final: prev: {
-                zpkgs = self.packages.${prev.stdenv.hostPlatform.system};
+                zpkgs = self.lib.mkPkgx' prev;
                 system = prev.stdenv.hostPlatform.system;
               })
             ];

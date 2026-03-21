@@ -6,7 +6,7 @@
 runCommandLocal "voyager-face.jpg" {
   nativeBuildInputs = [imagemagick];
   src = fetchurl {
-    url = "https://cdn.donmai.us/original/e9/c3/e9c3dbb346bb4ea181c2ae8680551585.jpg";
+    url = "https://drive.google.com/file/d/1twJv9RlKAdi5SM33194h7zbF72wCUN4i/view?usp=drive_link";
     hash = "sha256-0RKzzRxW1mtqHutt+9aKzkC5KijIiVLQqW5IRFI/IWY=";
   };
   dontUnpack = true;

@@ -1,70 +1,41 @@
-{pkgs, ...}: {
-  neovim = pkgs.neovim-unwrapped;
-  initLua = ''
-    require("config")
-    require("lz.n").load("plugins")
-    vim.cmd.colorscheme "rose-pine"
-  '';
-
-  extraLuaPackages = p: [p.magick p.neorg];
-  extraBinPath = [
-    pkgs.git
-    pkgs.fzf
-    pkgs.ripgrep
-    pkgs.wl-clipboard
-    pkgs.fd
-    pkgs.imagemagick
-  ];
-
-  providers.python3.enable = true;
-
-  plugins = {
-    start = builtins.attrValues {
-      inherit
-        (pkgs.vimPlugins)
-        lz-n
-        blink-cmp-nixpkgs-maintainers
-        nvim-web-devicons
-        lspkind-nvim
-        oil-nvim
-        mini-align
-        mini-cursorword
-        ;
-
-      treesitter = let
-        nts = pkgs.vimPlugins.nvim-treesitter;
-        tsg = pkgs.tree-sitter-grammars;
-        norgG = [tsg.tree-sitter-norg tsg.tree-sitter-norg-meta];
-      in
-        nts.withPlugins (_: nts.allGrammars ++ norgG);
+{
+  pkgs,
+  mnw,
+  small ? false,
+}: let
+  args = {inherit pkgs;};
+in
+  mnw.lib.wrap pkgs {
+    appName = "nvim";
+    neovim = pkgs.neovim.unwrapped.overrideAttrs {
+      version = "0.12.0";
+      src = pkgs.fetchFromGitHub {
+        owner = "neovim";
+        repo = "neovim";
+        rev = "8499af1119f0f96b4fd57ef9099ce5a2503bc952";
+        hash = "sha256-/PyUJOW1PMUdfy+ewWbngxttcaNsQmWpCEueNsAUBZE=";
+      };
+      doInstallCheck = false;
     };
 
-    opt = builtins.attrValues {
-      inherit
-        (pkgs.vimPlugins)
-        image-nvim
-        catppuccin-nvim
-        rose-pine
-        tokyonight-nvim
-        which-key-nvim
-        toggleterm-nvim
-        lualine-nvim
-        gitsigns-nvim
-        flash-nvim
-        fidget-nvim
-        fzf-lua
-        nvim-autopairs
-        indent-blankline-nvim
-        neorg
-        direnv-nvim
-        nvim-dbee
-        slimv
-        ;
-    };
+    luaFiles = [
+      ./init.lua
+    ];
 
-    dev.myconfig = {
-      pure = ../../dots/nvim;
-      impure = "/home/rexies/nixos/dots/nvim";
+    plugins = {
+      startAttrs = import ./packages/startPlugins.nix args;
+      start = import ./packages/treesitter.nix args;
+      optAttrs = mnw.lib.npinsToPluginsAttrs pkgs ./opt.json;
+      dev.config = {
+        pure = ../../dots/nvim;
+        impure = "/home/antonio/nixos/dots/nvim"; # Absolute path needed
+      };
     };
-  };
-}
+    extraBinPath =
+      import ./packages/binaries.nix args
+      ++ (
+        if small
+        then []
+        else import ./packages/extraBinaries.nix args
+      );
+  }

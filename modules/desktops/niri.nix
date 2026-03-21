@@ -11,6 +11,7 @@
     nixpkgs.overlays = [
       niri.overlays.default
     ];
+
     environment.systemPackages = with pkgs; [
       hyprsunset
       xwayland-satellite
