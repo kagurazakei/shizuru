@@ -1,5 +1,6 @@
 {
   stash,
+  mnw,
   self,
   ...
 }: {
@@ -10,8 +11,8 @@
       zpkgs,
     }: {
       xvim = pkgs.callPackage (self.paths.specials + /xvim) {
-        inherit (zpkgs) mnw sources pkgs;
-        small = false;
+        inherit (zpkgs) sources;
+        mnw = mnw.lib;
       };
       stash = let
         stp = stash.packages.${system}.default;

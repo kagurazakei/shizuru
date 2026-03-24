@@ -1,41 +1,115 @@
 {
   pkgs,
-  mnw,
-  small ? false,
+  lib,
+  ...
 }: let
-  args = {inherit pkgs;};
-in
-  mnw.lib.wrap pkgs {
-    appName = "nvim";
-    neovim = pkgs.neovim.unwrapped.overrideAttrs {
-      version = "0.12.0";
-      src = pkgs.fetchFromGitHub {
-        owner = "neovim";
-        repo = "neovim";
-        rev = "8499af1119f0f96b4fd57ef9099ce5a2503bc952";
-        hash = "sha256-/PyUJOW1PMUdfy+ewWbngxttcaNsQmWpCEueNsAUBZE=";
+  initLua = ../../dots/nvim/init.lua;
+in {
+  neovim = pkgs.neovim or {};
+  luaFiles = [
+    initLua
+  ];
+  extraLuaPackages = _p: [];
+
+  extraBinPath = let
+    externalTools =
+      {
+        inherit
+          (pkgs)
+          curl
+          ripgrep
+          imagemagick
+          git
+          bat
+          ;
+      }
+      // lib.optionalAttrs (lib.meta.availableOn pkgs.stdenv.hostPlatform pkgs.wayland) {
+        inherit (pkgs) wl-clipboard;
       };
-      doInstallCheck = false;
+
+    formatters = {
+      gdscript = pkgs.gdtoolkit_4;
+      lua = pkgs.stylua;
+      nix = pkgs.nixfmt;
+      toml = pkgs.taplo;
+      kdl = pkgs.kdlfmt;
+      hyprls = pkgs.hyprls;
     };
 
-    luaFiles = [
-      ./init.lua
-    ];
-
-    plugins = {
-      startAttrs = import ./packages/startPlugins.nix args;
-      start = import ./packages/treesitter.nix args;
-      optAttrs = mnw.lib.npinsToPluginsAttrs pkgs ./opt.json;
-      dev.config = {
-        pure = ../../dots/nvim;
-        impure = "/home/antonio/nixos/dots/nvim"; # Absolute path needed
-      };
+    languageServers = {
+      lua = pkgs.lua-language-server;
+      nix = pkgs.nixd;
+      toml = pkgs.taplo;
+      hyprlang = pkgs.hyprlang;
     };
-    extraBinPath =
-      import ./packages/binaries.nix args
-      ++ (
-        if small
-        then []
-        else import ./packages/extraBinaries.nix args
-      );
-  }
+
+    pluginDependencies = {
+      fzf-lua = pkgs.fzf;
+    };
+  in
+    [
+      externalTools
+      formatters
+      languageServers
+      pluginDependencies
+    ]
+    |> builtins.concatMap builtins.attrValues
+    |> lib.flatten
+    |> lib.unique;
+
+  providers.python3.enable = true;
+
+  plugins = {
+    # injected from default.nix
+    startAttrs = pkgs.startAttrsPlugins or {};
+    optAttrs = pkgs.optAttrsPlugins or {};
+    opt = pkgs.optPlugins or {};
+    # treesitter (manual)
+    start = let
+      nts = pkgs.vimPlugins.nvim-treesitter;
+      langs = [
+        "bash"
+        "comment"
+        "diff"
+        "json"
+        "just"
+        "markdown"
+        "nix"
+        "query"
+        "regex"
+        "toml"
+        "yaml"
+        "zsh"
+        "hyprlang"
+        "git_config"
+        "git_rebase"
+        "gitattributes"
+        "gitcommit"
+        "gitignore"
+        "gdscript"
+        "gdshader"
+        "godot_resource"
+        "lua"
+        "luadoc"
+        "luap"
+        "vim"
+        "vimdoc"
+        "hyprlang"
+        "kdl"
+      ];
+    in (
+      builtins.concatLists (
+        map (lang: [
+          nts.parsers.${lang}
+          nts.queries.${lang}
+        ])
+        langs
+      )
+      ++ import ./packages/treesitter.nix {inherit pkgs;}
+    );
+    dev.config = {
+      pure = ../../dots/nvim;
+      impure = "/home/antonio/nixos/dots/nvim";
+    };
+  };
+}

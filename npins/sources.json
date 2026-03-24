@@ -68,6 +68,19 @@
       "url": "https://github.com/catppuccin/bat/archive/6810349b28055dce54076712fc05fc68da4b8ec0.tar.gz",
       "hash": "sha256-lJapSgRVENTrbmpVyn+UQabC9fpV1G1e+CdlJ090uvg="
     },
+    "direnv.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "NotAShelf",
+        "repo": "direnv.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "9e58bb5e8db19d8bf2626de8e94a85fc305a8c1e",
+      "url": "https://github.com/NotAShelf/direnv.nvim/archive/9e58bb5e8db19d8bf2626de8e94a85fc305a8c1e.tar.gz",
+      "hash": "sha256-TlQ3oTRirUf/Po1KWCL4wDp8GgrJXzYWQx0C5qyZFeQ="
+    },
     "fish": {
       "type": "Git",
       "repository": {
@@ -177,6 +190,19 @@
       "revision": "68cf6e013e6b59fd3eaa1c1ddc82cd40c76bbfc9",
       "url": "https://github.com/kagurazakei/mnw-nvim/archive/68cf6e013e6b59fd3eaa1c1ddc82cd40c76bbfc9.tar.gz",
       "hash": "sha256-dmcL+t15906yUvmiz2am0XQY3OYx6RwtvyWJ5+H9e4s="
+    },
+    "neorg": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nvim-neorg",
+        "repo": "neorg"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "338f601c7c164e7e3ded7539f209c1f12344a5d5",
+      "url": "https://github.com/nvim-neorg/neorg/archive/338f601c7c164e7e3ded7539f209c1f12344a5d5.tar.gz",
+      "hash": "sha256-ifCD/EZVS53qRxolq7MK8IhuUPFx520HAAiPQk2AeX0="
     },
     "neovim-nightly-overlay": {
       "type": "Git",
@@ -294,9 +320,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "c201e815f64b92c058ced8dadfaac4c8a00bd1f3",
-      "url": "https://github.com/kagurazakei/nvim-flake/archive/c201e815f64b92c058ced8dadfaac4c8a00bd1f3.tar.gz",
-      "hash": "sha256-PhIGj1hjb68Qg2yCPt2HgMoloc3wPcjqQBqndlv1UbU="
+      "revision": "0f376c2d648659ccedb97123d703cd6ae6f53c0e",
+      "url": "https://github.com/kagurazakei/nvim-flake/archive/0f376c2d648659ccedb97123d703cd6ae6f53c0e.tar.gz",
+      "hash": "sha256-eJfBkTKbPCivKcVnLU4IaMZPFrMPwMjEo54MHjnMNGs="
     },
     "piri": {
       "type": "Git",

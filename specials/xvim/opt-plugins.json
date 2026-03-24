@@ -1,0 +1,73 @@
+{
+  "pins": {
+    "catppuccin": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "catppuccin",
+        "repo": "nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "384f304c8b04664c9e0091fbfb3923c5f97c1bcf",
+      "url": "https://github.com/catppuccin/nvim/archive/384f304c8b04664c9e0091fbfb3923c5f97c1bcf.tar.gz",
+      "hash": "sha256-L6W+aW3wuAYg9tyKDqxL4iykqOaFT6Bmx3nZMux409k="
+    },
+    "conform.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "stevearc",
+        "repo": "conform.nvim"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
+      "url": "https://github.com/stevearc/conform.nvim/archive/086a40dc7ed8242c03be9f47fbcee68699cc2395.tar.gz",
+      "hash": "sha256-aJIUkAcFdaOWBQ3HNLLvhqALzch0BqPUZPtb2cmIeCE="
+    },
+    "fzf-lua": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "ibhagwan",
+        "repo": "fzf-lua"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "bf59dcee2a8d894724b060401d2abf3d71d4bd47",
+      "url": "https://github.com/ibhagwan/fzf-lua/archive/bf59dcee2a8d894724b060401d2abf3d71d4bd47.tar.gz",
+      "hash": "sha256-EjCjBTqpZz74oOJ2+8+hEbTUfTRFiSfVMs1owaryeSY="
+    },
+    "mini.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nvim-mini",
+        "repo": "mini.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "9990c41f10f54f29a888d13024c9f765037bde23",
+      "url": "https://github.com/nvim-mini/mini.nvim/archive/9990c41f10f54f29a888d13024c9f765037bde23.tar.gz",
+      "hash": "sha256-Idg/aP7kXAjXra51I56+DtldHII4NmKzGehIkk0S19c="
+    },
+    "oil.nvim": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "stevearc",
+        "repo": "oil.nvim"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v2.15.0",
+      "revision": "975a77cce3c8cb742bc1b3629f4328f5ca977dad",
+      "url": "https://api.github.com/repos/stevearc/oil.nvim/tarball/refs/tags/v2.15.0",
+      "hash": "sha256-jCuOwTd6QIy3USuE7X/rHYUbriW6+2WaK9JxCx4/O2c="
+    }
+  },
+  "version": 7
+}

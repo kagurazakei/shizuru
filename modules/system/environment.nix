@@ -1,11 +1,21 @@
-{zakeivim, ...}: {
-  azalea.modules.environment = {pkgs, ...}: {
+{mnw, ...}: {
+  azalea.modules.environment = {
+    pkgs,
+    sources,
+    inputs,
+    ...
+  }: {
     environment.systemPackages = [
       pkgs.git
       pkgs.gh
       pkgs.npins
       pkgs.alejandra
-      zakeivim.packages.${pkgs.stdenv.hostPlatform.system}.nightly
+      (pkgs.callPackage "${sources.nvim-flake}/default.nix" {
+        inherit mnw pkgs;
+        neovim-nightly = inputs.neovim-nightly;
+        lib = pkgs.lib;
+        dev = false;
+      })
     ];
 
     environment.variables.EDITOR = "nvim";

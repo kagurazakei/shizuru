@@ -30,7 +30,7 @@
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
     firefox.url = "github:nix-community/flake-firefox-nightly";
     mnw.url = "github:Gerg-L/mnw";
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     ambxst.url = "github:kagurazakei/Ambxst?ref=master";
     niri = {
       url = "github:kagurazakei/niri";
