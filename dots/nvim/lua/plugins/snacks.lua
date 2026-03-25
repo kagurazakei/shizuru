@@ -12,7 +12,12 @@ return {
         input = { enabled = true },
         gh = { enable = true },
         gitbrowse = { enabled = true },
-        indent = { enabled = true },
+        indent = {
+          enabled = true,
+          animate = {
+            enabled = false,
+          },
+        },
         image = { enabled = true },
         picker = { enabled = true },
         terminal = {

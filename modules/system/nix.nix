@@ -37,7 +37,7 @@
       channel.enable = false;
       settings = {
         warn-dirty = false;
-        allow-import-from-derivation = false;
+        allow-import-from-derivation = true;
         experimental-features = [
           "nix-command"
           "flakes"
@@ -70,6 +70,7 @@
         options = "--delete-older-than 7d";
       };
       extraOptions = ''
+        allow-import-from-derivation = true
         !include ${config.age.secrets.secret2.path}
       '';
     };

@@ -1,21 +1,15 @@
-{mnw, ...}: {
-  azalea.modules.environment = {
-    pkgs,
-    sources,
-    inputs,
-    ...
-  }: {
-    environment.systemPackages = [
-      pkgs.git
-      pkgs.gh
-      pkgs.npins
-      pkgs.alejandra
-      (pkgs.callPackage "${sources.nvim-flake}/default.nix" {
-        inherit mnw pkgs;
-        neovim-nightly = inputs.neovim-nightly;
-        lib = pkgs.lib;
-        dev = false;
-      })
+{self, ...}: {
+  azalea.modules.environment = {sources, ...}: let
+    pkgs = import sources.nixpkgs {inherit pkgs;};
+  in {
+    environment.systemPackages = with pkgs; [
+      git
+      gh
+      neovide
+      (callPackage "${sources.npins}/npins.nix" {})
+      alejandra
+      (self.lib.mkPkgx' pkgs).xvim.default
+      # (callPackage "${sources.nvim-flake}/package.nix" { })
     ];
 
     environment.variables.EDITOR = "nvim";

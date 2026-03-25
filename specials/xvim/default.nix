@@ -12,23 +12,19 @@ lib.fix (self: {
     mnw.wrap (
       pkgs
       // {
-        neovim = pkgs.neovim.unwrapped.overrideAttrs {
-          version = "0.12.0";
-          src = pkgs.fetchFromGitHub {
-            owner = "neovim";
-            repo = "neovim";
-            rev = "8499af1119f0f96b4fd57ef9099ce5a2503bc952";
-            hash = "sha256-/PyUJOW1PMUdfy+ewWbngxttcaNsQmWpCEueNsAUBZE=";
-          };
+        neovim = pkgs.neovim.unwrapped.overrideAttrs (_old: {
+          version = "nightly";
+          src = sources.neovim;
           doInstallCheck = false;
-        };
+        });
         inherit (self) vimPlugins;
         startAttrsPlugins = mnw.npinsToPluginsAttrs pkgs ./start-plugins.json;
         optAttrsPlugins = mnw.npinsToPluginsAttrs pkgs ./opt-plugins.json;
         optPlugins = with pkgs.vimPlugins; [
           blink-cmp-avante
           cord-nvim
-          blink-cmp-nixpkgs-maintainers
+          blink-cmp
+          blink-pairs
         ];
       }
     )

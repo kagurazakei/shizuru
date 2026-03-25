@@ -25,7 +25,7 @@
         "showIconBackground": true,
         "sortByMostUsed": true,
         "terminalCommand": "kitty -e",
-        "viewMode": "list"
+        "viewMode": "grid"
     },
     "audio": {
         "mprisBlacklist": [
@@ -50,7 +50,7 @@
         "displayMode": "always_visible",
         "enableExclusionZoneInset": true,
         "floating": false,
-        "fontScale": 0.87,
+        "fontScale": 1,
         "frameRadius": 7,
         "frameThickness": 17,
         "hideOnOverview": false,
@@ -65,7 +65,7 @@
         "mouseWheelAction": "none",
         "mouseWheelWrap": true,
         "outerCorners": true,
-        "position": "top",
+        "position": "left",
         "reverseScroll": false,
         "rightClickAction": "controlCenter",
         "rightClickCommand": "",
@@ -535,12 +535,12 @@
         "clockStyle": "digital",
         "compactLockScreen": false,
         "dimmerOpacity": 0.1,
-        "enableBlurBehind": false,
+        "enableBlurBehind": true,
         "enableLockScreenCountdown": true,
         "enableLockScreenMediaControls": true,
-        "enableShadows": false,
+        "enableShadows": true,
         "forceBlackScreenCorners": false,
-        "iRadiusRatio": 0.36,
+        "iRadiusRatio": 0.84,
         "keybinds": {
             "keyDown": [
                 "Down"
@@ -573,8 +573,8 @@
         "lockScreenMonitors": [
         ],
         "lockScreenTint": 0,
-        "passwordChars": false,
-        "radiusRatio": 0.21,
+        "passwordChars": true,
+        "radiusRatio": 1.03,
         "reverseScroll": false,
         "scaleRatio": 1.05,
         "screenRadiusRatio": 0.86,

@@ -1,5 +1,10 @@
 return {
   "blink.cmp",
+  before = function()
+    require("lz.n").trigger_load("friendly-snippet")
+    require("lz.n").trigger_load("luasnip")
+    require("lz.n").trigger_load("colorful-menu")
+  end,
   after = function()
     require("blink.cmp").setup({
       snippets = { preset = "luasnip" },
@@ -17,10 +22,10 @@ return {
         enabled = true,
         keymap = {
           preset = "cmdline",
-          ["<Tab>"] = { "select_and_accept", "fallback" },
+          ["<Tab>"] = { "select_next", "fallback" },
           ["<S-Tab>"] = { "select_prev", "fallback" },
+          ["CR"] = { "accept", "fallback" },
         },
-
         completion = {
           list = {
             selection = {
@@ -33,16 +38,16 @@ return {
         },
       },
       completion = {
+        list = {
+          selection = { preselect = true, auto_insert = true },
+          max_items = 10,
+        },
+        accept = {
+          auto_brackets = {
+            enabled = true,
+          },
+        },
         menu = {
-          accept = {
-            auto_brackets = {
-              enabled = true,
-            },
-          },
-          list = {
-            selection = { preselect = true, auto_insert = true },
-            max_items = 10,
-          },
           draw = {
             components = {
               label = {

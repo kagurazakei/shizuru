@@ -8,6 +8,9 @@ return {
       ---@diagnostic disable: missing-fields
       require("notify").setup({
         background_colour = "#000000",
+        stages = "fade",
+        timeout = 2000,
+        render = "compact",
       })
     end,
   },
@@ -25,6 +28,13 @@ return {
             filter = {
               event = "msg_show",
               find = "is deprecated. Run \":checkhealth vim.deprecated\" for more information",
+            },
+            opts = { skip = true },
+          },
+          {
+            filter = {
+              event = "notify",
+              cond = function() return vim.api.nvim_get_mode().mode:match("i") end,
             },
             opts = { skip = true },
           },

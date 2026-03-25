@@ -6,7 +6,7 @@ return {
   after = function()
     -- bash
     vim.lsp.enable("bashls")
-    vim.lsp.config("hyprls", {
+    vim.lsp.config("hyprlang", {
       cmd = { "hyprls" },
       settings = {
         hyprls = {

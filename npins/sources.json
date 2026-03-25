@@ -42,6 +42,32 @@
       "url": "https://github.com/ryantm/agenix/archive/b027ee29d959fda4b60b57566d64c98a202e0feb.tar.gz",
       "hash": "sha256-9VnK6Oqai65puVJ4WYtCTvlJeXxMzAp/69HhQuTdl/I="
     },
+    "blink-cmp": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "saghen",
+        "repo": "blink.cmp"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "18712d9d292dd362067de74d3b54eb90ce860ba9",
+      "url": "https://github.com/saghen/blink.cmp/archive/18712d9d292dd362067de74d3b54eb90ce860ba9.tar.gz",
+      "hash": "sha256-BTI6TLv7gafyn/leGdfhgF9FW6ADOwheD+TNwUd22X4="
+    },
+    "blink.pairs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "saghen",
+        "repo": "blink.pairs"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "4e43012356d33a26f69eae475f746fbe9f325f44",
+      "url": "https://github.com/saghen/blink.pairs/archive/4e43012356d33a26f69eae475f746fbe9f325f44.tar.gz",
+      "hash": "sha256-PTbj6jlXNRUOmwFSplvRDDiyyGqkBzUKtuBrvZm9kzM="
+    },
     "cat-gtk-themes": {
       "type": "Git",
       "repository": {
@@ -90,9 +116,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "bcfeb321aaecfd0634b7364f3ac8cda5eeea85a6",
-      "url": "https://github.com/kagurazakei/fish/archive/bcfeb321aaecfd0634b7364f3ac8cda5eeea85a6.tar.gz",
-      "hash": "sha256-ODbSYwWKNVh7BsKPyycORr4rT8We8yJuCgVZBpmvoaQ="
+      "revision": "8ec6595afdd4c811c02e781165283ebb9330b14c",
+      "url": "https://github.com/kagurazakei/fish/archive/8ec6595afdd4c811c02e781165283ebb9330b14c.tar.gz",
+      "hash": "sha256-6Y6feGSIxv49dX46ATmJ5H5s5RL/90IO1B1U7KwxvgQ="
     },
     "hyprland": {
       "type": "Git",
@@ -204,6 +230,19 @@
       "url": "https://github.com/nvim-neorg/neorg/archive/338f601c7c164e7e3ded7539f209c1f12344a5d5.tar.gz",
       "hash": "sha256-ifCD/EZVS53qRxolq7MK8IhuUPFx520HAAiPQk2AeX0="
     },
+    "neovim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "neovim",
+        "repo": "neovim"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "170ff4b24487e7350248d1a745b69979ada185ce",
+      "url": "https://github.com/neovim/neovim/archive/170ff4b24487e7350248d1a745b69979ada185ce.tar.gz",
+      "hash": "sha256-FVpcyaaOtJT7Ji5tbPKHRvUdunllDmHUoehHgmEzOrU="
+    },
     "neovim-nightly-overlay": {
       "type": "Git",
       "repository": {
@@ -272,6 +311,19 @@
       "url": "https://github.com/fufexan/nix-gaming/archive/d2b0b283deb24cdbb2750e658fa7001fee5ad586.tar.gz",
       "hash": "sha256-Yw1tP/ASebNYuW2GcYDTgWf2Mg9qcUYo6MTagXyeFCs="
     },
+    "nixpkgs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nixos",
+        "repo": "nixpkgs"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "d0956cd741acd4c63af7781c948a98f79443dd43",
+      "url": "https://github.com/nixos/nixpkgs/archive/d0956cd741acd4c63af7781c948a98f79443dd43.tar.gz",
+      "hash": "sha256-vEtKwalD5El4ePmFwqHYx7eHW8Hta7ZibmisWtQk+nI="
+    },
     "noctalia-qs": {
       "type": "Git",
       "repository": {
@@ -307,9 +359,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "c664916b48964bdb442f8a1529d3a10c168ab195",
-      "url": "https://github.com/andir/npins/archive/c664916b48964bdb442f8a1529d3a10c168ab195.tar.gz",
-      "hash": "sha256-qoVRA4osHAXC+g+C3h/OjEm9ODRwCR4w9xOgjASjwOM="
+      "revision": "c77829b17a45f48bc252297244f0920b61c406a2",
+      "url": "https://github.com/andir/npins/archive/c77829b17a45f48bc252297244f0920b61c406a2.tar.gz",
+      "hash": "sha256-HqfftzCWvcXZ/NY3yegWsaWYAH761/p4fU2IJvrvPro="
     },
     "nvim-flake": {
       "type": "Git",
@@ -320,9 +372,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "0f376c2d648659ccedb97123d703cd6ae6f53c0e",
-      "url": "https://github.com/kagurazakei/nvim-flake/archive/0f376c2d648659ccedb97123d703cd6ae6f53c0e.tar.gz",
-      "hash": "sha256-eJfBkTKbPCivKcVnLU4IaMZPFrMPwMjEo54MHjnMNGs="
+      "revision": "ca36512a199b1e0a6d5bf5fed61cb6e435fd0678",
+      "url": "https://github.com/kagurazakei/nvim-flake/archive/ca36512a199b1e0a6d5bf5fed61cb6e435fd0678.tar.gz",
+      "hash": "sha256-IYZfeGw/u82cm2pi0MCWguSBxQl8s+QDY4CYp9UBbv4="
     },
     "piri": {
       "type": "Git",

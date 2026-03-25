@@ -74,6 +74,8 @@
         wallcrop
         nixy
         lutui
+        npins-add
+        npins-ui
         ;
       # Themes
       inherit
