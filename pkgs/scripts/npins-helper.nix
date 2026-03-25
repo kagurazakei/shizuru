@@ -5,7 +5,7 @@
   coreutils,
   gnused,
 }:
-writers.writeBashBin "npins-add" ''
+writers.writeBashBin "npins-helper" ''
     #!${bash}/bin/bash
     set -euo pipefail
 
@@ -52,16 +52,16 @@ writers.writeBashBin "npins-add" ''
   📦 NPins Helper
 
   Usage:
-    npins-add [--file path] add github repo [repo ...] [npins args]
-    npins-add [--file path] add git url [url ...] [npins args]
-    npins-add [--file path] add tarball url [url ...]
-    npins-add [--file path] remove name [name ...]
-    npins-add [--file path] show
+    npins-helper [--file path] add github repo [repo ...] [npins args]
+    npins-helper [--file path] add git url [url ...] [npins args]
+    npins-helper [--file path] add tarball url [url ...]
+    npins-helper [--file path] remove name [name ...]
+    npins-helper [--file path] show
 
   Examples:
-    npins-add --file ~/nixos/npins/sources.json add github nixos/nixpkgs neovim/neovim -b master
-    npins-add add git https://github.com/user/repo.git -b main
-    npins-add remove blink-cmp mini.nvim
+    npins-helper --file ~/nixos/npins/sources.json add github nixos/nixpkgs neovim/neovim -b master
+    npins-helper add git https://github.com/user/repo.git -b main
+    npins-helper remove blink-cmp mini.nvim
   EOF
       exit 1
     }

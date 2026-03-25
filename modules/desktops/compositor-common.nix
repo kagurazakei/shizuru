@@ -73,7 +73,7 @@
         wallcrop
         nixy
         lutui
-        npins-add
+        npins-helper
         npins-ui
         ;
       # Themes

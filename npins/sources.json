@@ -120,32 +120,6 @@
       "url": "https://github.com/kagurazakei/fish/archive/8ec6595afdd4c811c02e781165283ebb9330b14c.tar.gz",
       "hash": "sha256-6Y6feGSIxv49dX46ATmJ5H5s5RL/90IO1B1U7KwxvgQ="
     },
-    "hyprland": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "hyprwm",
-        "repo": "hyprland"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "5cf53f581b8b383fe7b1bf9bb9e28c72394e2e16",
-      "url": "https://github.com/hyprwm/hyprland/archive/5cf53f581b8b383fe7b1bf9bb9e28c72394e2e16.tar.gz",
-      "hash": "sha256-0B7oWd6vfp2gWYzZxCZocVKlzlHul8KrJLapPra6x2o="
-    },
-    "hyprland-plugins": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "hyprwm",
-        "repo": "hyprland-plugins"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "b85a56b9531013c79f2f3846fd6ee2ff014b8960",
-      "url": "https://github.com/hyprwm/hyprland-plugins/archive/b85a56b9531013c79f2f3846fd6ee2ff014b8960.tar.gz",
-      "hash": "sha256-xwNa+1D8WPsDnJtUofDrtyDCZKZotbUymzV/R5s+M0I="
-    },
     "impermanence": {
       "type": "Git",
       "repository": {
@@ -158,19 +132,6 @@
       "revision": "7b1d382faf603b6d264f58627330f9faa5cba149",
       "url": "https://github.com/nix-community/impermanence/archive/7b1d382faf603b6d264f58627330f9faa5cba149.tar.gz",
       "hash": "sha256-03+JxvzmfwRu+5JafM0DLbxgHttOQZkUtDWBmeUkN8Y="
-    },
-    "khanelivim": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "kagurazakei",
-        "repo": "khanelivim"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "ed0892ce3946b132955ec541e7cdd275443b62ba",
-      "url": "https://github.com/kagurazakei/khanelivim/archive/ed0892ce3946b132955ec541e7cdd275443b62ba.tar.gz",
-      "hash": "sha256-732/iyVGUZbB/oNA1xBU1hUKlzD+wzzXDnTZQyluFZk="
     },
     "ktop": {
       "type": "GitRelease",
@@ -204,19 +165,6 @@
       "url": "https://api.github.com/repos/DreamMaoMao/mangowc/tarball/0.10.8",
       "hash": "sha256-Vszn4Zp0pojvvKkyP7M7V5iqNRB0kUvwd9iez+KzOyM="
     },
-    "mnw-nvim": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "kagurazakei",
-        "repo": "mnw-nvim"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "68cf6e013e6b59fd3eaa1c1ddc82cd40c76bbfc9",
-      "url": "https://github.com/kagurazakei/mnw-nvim/archive/68cf6e013e6b59fd3eaa1c1ddc82cd40c76bbfc9.tar.gz",
-      "hash": "sha256-dmcL+t15906yUvmiz2am0XQY3OYx6RwtvyWJ5+H9e4s="
-    },
     "neorg": {
       "type": "Git",
       "repository": {
@@ -242,19 +190,6 @@
       "revision": "170ff4b24487e7350248d1a745b69979ada185ce",
       "url": "https://github.com/neovim/neovim/archive/170ff4b24487e7350248d1a745b69979ada185ce.tar.gz",
       "hash": "sha256-FVpcyaaOtJT7Ji5tbPKHRvUdunllDmHUoehHgmEzOrU="
-    },
-    "neovim-nightly-overlay": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nix-community",
-        "repo": "neovim-nightly-overlay"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "7f54fc34e0ff994dff6494f074979ad6e4a0eba4",
-      "url": "https://github.com/nix-community/neovim-nightly-overlay/archive/7f54fc34e0ff994dff6494f074979ad6e4a0eba4.tar.gz",
-      "hash": "sha256-xjL22RjFqfN3D4dglBt0PTEFLl1rvN60f6LtHX8kQJs="
     },
     "niri-scratchpad-rs": {
       "type": "Git",
