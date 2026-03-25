@@ -6,9 +6,12 @@
 </p>
 
 <div align="center">
-  <img src="./.github/screenshots/niri-1.png" width="30%" alt="Niri Overview"/>
+    <img src="./.github/screenshots/niri-1.png" width="30%" alt="Niri Overview"/>
   <img src="./.github/screenshots/niri-2.png" width="30%" alt="Niri Rice"/>
   <img src="./.github/screenshots/silent-sddm.png" width="30%" alt="Niri Rice"/>
+
+<img src="./.github/screenshots/nvim-1.png" width="30%" alt="nvim dashboard"/>
+  <img src="./.github/screenshots/nvim-2.png" width="30%" alt="nvim showcase"/>
 </div>
 
 - [Installation Guide][install guide]
