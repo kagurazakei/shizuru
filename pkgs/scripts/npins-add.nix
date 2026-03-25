@@ -1,94 +1,156 @@
 {
   writers,
+  bash,
   npins,
+  coreutils,
+  gnused,
 }:
 writers.writeBashBin "npins-add" ''
-  set -euo pipefail
+    #!${bash}/bin/bash
+    set -euo pipefail
 
-  NPINS_FILE="''${NPINS_FILE:-npins/sources.json}"
+    export PATH="${coreutils}/bin:${gnused}/bin:$PATH"
 
-  # ---------------- file override ----------------
-  while [[ $# -gt 0 ]]; do
-    case "$1" in
-      --file)
-        shift
-        NPINS_FILE="$1"
-        shift
-        ;;
-      *)
-        break
-        ;;
-    esac
-  done
+    # ---------------- GLOBAL CONFIG ----------------
+    NPINS_FILE="''${NPINS_FILE:-npins/sources.json}"
 
-  cmd="''${1:-}"
-  shift || true
-
-  npins_cmd() {
-    ${npins}/bin/npins --lock-file "$NPINS_FILE" "$@"
-  }
-
-  log() { echo "[INFO] $*"; }
-  err() { echo "[ERROR] $*" >&2; exit 1; }
-
-  case "$cmd" in
-
-    add)
-      type="''${1:-}"
-      shift || true
-
-      case "$type" in
-
-        github)
-          for r in "$@"; do
-            owner="''${r%%/*}"
-            repo="''${r##*/}"
-            [[ "$owner" == "$repo" ]] && err "bad github: $r"
-
-            log "github $owner/$repo"
-            npins_cmd add github "$owner" "$repo"
-          done
+    # ---------------- ARG PARSER ----------------
+    while [[ $# -gt 0 ]]; do
+      case "$1" in
+        --file)
+          shift
+          [[ -z "''${1:-}" ]] && echo "Missing file after --file" && exit 1
+          NPINS_FILE="$1"
+          shift
           ;;
-
-        git)
-          for url in "$@"; do
-            log "git $url"
-            npins_cmd add git "$url"
-          done
-          ;;
-
-        tarball)
-          for url in "$@"; do
-            name="$(basename "$url" | sed 's/\.tar\..*$//')"
-            log "tarball $name"
-            npins_cmd add tarball "$url" -n "$name"
-          done
-          ;;
-
         *)
-          err "unknown type"
+          break
           ;;
       esac
-      ;;
+    done
 
-    remove)
-      [[ $# -eq 0 ]] && err "no pins provided"
-      for p in "$@"; do
-        log "remove $p"
-        npins_cmd remove "$p"
-      done
-      ;;
+    cmd="''${1:-}"
+    shift || true
 
-    show)
-      npins_cmd show
-      ;;
+    # ---------------- helpers ----------------
+    log() {
+      printf "\033[1;34m[INFO]\033[0m %s\n" "$*"
+    }
 
-    *)
-      echo "Usage:"
-      echo "  npins-add [--file path] add github repo1 repo2"
-      echo "  npins-add remove pin1 pin2"
-      echo "  npins-add show"
+    err() {
+      printf "\033[1;31m[ERROR]\033[0m %s\n" "$*" >&2
       exit 1
-      ;;
-  esac
+    }
+
+    npins_cmd() {
+      ${npins}/bin/npins --lock-file "$NPINS_FILE" "$@"
+    }
+
+    # ---------------- usage ----------------
+    usage() {
+      cat <<EOF
+  📦 NPins Helper
+
+  Usage:
+    npins-add [--file path] add github repo [repo ...] [npins args]
+    npins-add [--file path] add git url [url ...] [npins args]
+    npins-add [--file path] add tarball url [url ...]
+    npins-add [--file path] remove name [name ...]
+    npins-add [--file path] show
+
+  Examples:
+    npins-add --file ~/nixos/npins/sources.json add github nixos/nixpkgs neovim/neovim -b master
+    npins-add add git https://github.com/user/repo.git -b main
+    npins-add remove blink-cmp mini.nvim
+  EOF
+      exit 1
+    }
+
+    [[ -z "''${cmd:-}" ]] && usage
+
+    # ---------------- COMMANDS ----------------
+    case "$cmd" in
+
+      # ---------------- ADD ----------------
+      add)
+        type="''${1:-}"
+        shift || true
+        [[ -z "$type" ]] && usage
+
+        case "$type" in
+
+          github)
+            repos=()
+
+            while [[ $# -gt 0 && "$1" != -* ]]; do
+              repos+=("$1")
+              shift
+            done
+
+            [[ ''${#repos[@]} -eq 0 ]] && err "No github repos provided"
+
+            for r in "''${repos[@]}"; do
+              owner="''${r%%/*}"
+              repo="''${r##*/}"
+
+              [[ "$owner" == "$repo" ]] && err "Invalid github repo: $r"
+
+              log "github → $owner/$repo"
+              npins_cmd add github "$owner" "$repo" "$@"
+            done
+            ;;
+
+          git)
+            urls=()
+
+            while [[ $# -gt 0 && "$1" != -* ]]; do
+              urls+=("$1")
+              shift
+            done
+
+            [[ ''${#urls[@]} -eq 0 ]] && err "No git urls provided"
+
+            for url in "''${urls[@]}"; do
+              log "git → $url"
+              npins_cmd add git "$url" "$@"
+            done
+            ;;
+
+          tarball)
+            urls=("$@")
+
+            [[ ''${#urls[@]} -eq 0 ]] && err "No tarball urls provided"
+
+            for url in "''${urls[@]}"; do
+              name="$(basename "$url" | sed 's/\.tar\..*$//')"
+              log "tarball → $name"
+              npins_cmd add tarball "$url" -n "$name"
+            done
+            ;;
+
+          *)
+            err "Unknown type: $type"
+            ;;
+        esac
+        ;;
+
+      # ---------------- REMOVE ----------------
+      remove)
+        [[ $# -eq 0 ]] && err "No pins provided"
+
+        for name in "$@"; do
+          log "remove → $name"
+          npins_cmd remove "$name"
+        done
+        ;;
+
+      # ---------------- SHOW ----------------
+      show)
+        npins_cmd show
+        ;;
+
+      *)
+        usage
+        ;;
+    esac
 ''

@@ -12,6 +12,11 @@ return {
         input = { enabled = true },
         gh = { enable = true },
         gitbrowse = { enabled = true },
+        explorer = {
+          enabled = true,
+          replace_netrw = true,
+          trash = true,
+        },
         indent = {
           enabled = true,
           animate = {
@@ -215,7 +220,11 @@ return {
         "<cmd>Snacks dashboard keys<CR>",
         desc = "Dashboard Keys",
       },
-
+      {
+        "<C-e>",
+        "<cmd>lua Snacks.explorer.open()<CR>",
+        desc = "Open File Explorer",
+      },
       {
         "<leader>uC",
         function() Snacks.picker.colorschemes() end,

@@ -9,7 +9,6 @@
     ...
   }: let
     inherit (lib) mkForce attrValues;
-
     system = pkgs.stdenv.hostPlatform.system;
     todo = hs-todo.packages.${system}.default;
     noRounding = ''

@@ -9,7 +9,6 @@
       (callPackage "${sources.npins}/npins.nix" {})
       alejandra
       (self.lib.mkPkgx' pkgs).xvim.default
-      # (callPackage "${sources.nvim-flake}/package.nix" { })
     ];
 
     environment.variables.EDITOR = "nvim";

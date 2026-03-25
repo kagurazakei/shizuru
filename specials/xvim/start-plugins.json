@@ -433,6 +433,19 @@
       "url": "https://api.github.com/repos/nvim-tree/nvim-web-devicons/tarball/refs/tags/v0.100",
       "hash": "sha256-DSUTxUFCesXuaJjrDNvurILUt1IrO5MI5ukbZ8D87zQ="
     },
+    "oxocarbon.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nyoom-engineering",
+        "repo": "oxocarbon.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "a7ba74849a00546a311f8c146320b433900393e7",
+      "url": "https://github.com/nyoom-engineering/oxocarbon.nvim/archive/a7ba74849a00546a311f8c146320b433900393e7.tar.gz",
+      "hash": "sha256-OdcKcS6dJbbqNT0kvexXjDOWAWyFcrp8NlVBlT0msVg="
+    },
     "plenary.nvim": {
       "type": "GitRelease",
       "repository": {
@@ -561,6 +574,32 @@
       "revision": "325036ee145ca51d9efb145c09ac16bce3bc8b7d",
       "url": "https://api.github.com/repos/chomosuke/typst-preview.nvim/tarball/refs/tags/v1.4.2",
       "hash": "sha256-7jOKLZ7WKBdX1Ljbvuuki4zmuZ86l62jAN8q2kSThDs="
+    },
+    "vim-moonfly-colors": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "bluz71",
+        "repo": "vim-moonfly-colors"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "d11b3d04cc1cb71a778d67a4df73283a5a6d66f4",
+      "url": "https://github.com/bluz71/vim-moonfly-colors/archive/d11b3d04cc1cb71a778d67a4df73283a5a6d66f4.tar.gz",
+      "hash": "sha256-+zUmQWRUNzdUDZBV7xmrA0415/HlagHDi+O9ehdaDN8="
+    },
+    "which-colorscheme.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "DrKJeff16",
+        "repo": "which-colorscheme.nvim"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "b239a81ccce3b7b6d3c70c88c5b60e544c0027e6",
+      "url": "https://github.com/DrKJeff16/which-colorscheme.nvim/archive/b239a81ccce3b7b6d3c70c88c5b60e544c0027e6.tar.gz",
+      "hash": "sha256-MPteCV2F1nVA8Db5uPiTtKSYZ9ctiZSE4BpHFsHBt9U="
     },
     "which-key.nvim": {
       "type": "Git",

@@ -46,14 +46,14 @@ return {
       float = {
         -- Padding around the floating window
         padding = 10,
-        max_width = 40,
-        max_height = 40,
+        max_width = 50,
+        max_height = 70,
         border = "rounded",
         win_options = {
           winblend = 30,
         },
         get_win_title = nil,
-        preview_split = "left",
+        preview_split = "auto",
         override = function(conf) return conf end,
       },
       confirmation = {
@@ -70,7 +70,7 @@ return {
       },
       progress = {
         max_width = 0.9,
-        min_width = { 40, 0.4 },
+        min_width = { 40, 0.1 },
         width = nil,
         max_height = { 10, 0.9 },
         min_height = { 5, 0.1 },
@@ -98,7 +98,7 @@ return {
         width = nil,
         max_height = 0.9,
         min_height = { 10, 1.0 },
-        border = "square",
+        border = "rounded",
       },
       win_options = {
         wrap = false,
