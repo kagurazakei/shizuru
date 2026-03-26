@@ -1,10 +1,12 @@
 {niri, ...}: {
   azalea.modules.niri = {
-    pkgs,
     lib,
     config,
+    sources,
     ...
-  }: {
+  }: let
+    pkgs = import sources.nixpkgs {};
+  in {
     imports = [
       niri.nixosModules.default
     ];

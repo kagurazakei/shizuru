@@ -1596,22 +1596,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-master": {
-      "locked": {
-        "lastModified": 1773114294,
-        "narHash": "sha256-QWLWhYW97JfpWibyE2CRYDbwLZNk97/eVG8RzQQH00A=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "e0c8c7833bd0456518318bd68a1958a6543b30c3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "master",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs_10": {
       "locked": {
         "lastModified": 1773648879,
@@ -1946,7 +1930,6 @@
         "niri": "niri",
         "nix-cachyos-kernel": "nix-cachyos-kernel",
         "nixpkgs": "nixpkgs_11",
-        "nixpkgs-master": "nixpkgs-master",
         "nur": "nur",
         "nur-repo-override": "nur-repo-override",
         "silent-sddm": "silent-sddm",

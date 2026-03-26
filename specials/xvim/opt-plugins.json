@@ -39,19 +39,6 @@
       "url": "https://github.com/ibhagwan/fzf-lua/archive/bf59dcee2a8d894724b060401d2abf3d71d4bd47.tar.gz",
       "hash": "sha256-EjCjBTqpZz74oOJ2+8+hEbTUfTRFiSfVMs1owaryeSY="
     },
-    "mini.indentscope": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nvim-mini",
-        "repo": "mini.indentscope"
-      },
-      "branch": "main",
-      "submodules": false,
-      "revision": "065c7713fb4cd0124fe1462f15f27feeb8b04406",
-      "url": "https://github.com/nvim-mini/mini.indentscope/archive/065c7713fb4cd0124fe1462f15f27feeb8b04406.tar.gz",
-      "hash": "sha256-0PpLyR32K6qr/UdcgVcB9WTAgn9eg2O5iWrZPCnpcF0="
-    },
     "mini.nvim": {
       "type": "Git",
       "repository": {
@@ -80,19 +67,6 @@
       "revision": "975a77cce3c8cb742bc1b3629f4328f5ca977dad",
       "url": "https://api.github.com/repos/stevearc/oil.nvim/tarball/refs/tags/v2.15.0",
       "hash": "sha256-jCuOwTd6QIy3USuE7X/rHYUbriW6+2WaK9JxCx4/O2c="
-    },
-    "vim-moonfly-colors": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "bluz71",
-        "repo": "vim-moonfly-colors"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "d11b3d04cc1cb71a778d67a4df73283a5a6d66f4",
-      "url": "https://github.com/bluz71/vim-moonfly-colors/archive/d11b3d04cc1cb71a778d67a4df73283a5a6d66f4.tar.gz",
-      "hash": "sha256-+zUmQWRUNzdUDZBV7xmrA0415/HlagHDi+O9ehdaDN8="
     }
   },
   "version": 7
