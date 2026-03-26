@@ -14,7 +14,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    nixpkgs-master.url = "github:nixos/nixpkgs?ref=master";
     systems.url = "github:nix-systems/x86_64-linux";
     crane.url = "github:ipetkov/crane";
     chaotic.url = "github:lonerOrz/nyx-loner";

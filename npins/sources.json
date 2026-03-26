@@ -255,9 +255,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "d0956cd741acd4c63af7781c948a98f79443dd43",
-      "url": "https://github.com/nixos/nixpkgs/archive/d0956cd741acd4c63af7781c948a98f79443dd43.tar.gz",
-      "hash": "sha256-vEtKwalD5El4ePmFwqHYx7eHW8Hta7ZibmisWtQk+nI="
+      "revision": "6f2bd12ede90ea2fa32822647ce9f70cd42218f6",
+      "url": "https://github.com/nixos/nixpkgs/archive/6f2bd12ede90ea2fa32822647ce9f70cd42218f6.tar.gz",
+      "hash": "sha256-pTexELRBYKfSlM9yXkXcsWR5Uo5tIcKZpO3kWpvdEzs="
     },
     "noctalia-qs": {
       "type": "Git",
