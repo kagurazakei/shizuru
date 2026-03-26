@@ -187,9 +187,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "170ff4b24487e7350248d1a745b69979ada185ce",
-      "url": "https://github.com/neovim/neovim/archive/170ff4b24487e7350248d1a745b69979ada185ce.tar.gz",
-      "hash": "sha256-FVpcyaaOtJT7Ji5tbPKHRvUdunllDmHUoehHgmEzOrU="
+      "revision": "c9e961994b16ed841be43541ef550bf3d3f043ec",
+      "url": "https://github.com/neovim/neovim/archive/c9e961994b16ed841be43541ef550bf3d3f043ec.tar.gz",
+      "hash": "sha256-Hp4A0llEmBvvNuw5uKOz+BA86X7TmXZ1vUK0StiMdVs="
     },
     "niri-scratchpad-rs": {
       "type": "Git",
@@ -281,9 +281,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "c6d0f651f57faa7980f0a3aa4343b8cf9687b1df",
-      "url": "https://github.com/noctalia-dev/noctalia-shell/archive/c6d0f651f57faa7980f0a3aa4343b8cf9687b1df.tar.gz",
-      "hash": "sha256-+kYg/8RbMkKs9hTheqO+4IdOJXpIshNdRFgxqJZdq7M="
+      "revision": "df62bb3212d474276e66c17986f2032362c0991d",
+      "url": "https://github.com/noctalia-dev/noctalia-shell/archive/df62bb3212d474276e66c17986f2032362c0991d.tar.gz",
+      "hash": "sha256-iML1zRJOue/KYoeChmgNBkzh24UMAT0PgIEEgcI/140="
     },
     "npins": {
       "type": "Git",
@@ -307,9 +307,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "ca36512a199b1e0a6d5bf5fed61cb6e435fd0678",
-      "url": "https://github.com/kagurazakei/nvim-flake/archive/ca36512a199b1e0a6d5bf5fed61cb6e435fd0678.tar.gz",
-      "hash": "sha256-IYZfeGw/u82cm2pi0MCWguSBxQl8s+QDY4CYp9UBbv4="
+      "revision": "8513b65786518edf72b8a3ff0705e950e2b04cf0",
+      "url": "https://github.com/kagurazakei/nvim-flake/archive/8513b65786518edf72b8a3ff0705e950e2b04cf0.tar.gz",
+      "hash": "sha256-owazJcWGFPT8EXU2qFBCT4TurELWWGc9McuBEcaYQrY="
     },
     "piri": {
       "type": "Git",

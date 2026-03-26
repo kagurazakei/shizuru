@@ -9,7 +9,7 @@ writers.writeBashBin "npins-helper" ''
     #!${bash}/bin/bash
     set -euo pipefail
 
-    export PATH="${coreutils}/bin:${gnused}/bin:$PATH"
+    export PATH="${coreutils}/bin:${gnused}/bin:${npins}/bin:$PATH"
 
     # ---------------- GLOBAL CONFIG ----------------
     NPINS_FILE="''${NPINS_FILE:-npins/sources.json}"
@@ -19,7 +19,7 @@ writers.writeBashBin "npins-helper" ''
       case "$1" in
         --file)
           shift
-          [[ -z "''${1:-}" ]] && echo "Missing file after --file" && exit 1
+          [[ -z "''${1:-}" ]] && echo "Missing file after --file" >&2 && exit 1
           NPINS_FILE="$1"
           shift
           ;;
@@ -59,7 +59,7 @@ writers.writeBashBin "npins-helper" ''
     npins-helper [--file path] show
 
   Examples:
-    npins-helper --file ~/nixos/npins/sources.json add github nixos/nixpkgs neovim/neovim -b master
+    npins-helper --file ~/nixos/npins/sources.json add github nixos/nixpkgs neovim/neovim -b main
     npins-helper add git https://github.com/user/repo.git -b main
     npins-helper remove blink-cmp mini.nvim
   EOF

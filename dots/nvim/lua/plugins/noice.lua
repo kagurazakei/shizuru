@@ -34,6 +34,18 @@ return {
           {
             filter = {
               event = "notify",
+              cond = function()
+                local mode = vim.api.nvim_get_mode().mode
+                return mode:match("^[iR]")
+              end,
+              -- Optional: only filter certain kinds of notifications
+              -- kind = "info",  -- or "warn", "error", etc.
+            },
+            opts = { skip = true },
+          },
+          {
+            filter = {
+              event = "notify",
               cond = function() return vim.api.nvim_get_mode().mode:match("i") end,
             },
             opts = { skip = true },
