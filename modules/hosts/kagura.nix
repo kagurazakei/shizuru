@@ -10,18 +10,20 @@
       self.azalea.dots.zakei-cli
       self.azalea.dots.zakei-gui
       self.azalea.dots.zakei-niri
+      self.azalea.dots.zakei-hyprland
 
       self.azalea.profiles.default
       self.azalea.profiles.workstation
       self.azalea.profiles.niri
+      self.azalea.modules.hyprland
       self.azalea.modules.dolphin
       self.azalea.modules.cursors
       self.azalea.modules.btrfs
       self.azalea.modules.intel
       self.azalea.modules.nvidia
       self.azelea.modules.mpv
-      # self.azalea.modules.greetd-autostart
-      self.azalea.modules.silent-sddm
+      self.azalea.modules.sysc-greet
+      # self.azalea.modules.silent-sddm
       self.azalea.modules.cups
       self.azalea.modules.spicetify
       self.azalea.modules.kagura-fs
@@ -38,7 +40,7 @@
     ];
     # zaphkiel opts
     zaphkiel = {
-      data.wallpaper = self.packages.${pkgs.stdenv.hostPlatform.system}.images.corvus;
+      data.wallpaper = pkgs.zpkgs.images.nix-logo;
       graphics.intel.hwAccelDriver = "media-driver";
       graphics.nvidia = {
         hybrid = {
