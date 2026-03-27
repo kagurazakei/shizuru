@@ -301,22 +301,6 @@
       "url": "https://api.github.com/repos/nvim-mini/mini.indentscope/tarball/refs/tags/v0.17.0",
       "hash": "sha256-SiuDgLAj58cWLn5IbN6wt9JEmlM2nsLsGo2oThuLQnw="
     },
-    "mini.surround": {
-      "type": "GitRelease",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nvim-mini",
-        "repo": "mini.surround"
-      },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
-      "submodules": false,
-      "version": "v0.17.0",
-      "revision": "b48eca1c28f6e80a389f331bf47f93c897f7cff6",
-      "url": "https://api.github.com/repos/nvim-mini/mini.surround/tarball/refs/tags/v0.17.0",
-      "hash": "sha256-mD82IlSWNrN+EhOjG5r34uz8NsaBVhunGcys+cQz7nA="
-    },
     "multicursor.nvim": {
       "type": "Git",
       "repository": {
@@ -646,18 +630,18 @@
       "url": "https://api.github.com/repos/chomosuke/typst-preview.nvim/tarball/refs/tags/v1.4.2",
       "hash": "sha256-7jOKLZ7WKBdX1Ljbvuuki4zmuZ86l62jAN8q2kSThDs="
     },
-    "vim-moonfly-colors": {
+    "ui": {
       "type": "Git",
       "repository": {
         "type": "GitHub",
-        "owner": "bluz71",
-        "repo": "vim-moonfly-colors"
+        "owner": "NvChad",
+        "repo": "ui"
       },
-      "branch": "master",
+      "branch": "v3.0",
       "submodules": false,
-      "revision": "d11b3d04cc1cb71a778d67a4df73283a5a6d66f4",
-      "url": "https://github.com/bluz71/vim-moonfly-colors/archive/d11b3d04cc1cb71a778d67a4df73283a5a6d66f4.tar.gz",
-      "hash": "sha256-+zUmQWRUNzdUDZBV7xmrA0415/HlagHDi+O9ehdaDN8="
+      "revision": "cb75908a86720172594b30de147272c1b3a7f452",
+      "url": "https://github.com/NvChad/ui/archive/cb75908a86720172594b30de147272c1b3a7f452.tar.gz",
+      "hash": "sha256-zy1fzwGKAZNDaceoPEyXUgVd7WAT3VnHTCytBh9+m98="
     },
     "which-colorscheme.nvim": {
       "type": "Git",
