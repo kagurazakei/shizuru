@@ -19,7 +19,7 @@ writers.writeBashBin "npins-helper" ''
       case "$1" in
         --file)
           shift
-          [[ -z "''${1:-}" ]] && echo "Missing file after --file" >&2 && exit 1
+          [[ -z "''${1:-}" ]] && echo "Missing file after --file" && exit 1
           NPINS_FILE="$1"
           shift
           ;;
@@ -52,16 +52,21 @@ writers.writeBashBin "npins-helper" ''
   📦 NPins Helper
 
   Usage:
-    npins-helper [--file path] add github repo [repo ...] [npins args]
-    npins-helper [--file path] add git url [url ...] [npins args]
-    npins-helper [--file path] add tarball url [url ...]
+    npins-helper [--file path] add <mixed sources...>
     npins-helper [--file path] remove name [name ...]
     npins-helper [--file path] show
 
+  Add supports inline mixed sources with per-source options:
+
+    github owner/repo [args...]
+    git URL [args...]
+    tarball URL [args...]
+
   Examples:
-    npins-helper --file ~/nixos/npins/sources.json add github nixos/nixpkgs neovim/neovim -b main
-    npins-helper add git https://github.com/user/repo.git -b main
-    npins-helper remove blink-cmp mini.nvim
+    npins-helper --file sources.json add github nixos/nixpkgs -b master github neovim/neovim -b main
+    npins-helper add github owner/repo -b main git https://example.com/repo.git
+    npins-helper add github a/b -b main github c/d --at 123456 git https://repo
+
   EOF
       exit 1
     }
@@ -73,65 +78,73 @@ writers.writeBashBin "npins-helper" ''
 
       # ---------------- ADD ----------------
       add)
-        type="''${1:-}"
-        shift || true
-        [[ -z "$type" ]] && usage
+        [[ $# -eq 0 ]] && usage
 
-        case "$type" in
+        while [[ $# -gt 0 ]]; do
+          type="$1"
+          shift
 
-          github)
-            repos=()
+          case "$type" in
 
-            while [[ $# -gt 0 && "$1" != -* ]]; do
-              repos+=("$1")
+            github)
+              [[ $# -eq 0 ]] && err "Missing github repo"
+
+              repo="$1"
               shift
-            done
 
-            [[ ''${#repos[@]} -eq 0 ]] && err "No github repos provided"
+              owner="''${repo%%/*}"
+              name="''${repo##*/}"
+              [[ "$owner" == "$name" ]] && err "Invalid github repo: $repo"
 
-            for r in "''${repos[@]}"; do
-              owner="''${r%%/*}"
-              repo="''${r##*/}"
+              args=()
+              while [[ $# -gt 0 && "$1" != "github" && "$1" != "git" && "$1" != "tarball" ]]; do
+                args+=("$1")
+                shift
+              done
 
-              [[ "$owner" == "$repo" ]] && err "Invalid github repo: $r"
+              log "github → $owner/$name ''${args[*]}"
+              npins_cmd add github "$owner" "$name" "''${args[@]}"
+              ;;
 
-              log "github → $owner/$repo"
-              npins_cmd add github "$owner" "$repo" "$@"
-            done
-            ;;
+            git)
+              [[ $# -eq 0 ]] && err "Missing git url"
 
-          git)
-            urls=()
-
-            while [[ $# -gt 0 && "$1" != -* ]]; do
-              urls+=("$1")
+              url="$1"
               shift
-            done
 
-            [[ ''${#urls[@]} -eq 0 ]] && err "No git urls provided"
+              args=()
+              while [[ $# -gt 0 && "$1" != "github" && "$1" != "git" && "$1" != "tarball" ]]; do
+                args+=("$1")
+                shift
+              done
 
-            for url in "''${urls[@]}"; do
-              log "git → $url"
-              npins_cmd add git "$url" "$@"
-            done
-            ;;
+              log "git → $url ''${args[*]}"
+              npins_cmd add git "$url" "''${args[@]}"
+              ;;
 
-          tarball)
-            urls=("$@")
+            tarball)
+              [[ $# -eq 0 ]] && err "Missing tarball url"
 
-            [[ ''${#urls[@]} -eq 0 ]] && err "No tarball urls provided"
+              url="$1"
+              shift
 
-            for url in "''${urls[@]}"; do
               name="$(basename "$url" | sed 's/\.tar\..*$//')"
-              log "tarball → $name"
-              npins_cmd add tarball "$url" -n "$name"
-            done
-            ;;
 
-          *)
-            err "Unknown type: $type"
-            ;;
-        esac
+              args=()
+              while [[ $# -gt 0 && "$1" != "github" && "$1" != "git" && "$1" != "tarball" ]]; do
+                args+=("$1")
+                shift
+              done
+
+              log "tarball → $name ''${args[*]}"
+              npins_cmd add tarball "$url" -n "$name" "''${args[@]}"
+              ;;
+
+            *)
+              err "Unknown type: $type"
+              ;;
+          esac
+        done
         ;;
 
       # ---------------- REMOVE ----------------

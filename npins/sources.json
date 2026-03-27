@@ -107,6 +107,19 @@
       "url": "https://github.com/NotAShelf/direnv.nvim/archive/9e58bb5e8db19d8bf2626de8e94a85fc305a8c1e.tar.gz",
       "hash": "sha256-TlQ3oTRirUf/Po1KWCL4wDp8GgrJXzYWQx0C5qyZFeQ="
     },
+    "firefox-nightly": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "flake-firefox-nightly"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "7447ae12e9dee94b2689c0fc50d3cfccc6ed62e9",
+      "url": "https://github.com/nix-community/flake-firefox-nightly/archive/7447ae12e9dee94b2689c0fc50d3cfccc6ed62e9.tar.gz",
+      "hash": "sha256-l9zBoXa+GK6l+Dy+mIuXW5xCGoIyPvr2TOa5uzmevu4="
+    },
     "fish": {
       "type": "Git",
       "repository": {
@@ -255,9 +268,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "6f2bd12ede90ea2fa32822647ce9f70cd42218f6",
-      "url": "https://github.com/nixos/nixpkgs/archive/6f2bd12ede90ea2fa32822647ce9f70cd42218f6.tar.gz",
-      "hash": "sha256-pTexELRBYKfSlM9yXkXcsWR5Uo5tIcKZpO3kWpvdEzs="
+      "revision": "d0956cd741acd4c63af7781c948a98f79443dd43",
+      "url": "https://github.com/nixos/nixpkgs/archive/d0956cd741acd4c63af7781c948a98f79443dd43.tar.gz",
+      "hash": "sha256-vEtKwalD5El4ePmFwqHYx7eHW8Hta7ZibmisWtQk+nI="
     },
     "noctalia-qs": {
       "type": "Git",
@@ -441,6 +454,19 @@
       "revision": "864c7451af8ccf3ea3c0af4a2b3e7aceea03a028",
       "url": "https://github.com/kagurazakei/sysc-greet/archive/864c7451af8ccf3ea3c0af4a2b3e7aceea03a028.tar.gz",
       "hash": "sha256-OVZUrTEufEnChLkaxljO50ypaPCRnZ5/RNg7iA5o4tQ="
+    },
+    "unstable": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nixos",
+        "repo": "nixpkgs"
+      },
+      "branch": "nixos-unstable",
+      "submodules": false,
+      "revision": "46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9",
+      "url": "https://github.com/nixos/nixpkgs/archive/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9.tar.gz",
+      "hash": "sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc="
     },
     "viu": {
       "type": "Git",

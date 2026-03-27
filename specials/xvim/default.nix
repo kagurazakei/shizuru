@@ -25,6 +25,8 @@ lib.fix (self: {
           cord-nvim
           blink-cmp
           blink-pairs
+          catppuccin-nvim
+          base16-nvim
         ];
       }
     )

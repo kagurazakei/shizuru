@@ -19,8 +19,9 @@ return {
         },
         indent = {
           enabled = true,
+          char = "┋",
           animate = {
-            enabled = false,
+            enabled = true,
           },
         },
         image = { enabled = true },

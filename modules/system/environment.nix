@@ -1,6 +1,6 @@
 {self, ...}: {
   azalea.modules.environment = {sources, ...}: let
-    pkgs = import sources.stable {inherit pkgs;};
+    pkgs = import sources.stable {};
   in {
     environment.systemPackages = with pkgs; [
       git

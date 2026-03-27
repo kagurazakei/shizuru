@@ -33,7 +33,6 @@
           {...}: {
             nixpkgs.overlays = [
               (_final: prev: {
-                pkgs = import sources.nixpkgs {inherit nixpkgs;};
                 zpkgs = self.lib.mkPkgx' prev;
                 system = prev.stdenv.hostPlatform.system;
               })

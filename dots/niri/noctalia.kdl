@@ -37,7 +37,7 @@ binds {
         spawn "noctalia-shell" "ipc" "call" "bar" "toggle"
     }
     Mod+O hotkey-overlay-title="Wallpaper: Next" {
-        spawn "fuzzel-clip"
+        spawn sh -c "stash list | TERMINAL=kitty fuzzel --dmenu --prompt 'Clipboard History' | stash decode | wl-copy"
     }
     Mod+V hotkey-overlay-title="Clipboard: Toggle" {
         spawn "noctalia-shell" "ipc" "call" "launcher" "clipboard"

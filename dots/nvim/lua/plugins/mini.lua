@@ -156,7 +156,7 @@ return {
         goto_top = "",
         goto_bottom = "",
       },
-      symbol = "╎",
+      symbol = "┋",
     })
   end,
 }

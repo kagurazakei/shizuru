@@ -494,6 +494,19 @@
       "url": "https://api.github.com/repos/stevearc/quicker.nvim/tarball/refs/tags/v1.5.0",
       "hash": "sha256-cL/BxgmqWE28UVRwoGXz0pSlJREjrQw5/st15SITYeA="
     },
+    "rainbow-delimiters.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "HiPhish",
+        "repo": "rainbow-delimiters.nvim"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "50080ed0f44dbc18ae13b81278a01b951a06127a",
+      "url": "https://github.com/HiPhish/rainbow-delimiters.nvim/archive/50080ed0f44dbc18ae13b81278a01b951a06127a.tar.gz",
+      "hash": "sha256-zQgnNN8QvboOHWaMcLw1uRt/9AxV1asvTnpCcJ/qVS4="
+    },
     "rose-pine": {
       "type": "GitRelease",
       "repository": {

@@ -32,6 +32,7 @@
         ],
         "preferredPlayer": "",
         "spectrumFrameRate": 30,
+        "spectrumMirrored": true,
         "visualizerType": "mirrored",
         "volumeFeedback": true,
         "volumeFeedbackSoundFile": "",
@@ -49,7 +50,6 @@
         "density": "comfortable",
         "displayMode": "always_visible",
         "enableExclusionZoneInset": true,
-        "floating": false,
         "fontScale": 1,
         "frameRadius": 7,
         "frameThickness": 17,
@@ -65,7 +65,7 @@
         "mouseWheelAction": "none",
         "mouseWheelWrap": true,
         "outerCorners": true,
-        "position": "left",
+        "position": "top",
         "reverseScroll": false,
         "rightClickAction": "controlCenter",
         "rightClickCommand": "",
@@ -327,6 +327,7 @@
         "monitorForColors": "",
         "predefinedScheme": "Oxocarbon",
         "schedulingMode": "off",
+        "syncGsettings": true,
         "useWallpaperColors": false
     },
     "controlCenter": {
@@ -506,8 +507,10 @@
         "indicatorColor": "primary",
         "indicatorOpacity": 0.6,
         "indicatorThickness": 6,
+        "launcherIcon": "",
         "launcherIconColor": "none",
         "launcherPosition": "end",
+        "launcherUseDistroLogo": false,
         "monitors": [
             "eDP-1",
             "HDMI-A-1"
@@ -534,12 +537,12 @@
         "clockStyle": "digital",
         "compactLockScreen": false,
         "dimmerOpacity": 0.1,
-        "enableBlurBehind": true,
+        "enableBlurBehind": false,
         "enableLockScreenCountdown": true,
         "enableLockScreenMediaControls": true,
         "enableShadows": true,
         "forceBlackScreenCorners": false,
-        "iRadiusRatio": 0.84,
+        "iRadiusRatio": 0.23,
         "keybinds": {
             "keyDown": [
                 "Down"
@@ -573,7 +576,7 @@
         ],
         "lockScreenTint": 0,
         "passwordChars": true,
-        "radiusRatio": 1.03,
+        "radiusRatio": 0.42,
         "reverseScroll": false,
         "scaleRatio": 1.05,
         "screenRadiusRatio": 0.86,
@@ -587,6 +590,7 @@
         "telemetryEnabled": true
     },
     "hooks": {
+        "colorGeneration": "",
         "darkModeChange": "",
         "enabled": true,
         "performanceModeDisabled": "",
@@ -634,8 +638,7 @@
         "bluetoothRssiPollingEnabled": false,
         "disableDiscoverability": false,
         "networkPanelView": "wifi",
-        "wifiDetailsViewMode": "grid",
-        "wifiEnabled": true
+        "wifiDetailsViewMode": "grid"
     },
     "nightLight": {
         "autoSchedule": true,
@@ -699,7 +702,8 @@
         "overlayLayer": true
     },
     "plugins": {
-        "autoUpdate": false
+        "autoUpdate": false,
+        "notifyUpdates": true
     },
     "sessionMenu": {
         "countdownDuration": 10000,
@@ -768,7 +772,7 @@
         "showHeader": true,
         "showKeybinds": true
     },
-    "settingsVersion": 58,
+    "settingsVersion": 59,
     "systemMonitor": {
         "batteryCriticalThreshold": 5,
         "batteryWarningThreshold": 20,
@@ -805,6 +809,10 @@
             {
                 "enabled": true,
                 "id": "zenBrowser"
+            },
+            {
+                "enabled": true,
+                "id": "yazi"
             }
         ],
         "enableUserTheming": false
@@ -844,10 +852,13 @@
         "showHiddenFiles": false,
         "skipStartupTransition": false,
         "solidColor": "#1a1a2e",
-        "sortOrder": "name_desc",
+        "sortOrder": "random",
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
-        "transitionType": "honeycomb",
+        "transitionType": [
+            "honeycomb"
+        ],
+        "useOriginalImages": false,
         "useSolidColor": false,
         "useWallhaven": false,
         "viewMode": "browse",
