@@ -6,7 +6,7 @@
         "clipboardWrapText": true,
         "customLaunchPrefix": "",
         "customLaunchPrefixEnabled": false,
-        "density": "default",
+        "density": "comfortable",
         "enableClipPreview": true,
         "enableClipboardChips": true,
         "enableClipboardHistory": true,
@@ -14,18 +14,18 @@
         "enableSessionSearch": true,
         "enableSettingsSearch": true,
         "enableWindowsSearch": true,
-        "iconMode": "tabler",
+        "iconMode": "native",
         "ignoreMouseInput": false,
         "overviewLayer": false,
         "pinnedApps": [
         ],
-        "position": "top_center",
+        "position": "bottom_center",
         "screenshotAnnotationTool": "",
         "showCategories": true,
         "showIconBackground": true,
         "sortByMostUsed": true,
         "terminalCommand": "kitty -e",
-        "viewMode": "grid"
+        "viewMode": "list"
     },
     "audio": {
         "mprisBlacklist": [
@@ -51,8 +51,8 @@
         "displayMode": "always_visible",
         "enableExclusionZoneInset": true,
         "fontScale": 1,
-        "frameRadius": 7,
-        "frameThickness": 17,
+        "frameRadius": 4,
+        "frameThickness": 16,
         "hideOnOverview": false,
         "marginHorizontal": 4,
         "marginVertical": 4,
@@ -76,9 +76,9 @@
                 "name": "HDMI-A-1"
             }
         ],
-        "showCapsule": true,
+        "showCapsule": false,
         "showOnWorkspaceSwitch": true,
-        "showOutline": true,
+        "showOutline": false,
         "useSeparateOpacity": false,
         "widgetSpacing": 8,
         "widgets": {
@@ -171,17 +171,17 @@
                 {
                     "characterCount": 2,
                     "colorizeIcons": false,
-                    "emptyColor": "tertiary",
+                    "emptyColor": "error",
                     "enableScrollWheel": true,
                     "focusedColor": "secondary",
                     "followFocusedScreen": false,
-                    "fontWeight": "bold",
+                    "fontWeight": "regular",
                     "groupedBorderOpacity": 0.86,
                     "hideUnoccupied": false,
                     "iconScale": 0.67,
                     "id": "Workspace",
                     "labelMode": "none",
-                    "occupiedColor": "tertiary",
+                    "occupiedColor": "error",
                     "pillSize": 0.4,
                     "showApplications": false,
                     "showApplicationsHover": false,
@@ -204,13 +204,13 @@
                     "textColor": "none"
                 },
                 {
-                    "clockColor": "none",
-                    "customFont": "",
-                    "formatHorizontal": "HH:mm ddd, MMM dds",
+                    "clockColor": "error",
+                    "customFont": "CaskaydiaCove Nerd Font",
+                    "formatHorizontal": "HH:mm ddd, MMM dd",
                     "formatVertical": "HH mm - dd MM",
                     "id": "Clock",
                     "tooltipFormat": "HH:mm ddd, MMM dd",
-                    "useCustomFont": false
+                    "useCustomFont": true
                 }
             ],
             "right": [
@@ -292,6 +292,12 @@
                         ]
                     },
                     "id": "plugin:mangowc-layout-switcher"
+                },
+                {
+                    "id": "plugin:mimeapp-gui"
+                },
+                {
+                    "id": "plugin:screen-toolkit"
                 }
             ]
         }
@@ -391,7 +397,7 @@
         }
     },
     "desktopWidgets": {
-        "enabled": true,
+        "enabled": false,
         "gridSnap": false,
         "gridSnapScale": true,
         "monitorWidgets": [
@@ -534,7 +540,7 @@
         "avatarImage": "/home/antonio/nixos/dots/profile.png",
         "boxRadiusRatio": 1,
         "clockFormat": "hh\\nmm",
-        "clockStyle": "digital",
+        "clockStyle": "analog",
         "compactLockScreen": false,
         "dimmerOpacity": 0.1,
         "enableBlurBehind": false,
@@ -837,6 +843,19 @@
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [
+            {
+                "colorScheme": "Oxocarbon",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#82cfff",
+                    "#42be65",
+                    "#be95ff",
+                    "#ee5396"
+                ],
+                "path": "/home/antonio/Pictures/wallpapers/964397.png",
+                "useWallpaperColors": false
+            }
         ],
         "fillColor": "#000000",
         "fillMode": "crop",

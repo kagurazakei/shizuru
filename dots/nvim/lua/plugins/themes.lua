@@ -1,5 +1,8 @@
 return {
   {
+    "ui",
+  },
+  {
     "base16-nvim",
     after = function()
       require("base16-colorscheme").with_config({
