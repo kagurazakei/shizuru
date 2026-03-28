@@ -4,7 +4,6 @@
 {
   self,
   nixpkgs,
-  mnw,
   ...
 } @ inputs: let
   inherit
@@ -22,7 +21,6 @@
           self
           nixpkgs
           sources
-          mnw
           ;
         username = "antonio";
       };
