@@ -1,9 +1,5 @@
 {
-  azalea.modules.git = {
-    config,
-    sources,
-    ...
-  }: let
+  azalea.modules.git = {config, ...}: let
     hanaKey = config.services.openssh.knownHosts.hana.publicKey;
     kaguraKey = config.services.openssh.knownHosts.kagura.publicKey;
     signKey =
@@ -12,11 +8,9 @@
       else if config.networking.hostName == "kagura"
       then kaguraKey
       else null;
-    pkgs = import sources.stable {};
   in {
     hj.rum.programs.git = {
       enable = true;
-      package = pkgs.git;
       settings = {
         user = {
           name = "kagurazakei";

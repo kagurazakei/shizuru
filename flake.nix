@@ -18,7 +18,6 @@
     crane.url = "github:ipetkov/crane";
     chaotic.url = "github:lonerOrz/nyx-loner";
     silent-sddm.url = "github:kagurazakei/SilentSDDM";
-    zakeivim.url = "github:kagurazakei/nvim-flake?ref=master";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
     firefox.url = "github:nix-community/flake-firefox-nightly";
     mnw.url = "github:Gerg-L/mnw";

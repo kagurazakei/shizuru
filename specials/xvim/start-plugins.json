@@ -314,22 +314,6 @@
       "url": "https://github.com/jake-stewart/multicursor.nvim/archive/811681faf44d8031685614cc00a148cd3ece697c.tar.gz",
       "hash": "sha256-5Syxir+5cKzpr9cEDGm2AWILJ40lsTObuOwMVxV+znE="
     },
-    "neorg": {
-      "type": "GitRelease",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nvim-neorg",
-        "repo": "neorg"
-      },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
-      "submodules": false,
-      "version": "v9.4.0",
-      "revision": "408fc04013a95da8f217cb0958a06b6a77c01743",
-      "url": "https://api.github.com/repos/nvim-neorg/neorg/tarball/refs/tags/v9.4.0",
-      "hash": "sha256-azweiMPwFywBXZeIdaLDlqU9ey8/3TciphnxA24ehXQ="
-    },
     "nerdy.nvim": {
       "type": "GitRelease",
       "repository": {

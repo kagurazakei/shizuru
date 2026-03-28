@@ -320,9 +320,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "8513b65786518edf72b8a3ff0705e950e2b04cf0",
-      "url": "https://github.com/kagurazakei/nvim-flake/archive/8513b65786518edf72b8a3ff0705e950e2b04cf0.tar.gz",
-      "hash": "sha256-owazJcWGFPT8EXU2qFBCT4TurELWWGc9McuBEcaYQrY="
+      "revision": "78c5e722b510351c484300d97a1040029ccba193",
+      "url": "https://github.com/kagurazakei/nvim-flake/archive/78c5e722b510351c484300d97a1040029ccba193.tar.gz",
+      "hash": "sha256-9vODct6S2KVANMKyeA336/f6h7LRwnirC1XXxiztt40="
     },
     "piri": {
       "type": "Git",

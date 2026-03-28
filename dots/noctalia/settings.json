@@ -60,7 +60,8 @@
         "middleClickCommand": "",
         "middleClickFollowMouse": false,
         "monitors": [
-            "HDMI-A-1"
+            "HDMI-A-1",
+            "eDP-1"
         ],
         "mouseWheelAction": "none",
         "mouseWheelWrap": true,

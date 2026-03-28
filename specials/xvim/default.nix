@@ -27,6 +27,7 @@ lib.fix (self: {
           blink-pairs
           catppuccin-nvim
           base16-nvim
+          neorg
         ];
       }
     )
