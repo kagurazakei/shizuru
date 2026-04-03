@@ -103,7 +103,7 @@
         nvidiaSettings = true;
         package =
           if config.networking.hostName == "hana"
-          then config.boot.kernelPackages.nvidiaPackages.stable
+          then config.boot.kernelPackages.nvidiaPackages.legacy_580
           else
             config.boot.kernelPackages.nvidiaPackages.mkDriver {
               version = "595.58.03";

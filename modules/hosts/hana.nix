@@ -24,9 +24,7 @@
       self.azalea.modules.btrfs
       self.azalea.modules.steam
       self.azalea.modules.nvidia
-      # self.azalea.modules.greetd-autostart
       self.azalea.modules.sysc-greet
-      # self.azalea.modules.silent-sddm
       self.azalea.modules.cups
       self.azalea.modules.hana-fs
       self.azalea.modules.spicetify

@@ -256,7 +256,6 @@
                     "id": "SessionMenu"
                 },
                 {
-                    "commandPrefix": "auto-tile",
                     "defaultSettings": {
                         "debounceMs": 300,
                         "enabled": true,

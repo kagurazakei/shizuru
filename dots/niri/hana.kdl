@@ -19,7 +19,7 @@ environment {
 }
 binds {
     Mod release=true {
-        spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"
+        spawn-sh "pkill fuzzel || fuzzel -I"
     }
     Ctrl+Print {
         screenshot-window
@@ -520,8 +520,8 @@ layout {
     }
     border {
         width 3
-        active-gradient angle=180 from="#f497b1" to="#b2e7ad" relative-to="window"
-        inactive-gradient angle=180 from="#414868" to="#1e1e2e" relative-to="window"
+        active-gradient angle=120 from="#a6e3a1" to="#f9e2af" to="#f38ba8" to="#89b4fa" in="oklch longer hue"
+        inactive-gradient angle=180 from="#414868" to="#1e1e2e" in="oklch shorter hue"
         urgent-gradient from="#800" to="#a33" angle=45
     }
     background-color "transparent"
