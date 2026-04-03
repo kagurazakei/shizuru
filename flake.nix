@@ -43,7 +43,6 @@
     nur-repo-override.url = "github:ilya-fedin/nur-repository";
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     hjem-impure = {
       url = "github:Rexcrazy804/hjem-impure";
