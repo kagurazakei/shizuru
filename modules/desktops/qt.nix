@@ -14,8 +14,6 @@ in {
     ];
     # Enable Qt globally
     qt.enable = true;
-
-    # System-wide packages
     environment.systemPackages = with pkgs; [
       zpkgs.qt6ct
       wlsunset

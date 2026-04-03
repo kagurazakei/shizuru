@@ -65,7 +65,6 @@ in {
       user = username;
       directory = config.users.users.${username}.home;
       clobberFiles = lib.mkForce true;
-
       impure = {
         enable = true;
         dotsDir = "${self.paths.dots}";

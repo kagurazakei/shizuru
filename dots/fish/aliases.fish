@@ -20,7 +20,7 @@ alias ls 'g -tb --tb-style=unicode --all --title --total-size --sort=size'
 #alias ls "lsd"
 alias l "ls -a"
 alias lt "ls --tree"
-alias gadd "git add ."
+# alias gadd "git add ."
 alias gcommit "git commit -m"
 alias gpush "git push -u origin main"
 alias ... "cd ../.."

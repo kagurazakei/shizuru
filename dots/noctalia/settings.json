@@ -56,7 +56,7 @@
         "hideOnOverview": false,
         "marginHorizontal": 4,
         "marginVertical": 4,
-        "middleClickAction": "none",
+        "middleClickAction": "controlCenter",
         "middleClickCommand": "",
         "middleClickFollowMouse": false,
         "monitors": [
@@ -68,7 +68,7 @@
         "outerCorners": true,
         "position": "top",
         "reverseScroll": false,
-        "rightClickAction": "controlCenter",
+        "rightClickAction": "settings",
         "rightClickCommand": "",
         "rightClickFollowMouse": true,
         "screenOverrides": [
@@ -256,6 +256,7 @@
                     "id": "SessionMenu"
                 },
                 {
+                    "commandPrefix": "auto-tile",
                     "defaultSettings": {
                         "debounceMs": 300,
                         "enabled": true,
@@ -286,19 +287,6 @@
                         "videoSource": "portal"
                     },
                     "id": "plugin:screen-recorder"
-                },
-                {
-                    "defaultSettings": {
-                        "monitorOrder": [
-                        ]
-                    },
-                    "id": "plugin:mangowc-layout-switcher"
-                },
-                {
-                    "id": "plugin:mimeapp-gui"
-                },
-                {
-                    "id": "plugin:screen-toolkit"
                 }
             ]
         }
@@ -450,38 +438,6 @@
                         "y": 960
                     },
                     {
-                        "defaultSettings": {
-                            "completedCount": 0,
-                            "count": 0,
-                            "current_page_id": 0,
-                            "exportEmptySections": false,
-                            "exportFormat": "markdown",
-                            "exportPath": "~/Documents",
-                            "isExpanded": false,
-                            "pages": [
-                                {
-                                    "id": 0,
-                                    "name": "General"
-                                }
-                            ],
-                            "priorityColors": {
-                                "high": "#f44336",
-                                "low": "#9e9e9e",
-                                "medium": "#2196f3"
-                            },
-                            "showBackground": true,
-                            "showCompleted": true,
-                            "todos": [
-                            ],
-                            "useCustomColors": false
-                        },
-                        "id": "plugin:todo",
-                        "scale": 1.3388404135576473,
-                        "showBackground": true,
-                        "x": 1490,
-                        "y": 58
-                    },
-                    {
                         "diskPath": "/",
                         "id": "SystemStat",
                         "layout": "bottom",
@@ -583,7 +539,7 @@
         ],
         "lockScreenTint": 0,
         "passwordChars": true,
-        "radiusRatio": 0.42,
+        "radiusRatio": 0.21,
         "reverseScroll": false,
         "scaleRatio": 1.05,
         "screenRadiusRatio": 0.86,
@@ -826,9 +782,9 @@
     },
     "ui": {
         "boxBorderEnabled": true,
-        "fontDefault": "JetBrainsMono Nerd Font Propo",
+        "fontDefault": "CaskaydiaCove Nerd Font Mono",
         "fontDefaultScale": 1.05,
-        "fontFixed": "JetBrainsMono Nerd Font Propo",
+        "fontFixed": "CaskaydiaCove Nerd Font Mono",
         "fontFixedScale": 1.04,
         "panelBackgroundOpacity": 0.91,
         "panelsAttachedToBar": true,
@@ -869,10 +825,10 @@
         "panelPosition": "follow_bar",
         "randomIntervalSec": 1800,
         "setWallpaperOnAllMonitors": true,
-        "showHiddenFiles": false,
+        "showHiddenFiles": true,
         "skipStartupTransition": false,
         "solidColor": "#1a1a2e",
-        "sortOrder": "random",
+        "sortOrder": "name_desc",
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
         "transitionType": [

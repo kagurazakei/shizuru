@@ -59,7 +59,7 @@
       inherit
         (pkgs.zpkgs)
         kokCursor
-        stash
+        # stash
         viu
         equibop
         ktop
@@ -75,6 +75,7 @@
         lutui
         npins-helper
         npins-ui
+        touchpad-toggle
         ;
       # Themes
       inherit
@@ -125,7 +126,7 @@
         app2unit
         komikku
         ollama
-        protonvpn-gui
+        proton-vpn
         ;
       inherit (pkgs) foot libsixel kitty;
       # external

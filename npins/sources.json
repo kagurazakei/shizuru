@@ -129,9 +129,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "8ec6595afdd4c811c02e781165283ebb9330b14c",
-      "url": "https://github.com/kagurazakei/fish/archive/8ec6595afdd4c811c02e781165283ebb9330b14c.tar.gz",
-      "hash": "sha256-6Y6feGSIxv49dX46ATmJ5H5s5RL/90IO1B1U7KwxvgQ="
+      "revision": "642e00e617b4a535f79c6a477fa318085597b909",
+      "url": "https://github.com/kagurazakei/fish/archive/642e00e617b4a535f79c6a477fa318085597b909.tar.gz",
+      "hash": "sha256-lpRUJ2/jfo2fZ8rxQHERhsXBEe9DoDM32ioB57UvjBc="
     },
     "impermanence": {
       "type": "Git",
@@ -294,9 +294,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "df62bb3212d474276e66c17986f2032362c0991d",
-      "url": "https://github.com/noctalia-dev/noctalia-shell/archive/df62bb3212d474276e66c17986f2032362c0991d.tar.gz",
-      "hash": "sha256-iML1zRJOue/KYoeChmgNBkzh24UMAT0PgIEEgcI/140="
+      "revision": "ed1a2b54de22f0841f61fbcb8c26f4959a1dc205",
+      "url": "https://github.com/noctalia-dev/noctalia-shell/archive/ed1a2b54de22f0841f61fbcb8c26f4959a1dc205.tar.gz",
+      "hash": "sha256-gXsUqjhm7qiEq6bwnRMOTPxwuK+WmNp9BKaMO9VmmAE="
     },
     "npins": {
       "type": "Git",
@@ -399,9 +399,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "4ce14a2ee444ea542fa4278aa52ceb8ce5f77e91",
-      "url": "https://github.com/kagurazakei/shizuru/archive/4ce14a2ee444ea542fa4278aa52ceb8ce5f77e91.tar.gz",
-      "hash": "sha256-leh6f0FpdHo3T7l+L7SX14aBPwSUTExfRWh4EHm+IFA="
+      "revision": "6d5b7478d11d399f2ecfbcddc9239d0983f77d9b",
+      "url": "https://github.com/kagurazakei/shizuru/archive/6d5b7478d11d399f2ecfbcddc9239d0983f77d9b.tar.gz",
+      "hash": "sha256-em+Fz2d49+tSb85lGfBlfxG9Rp0yfTCL6zLr4lP7PPc="
     },
     "shizuruPkgs": {
       "type": "Git",
