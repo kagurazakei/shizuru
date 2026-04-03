@@ -417,17 +417,20 @@
       "hash": "sha256-6bL54LqB9oCjgO6S0BUYEGV3DCp6veSOKaYUfS+Wuoo="
     },
     "spicetify-nix": {
-      "type": "Git",
+      "type": "GitRelease",
       "repository": {
         "type": "GitHub",
         "owner": "Gerg-L",
         "repo": "spicetify-nix"
       },
-      "branch": "master",
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
       "submodules": false,
-      "revision": "6dd43010ac2458cc56a6ac5250349b9217a7a2ae",
-      "url": "https://github.com/Gerg-L/spicetify-nix/archive/6dd43010ac2458cc56a6ac5250349b9217a7a2ae.tar.gz",
-      "hash": "sha256-7wn9qbzIQQgH8tnq4VwzuWEqEWpekuymlLyhY3vM/j8="
+      "version": "24.11",
+      "revision": "543f12dd14c62ddee79ab79fbfd8726f312b89ff",
+      "url": "https://api.github.com/repos/Gerg-L/spicetify-nix/tarball/refs/tags/24.11",
+      "hash": "sha256-e3x1mhpPpYgyyin9j/VbrBpOT5PFpEfx2hkxVZuJZhg="
     },
     "stable": {
       "type": "Git",

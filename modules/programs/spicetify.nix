@@ -8,29 +8,21 @@
     programs.spicetify = {
       enable = true;
       enabledExtensions = with spicePkgs.extensions; [
-        adblockify
+        powerBar
+        fullAlbumDate
+        fullAppDisplay
+        listPlaylistsWithSong
+        volumePercentage
+        adblock
         hidePodcasts
-        shuffle # shuffle+ (special characters are sanitized out of extension names)
+        beautifulLyrics
       ];
+      enabledCustomApps = with spicePkgs.apps; [
+        lyricsPlus
+        newReleases
+      ];
+      theme = spicePkgs.themes.text;
+      colorScheme = "RosePine";
     };
-    # programs.spicetify = {
-    #   enable = true;
-    #   enabledExtensions = with spicePkgs.extensions; [
-    #     powerBar
-    #     fullAlbumDate
-    #     fullAppDisplay
-    #     listPlaylistsWithSong
-    #     volumePercentage
-    #     adblock
-    #     hidePodcasts
-    #     beautifulLyrics
-    #   ];
-    #   enabledCustomApps = with spicePkgs.apps; [
-    #     lyricsPlus
-    #     newReleases
-    #   ];
-    #   # theme = spicePkgs.themes.text;
-    #   # colorScheme = "RosePine";
-    # };
   };
 }
