@@ -243,6 +243,22 @@
       "url": "https://api.github.com/repos/lumen-oss/lz.n/tarball/refs/tags/v2.12.2",
       "hash": "sha256-YP8jlE71i/MuF11jsJUNIgojfKpekoSmMlWkKZj+GjQ="
     },
+    "markdown-preview.nvim": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "iamcco",
+        "repo": "markdown-preview.nvim"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v0.0.10",
+      "revision": "c5533033137a8836f2f90027894753e4de31edd8",
+      "url": "https://api.github.com/repos/iamcco/markdown-preview.nvim/tarball/refs/tags/v0.0.10",
+      "hash": "sha256-T/kFzbHTIOiIU5qU7jdQOZFMzPWm/Z5yOftrwkxATc4="
+    },
     "mini.comment": {
       "type": "Git",
       "repository": {
@@ -487,6 +503,22 @@
       "revision": "50080ed0f44dbc18ae13b81278a01b951a06127a",
       "url": "https://github.com/HiPhish/rainbow-delimiters.nvim/archive/50080ed0f44dbc18ae13b81278a01b951a06127a.tar.gz",
       "hash": "sha256-zQgnNN8QvboOHWaMcLw1uRt/9AxV1asvTnpCcJ/qVS4="
+    },
+    "render-markdown.nvim": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "MeanderingProgrammer",
+        "repo": "render-markdown.nvim"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v8.12.0",
+      "revision": "ba901b0d5d4aa56d516e224af6f7832dee92ed8a",
+      "url": "https://api.github.com/repos/MeanderingProgrammer/render-markdown.nvim/tarball/refs/tags/v8.12.0",
+      "hash": "sha256-7O8V8XDYn4ITF9VfvV1OSkto+piIm/DpwtEe+vJcE2g="
     },
     "rose-pine": {
       "type": "GitRelease",
