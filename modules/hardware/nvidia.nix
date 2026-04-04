@@ -104,15 +104,7 @@
         package =
           if config.networking.hostName == "hana"
           then config.boot.kernelPackages.nvidiaPackages.legacy_580
-          else
-            config.boot.kernelPackages.nvidiaPackages.mkDriver {
-              version = "595.58.03";
-              sha256_64bit = "sha256-jA1Plnt5MsSrVxQnKu6BAzkrCnAskq+lVRdtNiBYKfk=";
-              sha256_aarch64 = "sha256-2vLF5Evl2D6tRQJo0uUyY3tpWqjvJQ0/Rpxan3NOD3c=";
-              openSha256 = "sha256-6LvJyT0cMXGS290Dh8hd9rc+nYZqBzDIlItOFk8S4n8=";
-              settingsSha256 = "sha256-2vLF5Evl2D6tRQJo0uUyY3tpWqjvJQ0/Rpxan3NOD3c=";
-              persistencedSha256 = "sha256-2vLF5Evl2D6tRQJo0uUyY3tpWqjvJQ0/Rpxan3NOD3c=";
-            };
+          else config.boot.kernelPackages.nvidiaPackages.legacy_580;
         prime = lib.mkIf cfg.hybrid.enable {
           offload = {
             enable = true;

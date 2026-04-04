@@ -27,21 +27,13 @@
       url = "github:kagurazakei/niri";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland-plugins = {
-      url = "github:ItsOhen/hyprland-plugins";
-    };
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs = {
-        systems.follows = "systems";
-      };
-    };
+    hyprnix.url = "github:hyprwm/hyprnix";
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nur-repo-override.url = "github:ilya-fedin/nur-repository";
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix/2e2234c2932a3aff5f845cda33cb1972a9e889aa";
     hjem-impure = {
       url = "github:Rexcrazy804/hjem-impure";
       inputs.hjem.follows = "";

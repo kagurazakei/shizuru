@@ -1,4 +1,4 @@
-{
+{hyprnix, ...}: {
   azalea.modules.hyprland = {
     pkgs,
     lib,
@@ -18,7 +18,9 @@
       enable = true;
       withUWSM = true;
       xwayland.enable = true;
-      portalPackage = pkgs.xdg-desktop-portal-hyprland;
+      package = hyprnix.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      # make sure to also set the portal package, so that they are in sync
+      portalPackage = hyprnix.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     };
 
     # I could write a hypersunris service to conflict but fuck it better to just

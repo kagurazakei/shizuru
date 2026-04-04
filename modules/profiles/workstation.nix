@@ -12,6 +12,7 @@
       self.azalea.modules.graphics
       self.azalea.modules.openssh
       self.azalea.modules.git
+      self.azalea.modules.spicetify
     ];
   };
 }

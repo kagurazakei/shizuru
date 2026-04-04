@@ -1,10 +1,8 @@
 {spicetify-nix, ...}: {
-  azalea.modules.spicetify = {...}: let
-    spicePkgs = spicetify-nix.legacyPackages;
+  azalea.modules.spicetify = {pkgs, ...}: let
+    spicePkgs = spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
   in {
-    imports = [
-      spicetify-nix.nixosModules.spicetify
-    ];
+    imports = [spicetify-nix.nixosModules.spicetify];
     programs.spicetify = {
       enable = true;
       enabledExtensions = with spicePkgs.extensions; [
@@ -16,6 +14,8 @@
         adblock
         hidePodcasts
         beautifulLyrics
+        autoSkipExplicit
+        shuffle # shuffle+ (special characters are sanitized out of extension names)
       ];
       enabledCustomApps = with spicePkgs.apps; [
         lyricsPlus
