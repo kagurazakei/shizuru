@@ -28,7 +28,6 @@
         self.azalea.modules.sysc-greet
         self.azalea.modules.cups
         self.azalea.modules.kagura-fs
-        self.azalea.modules.spotify
       ];
 
       # info
