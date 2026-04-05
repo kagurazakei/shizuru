@@ -19,13 +19,8 @@
       withUWSM = true;
       xwayland.enable = true;
       package = hyprnix.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      # make sure to also set the portal package, so that they are in sync
       portalPackage = hyprnix.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     };
-
-    # I could write a hypersunris service to conflict but fuck it better to just
-    # make a keybind to stop the service lol And I am less likely to forget to
-    # turn the darn thing off if its right on my face
     systemd.user.timers.hyprsunset = {
       description = "Start hyprsunset after sunset";
       enable = true;
