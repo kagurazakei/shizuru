@@ -1,11 +1,14 @@
 {
-  azalea.modules.spicetify =
-    { pkgs, inputs, ... }:
+  azalea.modules.spotify =
+    { pkgs, sources, ... }:
     let
-      spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+      spicetify-nix = import sources.spicetify-nix {
+        inherit pkgs;
+      };
+      spicePkgs = spicetify-nix.packages;
     in
     {
-      imports = [ inputs.spicetify-nix.nixosModules.spicetify ];
+      imports = [ spicetify-nix.nixosModules.spicetify ];
       programs.spicetify = {
         enable = true;
         enabledExtensions = with spicePkgs.extensions; [
