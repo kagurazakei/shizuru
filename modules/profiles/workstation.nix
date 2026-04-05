@@ -1,4 +1,5 @@
-{self, ...}: {
+{ self, ... }:
+{
   azalea.profiles.workstation = {
     imports = [
       self.azalea.modules.firefox
@@ -12,7 +13,7 @@
       self.azalea.modules.graphics
       self.azalea.modules.openssh
       self.azalea.modules.git
-      # self.azalea.modules.spicetify
+      self.azalea.modules.spicetify
     ];
   };
 }
