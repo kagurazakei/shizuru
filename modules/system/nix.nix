@@ -1,85 +1,89 @@
-{nixpkgs, ...}: {
-  azalea.modules.nix = {
-    pkgs,
-    config,
-    lib,
-    ...
-  }: let
-    script = pkgs.writers.writeNuBin "activate" ''
-      def main [systemConfig: string] {
-        let diff_closure = ${pkgs.nix}/bin/nix store diff-closures /run/current-system $systemConfig;
-        if $diff_closure != "" {
-          let table = $diff_closure
-          | lines
-          | where $it =~ KiB
-          | where $it =~ →
-          | parse -r '^(?<Package>\S+): (?<Old_Version>[^,]+)(?:.*) → (?<New_Version>[^,]+)(?:.*, )(?<DiffBin>.*)$'
-          | insert Diff {
-            get DiffBin
-            | ansi strip
-            | str trim -l -c '+'
-            | into filesize
-          }
-          | reject DiffBin
-          | sort-by -r Diff;
+{ nixpkgs, ... }:
+{
+  azalea.modules.nix =
+    {
+      pkgs,
+      config,
+      lib,
+      ...
+    }:
+    let
+      script = pkgs.writers.writeNuBin "activate" ''
+        def main [systemConfig: string] {
+          let diff_closure = ${pkgs.nix}/bin/nix store diff-closures /run/current-system $systemConfig;
+          if $diff_closure != "" {
+            let table = $diff_closure
+            | lines
+            | where $it =~ KiB
+            | where $it =~ →
+            | parse -r '^(?<Package>\S+): (?<Old_Version>[^,]+)(?:.*) → (?<New_Version>[^,]+)(?:.*, )(?<DiffBin>.*)$'
+            | insert Diff {
+              get DiffBin
+              | ansi strip
+              | str trim -l -c '+'
+              | into filesize
+            }
+            | reject DiffBin
+            | sort-by -r Diff;
 
-          print $table;
-          $table | math sum
+            print $table;
+            $table | math sum
+          }
         }
-      }
-    '';
-  in {
-    nixpkgs.config.allowUnfree = true;
-    chaotic.nyx.cache.enable = lib.mkForce false;
-    nix = {
-      package = pkgs.nixVersions.git;
-      registry.nixpkgs.flake = nixpkgs;
-      channel.enable = false;
-      settings = {
-        warn-dirty = false;
-        allow-import-from-derivation = true;
-        trusted-substituters = ["https://hyprland.cachix.org"];
-        trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-        experimental-features = [
-          "nix-command"
-          "flakes"
-          "pipe-operators"
-        ];
-        commit-lockfile-summary = "chore(deps): update flake";
-        auto-optimise-store = true;
-        trusted-users = [
-          "root"
-          "@wheel"
-        ];
-        substituters = ["https://hyprland.cachix.org"];
-        extra-substituters = [
-          "https://nix-community.cachix.org"
-          "https://cache.garnix.io"
-          "https://loneros.cachix.org"
-          "https://heitor.cachix.org"
-        ];
-        extra-trusted-public-keys = [
-          "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-          "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
-          "loneros.cachix.org-1:dVCECfW25sOY3PBHGBUwmQYrhRRK2+p37fVtycnedDU="
-          "heitor.cachix.org-1:IZ1ydLh73kFtdv+KfcsR4WGPkn+/I926nTGhk9O9AxI="
-        ];
+      '';
+    in
+    {
+      nixpkgs.config.allowUnfree = true;
+      chaotic.nyx.cache.enable = lib.mkForce false;
+      nix = {
+        package = pkgs.nixVersions.git;
+        registry.nixpkgs.flake = nixpkgs;
+        channel.enable = false;
+        settings = {
+          warn-dirty = false;
+          allow-import-from-derivation = true;
+          trusted-substituters = [ "https://hyprland.cachix.org" ];
+          trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+          experimental-features = [
+            "nix-command"
+            "flakes"
+            "pipe-operators"
+          ];
+          commit-lockfile-summary = "chore(deps): update flake";
+          auto-optimise-store = true;
+          trusted-users = [
+            "root"
+            "@wheel"
+          ];
+          substituters = [ "https://hyprland.cachix.org" ];
+          extra-substituters = [
+            "https://nix-community.cachix.org"
+            "https://cache.garnix.io"
+            "https://loneros.cachix.org"
+            "https://heitor.cachix.org"
+          ];
+          extra-trusted-public-keys = [
+            "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+            "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
+            "loneros.cachix.org-1:dVCECfW25sOY3PBHGBUwmQYrhRRK2+p37fVtycnedDU="
+            "heitor.cachix.org-1:IZ1ydLh73kFtdv+KfcsR4WGPkn+/I926nTGhk9O9AxI="
+          ];
+        };
+        gc = {
+          persistent = true;
+          automatic = true;
+          dates = "weekly";
+          options = "--delete-older-than 7d";
+        };
+        extraOptions = ''
+          allow-import-from-derivation = true
+          !include ${config.age.secrets.secret2.path}
+        '';
       };
-      gc = {
-        persistent = true;
-        automatic = true;
-        dates = "weekly";
-        options = "--delete-older-than 7d";
-      };
-      extraOptions = ''
-        allow-import-from-derivation = true
-        !include ${config.age.secrets.secret2.path}
+      system.activationScripts.diff = ''
+        if [[ -e /run/current-system ]]; then
+          ${script}/bin/activate "$systemConfig"
+        fi
       '';
     };
-    system.activationScripts.diff = ''
-      if [[ -e /run/current-system ]]; then
-        ${script}/bin/activate "$systemConfig"
-      fi
-    '';
-  };
 }

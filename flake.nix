@@ -3,10 +3,12 @@
 
   # This is the completely stolen from Rexcrazy804/Zaphkiel(dandelion)
   # Presenting, the *azalea* setup
-  outputs = {...} @ inputs: let
-    azalea = import ./azalea.nix inputs;
-    inherit (azalea) importModules recursiveImport;
-  in
+  outputs =
+    { ... }@inputs:
+    let
+      azalea = import ./azalea.nix inputs;
+      inherit (azalea) importModules recursiveImport;
+    in
     importModules [
       (recursiveImport ./modules)
       (recursiveImport ./flake)
@@ -14,7 +16,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    systems.url = "github:nix-systems/x86_64-linux";
+    systems.url = "github:nix-systems/default-linux";
     crane.url = "github:ipetkov/crane";
     chaotic.url = "github:lonerOrz/nyx-loner";
     silent-sddm.url = "github:kagurazakei/SilentSDDM";
@@ -33,7 +35,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nur-repo-override.url = "github:ilya-fedin/nur-repository";
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix/2e2234c2932a3aff5f845cda33cb1972a9e889aa";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     hjem-impure = {
       url = "github:Rexcrazy804/hjem-impure";
       inputs.hjem.follows = "";
