@@ -21,6 +21,8 @@
         lyricsPlus
         newReleases
       ];
+      theme = spicePkgs.themes.text;
+      colorScheme = "RosePine";
     };
   };
 }
