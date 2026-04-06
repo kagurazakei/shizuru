@@ -259,6 +259,19 @@
       "url": "https://github.com/fufexan/nix-gaming/archive/d2b0b283deb24cdbb2750e658fa7001fee5ad586.tar.gz",
       "hash": "sha256-Yw1tP/ASebNYuW2GcYDTgWf2Mg9qcUYo6MTagXyeFCs="
     },
+    "nixcord": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "FlameFlag",
+        "repo": "nixcord"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "43d45d61b7a94ee59868da04e411f9d198177577",
+      "url": "https://github.com/FlameFlag/nixcord/archive/43d45d61b7a94ee59868da04e411f9d198177577.tar.gz",
+      "hash": "sha256-L7iWk7TwbLboSdCH1an3mTqdCjq5c75ijC7IFGSEpso="
+    },
     "nixpkgs": {
       "type": "Git",
       "repository": {
