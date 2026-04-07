@@ -13,7 +13,6 @@
       self.azalea.modules.openssh
       self.azalea.modules.git
       self.azalea.modules.spotify
-      self.azalea.modules.nixcord
     ];
   };
 }
