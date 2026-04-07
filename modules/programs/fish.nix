@@ -64,6 +64,7 @@ in {
 
         # git stuff
         gaa = "git add --all";
+        gad = "git add .";
         ga = "git add";
         gc = "git commit";
         gcm = "git commit -m";
