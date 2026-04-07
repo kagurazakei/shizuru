@@ -1,3 +1,6 @@
+##
+##  check this https://github.com/NixOS/nixpkgs/pull/503416w
+##
 {
   pkgs,
   sources,
@@ -16,15 +19,11 @@
 in
   rustPlatform.buildRustPackage rec {
     pname = "wayle";
-    version = "0.1.2";
+    version = "nightly";
 
     src = sources.wayle;
-
-    # ✅ Keep cargoHash (correct)
     cargoHash = "sha256-bOc4BpzxqZBIwPVlJQr1Blo+0+8UyyTUAiGz2Ao8f+s=";
-
     RUSTC_BOOTSTRAP = true;
-
     nativeBuildInputs = with pkgsWithRust; [
       glib
       wrapGAppsHook4
@@ -41,17 +40,13 @@ in
       fftw.dev
       libpulseaudio
     ];
-
     cargoBuildFlags = ["--bin=wayle"];
-
     preCheck = ''
       export HOME=$(mktemp -d)
     '';
-
     checkFlags = [
       "--skip=tests::css_loads_into_gtk4"
     ];
-
     preInstall = ''
       mkdir -p "$out/share/icons"
       cp -r resources/icons "$out/share"
