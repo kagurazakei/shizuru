@@ -252,23 +252,6 @@
                     "textColor": "none"
                 },
                 {
-                    "iconColor": "error",
-                    "id": "SessionMenu"
-                },
-                {
-                    "defaultSettings": {
-                        "debounceMs": 300,
-                        "enabled": true,
-                        "maxEventsPerSecond": 20,
-                        "maxVisible": 4,
-                        "onlyAtMax": true,
-                        "perWorkspace": false,
-                        "workspaceMaxVisible": {
-                        }
-                    },
-                    "id": "plugin:niri-auto-tile"
-                },
-                {
                     "defaultSettings": {
                         "audioCodec": "opus",
                         "audioSource": "default_output",
@@ -286,6 +269,15 @@
                         "videoSource": "portal"
                     },
                     "id": "plugin:screen-recorder"
+                },
+                {
+                    "id": "plugin:notes-scratchpad"
+                },
+                {
+                    "id": "plugin:sticky-notes"
+                },
+                {
+                    "id": "plugin:slowbongo"
                 }
             ]
         }

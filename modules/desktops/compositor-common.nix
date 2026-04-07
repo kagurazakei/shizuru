@@ -63,6 +63,7 @@
         viu
         equibop
         ktop
+        wayle
         ;
       inherit
         (pkgs.zpkgs.scripts)
