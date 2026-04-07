@@ -21,6 +21,7 @@
       zpkgs.nirinit
       zpkgs.niri-scratchpad-rs
       zpkgs.piri
+      zpkgs.wayle
     ];
     services.displayManager.defaultSession = "niri-uwsm";
     systemd.user.services.hypridle.path = lib.mkForce [config.programs.hyprland.package];

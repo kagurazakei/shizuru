@@ -497,6 +497,22 @@
       "url": "https://github.com/kagurazakei/waifu-cursors/archive/8e692c1daacf241b3d76ea3b2024f0fa4d662531.tar.gz",
       "hash": "sha256-68QmW2WK0OxyMlcdTxhjCRY4SMmKWy+eDF8yA6dkx4c="
     },
+    "wayle": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "wayle-rs",
+        "repo": "wayle"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v0.1.2",
+      "revision": "dcb35313983678c84e328392fb9af9701db26455",
+      "url": "https://api.github.com/repos/wayle-rs/wayle/tarball/refs/tags/v0.1.2",
+      "hash": "sha256-iZddhPdskoyyAYT3J92S5cRRKkkR8KyqIyBBPE+Lg18="
+    },
     "zen-browser-flake": {
       "type": "Git",
       "repository": {
