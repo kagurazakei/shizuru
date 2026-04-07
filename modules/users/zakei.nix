@@ -140,6 +140,7 @@ in {
     "hypr/hyprland.conf" = "/hyprland/hyprland.conf";
     "hypr/windowRules.conf" = "/hyprland/windowRules.conf";
     "hypr/keybinds.conf" = "/hyprland/keybinds.conf";
+    "wayle/config.toml" = "/wayle/config.toml";
   };
   azalea.dots.zakei-niri = mkDotsModule username {
     "niri/config.kdl" = d: d.dotsDir + "/niri/${d.lib.toLower d.config.networking.hostName}.kdl";
