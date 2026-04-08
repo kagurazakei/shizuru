@@ -15,7 +15,7 @@
 }: let
   stdenvNoCC = pkgs.stdenvNoCC;
   qt6 = pkgs.qt6;
-  quickshell = pkgs.callPackage "${sources.noctalia-qs}/default.nix" {};
+  quickshell = pkgs.callPackage "${sources.noctalia-qs}/nix/package.nix" {inherit pkgs;};
 
   # runtime dependencies
   runtimeDeps =
@@ -45,7 +45,7 @@
 in
   stdenvNoCC.mkDerivation rec {
     pname = "noctalia-shell";
-    version = sources.noctalia-shell.rev or "npins";
+    version = "nightly";
     src = sources.noctalia-shell;
 
     nativeBuildInputs = [
