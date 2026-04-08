@@ -1,0 +1,97 @@
+{
+  pkgs,
+  lib,
+  sources,
+}: let
+  inherit
+    (pkgs)
+    stdenv
+    pkg-config
+    cmake
+    ninja
+    spirv-tools
+    qt6
+    jemalloc
+    cli11
+    wayland
+    wayland-protocols
+    wayland-scanner
+    libxcb
+    libdrm
+    libgbm
+    vulkan-headers
+    pipewire
+    pam
+    glib
+    polkit
+    cpptrace
+    libunwind
+    ;
+in
+  stdenv.mkDerivation rec {
+    pname = "noctalia-qs";
+
+    # derive from npins
+    version = sources.noctalia-qs.version or sources.noctalia-qs.rev or "unstable";
+    gitRev = sources.noctalia-qs.rev or "dirty";
+
+    src = sources.noctalia-qs;
+
+    nativeBuildInputs = [
+      cmake
+      ninja
+      qt6.qtshadertools
+      spirv-tools
+      wayland-scanner
+      qt6.wrapQtAppsHook
+      pkg-config
+    ];
+
+    buildInputs = [
+      qt6.qtbase
+      qt6.qtdeclarative
+      qt6.qtwayland
+      qt6.qtsvg
+      cli11
+      wayland
+      wayland-protocols
+      libdrm
+      libgbm
+      vulkan-headers
+      libxcb
+      jemalloc
+      pam
+      pipewire
+      polkit
+      glib
+
+      (cpptrace.overrideAttrs (old: {
+        cmakeFlags =
+          (old.cmakeFlags or [])
+          ++ [
+            (lib.cmakeBool "CPPTRACE_UNWIND_WITH_LIBUNWIND" true)
+          ];
+        buildInputs = (old.buildInputs or []) ++ [libunwind];
+      }))
+    ];
+
+    cmakeFlags = [
+      (lib.cmakeFeature "DISTRIBUTOR" "Custom-Nix")
+      (lib.cmakeBool "DISTRIBUTOR_DEBUGINFO_AVAILABLE" true)
+      (lib.cmakeBool "CRASH_HANDLER" true)
+      (lib.cmakeFeature "INSTALL_QML_PREFIX" qt6.qtbase.qtQmlPrefix)
+      (lib.cmakeFeature "GIT_REVISION" gitRev)
+      (lib.cmakeBool "NIX_STORE_DIR_SKIP_WATCH" true)
+      (lib.cmakeFeature "NIX_STORE_DIR" builtins.storeDir)
+    ];
+
+    cmakeBuildType = "Release";
+
+    meta = {
+      homepage = "https://github.com/noctalia-dev/noctalia-qs";
+      description = "Flexible QtQuick based desktop shell toolkit for Noctalia";
+      license = lib.licenses.lgpl3Only;
+      platforms = lib.platforms.linux;
+      mainProgram = "qs";
+    };
+  }

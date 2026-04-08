@@ -62,7 +62,6 @@
         # stash
         viu
         equibop
-        ktop
         wayle
         ;
       inherit
