@@ -15,8 +15,9 @@
 }: let
   stdenvNoCC = pkgs.stdenvNoCC;
   qt6 = pkgs.qt6;
-  quickshell = pkgs.callPackage "${sources.noctalia-qs}/nix/package.nix" {inherit pkgs;};
-
+  quickshell = pkgs.noctalia-qs.overrideAttrs (_: {
+    src = sources.noctalia-qs;
+  });
   # runtime dependencies
   runtimeDeps =
     [
