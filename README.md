@@ -35,7 +35,7 @@
 - ~~fix sddm weird eval input errors check~~
   \[`modules/nixosConfiguration.nix`\][hostConfig]
 
-## What in the nix is going on here?
+# What in the nix is going on here?
 
 The flake impliments the [dandruff pattern], without flake-parts. Should you try
 it? If you like your sanity, please don't. The functions that set this up are
