@@ -4,7 +4,6 @@ in {
   azalea.modules.qt = {
     pkgs,
     config,
-    sources,
     lib,
     ...
   }: {
@@ -16,6 +15,7 @@ in {
     qt.enable = true;
     environment.systemPackages = with pkgs; [
       zpkgs.qt6ct
+      zpkgs.noctalia-qs
       wlsunset
       libqalculate
       libsForQt5.qtstyleplugin-kvantum
@@ -38,7 +38,6 @@ in {
       kdePackages.kirigami-addons
       kdePackages.breeze
       libsForQt5.qt5.qtgraphicaleffects
-      (pkgs.callPackage "${sources.noctalia-qs}/default.nix" {})
     ];
 
     # User-specific packages

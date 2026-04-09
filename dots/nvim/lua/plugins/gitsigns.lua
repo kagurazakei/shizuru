@@ -20,32 +20,31 @@ return {
         untracked = { text = "┆" },
       },
       signs_staged_enable = true,
-      signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
-      numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
-      linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
-      word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
+      signcolumn = true,
+      numhl = false,
+      linehl = false,
+      word_diff = false,
       watch_gitdir = {
         follow_files = true,
       },
       auto_attach = true,
       attach_to_untracked = true,
-      current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
+      current_line_blame = true,
       current_line_blame_opts = {
         virt_text = true,
-        virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
+        virt_text_pos = "eol",
         delay = 100,
         ignore_whitespace = true,
         virt_text_priority = 100,
         use_focus = true,
       },
       current_line_blame_formatter = "<author>, <author_time:%R> - <summary>",
-      blame_formatter = nil, -- Use default
+      blame_formatter = nil,
       sign_priority = 6,
       update_debounce = 100,
-      status_formatter = nil, -- Use default
-      max_file_length = 40000, -- Disable if file is longer than this (in lines)
+      status_formatter = nil,
+      max_file_length = 40000,
       preview_config = {
-        -- Options passed to nvim_open_win
         style = "minimal",
         relative = "cursor",
         row = 0,
@@ -59,8 +58,6 @@ return {
           opts.buffer = bufnr
           vim.keymap.set(mode, l, r, opts)
         end
-
-        -- Navigation
         map("n", "]h", function()
           if vim.wo.diff then
             vim.cmd.normal({ "]h", bang = true })
@@ -68,7 +65,6 @@ return {
             gitsigns.nav_hunk("next")
           end
         end, { desc = "Gitsigns: next hunk" })
-
         map("n", "[h", function()
           if vim.wo.diff then
             vim.cmd.normal({ "[h", bang = true })
@@ -76,19 +72,11 @@ return {
             gitsigns.nav_hunk("prev")
           end
         end, { desc = "Gitsigns: prev hunk" })
-
-        -- Actions
         map(
           "n",
           "<leader>hs",
           gitsigns.stage_hunk,
           { desc = "Gitsigns: stage hunk" }
-        )
-        map(
-          "n",
-          "<leader>hu",
-          gitsigns.undo_stage_hunk,
-          { desc = "Gitsigns: unstage hunk" }
         )
         map(
           "n",
@@ -104,17 +92,9 @@ return {
         )
         map(
           "v",
-          "<leader>hu",
-          function()
-            gitsigns.undo_stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
-          end
-        )
-        map(
-          "v",
           "<leader>hr",
           function() gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") }) end
         )
-
         map(
           "n",
           "<leader>hS",
@@ -127,8 +107,6 @@ return {
           gitsigns.reset_buffer,
           { desc = "Gitsigns: reset Buffer" }
         )
-
-        -- diffs
         map(
           "n",
           "<leader>hp",
