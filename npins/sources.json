@@ -116,9 +116,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "cda0afa360ef75d5d235f2d7210cdee8079ff472",
-      "url": "https://github.com/nix-community/flake-firefox-nightly/archive/cda0afa360ef75d5d235f2d7210cdee8079ff472.tar.gz",
-      "hash": "sha256-rrMLuU1G8r2X5D5FA7L104RN9Noysvqia0Pf6+xGzs4="
+      "revision": "0bfb5d5940d63db673596300fd9c64c7a07c5fef",
+      "url": "https://github.com/nix-community/flake-firefox-nightly/archive/0bfb5d5940d63db673596300fd9c64c7a07c5fef.tar.gz",
+      "hash": "sha256-T2WJrbw5BGCSbXbvC2SnEiXv7b9cGTro1wZy36js9sQ="
     },
     "fish": {
       "type": "Git",
@@ -177,6 +177,19 @@
       "revision": "c89f8147f97ab07aab573a09f0f4b13bf9f2855d",
       "url": "https://api.github.com/repos/DreamMaoMao/mangowc/tarball/refs/tags/0.12.8",
       "hash": "sha256-k9qFn9I+eeAq1kBfw6QRLRMDb6sIV+pgd5zpKNoc1ck="
+    },
+    "master": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "NixOS",
+        "repo": "nixpkgs"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "8dce7e9ae4429c2796ef7041fc06901e85f07682",
+      "url": "https://github.com/NixOS/nixpkgs/archive/8dce7e9ae4429c2796ef7041fc06901e85f07682.tar.gz",
+      "hash": "sha256-XHpYTCPevMxAR9U1j5nfT+rhsSO0ltp/lYmYFxoZToI="
     },
     "neorg": {
       "type": "Git",
@@ -258,19 +271,6 @@
       "revision": "3c545996db7b1dc05aaddc0cf667235e32c7c834",
       "url": "https://github.com/fufexan/nix-gaming/archive/3c545996db7b1dc05aaddc0cf667235e32c7c834.tar.gz",
       "hash": "sha256-Se4dxrfyPQR2+N16Cq6C6li0JVd1p+Oa8GWTPzzRiwg="
-    },
-    "nixpkgs": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nixos",
-        "repo": "nixpkgs"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "60d18e6d1b200cf2785973abfee746b05d547f3c",
-      "url": "https://github.com/nixos/nixpkgs/archive/60d18e6d1b200cf2785973abfee746b05d547f3c.tar.gz",
-      "hash": "sha256-ldvwmtmpbkFtDdJSUYdeV/yoqQMAXQ64nOKd4nXttyk="
     },
     "noctalia-qs": {
       "type": "Git",
@@ -436,14 +436,14 @@
       "type": "Git",
       "repository": {
         "type": "GitHub",
-        "owner": "nixos",
+        "owner": "NixOS",
         "repo": "nixpkgs"
       },
       "branch": "nixos-25.11",
       "submodules": false,
-      "revision": "d96b37bbeb9840f1c0ebfe90585ef5067b69bbb3",
-      "url": "https://github.com/nixos/nixpkgs/archive/d96b37bbeb9840f1c0ebfe90585ef5067b69bbb3.tar.gz",
-      "hash": "sha256-BQb70+B378ECLO8iQT3P/b1hCC5/CJVHZdeulY8futc="
+      "revision": "4e92bbcdb030f3b4782be4751dc08e6b6cb6ccf2",
+      "url": "https://github.com/NixOS/nixpkgs/archive/4e92bbcdb030f3b4782be4751dc08e6b6cb6ccf2.tar.gz",
+      "hash": "sha256-OEf7YqhF9IjJFYZJyuhAypgU+VsRB5lD4DuiMws5Ltc="
     },
     "sysc-greet": {
       "type": "Git",
@@ -462,14 +462,14 @@
       "type": "Git",
       "repository": {
         "type": "GitHub",
-        "owner": "nixos",
+        "owner": "NixOS",
         "repo": "nixpkgs"
       },
       "branch": "nixos-unstable",
       "submodules": false,
-      "revision": "68d8aa3d661f0e6bd5862291b5bb263b2a6595c9",
-      "url": "https://github.com/nixos/nixpkgs/archive/68d8aa3d661f0e6bd5862291b5bb263b2a6595c9.tar.gz",
-      "hash": "sha256-vPKLpjhIVWdDrfiUM8atW6YkIggCEKdSAlJPzzhkQlw="
+      "revision": "4c1018dae018162ec878d42fec712642d214fdfa",
+      "url": "https://github.com/NixOS/nixpkgs/archive/4c1018dae018162ec878d42fec712642d214fdfa.tar.gz",
+      "hash": "sha256-ar3rofg+awPB8QXDaFJhJ2jJhu+KqN/PRCXeyuXR76E="
     },
     "viu": {
       "type": "Git",
