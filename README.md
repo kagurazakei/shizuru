@@ -71,9 +71,9 @@ due to [argosnothing] shilling [jet]'s nixos configuration a great deal.
 - [khaneliman/khanelivim][khanelivim]
 - and other nixvim community
 
-##### [!IMPORTANT]
+##### [IMPORTANT]
 
-NOW nixpkgs using from npins sources. also can use mix with stable unstable and master respectivly
+NOW nixpkgs using from npins sources. also can use mix with stable unstable and master respectivly. There is less flake input as much as possible help by flake-compat forked by lix.
 
 ```nix
     environment.systemPackages = with pkgs; [

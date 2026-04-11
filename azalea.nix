@@ -1,7 +1,9 @@
 inputs:
 assert inputs ? nixpkgs; let
+  sources = import ./npins;
+  lib = import "${sources.unstable}/lib";
   inherit
-    (inputs.nixpkgs.lib)
+    (lib)
     flip
     flatten
     hasSuffix

@@ -1,13 +1,12 @@
 {
-  hs-todo,
-  nur,
-  ...
-}: {
   azalea.modules.compositor-common = {
     pkgs,
     lib,
+    sources,
+    flakeCompat,
     ...
   }: let
+    hs-todo = (flakeCompat.flakeToNix {src = sources.hs-todo;}).defaultNix;
     inherit (lib) mkForce attrValues;
     system = pkgs.stdenv.hostPlatform.system;
     todo = hs-todo.packages.${system}.default;
@@ -27,9 +26,6 @@
       }
     '';
   in {
-    nixpkgs.overlays = [
-      nur.overlays.default
-    ];
     # for whatever reason swappy likes to open images
     # don't let that fucker open images
     hj = {

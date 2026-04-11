@@ -17,15 +17,9 @@
     systems.url = "github:nix-systems/default-linux";
     crane.url = "github:ipetkov/crane";
     silent-sddm.url = "github:kagurazakei/SilentSDDM";
-    firefox.url = "github:nix-community/flake-firefox-nightly";
     mnw.url = "github:Gerg-L/mnw";
-    neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     niri = {
       url = "github:kagurazakei/niri";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nur = {
-      url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nur-repo-override.url = "github:ilya-fedin/nur-repository";
@@ -53,11 +47,6 @@
       url = "github:notashelf/stash";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.crane.follows = "crane";
-    };
-    hs-todo = {
-      url = "github:Rexcrazy804/haskell-todo";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.systems.follows = "systems";
     };
   };
 }

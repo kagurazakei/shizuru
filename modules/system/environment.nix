@@ -2,8 +2,14 @@
   azalea.modules.environment = {
     pkgs,
     sources,
+    flakeCompat,
     ...
-  }: {
+  }: let
+    neovim-nightly = (flakeCompat.flakeToNix {src = sources.neovim-nightly;}).defaultNix;
+  in {
+    nixpkgs.overlays = [
+      neovim-nightly.overlays.default
+    ];
     environment.systemPackages = with pkgs; [
       git
       gh

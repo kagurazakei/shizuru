@@ -1,20 +1,17 @@
 {
   "pins": {
-    "Ambxst": {
-      "type": "GitRelease",
+    "NUR": {
+      "type": "Git",
       "repository": {
         "type": "GitHub",
-        "owner": "Axenide",
-        "repo": "Ambxst"
+        "owner": "nix-community",
+        "repo": "NUR"
       },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
+      "branch": "master",
       "submodules": false,
-      "version": "1.1.4",
-      "revision": "a2faad79618987c36cca2e4fb790e5c9f0fd7e22",
-      "url": "https://api.github.com/repos/Axenide/Ambxst/tarball/refs/tags/1.1.4",
-      "hash": "sha256-Nc6KTQxBWnVKxxOTHHZxPUk8stQBnVhdqSN+QZHQYlw="
+      "revision": "7f4366be821b64f130c08dd47cbc22cad3003d97",
+      "url": "https://github.com/nix-community/NUR/archive/7f4366be821b64f130c08dd47cbc22cad3003d97.tar.gz",
+      "hash": "sha256-gvLoC2HohFNtIAVEvBWSMacBH3sZdvhIPiF75hR2cO4="
     },
     "WiiUDownloader": {
       "type": "GitRelease",
@@ -46,20 +43,17 @@
       "hash": "sha256-9VnK6Oqai65puVJ4WYtCTvlJeXxMzAp/69HhQuTdl/I="
     },
     "ambxst": {
-      "type": "GitRelease",
+      "type": "Git",
       "repository": {
         "type": "GitHub",
         "owner": "kagurazakei",
-        "repo": "ambxst"
+        "repo": "Ambxst"
       },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
+      "branch": "main",
       "submodules": false,
-      "version": "1.0.12",
-      "revision": "59edec9a0430eb2f679697f4a817a1f44ffcfb8b",
-      "url": "https://api.github.com/repos/kagurazakei/ambxst/tarball/refs/tags/1.0.12",
-      "hash": "sha256-SONu9NiNr0gaLC6rMt3x5x1L6DwSUuGJesizS7Ej2eo="
+      "revision": "be0383712772de22d4fe3b03603c74cf6fcd32d2",
+      "url": "https://github.com/kagurazakei/Ambxst/archive/be0383712772de22d4fe3b03603c74cf6fcd32d2.tar.gz",
+      "hash": "sha256-JKeWbrp1d+9UMNqAdIClUjcJz0X+LnwRHUrtSHUYlvw="
     },
     "blink-cmp": {
       "type": "Git",
@@ -195,6 +189,19 @@
       "url": "https://api.github.com/repos/fricklerhandwerk/flake-inputs/tarball/refs/tags/4.1.0",
       "hash": "sha256-dSECtDeIOGKGsbEOOcOHbZ2NYDy0D/x0hlbiKvpWp8g="
     },
+    "haskell-todo": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Rexcrazy804",
+        "repo": "haskell-todo"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "4cfcb456af2fd41eea891860fa8ae18e4b965ec8",
+      "url": "https://github.com/Rexcrazy804/haskell-todo/archive/4cfcb456af2fd41eea891860fa8ae18e4b965ec8.tar.gz",
+      "hash": "sha256-f78KHuj8MGqJhCM05nrPe8vLpbdBo7HPOzJN/giAecY="
+    },
     "hjem": {
       "type": "Git",
       "repository": {
@@ -207,6 +214,19 @@
       "revision": "32bd6d54d805a3eb41efa62a940eeceaf263c4a8",
       "url": "https://github.com/feel-co/hjem/archive/32bd6d54d805a3eb41efa62a940eeceaf263c4a8.tar.gz",
       "hash": "sha256-W+kpLQ5J/DDaY1nUmvN9aIAfh5ixdyqYM76ZUdcvMBU="
+    },
+    "hs-todo": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Rexcrazy804",
+        "repo": "haskell-todo"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "4cfcb456af2fd41eea891860fa8ae18e4b965ec8",
+      "url": "https://github.com/Rexcrazy804/haskell-todo/archive/4cfcb456af2fd41eea891860fa8ae18e4b965ec8.tar.gz",
+      "hash": "sha256-f78KHuj8MGqJhCM05nrPe8vLpbdBo7HPOzJN/giAecY="
     },
     "hyprnix": {
       "type": "Git",
@@ -304,6 +324,19 @@
       "revision": "7a27c5b0c88097e65d2ac677ec17b075271b689f",
       "url": "https://github.com/neovim/neovim/archive/7a27c5b0c88097e65d2ac677ec17b075271b689f.tar.gz",
       "hash": "sha256-BC3dzSwf8f6zy6AX1sEsSn3d+r7XoRdVs7FuN77s1Qk="
+    },
+    "neovim-nightly": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "neovim-nightly-overlay"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "da590e86c5019cc3a853f0003b44aef8950b5620",
+      "url": "https://github.com/nix-community/neovim-nightly-overlay/archive/da590e86c5019cc3a853f0003b44aef8950b5620.tar.gz",
+      "hash": "sha256-im6eWkpc8l8sRnv+uHcxGtUi4cE/rsete9Mo6GBpwqU="
     },
     "niri-scratchpad-rs": {
       "type": "Git",

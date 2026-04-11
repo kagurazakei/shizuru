@@ -1,13 +1,15 @@
-{nur, ...}: let
-  username = "antonio";
-in {
+{
   azalea.modules.qt = {
     pkgs,
     config,
     lib,
+    sources,
+    username,
+    flakeCompat,
     ...
-  }: {
-    # Overlays
+  }: let
+    nur = (flakeCompat.flakeToNix {src = sources.NUR;}).defaultNix;
+  in {
     nixpkgs.overlays = [
       nur.overlays.default
     ];
