@@ -71,7 +71,19 @@ due to [argosnothing] shilling [jet]'s nixos configuration a great deal.
 - [khaneliman/khanelivim][khanelivim]
 - and other nixvim community
 
-## Licensing
+##### [!IMPORTANT]
+
+NOW nixpkgs using from npins sources. also can use mix with stable unstable and master respectivly
+
+```nix
+    environment.systemPackages = with pkgs; [
+        fastfetch ( unstable )
+        master.fastfetch ( master branch )
+        stable.fastfetch ( stable branch )
+    ];
+```
+
+###### Licensing
 
 All code in this repository is under the MIT license except wherever an explicit
 licensing is included.

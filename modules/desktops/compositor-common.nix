@@ -88,7 +88,6 @@
         libadwaita
         ;
       inherit (pkgs.kdePackages) breeze breeze-icons;
-      # utility
       inherit
         (pkgs)
         ayugram-desktop
@@ -105,7 +104,7 @@
         lazygit
         gpu-screen-recorder
         ;
-      inherit (pkgs) trashy fuzzel wl-screenrec;
+      inherit (pkgs.master) trashy fuzzel wl-screenrec;
       inherit
         (pkgs)
         libnotify
@@ -113,6 +112,9 @@
         imv
         wayfreeze
         networkmanagerapplet
+        ;
+      inherit
+        (pkgs.stable)
         bottom
         nitch
         fastfetch
