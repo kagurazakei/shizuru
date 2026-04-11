@@ -106,6 +106,7 @@ in {
     "matugen/templates" = "/matugen/templates";
     "equibop/settings.json" = "/equibop/settings.json";
     "equibop/themes" = "/equibop/themes";
+    "Equicord/themes" = "/equibop/themes";
     "fuzzel/fuzzel.ini" = "/fuzzel/fuzzel.ini";
     "fuzzel/noctalia" = "/fuzzel/noctalia";
     "foot/foot.ini" = "/foot/foot.ini";

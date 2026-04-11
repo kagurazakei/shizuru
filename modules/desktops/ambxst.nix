@@ -1,5 +1,11 @@
-{ambxst, ...}: {
-  azalea.modules.ambxst = {...}: {
+{
+  azalea.modules.ambxst = {
+    sources,
+    flakeCompat,
+    ...
+  }: let
+    ambxst = (flakeCompat.flakeToNix {src = sources.ambxst;}).defaultNix;
+  in {
     imports = [
       ambxst.nixosModules.default
     ];

@@ -10,19 +10,26 @@
     imports = [
       nixcordFlake.nixosModules.default
     ];
+    hj.files = {
+      ".config/equibop/settings/settings.json".source = "/home/${username}/.config/Equicord/settings/settings.json";
+    };
     programs.nixcord = {
       enable = true;
       user = "${username}";
+      equibop.enable = true;
       discord.vencord.enable = false;
       discord.equicord.enable = true;
       quickCss = ''
         @import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
-        @import './midnight.css';
+        @import '../themes/midnight.css';
         @import url('https://refact0r.github.io/system24/build/system24.css');
-        @import './system24.css';
+        @import '../themes/system24.css';
       '';
     };
     programs.nixcord.config.useQuickCss = true;
+    programs.nixcord.config.themeLinks = [
+      "https://raw.githubusercontent.com/kagurazakei/shizuru/refs/heads/main/dots/equibop/themes/system24-oxo-mocha-theme.css"
+    ];
     programs.nixcord.config.plugins = {
       alwaysExpandRoles.enable = true;
       betterGifPicker.enable = true;

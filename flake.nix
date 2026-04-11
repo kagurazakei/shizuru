@@ -20,18 +20,15 @@
     firefox.url = "github:nix-community/flake-firefox-nightly";
     mnw.url = "github:Gerg-L/mnw";
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
-    ambxst.url = "github:kagurazakei/Ambxst?ref=master";
     niri = {
       url = "github:kagurazakei/niri";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprnix.url = "github:hyprwm/hyprnix";
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nur-repo-override.url = "github:ilya-fedin/nur-repository";
-    spicetify-nix.url = "github:eclairevoyant/spicetify-nix";
     hjem-impure = {
       url = "github:Rexcrazy804/hjem-impure";
       inputs.hjem.follows = "";

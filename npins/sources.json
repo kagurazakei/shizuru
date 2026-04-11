@@ -1,17 +1,20 @@
 {
   "pins": {
     "Ambxst": {
-      "type": "Git",
+      "type": "GitRelease",
       "repository": {
         "type": "GitHub",
-        "owner": "kagurazakei",
+        "owner": "Axenide",
         "repo": "Ambxst"
       },
-      "branch": "master",
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
       "submodules": false,
-      "revision": "95be44492d54835c509d1d2846a259b03448695d",
-      "url": "https://github.com/kagurazakei/Ambxst/archive/95be44492d54835c509d1d2846a259b03448695d.tar.gz",
-      "hash": "sha256-kgMlar/18Ny9Q19IdY3kvlBcVPC6vK4ZOVqljSn1dUs="
+      "version": "1.1.4",
+      "revision": "a2faad79618987c36cca2e4fb790e5c9f0fd7e22",
+      "url": "https://api.github.com/repos/Axenide/Ambxst/tarball/refs/tags/1.1.4",
+      "hash": "sha256-Nc6KTQxBWnVKxxOTHHZxPUk8stQBnVhdqSN+QZHQYlw="
     },
     "WiiUDownloader": {
       "type": "GitRelease",
@@ -41,6 +44,22 @@
       "revision": "b027ee29d959fda4b60b57566d64c98a202e0feb",
       "url": "https://github.com/ryantm/agenix/archive/b027ee29d959fda4b60b57566d64c98a202e0feb.tar.gz",
       "hash": "sha256-9VnK6Oqai65puVJ4WYtCTvlJeXxMzAp/69HhQuTdl/I="
+    },
+    "ambxst": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "kagurazakei",
+        "repo": "ambxst"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "1.0.12",
+      "revision": "59edec9a0430eb2f679697f4a817a1f44ffcfb8b",
+      "url": "https://api.github.com/repos/kagurazakei/ambxst/tarball/refs/tags/1.0.12",
+      "hash": "sha256-SONu9NiNr0gaLC6rMt3x5x1L6DwSUuGJesizS7Ej2eo="
     },
     "blink-cmp": {
       "type": "Git",
@@ -188,6 +207,19 @@
       "revision": "32bd6d54d805a3eb41efa62a940eeceaf263c4a8",
       "url": "https://github.com/feel-co/hjem/archive/32bd6d54d805a3eb41efa62a940eeceaf263c4a8.tar.gz",
       "hash": "sha256-W+kpLQ5J/DDaY1nUmvN9aIAfh5ixdyqYM76ZUdcvMBU="
+    },
+    "hyprnix": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "hyprwm",
+        "repo": "hyprnix"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "8d20f41a48bd2f0a3afbedecf89c9cfd2ce314e6",
+      "url": "https://github.com/hyprwm/hyprnix/archive/8d20f41a48bd2f0a3afbedecf89c9cfd2ce314e6.tar.gz",
+      "hash": "sha256-wLoD2dJJ40Cpls1k38CPxq74ZJLEzoAIsQSTNcByjws="
     },
     "impermanence": {
       "type": "Git",

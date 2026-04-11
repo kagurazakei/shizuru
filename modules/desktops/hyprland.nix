@@ -1,11 +1,15 @@
-{hyprnix, ...}: {
+{
   azalea.modules.hyprland = {
     pkgs,
     lib,
     config,
     self,
+    sources,
+    flakeCompat,
     ...
-  }: {
+  }: let
+    hyprnix = (flakeCompat.flakeToNix {src = sources.hyprnix;}).defaultNix;
+  in {
     imports = [
       self.azalea.modules.ambxst
       self.azalea.modules.xdg
