@@ -133,6 +133,49 @@
       "url": "https://github.com/kagurazakei/fish/archive/642e00e617b4a535f79c6a477fa318085597b909.tar.gz",
       "hash": "sha256-lpRUJ2/jfo2fZ8rxQHERhsXBEe9DoDM32ioB57UvjBc="
     },
+    "flake-compat": {
+      "type": "Git",
+      "repository": {
+        "type": "Forgejo",
+        "server": "https://git.lix.systems/",
+        "owner": "lix-project",
+        "repo": "flake-compat"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "549f2762aebeff29a2e5ece7a7dc0f955281a1d1",
+      "url": "https://git.lix.systems/lix-project/flake-compat/archive/549f2762aebeff29a2e5ece7a7dc0f955281a1d1.tar.gz",
+      "hash": "sha256-NKw96t+BgHIYzHUjkTK95FqYRVKB8DHpVhefWSz/kTw="
+    },
+    "flake-inputs": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "fricklerhandwerk",
+        "repo": "flake-inputs"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "4.1.0",
+      "revision": "ad02792f7543754569fe2fd3d5787ee00ef40be2",
+      "url": "https://api.github.com/repos/fricklerhandwerk/flake-inputs/tarball/refs/tags/4.1.0",
+      "hash": "sha256-dSECtDeIOGKGsbEOOcOHbZ2NYDy0D/x0hlbiKvpWp8g="
+    },
+    "hjem": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "feel-co",
+        "repo": "hjem"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "32bd6d54d805a3eb41efa62a940eeceaf263c4a8",
+      "url": "https://github.com/feel-co/hjem/archive/32bd6d54d805a3eb41efa62a940eeceaf263c4a8.tar.gz",
+      "hash": "sha256-W+kpLQ5J/DDaY1nUmvN9aIAfh5ixdyqYM76ZUdcvMBU="
+    },
     "impermanence": {
       "type": "Git",
       "repository": {
@@ -245,6 +288,19 @@
       "revision": "e2506408dc160054febaee77893d180801d741f0",
       "url": "https://api.github.com/repos/amaanq/nirinit/tarball/refs/tags/v0.2.2",
       "hash": "sha256-l7Ue34qMrjkmpuMvd0Xak5vnEaUyMrBy5xr0kw3ojaE="
+    },
+    "nix-cachyos-kernel": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "xddxdd",
+        "repo": "nix-cachyos-kernel"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "0874d2c9eaea2e4be3fb116ab0a4b0f4cadccb3f",
+      "url": "https://github.com/xddxdd/nix-cachyos-kernel/archive/0874d2c9eaea2e4be3fb116ab0a4b0f4cadccb3f.tar.gz",
+      "hash": "sha256-uEzex2Tj7hXHTFm4OHJKcryvRJV3r9GM75ADNG0KvN0="
     },
     "nix-flatpak": {
       "type": "Git",

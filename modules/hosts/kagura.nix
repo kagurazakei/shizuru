@@ -47,12 +47,12 @@
           dgpu.port = "PCI:1:0:0";
         };
       };
-      services = {
-        # tailscale = {
-        #   operator = "antonio";
-        #   authFile = config.age.secrets.tailAuth.path;
-        # };
-      };
+      # services = {
+      #   tailscale = {
+      #     operator = "antonio";
+      #     authFile = config.age.secrets.tailAuth.path;
+      #   };
+      # };
       secrets = {
         antonioPass = {
           file = self.paths.secrets + /kagura-user.age;

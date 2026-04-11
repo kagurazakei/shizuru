@@ -3,13 +3,13 @@
   nixpkgs,
   ...
 } @ inputs: let
+  sources = import ../npins;
   inherit
     (nixpkgs.lib)
     genAttrs
     nixosSystem
     attrNames
     ;
-  sources = import ../npins;
   mkHost = hostName: let
     system = self.azalea.hosts.${hostName}.system or "x86_64-linux";
   in
@@ -29,6 +29,7 @@
         {
           nixpkgs.pkgs = import sources.unstable {
             inherit system;
+            inherit (import ../utils) utils;
             config.allowUnfree = true;
           };
         }

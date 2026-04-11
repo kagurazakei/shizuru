@@ -1,9 +1,13 @@
-{nix-cachyos-kernel, ...}: {
+{
   azalea.modules.kernel = {
     pkgs,
     config,
+    sources,
     ...
-  }: {
+  }: let
+    utils = import ../../utils;
+    nix-cachyos-kernel = (utils.flakeToNix {src = sources.nix-cachyos-kernel;}).defaultNix;
+  in {
     nixpkgs.overlays = [
       nix-cachyos-kernel.overlays.pinned
     ];
