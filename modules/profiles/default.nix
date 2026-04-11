@@ -25,7 +25,7 @@
       self.azalea.modules.nix
       self.azalea.modules.fish
       self.azalea.modules.direnv
-      self.azalea.modules.tailscale
+      # self.azalea.modules.tailscale
       # hardware
       self.azalea.modules.undetected
       self.azalea.modules.zram
