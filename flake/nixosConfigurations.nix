@@ -4,6 +4,7 @@
   ...
 } @ inputs: let
   sources = import ../npins;
+  flakeCompat = import ../utils/flake-compat.nix {};
   inherit
     (nixpkgs.lib)
     genAttrs
@@ -20,6 +21,7 @@
           self
           nixpkgs
           sources
+          flakeCompat
           ;
         username = "antonio";
       };
@@ -29,7 +31,6 @@
         {
           nixpkgs.pkgs = import sources.unstable {
             inherit system;
-            inherit (import ../utils) utils;
             config.allowUnfree = true;
           };
         }

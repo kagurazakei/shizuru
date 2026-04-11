@@ -94,6 +94,19 @@
       "url": "https://github.com/catppuccin/bat/archive/6810349b28055dce54076712fc05fc68da4b8ec0.tar.gz",
       "hash": "sha256-lJapSgRVENTrbmpVyn+UQabC9fpV1G1e+CdlJ090uvg="
     },
+    "chaotic": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "lonerOrz",
+        "repo": "nyx-loner"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "f9563635af26181eab8107a298c7b109cfc0b31e",
+      "url": "https://github.com/lonerOrz/nyx-loner/archive/f9563635af26181eab8107a298c7b109cfc0b31e.tar.gz",
+      "hash": "sha256-UBOUjGpu260xq4cvBeM0wOMdPDl7f2ymGqd6JcULkR8="
+    },
     "direnv.nvim": {
       "type": "Git",
       "repository": {
@@ -328,6 +341,19 @@
       "url": "https://github.com/fufexan/nix-gaming/archive/3c545996db7b1dc05aaddc0cf667235e32c7c834.tar.gz",
       "hash": "sha256-Se4dxrfyPQR2+N16Cq6C6li0JVd1p+Oa8GWTPzzRiwg="
     },
+    "nixcord": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "FlameFlag",
+        "repo": "nixcord"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "8b7178802e247cb5d29545e286d5664ff4fb83bc",
+      "url": "https://github.com/FlameFlag/nixcord/archive/8b7178802e247cb5d29545e286d5664ff4fb83bc.tar.gz",
+      "hash": "sha256-WwXmevM7d7A60pXuBIjhDts1WMj/yFym3XYsf7EVoEg="
+    },
     "noctalia-qs": {
       "type": "Git",
       "repository": {
@@ -379,6 +405,19 @@
       "revision": "0973e3ab32140df93ecca4dc31b19b72163c7235",
       "url": "https://github.com/kagurazakei/nvim-flake/archive/0973e3ab32140df93ecca4dc31b19b72163c7235.tar.gz",
       "hash": "sha256-d9fBpA012a1PkVjjbMkQrbtEwcvJOllJmiauYoMuHyo="
+    },
+    "nyx-loner": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "lonerOrz",
+        "repo": "nyx-loner"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "f9563635af26181eab8107a298c7b109cfc0b31e",
+      "url": "https://github.com/lonerOrz/nyx-loner/archive/f9563635af26181eab8107a298c7b109cfc0b31e.tar.gz",
+      "hash": "sha256-UBOUjGpu260xq4cvBeM0wOMdPDl7f2ymGqd6JcULkR8="
     },
     "piri": {
       "type": "Git",

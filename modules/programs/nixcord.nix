@@ -1,10 +1,18 @@
 {
-  azalea.modules.nixcord = {sources, ...}: {
+  azalea.modules.nixcord = {
+    sources,
+    username,
+    flakeCompat,
+    ...
+  }: let
+    nixcordFlake = (flakeCompat.flakeToNix {src = sources.nixcord;}).defaultNix;
+  in {
     imports = [
-      (sources.nixcord + "/modules/nixos/default.nix")
+      nixcordFlake.nixosModules.default
     ];
     programs.nixcord = {
       enable = true;
+      user = "${username}";
       discord.vencord.enable = false;
       discord.equicord.enable = true;
       quickCss = ''

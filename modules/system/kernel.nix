@@ -3,10 +3,10 @@
     pkgs,
     config,
     sources,
+    flakeCompat,
     ...
   }: let
-    utils = import ../../utils;
-    nix-cachyos-kernel = (utils.flakeToNix {src = sources.nix-cachyos-kernel;}).defaultNix;
+    nix-cachyos-kernel = (flakeCompat.flakeToNix {src = sources.nix-cachyos-kernel;}).defaultNix;
   in {
     nixpkgs.overlays = [
       nix-cachyos-kernel.overlays.pinned
