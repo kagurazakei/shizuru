@@ -2,6 +2,7 @@
   azalea.profiles.default = {
     imports = [
       self.azalea.modules.agenix
+      self.azalea.modules.compositor-common
       self.azalea.modules.hjem
       self.azalea.modules.hjem-impure
       self.azalea.modules.hjem-matugen
