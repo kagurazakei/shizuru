@@ -1,5 +1,5 @@
 {niri, ...}: {
-  azalea.modules.niri = {
+  azalea.desktops.niri = {
     lib,
     config,
     pkgs,
