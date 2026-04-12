@@ -48,10 +48,5 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.crane.follows = "crane";
     };
-    hs-todo = {
-      url = "github:Rexcrazy804/haskell-todo";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.systems.follows = "systems";
-    };
   };
 }
