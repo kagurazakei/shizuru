@@ -3,13 +3,10 @@
     pkgs,
     lib,
     sources,
-    flakeCompat,
     ...
   }: let
-    hs-todo = (flakeCompat.flakeToNix {src = sources.hs-todo;}).defaultNix;
     inherit (lib) mkForce attrValues;
-    system = pkgs.stdenv.hostPlatform.system;
-    todo = hs-todo.packages.${system}.default;
+    todo = pkgs.haskellPackages.callPackage "${sources.hs-todo}/nix/package.nix" {};
     noRounding = ''
       * {
                 border-radius: 0px !important;
