@@ -34,6 +34,7 @@
     documentation.info.enable = false;
     documentation.man.enable = false;
     chaotic.nyx.cache.enable = lib.mkForce false;
+    nixpkgs.flake.source = lib.mkForce sources.unstable;
     nix = {
       package = pkgs.nixVersions.git;
       registry.nixpkgs.to = {

@@ -605,6 +605,22 @@
       "url": "https://github.com/NixOS/nixpkgs/archive/4e92bbcdb030f3b4782be4751dc08e6b6cb6ccf2.tar.gz",
       "hash": "sha256-OEf7YqhF9IjJFYZJyuhAypgU+VsRB5lD4DuiMws5Ltc="
     },
+    "stash": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "NotAShelf",
+        "repo": "stash"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v0.3.6",
+      "revision": "66d8370a26d1c17c1e68a71e3a272b062b46041b",
+      "url": "https://api.github.com/repos/NotAShelf/stash/tarball/refs/tags/v0.3.6",
+      "hash": "sha256-NHsyzEjeIjfj5zZB7xoqilJtCzB7toLsxGbH781JD3g="
+    },
     "sysc-greet": {
       "type": "Git",
       "repository": {

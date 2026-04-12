@@ -52,7 +52,7 @@
       inherit
         (pkgs.zpkgs)
         kokCursor
-        # stash
+        stash
         viu
         equibop
         wayle
