@@ -9,6 +9,7 @@
       then kaguraKey
       else null;
   in {
+    hj.rum.environment.hideWarning = true;
     hj.rum.programs.git = {
       enable = true;
       settings = {

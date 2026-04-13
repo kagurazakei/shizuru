@@ -528,6 +528,19 @@
       "url": "https://github.com/kagurazakei/piri/archive/912eed97a68f8d1fb87da1cb47b6e46c26d6a5cd.tar.gz",
       "hash": "sha256-TEY54Y1nMMxTwaD7swybnlF84tF1lIo4KpFqh5dNGLk="
     },
+    "qtengine": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "kossLAN",
+        "repo": "qtengine"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "abf8c1d3068dd10739b0671fa62f96c5347f276f",
+      "url": "https://github.com/kossLAN/qtengine/archive/abf8c1d3068dd10739b0671fa62f96c5347f276f.tar.gz",
+      "hash": "sha256-aJ5ZdIX10nmhzMLjP6QMuFJHvljJD+xcojuKZjPkr70="
+    },
     "quickshell": {
       "type": "Git",
       "repository": {
