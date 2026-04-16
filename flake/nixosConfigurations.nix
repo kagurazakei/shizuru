@@ -29,7 +29,7 @@
       modules = [
         self.azalea.hosts.${hostName}
         {
-          nixpkgs.pkgs = import sources.unstable {
+          nixpkgs.pkgs = import (sources.unstable + "/.") {
             inherit system;
             config.allowUnfree = true;
           };
