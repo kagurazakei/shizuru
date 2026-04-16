@@ -5,6 +5,5 @@
     pkgs = ../pkgs;
     specials = ../specials;
     secrets = ../secrets;
-    utils = import ../utils;
   };
 }

@@ -27,7 +27,7 @@
       enable = true;
       withUWSM = true;
       xwayland.enable = true;
-      package = hyprnix.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      package = pkgs.master.hyprland;
       portalPackage = hyprnix.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     };
     systemd.user.timers.hyprsunset = {
