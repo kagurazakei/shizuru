@@ -313,15 +313,9 @@
       },
       "branch": "master",
       "submodules": false,
-<<<<<<< HEAD
-      "revision": "a7eb10ba297eafbe6ddd4b44a9507adb8d23f3cb",
-      "url": "https://github.com/NixOS/nixpkgs/archive/a7eb10ba297eafbe6ddd4b44a9507adb8d23f3cb.tar.gz",
-      "hash": "sha256-zytJzYvg8U8E+eXQ8eiN9B6TxEP+v9YHzUxgVdoeTj0="
-=======
       "revision": "4b6fd8e8882c7a5dca301f6b1d3cdcd9316f033f",
       "url": "https://github.com/NixOS/nixpkgs/archive/4b6fd8e8882c7a5dca301f6b1d3cdcd9316f033f.tar.gz",
       "hash": "sha256-YovFcHvrpbIarnR89HDD6OsEEiIvUg6qYPeCoYNh45w="
->>>>>>> 64b45d42b8baa6c085c9733502c11ec613b1d8b9
     },
     "neorg": {
       "type": "Git",
@@ -345,15 +339,9 @@
       },
       "branch": "master",
       "submodules": false,
-<<<<<<< HEAD
-      "revision": "e56deecf00822359af35983fce95baf24d6cc81b",
-      "url": "https://github.com/neovim/neovim/archive/e56deecf00822359af35983fce95baf24d6cc81b.tar.gz",
-      "hash": "sha256-sjWQqQknJxWWAfUoIA6gwqo2buR2da7MdnCmGDvEUbY="
-=======
       "revision": "0e07b2a1e271f01f3458185876f8712d97f6cf38",
       "url": "https://github.com/neovim/neovim/archive/0e07b2a1e271f01f3458185876f8712d97f6cf38.tar.gz",
       "hash": "sha256-jwhnfb3ZDAeNLBShx+a2cQsOTQ4vIH0PCr2ZfM5S7JY="
->>>>>>> 64b45d42b8baa6c085c9733502c11ec613b1d8b9
     },
     "neovim-nightly": {
       "type": "Git",
@@ -406,15 +394,9 @@
       },
       "branch": "master",
       "submodules": false,
-<<<<<<< HEAD
-      "revision": "d3effe14f53e61ad778d7478eeb83a97d9dd8143",
-      "url": "https://github.com/xddxdd/nix-cachyos-kernel/archive/d3effe14f53e61ad778d7478eeb83a97d9dd8143.tar.gz",
-      "hash": "sha256-f28a8P7LRcXJEv+Q1KYvDYLvs+Tn8odbdbGHs7Ej10o="
-=======
       "revision": "65eaf1492a6f0850ef2f08943c6bfc59b144e72a",
       "url": "https://github.com/xddxdd/nix-cachyos-kernel/archive/65eaf1492a6f0850ef2f08943c6bfc59b144e72a.tar.gz",
       "hash": "sha256-mLvw1+fa6vr0C87XfX0ja8yZMx0H+HWL0ena2SBMdp8="
->>>>>>> 64b45d42b8baa6c085c9733502c11ec613b1d8b9
     },
     "nix-flatpak": {
       "type": "Git",
@@ -451,15 +433,9 @@
       },
       "branch": "main",
       "submodules": false,
-<<<<<<< HEAD
-      "revision": "581440484d13e89b0944f5509cb436e9c30a00bc",
-      "url": "https://github.com/FlameFlag/nixcord/archive/581440484d13e89b0944f5509cb436e9c30a00bc.tar.gz",
-      "hash": "sha256-Ngpg2WKbrhcaRJ1i6LRQKyMsFBd81WrHgi2yK1JDYio="
-=======
       "revision": "3f10a1597a6bc32525767f19ae831bd87559d4b0",
       "url": "https://github.com/FlameFlag/nixcord/archive/3f10a1597a6bc32525767f19ae831bd87559d4b0.tar.gz",
       "hash": "sha256-choqghSDGpczvOmIQg00goi+nPoZeOEFjzHDoXysqPs="
->>>>>>> 64b45d42b8baa6c085c9733502c11ec613b1d8b9
     },
     "noctalia-qs": {
       "type": "Git",
