@@ -3,16 +3,9 @@
     pkgs,
     config,
     lib,
-    sources,
     username,
-    flakeCompat,
     ...
-  }: let
-    nur = (flakeCompat.flakeToNix {src = sources.NUR;}).defaultNix;
-  in {
-    nixpkgs.overlays = [
-      nur.overlays.default
-    ];
+  }: {
     # Enable Qt globally
     qt.enable = true;
     environment.systemPackages = with pkgs; [
