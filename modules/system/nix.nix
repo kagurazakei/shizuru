@@ -3,6 +3,7 @@
     pkgs,
     config,
     lib,
+    sources,
     ...
   }: let
     script = pkgs.writers.writeNuBin "activate" ''
@@ -33,13 +34,13 @@
     documentation.info.enable = false;
     documentation.man.enable = false;
     chaotic.nyx.cache.enable = lib.mkForce false;
-    # nixpkgs.flake.source = lib.mkForce sources.unstable;
+    nixpkgs.flake.source = lib.mkForce sources.unstable;
     nix = {
       package = pkgs.nixVersions.git;
-      # registry.nixpkgs.to = {
-      #   type = "path";
-      #   path = sources.unstable;
-      # };
+      registry.nixpkgs.to = {
+        type = "path";
+        path = sources.unstable;
+      };
       channel.enable = false;
       settings = {
         warn-dirty = false;

@@ -1,13 +1,10 @@
 {
-  azalea.modules.spotify = {
+  azalea.modules.spicetify = {
     pkgs,
     sources,
     flakeCompat,
     ...
   }: let
-    # spicetify-nix = import sources.spicetify-nix {
-    #   inherit pkgs;
-    # };
     spicetify-nix = (flakeCompat.flakeToNix {src = sources.spicetify-nix;}).defaultNix;
     spicePkgs = spicetify-nix.legacyPackages.${pkgs.system};
   in {

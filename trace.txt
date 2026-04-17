@@ -1,1 +1,323 @@
 building the system configuration...
+error:
+       … while calling the 'seq' builtin
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:402:18:
+          401|         options = checked options;
+          402|         config = checked (removeAttrs config [ "_module" ]);
+             |                  ^
+          403|         _module = checked (config._module);
+
+       … while evaluating a branch condition
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:305:9:
+          304|       checkUnmatched =
+          305|         if config._module.check && config._module.freeformType == null && merged.unmatchedDefns != [ ] then
+             |         ^
+          306|           let
+
+       … in the left operand of the AND (&&) operator
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:305:72:
+          304|       checkUnmatched =
+          305|         if config._module.check && config._module.freeformType == null && merged.unmatchedDefns != [ ] then
+             |                                                                        ^
+          306|           let
+
+       … in the left operand of the AND (&&) operator
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:305:33:
+          304|       checkUnmatched =
+          305|         if config._module.check && config._module.freeformType == null && merged.unmatchedDefns != [ ] then
+             |                                 ^
+          306|           let
+
+       … while evaluating a branch condition
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:296:9:
+          295|         in
+          296|         if declaredConfig._module.freeformType == null then
+             |         ^
+          297|           declaredConfig
+
+       … from call site
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:283:28:
+          282|           # For definitions that have an associated option
+          283|           declaredConfig = mapAttrsRecursiveCond (v: !isOption v) (_: v: v.value) options;
+             |                            ^
+          284|
+
+       … while calling 'mapAttrsRecursiveCond'
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/attrsets.nix:1182:14:
+         1181|   mapAttrsRecursiveCond =
+         1182|     cond: f: set:
+             |              ^
+         1183|     let
+
+       … while calling the 'mapAttrs' builtin
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/attrsets.nix:1191:5:
+         1190|     in
+         1191|     recurse [ ] set;
+             |     ^
+         1192|
+
+       … while evaluating the attribute 'matchedOptions'
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:932:15:
+          931|     {
+          932|       inherit matchedOptions;
+             |               ^
+          933|
+
+       … while calling the 'mapAttrs' builtin
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:922:24:
+          921|
+          922|       matchedOptions = mapAttrs (n: v: v.matchedOptions) resultsByName;
+             |                        ^
+          923|
+
+       … while calling the 'mapAttrs' builtin
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:870:23:
+          869|
+          870|       resultsByName = mapAttrs (
+             |                       ^
+          871|         name: decls:
+
+       … while calling the 'zipAttrsWith' builtin
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:786:21:
+          785|       # an attrset 'name' => list of submodules that declare ‘name’.
+          786|       declsByName = zipAttrsWith (n: v: v) (
+             |                     ^
+          787|         map (
+
+       … while calling the 'map' builtin
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:787:9:
+          786|       declsByName = zipAttrsWith (n: v: v) (
+          787|         map (
+             |         ^
+          788|           module:
+
+       … from call site
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:275:37:
+          274|
+          275|       merged = mergeModules prefix (reverseList (doCollect { }).modules);
+             |                                     ^
+          276|
+
+       … while calling 'reverseList'
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/lists.nix:1123:5:
+         1122|   reverseList =
+         1123|     xs:
+             |     ^
+         1124|     let
+
+       … while calling the 'genList' builtin
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/lists.nix:1127:5:
+         1126|     in
+         1127|     genList (n: elemAt xs (l - n - 1)) l;
+             |     ^
+         1128|
+
+       … while evaluating the second argument passed to builtins.genList
+
+       … while calling the 'length' builtin
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/lists.nix:1125:11:
+         1124|     let
+         1125|       l = length xs;
+             |           ^
+         1126|     in
+
+       … while evaluating the attribute 'modules'
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:591:7:
+          590|     modulesPath: initialModules: args: {
+          591|       modules = filterModules modulesPath (collectStructuredModules unknownModule "" initialModules args);
+             |       ^
+          592|       graph = toGraph modulesPath (collectStructuredModules unknownModule "" initialModules args);
+
+       … from call site
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:591:17:
+          590|     modulesPath: initialModules: args: {
+          591|       modules = filterModules modulesPath (collectStructuredModules unknownModule "" initialModules args);
+             |                 ^
+          592|       graph = toGraph modulesPath (collectStructuredModules unknownModule "" initialModules args);
+
+       … while calling 'filterModules'
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:566:9:
+          565|         modulesPath:
+          566|         { disabled, modules }:
+             |         ^
+          567|         let
+
+       … while calling the 'map' builtin
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:570:9:
+          569|         in
+          570|         map (attrs: attrs.module) (genericClosure {
+             |         ^
+          571|           startSet = keyFilter modules;
+
+       … while calling the 'genericClosure' builtin
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:570:36:
+          569|         in
+          570|         map (attrs: attrs.module) (genericClosure {
+             |                                    ^
+          571|           startSet = keyFilter modules;
+
+       … while calling the 'filter' builtin
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:571:22:
+          570|         map (attrs: attrs.module) (genericClosure {
+          571|           startSet = keyFilter modules;
+             |                      ^
+          572|           operator = attrs: keyFilter attrs.modules;
+
+       … while calling anonymous lambda
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:568:31:
+          567|         let
+          568|           keyFilter = filter (attrs: !isDisabled modulesPath disabled attrs);
+             |                               ^
+          569|         in
+
+       … in the argument of the not operator
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:568:39:
+          567|         let
+          568|           keyFilter = filter (attrs: !isDisabled modulesPath disabled attrs);
+             |                                       ^
+          569|         in
+
+       … from call site
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:568:39:
+          567|         let
+          568|           keyFilter = filter (attrs: !isDisabled modulesPath disabled attrs);
+             |                                       ^
+          569|         in
+
+       … while calling anonymous lambda
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:497:9:
+          496|         in
+          497|         structuredModule: elem structuredModule.key disabledKeys;
+             |         ^
+          498|
+
+       … while calling the 'elem' builtin
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:497:27:
+          496|         in
+          497|         structuredModule: elem structuredModule.key disabledKeys;
+             |                           ^
+          498|
+
+       … while calling the 'concatMap' builtin
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:495:26:
+          494|
+          495|           disabledKeys = concatMap ({ file, disabled }: map (moduleKey file) disabled) disabledList;
+             |                          ^
+          496|         in
+
+       … while calling the 'concatLists' builtin
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:527:24:
+          526|           collectResults = modules: {
+          527|             disabled = concatLists (catAttrs "disabled" modules);
+             |                        ^
+          528|             inherit modules;
+
+       … while evaluating the attribute 'disabled'
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:527:13:
+          526|           collectResults = modules: {
+          527|             disabled = concatLists (catAttrs "disabled" modules);
+             |             ^
+          528|             inherit modules;
+
+       (13 duplicate frames omitted)
+
+       … while evaluating a branch condition
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:545:19:
+          544|                 (
+          545|                   if module.disabledModules != [ ] then
+             |                   ^
+          546|                     [
+
+       … from call site
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:536:24:
+          535|             let
+          536|               module = checkModule (loadModule args parentFile "${parentKey}:anon-${toString n}" x);
+             |                        ^
+          537|               collectedImports = collectStructuredModules module._file module.key module.imports args;
+
+       … while calling anonymous lambda
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:455:11:
+          454|         if class != null then
+          455|           m:
+             |           ^
+          456|           if m._class == null || m._class == class then
+
+       … while evaluating a branch condition
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:456:11:
+          455|           m:
+          456|           if m._class == null || m._class == class then
+             |           ^
+          457|             m
+
+       … in the left operand of the OR (||) operator
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:456:31:
+          455|           m:
+          456|           if m._class == null || m._class == class then
+             |                               ^
+          457|             m
+
+       … from call site
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:536:37:
+          535|             let
+          536|               module = checkModule (loadModule args parentFile "${parentKey}:anon-${toString n}" x);
+             |                                     ^
+          537|               collectedImports = collectStructuredModules module._file module.key module.imports args;
+
+       … while calling 'loadModule'
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:420:42:
+          419|       loadModule =
+          420|         args: fallbackFile: fallbackKey: m:
+             |                                          ^
+          421|         if isFunction m then
+
+       … while evaluating a branch condition
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:421:9:
+          420|         args: fallbackFile: fallbackKey: m:
+          421|         if isFunction m then
+             |         ^
+          422|           unifyModuleSyntax fallbackFile fallbackKey (applyModuleArgs fallbackKey m args)
+
+       … from call site
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:421:12:
+          420|         args: fallbackFile: fallbackKey: m:
+          421|         if isFunction m then
+             |            ^
+          422|           unifyModuleSyntax fallbackFile fallbackKey (applyModuleArgs fallbackKey m args)
+
+       … while calling 'isFunction'
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/trivial.nix:1126:16:
+         1125|   */
+         1126|   isFunction = f: builtins.isFunction f || (f ? __functor && isFunction (f.__functor f));
+             |                ^
+         1127|
+
+       … in the left operand of the OR (||) operator
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/trivial.nix:1126:41:
+         1125|   */
+         1126|   isFunction = f: builtins.isFunction f || (f ? __functor && isFunction (f.__functor f));
+             |                                         ^
+         1127|
+
+       … while calling the 'isFunction' builtin
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/trivial.nix:1126:19:
+         1125|   */
+         1126|   isFunction = f: builtins.isFunction f || (f ? __functor && isFunction (f.__functor f));
+             |                   ^
+         1127|
+
+       … while calling the 'elemAt' builtin
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/lists.nix:347:43:
+          346|   */
+          347|   imap1 = f: list: genList (n: f (n + 1) (elemAt list n)) (length list);
+             |                                           ^
+          348|
+
+       … while calling the 'import' builtin
+         at «github:nixos/nixpkgs/46db2e09e1d3f113a13c0d7b81e2f221c63b8ce9?narHash=sha256-4hAV26quOxdC6iyG7kYaZcM3VOskcPUrdCQd/nx8obc%3D»/lib/modules.nix:2045:69:
+         2044|   importApply =
+         2045|     modulePath: staticArg: lib.setDefaultModuleLocation modulePath (import modulePath staticArg);
+             |                                                                     ^
+         2046|
+
+       error: path '/nix/store/mh0c2gk67lhjd36mr9sf4qvp8m5nixv8-source' is not a valid store path
+Command 'nix --extra-experimental-features 'nix-command flakes' build --print-out-paths '.#nixosConfigurations."kagura".config.system.build.toplevel' --no-link --show-trace' returned non-zero exit status 1.
