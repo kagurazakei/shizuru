@@ -79,7 +79,6 @@
       #   ];
       #   shpool.users = [ "antonio" ];
       # };
-      # graphics.intel.hwAccelDriver = "media-driver";
       # services = {
       #   # caddy = {
       #   #   secretsFile = config.age.secrets.caddyEnv.path;

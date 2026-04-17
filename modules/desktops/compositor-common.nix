@@ -55,7 +55,6 @@
         stash
         viu
         equibop
-        wayle
         ;
       inherit
         (pkgs.zpkgs.scripts)
