@@ -2,7 +2,6 @@
   lib,
   stdenv,
   callPackage,
-  fetchFromGitHub,
   makeWrapper,
   makeDesktopItem,
   copyDesktopItems,
@@ -15,18 +14,12 @@
   nodejs,
   withTTS ? true,
   withMiddleClickScroll ? false,
+  sources,
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "equibop";
-  version = "3.1.9";
-
-  src = fetchFromGitHub {
-    owner = "Equicord";
-    repo = "Equibop";
-    tag = "v${finalAttrs.version}";
-    hash = "sha256-4v0NKGmdbEdHyjz35l+QUnXvnVfLzIe1vLxOSmdgbYQ=";
-  };
-
+  version = "nightly";
+  src = sources.equibop;
   postPatch = ''
     substituteInPlace scripts/build/build.mts \
       --replace-fail 'gitHash = execSync("git rev-parse HEAD", { encoding: "utf-8" }).trim();' 'gitHash = "${finalAttrs.src.hash}"'

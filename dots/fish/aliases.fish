@@ -20,7 +20,7 @@ alias ls 'g -tb --tb-style=unicode --all --title --total-size --sort=size'
 #alias ls "lsd"
 alias l "ls -a"
 alias lt "ls --tree"
-# alias gadd "git add ."
+alias gaa "git add ."
 alias gcommit "git commit -m"
 alias gpush "git push -u origin main"
 alias ... "cd ../.."
@@ -36,7 +36,7 @@ alias e clear
 alias ff fastfetch
 alias nf nitch
 alias mf microfetch
-alias rebuild-hana "sudo nixos-rebuild switch --flake .#hana"
+alias rebuild-hana "sudo nixos-rebuild switch --flake .#hana --impure"
 alias rebuild-kagura "sudo nixos-rebuild switch --flake .#kagura"
 alias cd z
 alias zj zellij

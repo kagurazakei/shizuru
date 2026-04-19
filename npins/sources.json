@@ -120,6 +120,22 @@
       "url": "https://github.com/NotAShelf/direnv.nvim/archive/564146278b3d5fe4ffa389cd103bab20f9b515d6.tar.gz",
       "hash": "sha256-JbnGoZMApLtq4lSdGolcpKdsneolSOrzIi+O5yR2NDQ="
     },
+    "equibop": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Equicord",
+        "repo": "equibop"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v3.1.9",
+      "revision": "44000f82b50fd3497002aa965b217e8d2489dd53",
+      "url": "https://api.github.com/repos/Equicord/equibop/tarball/refs/tags/v3.1.9",
+      "hash": "sha256-4v0NKGmdbEdHyjz35l+QUnXvnVfLzIe1vLxOSmdgbYQ="
+    },
     "firefox-nightly": {
       "type": "Git",
       "repository": {
@@ -142,9 +158,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "642e00e617b4a535f79c6a477fa318085597b909",
-      "url": "https://github.com/kagurazakei/fish/archive/642e00e617b4a535f79c6a477fa318085597b909.tar.gz",
-      "hash": "sha256-lpRUJ2/jfo2fZ8rxQHERhsXBEe9DoDM32ioB57UvjBc="
+      "revision": "bb23e27209365aa43ce35f946d7a4d5df5533e22",
+      "url": "https://github.com/kagurazakei/fish/archive/bb23e27209365aa43ce35f946d7a4d5df5533e22.tar.gz",
+      "hash": "sha256-vH9U1F0FkxM/5mzEUV4D0PveSTiI5ZPZlEv2BJKnVOE="
     },
     "flake-compat": {
       "type": "Git",

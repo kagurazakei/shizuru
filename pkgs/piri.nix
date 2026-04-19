@@ -1,45 +1,19 @@
 {
-  pkgs,
+  lib,
+  rustPlatform,
   sources,
-}: let
-  # Import rust-overlay from sources
-  rustOverlay = import sources.rust-overlay;
-  # Apply overlay to nixpkgs
-  pkgsWithRust = import pkgs.path {
-    system = pkgs.stdenv.hostPlatform.system;
-    overlays = [rustOverlay];
+}:
+rustPlatform.buildRustPackage (_finalAttrs: {
+  pname = "piri";
+  version = "0.1.7";
+  src = sources.piri;
+  cargoHash = "sha256-iFbBpf6vy/0K7Ooubm4WsGZ2tyw+qFT7TkBSuVrOa9o=";
+
+  meta = {
+    description = "Piri is a high-performance Niri extension tool built with Rust. It leverages efficient Niri IPC interaction and a unified event distribution mechanism to provide a robust, state-driven plugin system";
+    homepage = "https://github.com/Asthestarsfalll/piri";
+    license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [Asthestarsfalll];
+    mainProgram = "piri";
   };
-
-  # Setup rust platform
-  rustPlatform = pkgsWithRust.makeRustPlatform {
-    cargo = pkgs.cargo;
-    rustc = pkgsWithRust.rust-bin.beta.latest.default;
-  };
-in
-  # Build the Rust package
-  rustPlatform.buildRustPackage {
-    pname = "piri";
-    version = "nightly";
-
-    src = sources.piri;
-
-    cargoLock = {
-      lockFile = "${sources.piri}/Cargo.lock";
-    };
-
-    # Optional: native build dependencies
-    nativeBuildInputs = with pkgsWithRust; [
-      pkg-config
-    ];
-
-    # Optional: runtime dependencies
-    buildInputs = with pkgsWithRust; [
-      openssl
-    ];
-
-    meta = {
-      description = "Session restore helper";
-      license = pkgs.lib.licenses.mit;
-      maintainers = [];
-    };
-  }
+})

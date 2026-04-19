@@ -55,6 +55,7 @@
         stash
         viu
         equibop
+        piri
         ;
       inherit
         (pkgs.zpkgs.scripts)
