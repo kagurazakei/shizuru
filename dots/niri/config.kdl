@@ -1,0 +1,521 @@
+environment {
+    CLUTTER_BACKEND "wayland"
+    DISPLAY ":0"
+    ELECTRON_ENABLE_HARDWARE_ACCELERATION "1"
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+    GDK_BACKEND "wayland,x11"
+    GTK_THEME "oomox-snazzy"
+    JAVA_AWT_WM_NONEREPARENTING "1"
+    MOZ_ENABLE_WAYLAND "1"
+    NIXOS_OZONE_WL "1"
+    NIXPKGS_ALLOW_UNFREE "1"
+    OZONE_PLATFORM "wayland"
+    QT_QPA_PLATFORM "wayland;xcb"
+    QT_QPA_PLATFORMTHEME "qt6ct"
+    QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
+    SDL_VIDEODRIVER "wayland"
+    XDG_CURRENT_DESKTOP "niri"
+    XDG_SESSION_TYPE "wayland"
+}
+binds {
+    Ctrl+Print {
+        screenshot-window
+    }
+    Mod+1 {
+        focus-workspace 1
+    }
+    Mod+2 {
+        focus-workspace 2
+    }
+    Mod+3 {
+        focus-workspace 3
+    }
+    Mod+4 {
+        focus-workspace 4
+    }
+    Mod+5 {
+        focus-workspace 5
+    }
+    Mod+6 {
+        focus-workspace 6
+    }
+    Mod+7 {
+        focus-workspace 7
+    }
+    Mod+8 {
+        focus-workspace 8
+    }
+    Mod+9 {
+        focus-workspace 9
+    }
+    Mod+C {
+        center-window
+    }
+    Mod+Comma {
+        consume-window-into-column
+    }
+    Mod+Down {
+        focus-workspace-down
+    }
+    Mod+Equal {
+        set-column-width "+10%"
+    }
+    Mod+F {
+        maximize-column
+    }
+    Mod+H {
+        focus-column-left
+    }
+    Mod+I {
+        spawn "fuzzel-clip"
+    }
+    Mod+J {
+        focus-window-or-workspace-down
+    }
+    Mod+K {
+        focus-window-or-workspace-up
+    }
+    Mod+L {
+        focus-column-right
+    }
+    Mod+Left {
+        focus-column-left
+    }
+    Mod+Minus {
+        set-column-width "-10%"
+    }
+    Mod+Period {
+        expel-window-from-column
+    }
+    Mod+Q {
+        close-window
+    }
+    Mod+Return {
+        spawn "kitty"
+    }
+    Mod+Right {
+        focus-column-right
+    }
+    Mod+S {
+        switch-preset-column-width
+    }
+    Mod+Shift+Alt+S {
+        screenshot-window
+    }
+    Mod+Shift+Ctrl+J {
+        move-column-to-monitor-down
+    }
+    Mod+Shift+Ctrl+K {
+        move-column-to-monitor-up
+    }
+    Mod+Shift+Equal {
+        set-window-height "+10%"
+    }
+    Mod+Shift+F {
+        expand-column-to-available-width
+    }
+    Mod+Shift+H {
+        move-column-left
+    }
+    Mod+Shift+J {
+        move-column-to-workspace-down
+    }
+    Mod+Shift+K {
+        move-column-to-workspace-up
+    }
+    Mod+Shift+L {
+        move-column-right
+    }
+    Mod+Shift+Minus {
+        set-window-height "-10%"
+    }
+    Mod+Shift+S {
+        screenshot
+    }
+    Mod+Shift+Space {
+        fullscreen-window
+    }
+    Mod+Shift+X {
+        spawn "kitty" "-e" "viu"
+    }
+    Mod+Space {
+        toggle-window-floating
+    }
+    Mod+T {
+        spawn "dolphin"
+    }
+    Mod+Tab {
+        toggle-overview
+    }
+    Mod+Up {
+        focus-workspace-up
+    }
+    Mod+grave {
+        switch-focus-between-floating-and-tiling
+    }
+    Print {
+        screenshot-screen
+    }
+    Shift+Print {
+        screenshot
+    }
+    XF86MonBrightnessDown allow-when-locked=true {
+        spawn "/home/antonio/.local/bin/brightness" "--dec"
+    }
+    XF86MonBrightnessUp allow-when-locked=true {
+        spawn "/home/antonio/.local/bin/brightness" "--inc"
+    }
+}
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
+spawn-at-startup "systemctl" "--user" "start" "hjem-impure.service" "--now"
+spawn-at-startup "systemctl" "--user" "start" "arRPC.service" "--now"
+spawn-at-startup "noctalia-shell" "--no-duplicate"
+spawn-at-startup "niri-scratchpad" "daemon"
+//This was a nightmare to make but here
+// original code from; https://github.com/XansiVA
+animations {
+    workspace-switch {
+        spring damping-ratio=2.45 stiffness=750 epsilon=0.0001
+    }
+    window-open {
+        duration-ms 800
+        curve "linear"
+        custom-shader "\n            float hash(vec2 p) {\n                return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);\n            }\n\n            float noise(vec2 p) {\n                vec2 i = floor(p);\n                vec2 f = fract(p);\n                f = f * f * (3.0 - 2.0 * f);\n                float a = hash(i);\n                float b = hash(i + vec2(1.0, 0.0));\n                float c = hash(i + vec2(0.0, 1.0));\n                float d = hash(i + vec2(1.0, 1.0));\n                return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);\n            }\n\n            float fbm(vec2 p) {\n                float v = 0.0;\n                float amp = 0.5;\n                for (int i = 0; i < 6; i++) {\n                    v += amp * noise(p);\n                    p *= 2.0;\n                    amp *= 0.5;\n                }\n                return v;\n            }\n\n            float warpedFbm(vec2 p, float t) {\n                vec2 q = vec2(fbm(p + vec2(0.0, 0.0)),\n                              fbm(p + vec2(5.2, 1.3)));\n\n                vec2 r = vec2(fbm(p + 6.0 * q + vec2(1.7, 9.2) + 0.25 * t),\n                              fbm(p + 6.0 * q + vec2(8.3, 2.8) + 0.22 * t));\n\n                vec2 s = vec2(fbm(p + 5.0 * r + vec2(3.1, 7.4) + 0.18 * t),\n                              fbm(p + 5.0 * r + vec2(6.7, 0.9) + 0.2 * t));\n\n                return fbm(p + 6.0 * s);\n            }\n\n            vec4 open_color(vec3 coords_geo, vec3 size_geo) {\n                float p = niri_clamped_progress;\n                vec2 uv = coords_geo.xy;\n                float seed = niri_random_seed * 100.0;\n\n                float t = p * 12.0 + seed;\n\n                float fluid = warpedFbm(uv * 2.0 + seed, t);\n\n                vec2 center = uv - 0.5;\n                float dist = length(center * vec2(1.0, 0.7));\n\n                float appear = (1.0 - dist * 1.2) + (1.0 - fluid) * 0.7;\n                float reveal = smoothstep(appear + 0.5, appear - 0.5, (1.0 - p) * 1.8);\n\n                float distort_strength = (1.0 - p) * (1.0 - p) * 0.35;\n                vec2 wq = vec2(fbm(uv * 2.0 + vec2(0.0, t * 0.2)),\n                               fbm(uv * 2.0 + vec2(5.2, t * 0.2)));\n                vec2 wr = vec2(fbm(uv * 2.0 + 4.0 * wq + vec2(1.7, 9.2)),\n                               fbm(uv * 2.0 + 4.0 * wq + vec2(8.3, 2.8)));\n                vec2 warped_uv = uv + (wr - 0.5) * distort_strength;\n\n                vec3 tex_coords = niri_geo_to_tex * vec3(warped_uv, 1.0);\n                vec4 color = texture2D(niri_tex, tex_coords.st);\n\n                return color * reveal;\n            }\n        "
+    }
+    window-close {
+        duration-ms 800
+        curve "linear"
+        custom-shader "\n            float hash(vec2 p) {\n                return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);\n            }\n\n            float noise(vec2 p) {\n                vec2 i = floor(p);\n                vec2 f = fract(p);\n                f = f * f * (3.0 - 2.0 * f);\n                float a = hash(i);\n                float b = hash(i + vec2(1.0, 0.0));\n                float c = hash(i + vec2(0.0, 1.0));\n                float d = hash(i + vec2(1.0, 1.0));\n                return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);\n            }\n\n            float fbm(vec2 p) {\n                float v = 0.0;\n                float amp = 0.5;\n                for (int i = 0; i < 6; i++) {\n                    v += amp * noise(p);\n                    p *= 2.0;\n                    amp *= 0.5;\n                }\n                return v;\n            }\n\n            float warpedFbm(vec2 p, float t) {\n                vec2 q = vec2(fbm(p + vec2(0.0, 0.0)),\n                              fbm(p + vec2(5.2, 1.3)));\n\n                vec2 r = vec2(fbm(p + 6.0 * q + vec2(1.7, 9.2) + 0.25 * t),\n                              fbm(p + 6.0 * q + vec2(8.3, 2.8) + 0.22 * t));\n\n                vec2 s = vec2(fbm(p + 5.0 * r + vec2(3.1, 7.4) + 0.18 * t),\n                              fbm(p + 5.0 * r + vec2(6.7, 0.9) + 0.2 * t));\n\n                return fbm(p + 6.0 * s);\n            }\n\n            vec4 close_color(vec3 coords_geo, vec3 size_geo) {\n                float p = niri_clamped_progress;\n                vec2 uv = coords_geo.xy;\n                float seed = niri_random_seed * 100.0;\n\n                float t = p * 12.0 + seed;\n\n                float fluid = warpedFbm(uv * 2.0 + seed, t);\n\n                vec2 center = uv - 0.5;\n                float dist = length(center * vec2(1.0, 0.7));\n\n                float dissolve = (1.0 - dist) * 1.2 + fluid * 0.7;\n                float remain = smoothstep(dissolve + 0.5, dissolve - 0.5, p * 1.8);\n\n                float distort_strength = p * p * 0.4;\n                vec2 wq = vec2(fbm(uv * 2.0 + vec2(0.0, t * 0.2)),\n                               fbm(uv * 2.0 + vec2(5.2, t * 0.2)));\n                vec2 wr = vec2(fbm(uv * 2.0 + 4.0 * wq + vec2(1.7, 9.2)),\n                               fbm(uv * 2.0 + 4.0 * wq + vec2(8.3, 2.8)));\n                vec2 warped_uv = uv + (wr - 0.5) * distort_strength;\n\n                vec3 tex_coords = niri_geo_to_tex * vec3(warped_uv, 1.0);\n                vec4 color = texture2D(niri_tex, tex_coords.st);\n\n                float tail = smoothstep(1.0, 0.8, p);\n                return color * remain * tail;\n            }\n        "
+    }
+    horizontal-view-movement {
+        spring damping-ratio=3.85 stiffness=723 epsilon=0.0001
+    }
+    window-movement {
+        spring damping-ratio=3.75 stiffness=523 epsilon=0.0001
+    }
+    window-resize {
+        custom-shader "\n            float hash(vec2 p) {\n                return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);\n            }\n\n            float noise(vec2 p) {\n                vec2 i = floor(p);\n                vec2 f = fract(p);\n                f = f * f * (3.0 - 2.0 * f);\n                float a = hash(i);\n                float b = hash(i + vec2(1.0, 0.0));\n                float c = hash(i + vec2(0.0, 1.0));\n                float d = hash(i + vec2(1.0, 1.0));\n                return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);\n            }\n\n            float fbm(vec2 p) {\n                float v = 0.0;\n                float amp = 0.5;\n                for (int i = 0; i < 6; i++) {\n                    v += amp * noise(p);\n                    p *= 2.0;\n                    amp *= 0.5;\n                }\n                return v;\n            }\n\n            float warpedFbm(vec2 p, float t) {\n                vec2 q = vec2(fbm(p + vec2(0.0, 0.0)),\n                              fbm(p + vec2(5.2, 1.3)));\n\n                vec2 r = vec2(fbm(p + 6.0 * q + vec2(1.7, 9.2) + 0.25 * t),\n                              fbm(p + 6.0 * q + vec2(8.3, 2.8) + 0.22 * t));\n\n                vec2 s = vec2(fbm(p + 5.0 * r + vec2(3.1, 7.4) + 0.18 * t),\n                              fbm(p + 5.0 * r + vec2(6.7, 0.9) + 0.2 * t));\n\n                return fbm(p + 6.0 * s);\n            }\n\n            vec4 close_color(vec3 coords_geo, vec3 size_geo) {\n                float p = niri_clamped_progress;\n                vec2 uv = coords_geo.xy;\n                float seed = niri_random_seed * 100.0;\n\n                float t = p * 12.0 + seed;\n\n                float fluid = warpedFbm(uv * 2.0 + seed, t);\n\n                vec2 center = uv - 0.5;\n                float dist = length(center * vec2(1.0, 0.7));\n\n                float dissolve = (1.0 - dist) * 1.2 + fluid * 0.7;\n                float remain = smoothstep(dissolve + 0.5, dissolve - 0.5, p * 1.8);\n\n                float distort_strength = p * p * 0.4;\n                vec2 wq = vec2(fbm(uv * 2.0 + vec2(0.0, t * 0.2)),\n                               fbm(uv * 2.0 + vec2(5.2, t * 0.2)));\n                vec2 wr = vec2(fbm(uv * 2.0 + 4.0 * wq + vec2(1.7, 9.2)),\n                               fbm(uv * 2.0 + 4.0 * wq + vec2(8.3, 2.8)));\n                vec2 warped_uv = uv + (wr - 0.5) * distort_strength;\n\n                vec3 tex_coords = niri_geo_to_tex * vec3(warped_uv, 1.0);\n                vec4 color = texture2D(niri_tex, tex_coords.st);\n\n                float tail = smoothstep(1.0, 0.8, p);\n                return color * remain * tail;\n            }\n        "
+    }
+    config-notification-open-close {
+        spring damping-ratio=0.65 stiffness=923 epsilon=0.001
+    }
+    screenshot-ui-open {
+        duration-ms 200
+        curve "ease-out-quad"
+    }
+    overview-open-close {
+        spring damping-ratio=1.85 stiffness=800 epsilon=0.0001
+    }
+}
+input {
+    keyboard {
+        xkb {
+            layout "us"
+            model ""
+            rules ""
+            variant ""
+            options "caps:swapescape"
+        }
+        repeat-delay 600
+        repeat-rate 25
+        track-layout "global"
+    }
+    touchpad {
+        tap
+        dwt
+        dwtp
+        middle-emulation
+        accel-profile "adaptive"
+        scroll-method "two-finger"
+        click-method "button-areas"
+        tap-button-map "left-right-middle"
+        scroll-factor 0.7
+    }
+    warp-mouse-to-focus
+    focus-follows-mouse
+    workspace-auto-back-and-forth
+}
+output "HDMI-A-1" {
+    scale 1.0
+    transform "normal"
+    mode "1920x1080"
+}
+window-rule {
+    draw-border-with-background false
+    geometry-corner-radius 2.0 2.0 2.0 2.0
+    clip-to-geometry true
+}
+window-rule {
+    match app-id="^niri$"
+    match app-id="^quickshell$"
+    match app-id="^noctalia-shell$"
+    opacity 0.85
+}
+window-rule {
+    match is-focused=false
+    opacity 0.8
+}
+window-rule {
+    match is-floating=true
+    shadow {
+        on
+    }
+}
+window-rule {
+    match is-window-cast-target=true
+    border {
+        inactive-color "#a9b1d600 "
+    }
+    focus-ring {
+        active-color "#f38ba8"
+        inactive-color "#a9b1d600 "
+    }
+    shadow {
+        color "#f38ba800 "
+    }
+    tab-indicator {
+        active-color "#f38ba8"
+        inactive-color "#a9b1d600"
+    }
+}
+window-rule {
+    match app-id="org.telegram.desktop"
+    block-out-from "screencast"
+}
+window-rule {
+    match app-id="app.drey.PaperPlane"
+    block-out-from "screencast"
+}
+window-rule {
+    match app-id="^(zen|firefox|chromium-browser|chrome-.*|zen-.*)$"
+    match app-id="^(xdg-desktop-portal-gtk)$"
+    scroll-factor 0.85
+}
+window-rule {
+    match app-id="^(info.febvre.Komikku)$"
+    scroll-factor 1.58
+}
+window-rule {
+    match app-id="firefox$" title="^Picture-in-Picture$"
+    match app-id="zen-.*$" title="^Picture-in-Picture$"
+    match title="^Picture in picture$"
+    match title="^Discord Popout$"
+    open-floating true
+    default-floating-position relative-to="top-right" x=32 y=32
+}
+window-rule {
+    match app-id="^(org.wezfurlong.wezterm)$"
+    match app-id="^(kitty)$"
+    match app-id="^(com.mitchellh.ghostty)$"
+    match app-id="^(firefox-nightly)$"
+    match app-id="^(zen-browser)$"
+    opacity 0.85
+}
+window-rule {
+    match app-id="^(dropdown)$"
+    match app-id="^file_chooser$"
+    default-column-width {
+        proportion 0.5
+    }
+    default-window-height {
+        proportion 0.5
+    }
+    open-floating true
+    default-floating-position relative-to="top" x=10 y=10
+}
+window-rule {
+    match app-id="^(pwvucontrol)" title=""
+    open-floating true
+}
+window-rule {
+    match app-id="^(Volume Control)" title=""
+    open-floating true
+}
+window-rule {
+    match app-id="^(dialog)" title=""
+    open-floating true
+}
+window-rule {
+    match app-id="^(file_progress)" title=""
+    open-floating true
+}
+window-rule {
+    match app-id="^(confirm)" title=""
+    open-floating true
+}
+window-rule {
+    match app-id="^(download)" title=""
+    open-floating true
+}
+window-rule {
+    match app-id="^(error)" title=""
+    open-floating true
+}
+window-rule {
+    match app-id="^(notification)" title=""
+    open-floating true
+}
+window-rule {
+    match app-id="^(thunar)" title=""
+    open-floating true
+}
+window-rule {
+    match app-id="^(discord)" title=""
+    open-floating true
+}
+window-rule {
+    match app-id="^(spotify)" title=""
+    open-floating true
+}
+window-rule {
+    match app-id="^(hiddify)" title=""
+    open-floating true
+}
+window-rule {
+    match app-id="^(mpv)" title=""
+    open-floating true
+}
+window-rule {
+    match app-id="^(com.mitchellh.ghostty)" title=""
+    open-floating true
+}
+window-rule {
+    match app-id="^(org.kde.dolphin)" title=""
+    open-floating true
+}
+window-rule {
+    match app-id="^(org.Waytrogen.Waytrogen)" title=""
+    open-floating true
+}
+window-rule {
+    match app-id="^(waypaper)" title=""
+    open-floating true
+}
+window-rule {
+    match app-id="^(org.wezfurlong.wezterm|ghostty|Kvantum|dolphin|niri)$"
+    open-maximized false
+}
+window-rule {
+    match app-id="^(zen|equibop|firefox-nightly|firefox|chromium-browser|edge|chrome-.*|zen-.*)$"
+    open-maximized false
+    default-column-width {
+        proportion 0.7
+    }
+}
+window-rule {
+    match app-id="^(info.febvre.Komikku)$" title="^(Komikku)$"
+    default-column-width {
+        proportion 0.7
+    }
+}
+window-rule {
+    match app-id="$zen-browser$" title="online Myanmar dictionary — Zen Browser"
+    default-column-width {
+        proportion 0.3
+    }
+}
+layer-rule {
+    match namespace="^swww-daemon$"
+    match namespace="^wallpaper$"
+    match namespace="^noctalia-overview*"
+    match namespace="^noctalia-wallpaper*"
+    match namespace="^quickshell*"
+    place-within-backdrop true
+}
+workspace "general" {
+    layout {
+        default-column-width {
+            proportion 0.5
+        }
+        always-center-single-column true
+        center-focused-column "never"
+    }
+}
+workspace "media" {
+    layout {
+        default-column-width {
+            proportion 0.5
+        }
+        always-center-single-column true
+        center-focused-column "never"
+    }
+}
+workspace "manga" {
+    layout {
+        gaps 6
+        struts {
+            left 2
+            right 2
+            top 10
+            bottom 10
+        }
+        background-color "transparent"
+        center-focused-column "never"
+        preset-column-widths {
+            proportion 0.7
+            proportion 0.3
+        }
+    }
+}
+screenshot-path "~/Pictures/Screenshots/Screenshot-from-%Y-%m-%d-%H-%M-%S.png"
+prefer-no-csd
+overview {
+    backdrop-color "#11121d"
+}
+layout {
+    empty-workspace-above-first false
+    gaps 6
+    struts {
+        left 2
+        right 2
+        top 5
+        bottom 5
+    }
+    focus-ring {
+        off
+    }
+    border {
+        width 3
+        active-gradient angle=120 from="#a6e3a1" to="#f9e2af" to="#f38ba8" to="#89b4fa" in="oklch longer hue"
+        inactive-gradient angle=180 from="#414868" to="#1e1e2e" in="oklch shorter hue"
+        urgent-gradient from="#800" to="#a33" angle=45
+    }
+    background-color "transparent"
+    shadow {
+        on
+        offset x=2 y=2
+        softness 40
+        spread 6
+        draw-behind-window false
+        color "rgba(0, 0, 0, 0.5)"
+    }
+    tab-indicator {
+        hide-when-single-tab
+        gap -12.0
+        width 4.0
+        length total-proportion=0.1
+        gaps-between-tabs 10.0
+        corner-radius 10.0
+    }
+    default-column-width {
+        proportion 0.5
+    }
+    preset-column-widths {
+        proportion 0.33
+        proportion 0.5
+        proportion 0.75
+        proportion 1.0
+    }
+    center-focused-column "never"
+    always-center-single-column
+}
+cursor {
+    xcursor-theme "Kokomi_Cursor"
+    xcursor-size 32
+}
+hotkey-overlay {
+    skip-at-startup
+}
+include "./noctalia.kdl"
+

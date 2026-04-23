@@ -35,11 +35,11 @@ in {
       # if you declare something here that isn't common to literally every host I
       # will personally show up under your bed whoever and wherever you are
       packages = [
-        pkgs.btop
-        pkgs.git
-        pkgs.bat
-        pkgs.delta
-        pkgs.git-lfs
+        pkgs.stable.btop
+        pkgs.stable.git
+        pkgs.stable.bat
+        pkgs.stable.delta
+        pkgs.stable.git-lfs
       ];
 
       openssh.authorizedKeys.keys = [

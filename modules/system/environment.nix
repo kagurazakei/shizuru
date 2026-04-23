@@ -11,7 +11,7 @@
       neovim-nightly.overlays.default
     ];
     environment.systemPackages = with pkgs; [
-      git
+      stable.git
       gh
       neovide
       (callPackage "${sources.npins}/npins.nix" {})

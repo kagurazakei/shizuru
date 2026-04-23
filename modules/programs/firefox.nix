@@ -1,7 +1,7 @@
 {
   azalea.modules.firefox = {pkgs, ...}: {
     programs.firefox = {
-      package = pkgs.librewolf;
+      package = pkgs.master.librewolf;
       enable = true;
     };
   };
