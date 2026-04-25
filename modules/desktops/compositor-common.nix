@@ -116,6 +116,9 @@
       inherit
         (pkgs)
         yazi
+        jq
+        hyprsunset
+        nwg-look
         ripdrag
         seahorse
         app2unit
@@ -132,7 +135,7 @@
       {
         settings = {
           "org/gnome/desktop/interface" = {
-            cursor-theme = "Kureiji-Ollie-v2";
+            cursor-theme = "Yuurei-Angel";
             gtk-theme = "oomox-snazzy";
             icon-theme = "Catppuccin-SE";
             document-font-name = "JetBrainsMono Nerd Font";
