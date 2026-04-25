@@ -125,9 +125,6 @@
         komikku
         ollama
         proton-vpn
-        hyprsunset
-        jq
-        nwg-look
         ;
       inherit (pkgs) foot libsixel kitty;
       # external
