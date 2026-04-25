@@ -440,6 +440,19 @@
       "url": "https://github.com/fufexan/nix-gaming/archive/6501eefe41c9fc81bda8dbfbd9265be3b3c47176.tar.gz",
       "hash": "sha256-Mop8M+cg2hshsWDSXO2qHIp0WQiK/pWeNqUa9kaIijA="
     },
+    "nix-index-database": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "nix-index-database"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "c43246d4e9e506178b69baed075d797ec2d873e2",
+      "url": "https://github.com/nix-community/nix-index-database/archive/c43246d4e9e506178b69baed075d797ec2d873e2.tar.gz",
+      "hash": "sha256-oHVcvP2Ahhj1KUsEzp+2BQF55/r5VSa3QxdPdwE1p00="
+    },
     "nixcord": {
       "type": "Git",
       "repository": {
@@ -729,6 +742,19 @@
       "revision": "8e692c1daacf241b3d76ea3b2024f0fa4d662531",
       "url": "https://github.com/kagurazakei/waifu-cursors/archive/8e692c1daacf241b3d76ea3b2024f0fa4d662531.tar.gz",
       "hash": "sha256-68QmW2WK0OxyMlcdTxhjCRY4SMmKWy+eDF8yA6dkx4c="
+    },
+    "walls": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "kagurazakei",
+        "repo": "walls"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "bbab47e790694112fe01550e9af5455a04a5b8c4",
+      "url": "https://github.com/kagurazakei/walls/archive/bbab47e790694112fe01550e9af5455a04a5b8c4.tar.gz",
+      "hash": "sha256-C8rWrCFN5v+WtY2TqJzkD74BU+BO2nXGVtIgQs0P9V8="
     },
     "wayle": {
       "type": "GitRelease",

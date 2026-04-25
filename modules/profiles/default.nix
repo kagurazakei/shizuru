@@ -29,6 +29,7 @@
       # hardware
       self.azalea.modules.undetected
       self.azalea.modules.zram
+      self.azalea.modules.nix-index-database
     ];
   };
 }

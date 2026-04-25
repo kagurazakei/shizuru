@@ -13,11 +13,7 @@
     ];
 
     environment.systemPackages = with pkgs; [
-      hyprsunset
       xwayland-satellite
-      jq
-      yazi
-      nwg-look
     ];
     services.displayManager.defaultSession = "niri-uwsm";
     systemd.user.services.hypridle.path = lib.mkForce [config.programs.hyprland.package];
