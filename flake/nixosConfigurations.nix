@@ -15,8 +15,14 @@
       stable = with-inputs.unstable;
       hjem-impure = with-inputs.hjem;
       hjem = with-inputs.unstable;
-      hjem-rum = with-inputs.hjem // with-inputs.unstable;
-      stash = with-inputs.crane // with-inputs.unstable;
+      hjem-rum = {
+        hjem = with-inputs.hjem;
+        nixpkgs = with-inputs.unstable;
+      };
+      stash = {
+        crane = with-inputs.crane;
+        nixpkgs = with-inputs.unstable;
+      };
     };
   inherit
     (nixpkgs.lib)
