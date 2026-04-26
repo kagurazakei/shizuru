@@ -107,6 +107,22 @@
       "url": "https://github.com/lonerOrz/nyx-loner/archive/6e69222d5343f4edfc7aeb02e5c844e122269cfb.tar.gz",
       "hash": "sha256-bo8xUFqJaj1s7qbY86DPPcrvy1BGi9QOMrDcDk+N9/E="
     },
+    "crane": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "ipetkov",
+        "repo": "crane"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v0.23.3",
+      "revision": "9db02d41c4107fab6914b772dc3a27f7adfa2279",
+      "url": "https://api.github.com/repos/ipetkov/crane/tarball/refs/tags/v0.23.3",
+      "hash": "sha256-K0i9GoNk2To1RQkW348EY4c7RYf3mD74hWlGSc/9sk0="
+    },
     "direnv.nvim": {
       "type": "Git",
       "repository": {
@@ -217,6 +233,32 @@
       "revision": "2d925bb07f89893c73cb2030fad7ca700ad156e1",
       "url": "https://github.com/feel-co/hjem/archive/2d925bb07f89893c73cb2030fad7ca700ad156e1.tar.gz",
       "hash": "sha256-N0lfsA1zVUzc4Jznr1UBezBKgLYKBvo6iHeOFGSGc6o="
+    },
+    "hjem-impure": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Rexcrazy804",
+        "repo": "hjem-impure"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "1a65894ec4b6b80591a7ec121ee4bb52ca772ebf",
+      "url": "https://github.com/Rexcrazy804/hjem-impure/archive/1a65894ec4b6b80591a7ec121ee4bb52ca772ebf.tar.gz",
+      "hash": "sha256-lECETmsnVngKI5qZYsygEAyFQVSvZNxzDqOWZoxK4mQ="
+    },
+    "hjem-rum": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "snugnug",
+        "repo": "hjem-rum"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "fdfb0cd3d735116a0356ce5a856059669a27ae96",
+      "url": "https://github.com/snugnug/hjem-rum/archive/fdfb0cd3d735116a0356ce5a856059669a27ae96.tar.gz",
+      "hash": "sha256-n+hYOHRF5/DWuyd1su/DCD3iFBZ8Np4l0ss9NNqUSiI="
     },
     "hs-todo": {
       "type": "Git",
@@ -771,6 +813,19 @@
       "revision": "4d49076a512bc5629fba172c9a8c8f86e63d44a6",
       "url": "https://api.github.com/repos/wayle-rs/wayle/tarball/refs/tags/v0.2.0",
       "hash": "sha256-jvga9yBhr7qaGipVtECJeB5jn6HShv4zoRJogYFIeCU="
+    },
+    "with-inputs": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "vic",
+        "repo": "with-inputs"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "b4cbe858b381c0ee0fe617498549f0562090ad04",
+      "url": "https://github.com/vic/with-inputs/archive/b4cbe858b381c0ee0fe617498549f0562090ad04.tar.gz",
+      "hash": "sha256-GgKZ4LyKDS9vd946UeArhYqBKw63LdH4JqfbfFf7qNw="
     },
     "zen-browser-flake": {
       "type": "Git",

@@ -1,5 +1,4 @@
 {
-  stash,
   mnw,
   self,
   ...
@@ -7,9 +6,13 @@
   packages = self.lib.eachSystem (
     {
       pkgs,
-      system,
       zpkgs,
-    }: {
+      system,
+    }: let
+      sources = import ../npins;
+      flakeCompat = import ../utils/flake-compat.nix {};
+      stash = (flakeCompat.flakeToNix {src = sources.stash;}).defaultNix;
+    in {
       xvim = pkgs.callPackage (self.paths.specials + /xvim) {
         inherit (zpkgs) sources;
         mnw = mnw.lib;

@@ -5,6 +5,19 @@
 } @ inputs: let
   sources = import ../npins;
   flakeCompat = import ../utils/flake-compat.nix {};
+  with-inputs-libs = import sources.with-inputs sources {};
+  with-inputs = with-inputs-libs sources;
+  with-inputs-follow =
+    with-inputs
+    // {
+      unstable = with-inputs.unstable;
+      master = with-inputs.unstable;
+      stable = with-inputs.unstable;
+      hjem-impure = with-inputs.hjem;
+      hjem = with-inputs.unstable;
+      hjem-rum = with-inputs.hjem // with-inputs.unstable;
+      stash = with-inputs.crane // with-inputs.unstable;
+    };
   inherit
     (nixpkgs.lib)
     genAttrs
@@ -22,6 +35,7 @@
           nixpkgs
           sources
           flakeCompat
+          with-inputs-follow
           ;
         username = "antonio";
       };
@@ -49,6 +63,15 @@
                   config.allowUnfree = true;
                 };
                 swww = pkgs.awww;
+                resolved = {
+                  inherit
+                    (with-inputs-follow)
+                    nixpkgs
+                    unstable
+                    master
+                    stable
+                    ;
+                };
               })
             ];
           }

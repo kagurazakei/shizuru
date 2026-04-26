@@ -1,6 +1,10 @@
-{hjem-impure, ...}: {
-  azalea.modules.hjem-impure = {pkgs, ...}: {
-    hjem.extraModules = [hjem-impure.hjemModules.default];
+{
+  azalea.modules.hjem-impure = {
+    pkgs,
+    sources,
+    ...
+  }: {
+    hjem.extraModules = [(sources.hjem-impure + "/nix/module.nix")];
     hj = {
       systemd.services = {
         hjem-impure = {

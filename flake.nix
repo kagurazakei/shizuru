@@ -23,20 +23,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nur-repo-override.url = "github:ilya-fedin/nur-repository";
-    hjem-impure = {
-      url = "github:Rexcrazy804/hjem-impure";
-      inputs.hjem.follows = "";
-    };
-    hjem = {
-      url = "github:feel-co/hjem";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nix-darwin.follows = "";
-    };
-    hjem-rum = {
-      url = "github:snugnug/hjem-rum";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.hjem.follows = "hjem";
-    };
+    # hjem-impure = {
+    #   url = "github:Rexcrazy804/hjem-impure";
+    #   inputs.hjem.follows = "";
+    # };
+    # hjem = {
+    #   url = "github:feel-co/hjem";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.nix-darwin.follows = "";
+    # };
+    # hjem-rum = {
+    #   url = "github:snugnug/hjem-rum";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.hjem.follows = "hjem";
+    # };
     booru-hs = {
       url = "github:Rexcrazy804/booru.hs";
       inputs.nixpkgs.follows = "nixpkgs";
