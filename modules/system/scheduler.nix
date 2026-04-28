@@ -10,7 +10,10 @@
     chaotic.nyx.overlay.enable = true;
     services.scx = {
       enable = true;
-      scheduler = "scx_rusty";
+      scheduler = "scx_lavd";
+    };
+    systemd.services.scx.environment = {
+      SCX_SCHEDULER_OVERRIDE = "scx_lavd";
     };
   };
 }

@@ -273,6 +273,19 @@
       "url": "https://github.com/Rexcrazy804/haskell-todo/archive/4cfcb456af2fd41eea891860fa8ae18e4b965ec8.tar.gz",
       "hash": "sha256-f78KHuj8MGqJhCM05nrPe8vLpbdBo7HPOzJN/giAecY="
     },
+    "hyprland": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "hyprwm",
+        "repo": "Hyprland"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "5419ea6a448fcf6aa86bb2c319f94857b55feeaf",
+      "url": "https://github.com/hyprwm/Hyprland/archive/5419ea6a448fcf6aa86bb2c319f94857b55feeaf.tar.gz",
+      "hash": "sha256-T/iptpy2nXKpJq9Owp0m7mqE3L4icz+OBW8JVe0r3PM="
+    },
     "hyprnix": {
       "type": "Git",
       "repository": {
@@ -282,9 +295,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "ea0e3066743625f88dbc4b905981c71461148fb5",
-      "url": "https://github.com/hyprwm/hyprnix/archive/ea0e3066743625f88dbc4b905981c71461148fb5.tar.gz",
-      "hash": "sha256-p108fPdfeOklfqOC1bF/ys38js/O6RQdn9Hfm3urIBg="
+      "revision": "b6bc34d51855277c02894d68794fa4664dc2ac67",
+      "url": "https://github.com/hyprwm/hyprnix/archive/b6bc34d51855277c02894d68794fa4664dc2ac67.tar.gz",
+      "hash": "sha256-nc2wV4g1b9gU8LhQWmOe3v2tLXx86xVd70qhy0fvg3E="
     },
     "impermanence": {
       "type": "Git",
@@ -316,21 +329,18 @@
       "hash": "sha256-VdQo1kVw+YnQDqjr62lp/NkRztSuv/yTqJXvNo1L7dc="
     },
     "lix": {
-      "type": "GitRelease",
+      "type": "Git",
       "repository": {
         "type": "Forgejo",
         "server": "https://git.lix.systems/",
         "owner": "lix-project",
         "repo": "lix"
       },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
+      "branch": "main",
       "submodules": false,
-      "version": "2.95.1",
-      "revision": "594dedae45c7d37e3522b09eca250614eee1de72",
-      "url": "https://git.lix.systems/api/v1/repos/lix-project/lix/archive/2.95.1.tar.gz",
-      "hash": "sha256-eZEynXdDcrjDMjGVfDhFJJrU5ENal7wlx7bn/wkggTg="
+      "revision": "de212be82bfb51dd7cc96c1485b1b7d713696501",
+      "url": "https://git.lix.systems/lix-project/lix/archive/de212be82bfb51dd7cc96c1485b1b7d713696501.tar.gz",
+      "hash": "sha256-ukqkOXABDV9aNOtM6jm1Xfkak4hVUOsB65j7Jsvnjug="
     },
     "lix-module": {
       "type": "Git",

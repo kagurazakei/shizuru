@@ -30,13 +30,24 @@
       }
     '';
   in {
+    imports = [
+      (import "${sources.lix-module}/module.nix" (
+        let
+          lix = sources.lix.outPath;
+        in {
+          inherit lix;
+          # versionSuffix = "pre${builtins.substring 0 8 lix.lastModifiedDate}-${lix.shortRev}";
+        }
+      ))
+    ];
+    lix.enable = true;
     documentation.nixos.enable = false;
     documentation.info.enable = false;
     documentation.man.enable = false;
     chaotic.nyx.cache.enable = lib.mkForce false;
     nixpkgs.flake.source = lib.mkForce sources.unstable;
     nix = {
-      package = pkgs.nixVersions.git;
+      # package = pkgs.nixVersions.git;
       registry.nixpkgs.to = {
         type = "path";
         path = sources.unstable;
@@ -44,13 +55,13 @@
       channel.enable = false;
       settings = {
         warn-dirty = false;
-        allow-import-from-derivation = true;
+        accept-flake-config = true; # allow using substituters from flake.nix
         trusted-substituters = ["https://hyprland.cachix.org"];
         trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
         experimental-features = [
           "nix-command"
           "flakes"
-          "pipe-operators"
+          "pipe-operator"
         ];
         commit-lockfile-summary = "chore(deps): update flake";
         auto-optimise-store = true;
@@ -59,6 +70,10 @@
           "@wheel"
         ];
         substituters = ["https://hyprland.cachix.org"];
+        extra-deprecated-features = [
+          "broken-string-escape"
+          "or-as-identifier"
+        ];
         extra-substituters = [
           "https://nix-community.cachix.org"
           "https://cache.garnix.io"
@@ -81,6 +96,7 @@
       extraOptions = ''
         allow-import-from-derivation = true
         !include ${config.age.secrets.secret2.path}
+        connect-timeout = 60
       '';
     };
     system.activationScripts.diff = ''
