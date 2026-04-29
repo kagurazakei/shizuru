@@ -19,7 +19,7 @@
     silent-sddm.url = "github:kagurazakei/SilentSDDM";
     mnw.url = "github:Gerg-L/mnw";
     niri = {
-      url = "github:kagurazakei/niri";
+      url = "git+https://codeberg.org/BANanaD3V/niri-nix.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nur-repo-override.url = "github:ilya-fedin/nur-repository";

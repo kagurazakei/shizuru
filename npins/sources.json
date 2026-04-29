@@ -424,6 +424,20 @@
       "url": "https://github.com/nix-community/neovim-nightly-overlay/archive/94b50f2d9ed535658d2cdc0e911439c26329cfa3.tar.gz",
       "hash": "sha256-zYXMyxsu7poR1m3C7VGW8v3WxaM6176cDD5hNo2GdSE="
     },
+    "niri-nix": {
+      "type": "Git",
+      "repository": {
+        "type": "Forgejo",
+        "server": "https://codeberg.org/",
+        "owner": "BANanaD3V",
+        "repo": "niri-nix"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "3dc18fb32f3e387d9d5f24a810f1e5f9bad7bba5",
+      "url": "https://codeberg.org/BANanaD3V/niri-nix/archive/3dc18fb32f3e387d9d5f24a810f1e5f9bad7bba5.tar.gz",
+      "hash": "sha256-Ytaf75Qv06j6iUyS4r4rpPzJbrb3rrBnwLLC/NHNzmk="
+    },
     "niri-scratchpad-rs": {
       "type": "Git",
       "repository": {
@@ -462,9 +476,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "65eaf1492a6f0850ef2f08943c6bfc59b144e72a",
-      "url": "https://github.com/xddxdd/nix-cachyos-kernel/archive/65eaf1492a6f0850ef2f08943c6bfc59b144e72a.tar.gz",
-      "hash": "sha256-mLvw1+fa6vr0C87XfX0ja8yZMx0H+HWL0ena2SBMdp8="
+      "revision": "f0064c04cf854e7aba2d867ee166a95e3c6eb8b5",
+      "url": "https://github.com/xddxdd/nix-cachyos-kernel/archive/f0064c04cf854e7aba2d867ee166a95e3c6eb8b5.tar.gz",
+      "hash": "sha256-JYxrUkkSXjGgviTGPL4bF6OoW+pGY+sUBCgcuVd+cN8="
     },
     "nix-flatpak": {
       "type": "Git",
@@ -595,6 +609,19 @@
       "revision": "6e69222d5343f4edfc7aeb02e5c844e122269cfb",
       "url": "https://github.com/lonerOrz/nyx-loner/archive/6e69222d5343f4edfc7aeb02e5c844e122269cfb.tar.gz",
       "hash": "sha256-bo8xUFqJaj1s7qbY86DPPcrvy1BGi9QOMrDcDk+N9/E="
+    },
+    "ori-sysc-greet": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Nomadcxx",
+        "repo": "sysc-greet"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "6741aee90568418dc6008f0bbbc04b5e29d0781d",
+      "url": "https://github.com/Nomadcxx/sysc-greet/archive/6741aee90568418dc6008f0bbbc04b5e29d0781d.tar.gz",
+      "hash": "sha256-r7oJA/wfME8u5bCSOlHnrNFMBTbDxyhlGsCzrNtvke4="
     },
     "piri": {
       "type": "Git",
@@ -752,9 +779,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "864c7451af8ccf3ea3c0af4a2b3e7aceea03a028",
-      "url": "https://github.com/kagurazakei/sysc-greet/archive/864c7451af8ccf3ea3c0af4a2b3e7aceea03a028.tar.gz",
-      "hash": "sha256-OVZUrTEufEnChLkaxljO50ypaPCRnZ5/RNg7iA5o4tQ="
+      "revision": "1085995f459c4d17b7598e01ba138791b728eb39",
+      "url": "https://github.com/kagurazakei/sysc-greet/archive/1085995f459c4d17b7598e01ba138791b728eb39.tar.gz",
+      "hash": "sha256-20qjkNO/XIoS7qIEuNhAGP8VrZv2YuWqDZfZOY61r88="
     },
     "unstable": {
       "type": "Git",
@@ -765,9 +792,9 @@
       },
       "branch": "nixos-unstable",
       "submodules": false,
-      "revision": "b12141ef619e0a9c1c84dc8c684040326f27cdcc",
-      "url": "https://github.com/NixOS/nixpkgs/archive/b12141ef619e0a9c1c84dc8c684040326f27cdcc.tar.gz",
-      "hash": "sha256-ZSK0NL4a1BwVbbTBoSnWgbJy9HeZFXLYQizjb2DPF24="
+      "revision": "1c3fe55ad329cbcb28471bb30f05c9827f724c76",
+      "url": "https://github.com/NixOS/nixpkgs/archive/1c3fe55ad329cbcb28471bb30f05c9827f724c76.tar.gz",
+      "hash": "sha256-bxrdOn8SCOv8tN4JbTF/TXq7kjo9ag4M+C8yzzIRYbE="
     },
     "viu": {
       "type": "Git",

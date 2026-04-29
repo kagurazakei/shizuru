@@ -144,7 +144,8 @@ in {
     "wayle/config.toml" = "/wayle/config.toml";
   };
   azalea.dots.zakei-niri = mkDotsModule username {
-    "niri/config.kdl" = d: d.dotsDir + "/niri/${d.lib.toLower d.config.networking.hostName}.kdl";
+    # "niri/config.kdl" = d: d.dotsDir + "/niri/${d.lib.toLower d.config.networking.hostName}.kdl";
+    "niri/config.kdl" = "/niri/config.kdl";
     "noctalia/colors.json" = "/noctalia/colors.json";
     "noctalia/settings.json" = "/noctalia/settings.json";
   };

@@ -4,12 +4,8 @@
     lib,
     config,
     self,
-    flakeCompat,
-    sources,
     ...
-  }: let
-    hyprnix = (flakeCompat.flakeToNix {src = sources.hyprland;}).defaultNix;
-  in {
+  }: {
     imports = [
       self.azalea.modules.ambxst
       self.azalea.modules.xdg
@@ -27,8 +23,8 @@
       enable = true;
       withUWSM = true;
       xwayland.enable = true;
-      package = hyprnix.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      portalPackage = hyprnix.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+      package = pkgs.master.hyprland;
+      portalPackage = pkgs.master.xdg-desktop-portal-hyprland;
     };
     systemd.user.timers.hyprsunset = {
       description = "Start hyprsunset after sunset";
