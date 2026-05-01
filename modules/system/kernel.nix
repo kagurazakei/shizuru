@@ -37,7 +37,7 @@
     boot = {
       kernelPackages =
         if config.networking.hostName == "hana"
-        then pkgs.cachyosKernels.linuxPackages-cachyos-rt-bore
+        then pkgs.linuxPackages_zen
         else pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto;
       consoleLogLevel = 0;
       kernelParams = [

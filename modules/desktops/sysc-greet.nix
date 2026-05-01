@@ -11,7 +11,7 @@
     environment.pathsToLink = ["/run/current-system/sw/share/wayland-sessions/"];
     services.sysc-greet = {
       enable = true;
-      compositor = "niri";
+      compositor = "hyprland";
     };
   };
 }

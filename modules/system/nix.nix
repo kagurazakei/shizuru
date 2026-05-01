@@ -30,24 +30,13 @@
       }
     '';
   in {
-    imports = [
-      (import "${sources.lix-module}/module.nix" (
-        let
-          lix = sources.lix.outPath;
-        in {
-          inherit lix;
-          # versionSuffix = "pre${builtins.substring 0 8 lix.lastModifiedDate}-${lix.shortRev}";
-        }
-      ))
-    ];
-    lix.enable = true;
     documentation.nixos.enable = false;
     documentation.info.enable = false;
     documentation.man.enable = false;
     chaotic.nyx.cache.enable = lib.mkForce false;
     nixpkgs.flake.source = lib.mkForce sources.unstable;
     nix = {
-      # package = pkgs.nixVersions.git;
+      package = pkgs.nixVersions.git;
       registry.nixpkgs.to = {
         type = "path";
         path = sources.unstable;
@@ -61,7 +50,6 @@
         experimental-features = [
           "nix-command"
           "flakes"
-          "pipe-operator"
         ];
         commit-lockfile-summary = "chore(deps): update flake";
         auto-optimise-store = true;
@@ -70,10 +58,6 @@
           "@wheel"
         ];
         substituters = ["https://hyprland.cachix.org"];
-        extra-deprecated-features = [
-          "broken-string-escape"
-          "or-as-identifier"
-        ];
         extra-substituters = [
           "https://nix-community.cachix.org"
           "https://cache.garnix.io"
@@ -94,9 +78,10 @@
         options = "--delete-older-than 7d";
       };
       extraOptions = ''
-        allow-import-from-derivation = true
+        allow-import-from-derivation = false
         !include ${config.age.secrets.secret2.path}
         connect-timeout = 60
+        require-sigs = false
       '';
     };
     system.activationScripts.diff = ''
