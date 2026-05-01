@@ -3,24 +3,8 @@
     lib,
     config,
     pkgs,
-    sources,
-    flakeCompat,
     ...
-  }: let
-    niri = (flakeCompat.flakeToNix {src = sources.niri-nix;}).defaultNix;
-  in {
-    nix.settings = {
-      substituters = [
-        "https://niri-nix.cachix.org"
-      ];
-      trusted-public-keys = [
-        "niri-nix.cachix.org-1:SvFtqpDcf7Sm1SMJdby1/+Y+6f3Yt3/3PMcSTKPJNJ0="
-      ];
-    };
-    imports = [
-      niri.nixosModules.default
-    ];
-    nixpkgs.overlays = [niri.overlays.niri-nix];
+  }: {
     environment.systemPackages = with pkgs; [
       xwayland-satellite
     ];
@@ -29,10 +13,6 @@
     systemd.user.services.xwayland-satellite.wantedBy = ["graphical-session.target"];
     programs.niri = {
       enable = true;
-      package = pkgs.niri-unstable;
-      withUWSM = true;
-      useNautilus = false;
-      withXDG = true;
     };
     services.dbus.packages = lib.mkForce [
       pkgs.thunar
