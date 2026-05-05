@@ -2,18 +2,16 @@
   azalea.modules.environment = {
     pkgs,
     sources,
-    flakeCompat,
+    pins,
     ...
-  }: let
-    neovim-nightly = (flakeCompat.flakeToNix {src = sources.neovim-nightly;}).defaultNix;
-  in {
+  }: {
     nixpkgs.overlays = [
-      neovim-nightly.overlays.default
+      pins.neovim-nightly.overlays.default
     ];
     environment.systemPackages = with pkgs; [
       stable.git
       gh
-      neovide
+      # neovide
       (callPackage "${sources.npins}/npins.nix" {})
       alejandra
       (self.lib.mkPkgx' pkgs).xvim.default

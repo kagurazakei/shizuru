@@ -10,7 +10,6 @@
     qt.enable = true;
     environment.systemPackages = with pkgs; [
       zpkgs.qt6ct
-      zpkgs.noctalia-qs
       wlsunset
       libqalculate
       libsForQt5.qtstyleplugin-kvantum

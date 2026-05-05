@@ -4,10 +4,9 @@
     lib,
     sources,
     flakeCompat,
+    pins,
     ...
   }: let
-    hjemOut = import sources.hjem {};
-    hjemFlake = (flakeCompat.flakeToNix {src = sources.hjem;}).defaultNix;
     qtengineOut = flakeCompat._flakeToNix {
       src = sources.qtengine;
       overrides = {
@@ -15,9 +14,9 @@
       };
     };
   in {
-    imports = [hjemOut.nixosModules.default];
+    imports = [pins.hjem.nixosModules.default];
     hjem = {
-      linker = lib.mkForce hjemFlake.packages.${pkgs.stdenv.hostPlatform.system}.smfh;
+      linker = lib.mkForce pins.hjem.packages.${pkgs.stdenv.hostPlatform.system}.smfh;
       extraModules = [
         qtengineOut.hjemModules.default
       ];

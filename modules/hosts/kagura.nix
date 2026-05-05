@@ -22,7 +22,7 @@
       self.azalea.modules.nvidia
       self.azelea.modules.mpv
       self.azalea.modules.sysc-greet
-      self.azalea.modules.cups
+      # self.azalea.modules.cups
       self.azalea.modules.kagura-fs
     ];
 

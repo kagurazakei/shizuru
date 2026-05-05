@@ -1,6 +1,6 @@
 {
   azalea.modules.zen = {
-    sources,
+    pins,
     pkgs,
     ...
   }: let
@@ -9,7 +9,8 @@
     '';
   in {
     environment.systemPackages = [
-      (pkgs.callPackage "${sources.zen-browser-flake}/default.nix" {}).default
+      # (pkgs.callPackage "${sources.zen-browser-flake}/default.nix" { }).default
+      pins.zen-browser-flake.packages.${pkgs.stdenv.hostPlatform.system}.beta
       fuzzel-clip
     ];
   };

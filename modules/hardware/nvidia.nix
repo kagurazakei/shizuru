@@ -52,7 +52,7 @@
         bottom
         htop
         egl-wayland
-        mesa
+        pkgs.commit.mesa
         zenith-nvidia
       ];
       boot = {

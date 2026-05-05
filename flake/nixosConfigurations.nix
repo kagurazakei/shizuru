@@ -5,6 +5,7 @@
 } @ inputs: let
   sources = import ../npins;
   flakeCompat = import ../utils/flake-compat.nix {};
+  pins = import ../inputs.nix;
   with-inputs-libs = import sources.with-inputs sources {};
   with-inputs = with-inputs-libs sources;
   with-inputs-follow =
@@ -42,6 +43,7 @@
           sources
           flakeCompat
           with-inputs-follow
+          pins
           ;
         username = "antonio";
       };
@@ -68,7 +70,14 @@
                   inherit (prev.stdenv.hostPlatform) system;
                   config.allowUnfree = true;
                 };
+                commit = import sources.commit {
+                  inherit (prev.stdenv.hostPlatform) system;
+                  config.allowUnfree = true;
+                };
                 swww = pkgs.awww;
+                systemd = pkgs.commit.systemd;
+                # ffmpeg = pkgs.commit.ffmpeg;
+                # propc = pkgs.commit.propc;
                 resolved = {
                   inherit
                     (with-inputs-follow)

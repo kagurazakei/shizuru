@@ -398,6 +398,19 @@
       "url": "https://github.com/NixOS/nixpkgs/archive/a6f9223f9fb0e5c60bee34e849081a2b12beba36.tar.gz",
       "hash": "sha256-FKHqCyQUQho9VkQRagPqHS4EMwtIC8D/6ytR1Xeo+AU="
     },
+    "mnw": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Gerg-L",
+        "repo": "mnw"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "54f7ad6e34f4e44e0260a5140af7726a4792dece",
+      "url": "https://github.com/Gerg-L/mnw/archive/54f7ad6e34f4e44e0260a5140af7726a4792dece.tar.gz",
+      "hash": "sha256-AHM3wNuC5zzGaygnovHqFUI0YJR1Jj7ZgK9D9m7cgMQ="
+    },
     "neorg": {
       "type": "Git",
       "repository": {
@@ -487,11 +500,11 @@
         "owner": "xddxdd",
         "repo": "nix-cachyos-kernel"
       },
-      "branch": "main",
+      "branch": "master",
       "submodules": false,
-      "revision": "ac5956bbceb022998fc1dd0001322f10ef1e6dda",
-      "url": "https://github.com/xddxdd/nix-cachyos-kernel/archive/ac5956bbceb022998fc1dd0001322f10ef1e6dda.tar.gz",
-      "hash": "sha256-cNFg3H09sBZl1v9ds6PDHfLCUTDJbefGMSv+WxFs+9c="
+      "revision": "bdf1cec8001039a6c6c9a35c27bc56a9f5f03143",
+      "url": "https://github.com/xddxdd/nix-cachyos-kernel/archive/bdf1cec8001039a6c6c9a35c27bc56a9f5f03143.tar.gz",
+      "hash": "sha256-E0jXK/AZpjimObFRYHhQ9uMfc6KRdfKn/yVCfkQnd0A="
     },
     "nix-flatpak": {
       "type": "Git",

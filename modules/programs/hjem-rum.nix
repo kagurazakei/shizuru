@@ -1,11 +1,5 @@
 {
-  azalea.modules.hjem-rum = {
-    sources,
-    flakeCompat,
-    ...
-  }: let
-    hjem-rum = (flakeCompat.flakeToNix {src = sources.hjem-rum;}).defaultNix;
-  in {
-    hjem.extraModules = [hjem-rum.hjemModules.default];
+  azalea.modules.hjem-rum = {pins, ...}: {
+    hjem.extraModules = [pins.hjem-rum.hjemModules.default];
   };
 }

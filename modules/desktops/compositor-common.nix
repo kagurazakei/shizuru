@@ -99,7 +99,7 @@
         ;
       inherit (pkgs.master) trashy fuzzel wl-screenrec;
       inherit
-        (pkgs)
+        (pkgs.commit)
         libnotify
         swappy
         imv
@@ -150,7 +150,7 @@
 
     services.hypridle.enable = true;
     systemd.user.services.hypridle.path = mkForce (attrValues {
-      inherit (pkgs) systemd procps brightnessctl;
+      inherit (pkgs.commit) systemd procps brightnessctl;
     });
   };
 }

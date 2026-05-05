@@ -273,41 +273,6 @@
                         "videoSource": "portal"
                     },
                     "id": "plugin:screen-recorder"
-                },
-                {
-                    "defaultSettings": {
-                        "cursorPosition": 0,
-                        "filePath": "",
-                        "fontSize": 14,
-                        "panelHeight": 400,
-                        "panelWidth": 600,
-                        "scratchpadContent": "",
-                        "scrollPositionX": 0,
-                        "scrollPositionY": 0
-                    },
-                    "id": "plugin:notes-scratchpad"
-                },
-                {
-                    "defaultSettings": {
-                        "githubGistId": "",
-                        "githubToken": "",
-                        "notes": "[]",
-                        "syncEnabled": false
-                    },
-                    "id": "plugin:sticky-notes"
-                },
-                {
-                    "defaultSettings": {
-                        "catColor": "default",
-                        "catOffsetY": 0,
-                        "catSize": 1,
-                        "idleTimeout": 150,
-                        "raveMode": false,
-                        "tappyMode": false,
-                        "useMprisFilter": false,
-                        "waitingTimeout": 30000
-                    },
-                    "id": "plugin:slowbongo"
                 }
             ]
         }

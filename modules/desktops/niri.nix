@@ -10,7 +10,6 @@
     ];
     services.displayManager.defaultSession = "niri-uwsm";
     systemd.user.services.hypridle.path = lib.mkForce [config.programs.hyprland.package];
-    systemd.user.services.xwayland-satellite.wantedBy = ["graphical-session.target"];
     programs.niri = {
       enable = true;
     };

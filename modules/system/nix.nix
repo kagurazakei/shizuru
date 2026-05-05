@@ -37,6 +37,7 @@
     nixpkgs.flake.source = lib.mkForce sources.unstable;
     nix = {
       package = pkgs.nixVersions.git;
+      nixPath = ["nixpkgs=/etc/nixos/nixpkgs"];
       registry.nixpkgs.to = {
         type = "path";
         path = sources.unstable;
@@ -50,6 +51,7 @@
         experimental-features = [
           "nix-command"
           "flakes"
+          "pipe-operators"
         ];
         commit-lockfile-summary = "chore(deps): update flake";
         auto-optimise-store = true;

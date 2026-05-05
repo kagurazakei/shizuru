@@ -1,14 +1,12 @@
 {
   azalea.modules.spicetify = {
     pkgs,
-    sources,
-    flakeCompat,
+    pins,
     ...
   }: let
-    spicetify-nix = (flakeCompat.flakeToNix {src = sources.spicetify-nix;}).defaultNix;
-    spicePkgs = spicetify-nix.legacyPackages.${pkgs.system};
+    spicePkgs = pins.spicetify-nix.legacyPackages.${pkgs.system};
   in {
-    imports = [spicetify-nix.nixosModules.spicetify];
+    imports = [pins.spicetify-nix.nixosModules.spicetify];
     programs.spicetify = {
       enable = true;
       enabledExtensions = with spicePkgs.extensions; [

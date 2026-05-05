@@ -2,14 +2,11 @@
   azalea.modules.kernel = {
     pkgs,
     config,
-    sources,
-    flakeCompat,
+    pins,
     ...
-  }: let
-    nix-cachyos-kernel = (flakeCompat.flakeToNix {src = sources.nix-cachyos-kernel;}).defaultNix;
-  in {
+  }: {
     nixpkgs.overlays = [
-      nix-cachyos-kernel.overlays.pinned
+      pins.nix-cachyos-kernel.overlays.pinned
     ];
     nix.settings.substituters = ["https://attic.xuyh0120.win/lantian"];
     nix.settings.trusted-public-keys = ["lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="];
@@ -37,7 +34,7 @@
     boot = {
       kernelPackages =
         if config.networking.hostName == "hana"
-        then pkgs.linuxPackages_zen
+        then pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto
         else pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto;
       consoleLogLevel = 0;
       kernelParams = [
