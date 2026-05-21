@@ -23,6 +23,7 @@
       self.azalea.modules.btrfs
       # self.azalea.modules.steam
       self.azalea.modules.nvidia
+      self.azalea.modules.amd
       self.azalea.modules.sysc-greet
       self.azalea.modules.cups
       self.azalea.modules.hana-fs
@@ -94,7 +95,7 @@
     # user stuff
     users.users."antonio".packages = [
       pkgs.vscodium
-      # pkgx.mpv-wrapped
+      pkgx.mpv-wrapped
       pkgs.cava
     ];
 

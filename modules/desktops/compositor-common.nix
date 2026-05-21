@@ -5,7 +5,7 @@
     sources,
     ...
   }: let
-    inherit (lib) mkForce attrValues;
+    inherit (lib) attrValues;
     todo = pkgs.haskellPackages.callPackage "${sources.hs-todo}/nix/package.nix" {};
     noRounding = ''
       * {
@@ -97,9 +97,9 @@
         lazygit
         gpu-screen-recorder
         ;
-      inherit (pkgs.master) trashy fuzzel wl-screenrec;
+      inherit (pkgs) trashy fuzzel wl-screenrec;
       inherit
-        (pkgs.commit)
+        (pkgs)
         libnotify
         swappy
         imv
@@ -107,7 +107,7 @@
         networkmanagerapplet
         ;
       inherit
-        (pkgs.stable)
+        (pkgs)
         bottom
         nitch
         fastfetch
@@ -149,8 +149,5 @@
     ];
 
     services.hypridle.enable = true;
-    systemd.user.services.hypridle.path = mkForce (attrValues {
-      inherit (pkgs.commit) systemd procps brightnessctl;
-    });
   };
 }

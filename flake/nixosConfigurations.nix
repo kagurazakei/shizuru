@@ -24,6 +24,7 @@
         crane = with-inputs.crane;
         nixpkgs = with-inputs.unstable;
       };
+      ambxst = with-inputs.quickshell;
     };
   inherit
     (nixpkgs.lib)

@@ -46,8 +46,6 @@
       settings = {
         warn-dirty = false;
         accept-flake-config = true; # allow using substituters from flake.nix
-        trusted-substituters = ["https://hyprland.cachix.org"];
-        trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
         experimental-features = [
           "nix-command"
           "flakes"
@@ -59,20 +57,24 @@
           "root"
           "@wheel"
         ];
-        substituters = ["https://hyprland.cachix.org"];
-        extra-substituters = [
+
+        substituters = [
+          "https://kagurazakei.cachix.org"
           "https://nix-community.cachix.org"
           "https://cache.garnix.io"
           "https://loneros.cachix.org"
           "https://heitor.cachix.org"
-          "https://niri-nix.cachix.org"
+          "https://attic.xuyh0120.win/lantian"
+          "https://hyprland.cachix.org"
         ];
-        extra-trusted-public-keys = [
+        trusted-public-keys = [
+          "kagurazakei.cachix.org-1:L150C/szoC/r6LOupCWQRU5IqdWIBl926O1HpiBVEkw="
           "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
           "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
           "loneros.cachix.org-1:dVCECfW25sOY3PBHGBUwmQYrhRRK2+p37fVtycnedDU="
           "heitor.cachix.org-1:IZ1ydLh73kFtdv+KfcsR4WGPkn+/I926nTGhk9O9AxI="
-          "niri-nix.cachix.org-1:SvFtqpDcf7Sm1SMJdby1/+Y+6f3Yt3/3PMcSTKPJNJ0="
+          "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
+          "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
         ];
       };
       gc = {

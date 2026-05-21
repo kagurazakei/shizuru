@@ -20,9 +20,12 @@
         "man:systemd-getty-generator(8)"
       ];
       conflicts = ["console-getty.service"];
-      wantedBy = ["multi-user.target"];
       restartIfChanged = false;
-
+      unitConfig.DefaultDependencies = false;
+      wantedBy = [
+        "multi-user.target"
+        "getty.target"
+      ];
       serviceConfig = {
         Type = "idle";
         ExecStart = "${pkgs.util-linux}/bin/agetty -o '-p -- \\u' --noclear - $TERM";
